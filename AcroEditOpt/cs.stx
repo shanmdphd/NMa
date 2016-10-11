@@ -1,0 +1,3957 @@
+#Author=
+#BinaryPrefix=
+#BlockBegin={
+#BlockCommentEnd1=*/
+#BlockCommentEnd2=
+#BlockCommentStart1=/*
+#BlockCommentStart2=
+#BlockEnd=}
+#BracketColor=20000000
+#BracketStyles=[]
+#CaseSensitive=True
+#CommentColor=7F0000
+#CommentStyles=[]
+#Delimiter=!"$%&'()*+,-./:;<=>?@[\]^`{|}~  
+#Extensions=*.cs
+#HexPrefix=0x
+#IdentifierColor=20000000
+#IdentifierStyles=[]
+#IndentSize=2
+
+#Keyword1=
++
+-
+*
+/
+%
+&
+|
+^
+!
+~
+&&
+||
+true
+false
++
+++
+--
+<<
+>>
+==
+!=
+<
+>
+<=
+>=
+=
++=
+-=
+*=
+/=
+%=
+&=
+|=
+^=
+<<=
+>>=
+.
+[
+]
+(
+)
+?
+:
++
+-
+new
+sizeof
+typeof
+checked
+unchecked
+*
+->
+[]
+&
+#KEYWORD=Keywords
+abstract
+as
+base
+bool
+break
+byte
+case
+catch
+char
+checked
+class
+const
+continue
+decimal
+default
+delegate
+do
+double
+else
+enum
+event
+explicit
+extern
+false
+finally
+fixed
+float
+for
+foreach
+goto
+if
+implicit
+in
+int
+interface
+internal
+is
+lock
+long
+namespace
+new
+null
+object
+operator
+out
+override
+params
+private
+protected
+public
+readonly
+ref
+return
+sbyte
+sealed
+short
+sizeof
+stackalloc
+static
+string
+struct
+switch
+this
+throw
+true
+try
+typeof
+uint
+ulong
+unchecked
+unsafe
+ushort
+using
+virtual
+void
+while
+#KEYWORD=Core classes
+__BinaryParser
+__BinaryWriter
+__ComObject
+__ConsoleStream
+__CustomAttributeData
+__CustomAttributeParser
+__DTString
+__Error
+__ExceptionInfo
+__Filters
+__HResults
+__TransparentProxy
+AccessException
+ActivationListener
+ActivationServices
+Activator
+AgileAsyncWorkerItem
+AllMembershipCondition
+AmbiguousMatchException
+AppDomain
+AppDomainFlags
+AppDomainUnloadedException
+AppDomainUnloadInProgressException
+ApplicationDirectory
+ApplicationDirectoryMembershipCondition
+ApplicationException
+ArgMapper
+ArgumentException
+ArgumentNullException
+ArgumentOutOfRangeException
+ArithmeticException
+Array
+ArrayList
+ArrayTypeMismatchException
+ArrayWithSize
+ASCIIEncoding
+Assembly
+AssemblyBuilder
+AssemblyBuilderData
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyCultureAttribute
+AssemblyDefaultAliasAttribute
+AssemblyDelaySignAttribute
+AssemblyDescriptionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyKeyFileAttribute
+AssemblyKeyNameAttribute
+AssemblyName
+AssemblyOperatingSystemAttribute
+AssemblyProcessorAttribute
+AssemblyProductAttribute
+AssemblyTitleAttribute
+AssemblyTrademarkAttribute
+AssemblyVersionAttribute
+Assert
+AssertFilter
+AsymmetricAlgorithm
+AsymmetricDecryptor
+AsymmetricEncryptor
+AsymmetricKeyExDeformatter
+AsymmetricKeyExFormatter
+AsymmetricSignatureDeformatter
+AsymmetricSignatureFormatter
+AsyncCallback
+AsyncFileStreamProto
+AsyncResult
+AsyncWorkItem
+Attribute
+AttributeUsageAttribute
+AutoResetEvent
+BadImageFormatException
+BCLDebug
+BinaryArray
+BinaryAssembly
+BinaryConverter
+BinaryFormatter
+BinaryObject
+BinaryObjectString
+BinaryObjectWithMap
+BinaryObjectWithMapTyped
+BinaryReader
+BinarySerializer
+BinaryUtil
+BinaryWriter
+Binder
+BitArray
+BitConverter
+Buffer
+BufferedStream
+Calendar
+CalendarTable
+CallBackHelper
+CallContext
+CallContextRemotingData
+CallContextSecurityData
+CallConvCdecl
+CallConvFastcall
+CallConvStdcall
+CallConvThiscall
+CaseInsensitiveComparer
+CaseInsensitiveHashCodeProvider
+CCMDictionary
+CertificateEntry
+CertificateStore
+ChannelInfo
+ChannelItfs
+ChannelServices
+ChannelServicesData
+CharacterInfo
+ClientAsyncReplyTerminatorSink
+ClientContextTerminatorSink
+CloningService
+CLSCompliantAttribute
+CodeAccessPermission
+CodeAccessSecurityAttribute
+CodeAccessSecurityEngine
+CodeGroupStack
+CodeGroupStackFrame
+CodePageDataItem
+CodePageEncoding
+ComAliasNameAttribute
+ComConversionLossAttribute
+ComEmulateAttribute
+COMEmulateException
+COMException
+ComImportAttribute
+CompareInfo
+Comparer
+CompilationRelaxationsAttribute
+Component
+ComRegisterFunctionAttribute
+ComSourceInterfacesAttribute
+ComUnregisterFunctionAttribute
+ComVisibleAttribute
+ConditionalAttribute
+Config
+Console
+ConstructionCall
+ConstructionResponse
+ConstructorBuilder
+ConstructorCallMessage
+ConstructorInfo
+ConstructorReturnMessage
+Container
+Context
+ContextAttribute
+ContextBoundObject
+ContextifyInfo
+ContextMarshalException
+ContextProperty
+ContextStaticAttribute
+Convert
+Converter
+CoreException
+CRMDictionary
+CrossAppDomainChannel
+CrossAppDomainData
+CrossAppDomainSerializer
+CrossAppDomainSink
+CrossContextChannel
+CrossContextDelegate
+CryptoConfig
+CryptoFileStream
+CryptographicException
+CryptographicObject
+CryptographicUnexpectedOperationException
+CryptoMemoryStream
+CryptoStorageClass
+CryptoStorageData
+CryptoStreamDeformatter
+CryptoStreamFormatter
+CSP_Decryptor
+CSP_Encryptor
+CSP_Parameters
+CultureInfo
+CultureInfoEnumerator
+CultureTable
+CurrentSystemTimeZone
+CustomAttributeBuilder
+CustomAttributeFormatException
+DateTimeFormat
+DateTimeFormatInfo
+DateTimeParse
+DateTimeRawInfo
+DateTimeResult
+DateTimeToken
+DBNull
+DebuggableAmbivalentAttribute
+DebuggableAttribute
+Debugger
+DebuggerHiddenAttribute
+DebuggerStepThroughAttribute
+DecimalConstantAttribute
+DecodeBase64
+Decoder
+DefaultBinder
+DefaultFilter
+DefaultLCIDMap
+DefaultMemberAttribute
+Delegate
+DelegateSerializationHolder
+DeriveBytes
+DES
+DES_CSP
+DeserializationEvent
+DeserializationEventHandler
+Dictionary
+Directory
+DirectoryNotFoundException
+DirectoryString
+DiscardableAttribute
+DispIdAttribute
+DivideByZeroException
+DllImportAttribute
+DomainSpecificRemotingData
+DSA
+DSA_CSP
+DSA_CSP_Object
+DSA_Signature_Deformatter
+DSA_Signature_Formatter
+DuplicateWaitObjectException
+DynamicPropertyHolder
+DynamicSecurityMethodAttribute
+DynamicTypeInfo
+EditAndContinueHelper
+Element
+Embedded
+Empty
+EncodeAsBase64
+Encoder
+Encoding
+EncodingTable
+EndOfStreamException
+EntryPointNotFoundException
+Enum
+EnumBuilder
+Environment
+EnvironmentPermission
+EnvironmentPermissionAttribute
+EnvoyInfo
+EnvoyTerminatorSink
+EraInfo
+EventArgs
+EventBuilder
+EventDelegateWriter
+EventHandler
+EventInfo
+EventProviderInterfaceWriter
+EventProviderWriter
+EventSinkHelperWriter
+EventSource
+Evidence
+EvidenceEnumerator
+Exception
+ExecutionEngineException
+ExposeHResultAttribute
+ExtensibleClassFactory
+ExternalException
+FieldAccessException
+FieldBuilder
+FieldInfo
+FieldOffsetAttribute
+File
+FileDialogPermission
+FileDialogPermissionAttribute
+FileIOAccess
+FileIOPermission
+FileIOPermissionAttribute
+FileNotFoundException
+FileStream
+FileSystemEntry
+FirstMatchCodeGroup
+FixupHolder
+FixupHolderList
+FlagsAttribute
+ForceToSharedDomain
+FormatException
+Formatter
+FormatterBinder
+FormatterConverter
+FormatterEnums
+FormatterServices
+FrameSecurityDescriptor
+GC
+GenericIdentity
+GenericPrincipal
+GlobalizationAssembly
+GlobalObjectAttribute
+GregorianCalendar
+GuidAttribute
+HasDefaultInterfaceAttribute
+Hash
+HashAlgorithm
+HashMembershipCondition
+HashMemorySink
+Hashtable
+Header
+HeaderHandler
+HebrewCalendar
+Hex
+HijriCalendar
+HMACSHA1
+Identity
+IdentityHolder
+IDispatchImplAttribute
+IDRole
+ILGenerator
+IllogicalCallContext
+ImportedFromTypeLibAttribute
+ImporterCallback
+InAttribute
+IndexOutOfRangeException
+InterfaceTypeAttribute
+Interlocked
+InternalSink
+InternalSoapMethodCall
+InvalidCastException
+InvalidComObjectException
+InvalidFilterCriteriaException
+InvalidOleVariantTypeException
+InvalidOperationException
+IOCompletionCallback
+IOException
+IsolatedStorage
+IsolatedStorageException
+IsolatedStorageFile
+IsolatedStorageFileEnumerator
+IsolatedStorageFilePermission
+IsolatedStorageFilePermissionAttribute
+IsolatedStorageFileStream
+IsolatedStoragePermission
+IsolatedStoragePermissionAttribute
+JapaneseCalendar
+JulianCalendar
+KeyedHashAlgorithm
+KeySizes
+KeyStorageInCSP
+KoreanCalendar
+LdsSyncHelper
+Lease
+LeaseLifeTimeServiceProperty
+LeaseManager
+LeaseSink
+LifetimeServices
+LineNumberInfo
+LocalActivator
+LocalBuilder
+LocalDataStore
+LocalDataStoreMgr
+LocalDataStoreSlot
+LocalSymInfo
+Log
+LogicalCallContext
+LogMessageEventHandler
+LogSwitch
+LogSwitchLevelHandler
+LongList
+MAC_TripleDES
+ManualResetEvent
+Marshal
+MarshalAsAttribute
+MarshalByRefObject
+MaskGenerationMethod
+Math
+MCMDictionary
+MD5
+MD5_CSP
+MemberFilter
+MemberHolder
+MemberInfo
+MemberInfoSerializationHolder
+MemberPrimitiveTyped
+MemberPrimitiveUnTyped
+MemberReference
+MemoryStream
+Message
+MessageDictionary
+MessageDictionaryEnumerator
+MessageEnd
+MessageSurrogate
+MessageSurrogateFilter
+MethodAccessException
+MethodBase
+MethodBuilder
+MethodCall
+MethodImplAttribute
+MethodInfo
+MethodRental
+MethodResponse
+Missing
+MissingFieldException
+MissingManifestResourceException
+MissingMemberException
+MissingMethodException
+Module
+ModuleBuilder
+ModuleBuilderData
+Monitor
+MRMDictionary
+MTSPrincipal
+MulticastDelegate
+MulticastNotSupportedException
+Mutex
+NamedPermissionSet
+NameInfo
+NameSpaceExtractor
+NoComRegistrationAttribute
+NoIDispatchAttribute
+NonSerializedAttribute
+NotFiniteNumberException
+NotImplementedException
+NotSupportedException
+NullReferenceException
+Number
+NumberFormatInfo
+OAVariantLib
+Object
+ObjectCreationDelegate
+ObjectHandle
+ObjectHolder
+ObjectHolderList
+ObjectHolderListEnumerator
+ObjectIDGenerator
+ObjectList
+ObjectManager
+ObjectMap
+ObjectMapInfo
+ObjectNull
+ObjectProgress
+ObjectReader
+ObjectWriter
+ObjRef
+ObsoleteAttribute
+OleAutBinder
+OneWayAttribute
+OpCodes
+OperatingSystem
+OutAttribute
+OutOfMemoryException
+OverflowException
+Overlapped
+ParamArrayAttribute
+ParameterBuilder
+ParameterInfo
+ParseNumbers
+Parser
+ParseRecord
+ParserStack
+ParserStackFrame
+PasswordDeriveBytes
+Path
+PathTooLongException
+PermissionList
+PermissionListSet
+PermissionListSetEnumerator
+PermissionRequestEvidence
+PermissionSet
+PermissionSetAttribute
+PermissionSetEnumerator
+PermissionToken
+PermissionTokenFactory
+PKCS1_MaskGenerationMethod1
+PKCS7StreamDeformatter
+PKCS7StreamFormatter
+PListNode
+Pointer
+PolicyException
+PolicyIDMembershipCondition
+PolicyLevel
+PolicyManager
+PolicyStatement
+PredeclaredAttribute
+PreserveSigAttribute
+PrincipalPermission
+PrincipalPermissionAttribute
+ProgIdAttribute
+PropertyBuilder
+PropertyInfo
+Publisher
+PublisherIdentityPermission
+PublisherIdentityPermissionAttribute
+PublisherMembershipCondition
+Queue
+Radix
+Random
+RandomNumberGenerator
+RankException
+RC2
+RC2_CSP
+ReaderWriterLock
+RealProxy
+ReflectionPermission
+ReflectionPermissionAttribute
+ReflectionTypeLoadException
+RegionInfo
+RegionTable
+RegisteredWaitHandle
+RegistrationServices
+Registry
+RegistryKey
+RegistryPermission
+RegistryPermissionAttribute
+RemotingConfigHandler
+RemotingException
+RemotingProxy
+RemotingServices
+RemotingSurrogate
+RemotingSurrogateSelector
+ResId
+ResolveEventHandler
+ResourceManager
+ResourceReader
+ResourceSet
+ResourceTable
+ResourceWriter
+ResWriterData
+ReturnCustomAttributes
+ReturnMessage
+RNG_CSP
+Root
+RSA
+RSA_CSP
+RSA_CSP_Object
+RSA_OAEP_KeyExchange_Deformatter
+RSA_OAEP_KeyExchange_Formatter
+RSA_PKCS1_KeyExchange_Deformatter
+RSA_PKCS1_KeyExchange_Formatter
+RSA_PKCS1_Signature_Deformatter
+RSA_PKCS1_Signature_Formatter
+RuntimeConstructorInfo
+RuntimeEventInfo
+RuntimeFieldInfo
+RuntimeHelpers
+RuntimeMethodInfo
+RuntimePropertyInfo
+RuntimeResourceSet
+RuntimeType
+SafeArrayTypeMismatchException
+SchemaType
+ScopeTree
+SecurityAttribute
+SecurityCallContext
+SecurityCallers
+SecurityElement
+SecurityException
+SecurityIdentity
+SecurityManager
+SecurityPermission
+SecurityPermissionAttribute
+SecurityRuntime
+SecurityStringPair
+SEHException
+SerializableAttribute
+SerializationBinder
+SerializationException
+SerializationFieldInfo
+SerializationHeaderRecord
+SerializationInfo
+SerializationInfoEnumerator
+SerializationMonkey
+SerObjectInfo
+SerObjectInfoInit
+SerStack
+SerTrace
+ServerAsyncReplyTerminatorSink
+ServerContextTerminatorSink
+ServerIdentity
+ServerObjectTerminatorSink
+SHA1
+SHA1_CSP
+SHA1Managed
+SharedStatics
+SignatureBuffer
+SignatureDescription
+SignatureHelper
+Site
+SiteIdentityPermission
+SiteIdentityPermissionAttribute
+SiteMembershipCondition
+SiteString
+SkipVerificationMembershipCondition
+SoapMessageSurrogate
+SoapMethodCall
+SortedList
+SortKey
+Stack
+StackBasedReturnMessage
+StackBuilderSink
+StackFrame
+StackFrameHelper
+StackOverflowException
+StackTrace
+StorageMicrosoftCSP
+StorageXML
+Stream
+StreamReader
+StreamWriter
+String
+StringBuilder
+StringExpressionSet
+StringInfo
+StringPair
+StringReader
+StringTable
+StringWriter
+StrongName
+StrongNameIdentityPermission
+StrongNameIdentityPermissionAttribute
+StrongNameKeyPair
+StrongNameMembershipCondition
+StrongNamePublicKeyBlob
+StrongNameString
+StructLayoutAttribute
+SuppressUnmanagedCodeSecurityAttribute
+SurrogateKey
+SurrogateSelector
+SymbolMethod
+SymbolType
+SymDocumentType
+SymLanguageType
+SymLanguageVendor
+SymmetricAlgorithm
+SymmetricStreamDecryptor
+SymmetricStreamEncryptor
+Synchronization
+SynchronizationLockException
+SynchronizedClientContextSink
+SynchronizedServerContextSink
+SystemException
+TargetException
+TargetInvocationException
+TargetParameterCountException
+TAWorkItem
+TCEAdapterGenerator
+TextElementEnumerator
+TextInfo
+TextReader
+TextWriter
+ThaiBuddhistCalendar
+Thread
+ThreadAbortException
+ThreadAffinity
+ThreadAffinityClientContextSink
+ThreadAffinityServerContextSink
+ThreadInterruptedException
+ThreadPool
+ThreadStart
+ThreadStateException
+ThreadStaticAttribute
+ThreadStopException
+Timeout
+Timer
+TimerCallback
+TimeZone
+TokenBasedSet
+TokenBasedSetEnumerator
+Tokenizer
+TrackingServices
+TransitionCall
+TripleDES
+TripleDES_CSP
+Type
+TypeAttr
+TypeBuilder
+TypeDelegator
+TypedReferenceBuilder
+TypeFilter
+TypeInfo
+TypeInitializationException
+TypeLibAttr
+TypeLibConverter
+TypeLibFuncAttribute
+TypeLibTypeAttribute
+TypeLibVarAttribute
+TypeLoadException
+TypeUnloadedException
+UIPermission
+UIPermissionAttribute
+UnhandledExceptionEvent
+UnhandledExceptionEventHandler
+UnicodeEncoding
+UnionCodeGroup
+UnitySerializationHolder
+UnmanagedMarshal
+UnrestrictedPermission
+UnverifiableCodeAttribute
+Url
+URLAttribute
+URLIdentityPermission
+URLIdentityPermissionAttribute
+URLMembershipCondition
+URLString
+UTF7Encoding
+UTF8Encoding
+Util
+Value
+ValueFixup
+ValueType
+VerifierException
+Version
+VTableCallsNotSupportedException
+WaitCallback
+WaitHandle
+WaitOrTimerCallback
+WeakReference
+WeakReferenceException
+Win32Native
+WindowsIdentity
+WindowsImpersonationContext
+WindowsPrincipal
+WorkItem
+X509Certificate
+XMLKeyStorage
+XmlNamespaceEncoder
+XMLSyntaxException
+XMLTree
+XMLUtil
+Zone
+ZoneIdentityPermission
+ZoneIdentityPermissionAttribute
+ZoneMembershipCondition
+#KEYWORD=.NET Classes
+Microsoft.Win32
+Registry
+RegistryHive
+RegistryKey
+System
+AccessException
+Activator
+AppDomain
+AppDomainFlags
+AppDomainUnloadedException
+AppDomainUnloadInProgressException
+ApplicationException
+ArgIterator
+ArgumentException
+ArgumentNullException
+ArgumentOutOfRangeException
+ArithmeticException
+Array
+ArrayTypeMismatchException
+AsyncCallback Delegate
+Attribute
+AttributeTargets
+AttributeUsageAttribute
+BadImageFormatException
+BitConverter
+Boolean
+Buffer
+Byte
+CallContext
+Char
+CLSCompliantAttribute
+Console
+ContextBoundObject
+ContextMarshalException
+ContextStaticAttribute
+Convert
+CoreException
+Currency
+DateTime
+DBNull
+Decimal
+Delegate
+DivideByZeroException
+Double
+DuplicateWaitObjectException
+Empty
+EntryPointNotFoundException
+Enum
+Environment
+EventArgs
+EventHandler Delegate
+Exception
+ExecutionEngineException
+FieldAccessException
+FlagsAttribute
+FormatException
+GC
+Guid
+IAsyncResult Interface
+ICloneable Interface
+IComparable Interface
+IConvertible Interface
+ICustomFormatter Interface
+IFormattable Interface
+ILogicalThreadAffinative Interface
+IndexOutOfRangeException
+Int16
+Int32
+Int64
+InvalidCastException
+InvalidOperationException
+IServiceObjectProvider Interface
+LocalDataStore
+LocalDataStoreMgr
+LocalDataStoreSlot
+LogicalCallContext
+MarshalByRefObject
+Math
+MethodAccessException
+MissingFieldException
+MissingMemberException
+MissingMethodException
+MulticastDelegate
+MulticastNotSupportedException
+NonSerializedAttribute
+NotFiniteNumberException
+NotImplementedException
+NotSupportedException
+NullReferenceException
+Object
+ObsoleteAttribute
+OperatingSystem
+OutOfMemoryException
+OverflowException
+ParamArray
+ParamArrayAttribute
+PlatformID
+Radix
+Random
+RankException
+RuntimeArgumentHandle
+RuntimeFieldHandle
+RuntimeMethodHandle
+RuntimeTypeHandle
+SByte
+SerializableAttribute
+Single
+StackOverflowException
+String
+SystemException
+ThreadStaticAttribute
+TimeSpan
+TimeZone
+Type
+TypeCode
+TypedReference
+TypeInitializationException
+TypeLoadException
+TypeUnloadedException
+UInt16
+UInt32
+UInt64
+UnhandledExceptionEvent
+UnhandledExceptionEventHandler Delegate
+Value
+ValueType
+Version
+Void
+WeakReference
+WeakReferenceException
+System.CodeDOM
+CodeArrayCreateExpression
+CodeAssignStatement
+CodeAttributeArgument
+CodeAttributeArgumentCollection
+CodeAttributeBlock
+CodeAttributeDeclaration
+CodeAttributeDeclarationCollection
+CodeBaseReferenceExpression
+CodeBinaryOperatorExpression
+CodeBinaryOperatorType
+CodeCastExpression
+CodeCatchClause
+CodeCatchClauseCollection
+CodeClass
+CodeClassCollection
+CodeClassConstructor
+CodeClassDelegate
+CodeClassMember
+CodeClassMemberCollection
+CodeCommentStatement
+CodeConstructor
+CodeDelegateCreateExpression
+CodeDelegateInvokeExpression
+CodeDelegateInvokeStatement
+CodeExpression
+CodeExpressionCollection
+CodeFieldReferenceExpression
+CodeForLoopStatement
+CodeIfStatement
+CodeIndexerExpression
+CodeLinePragma
+CodeLiteralClassMember
+CodeLiteralExpression
+CodeLiteralStatement
+CodeMemberEvent
+CodeMemberField
+CodeMemberMethod
+CodeMemberProperty
+CodeMethodInvokeExpression
+CodeMethodInvokeStatement
+CodeMethodReturnStatement
+CodeNamespace
+CodeNamespaceImport
+CodeNamespaceImportCollection
+CodeObjectCreateExpression
+CodeParameterDeclarationExpression
+CodeParameterDeclarationExpressionCollection
+CodePrimitiveExpression
+CodePropertyReferenceExpression
+CodeStatement
+CodeStatementCollection
+CodeThisReferenceExpression
+CodeThrowExceptionStatement
+CodeTryCatchFinallyStatement
+CodeTypeOfExpression
+CodeTypeReferenceExpression
+CodeVariableDeclarationStatement
+FieldDirection
+MemberAttributes
+System.CodeDOM.Compiler
+CodeCompiler
+CodeGenerator
+CompilerError
+CompilerErrorCollection
+CompilerParameters
+CompilerResults
+CSharpCodeGenerator
+Executor
+IBatchCompiler Interface
+ICodeCompiler Interface
+ICodeGenerator Interface
+IndentedTextWriter
+JSCodeGenerator
+TempFiles
+VBCodeGenerator
+System.Collections
+ArrayList
+BitArray
+CaseInsensitiveComparer
+CaseInsensitiveHashCodeProvider
+CaseInsensitiveHashtable
+CaseInsensitiveSortedList
+Comparer
+Dictionary
+DictionaryEntry
+Hashtable
+ICollection Interface
+IComparer Interface
+IDictionary Interface
+IDictionaryEnumerator Interface
+IEnumerable Interface
+IEnumerator Interface
+IHashCodeProvider Interface
+IList Interface
+NameObjectCollectionBase
+NameValueCollection
+ObjectList
+Queue
+SortedList
+Stack
+StringCollection
+StringTable
+System.Collections.Bases
+TypedCollectionBase
+TypedReadonlyCollectionBase
+System.ComponentModel
+ArrayConverter
+BindableAttribute
+BooleanConverter
+BrowsableAttribute
+ByteConverter
+CancelEventArgs
+CancelEventHandler Delegate
+CategoryAttribute
+CharConverter
+CollectionConverter
+Component
+ComponentConverter
+ComponentEditorAttribute
+Container
+CultureInfoConverter
+CurrencyConverter
+DateTimeConverter
+DecimalConverter
+DefaultEventAttribute
+DefaultPropertyAttribute
+DefaultValueAttribute
+DescriptionAttribute
+DesignerAttribute
+DesignerCategoryAttribute
+DesignOnlyAttribute
+DoubleConverter
+EditorAttribute
+EnumConverter
+EventDescriptor
+EventDescriptorAttribute
+EventDescriptorCollection
+ExpandableObjectConverter
+ExtenderPropertyAttribute
+GuidConverter
+HelpAttribute
+IComponent Interface
+IContainer Interface
+ICustomTypeDescriptor Interface
+IExtenderProvider Interface
+Int16Converter
+Int32Converter
+Int64Converter
+ISite Interface
+ISupportInitialize Interface
+ISynchronizeInvoke Interface
+ITypeDescriptorContext Interface
+IValueAccess Interface
+License
+LicenseContext
+LicenseException
+LicenseManager
+LicenseProvider
+LicenseProviderAttribute
+LicenseUsageMode
+LicFileLicenseProvider
+LocalizableAttribute
+MarshalByRefComponent
+MemberAttribute
+MemberAttributeCollection
+MemberDescriptor
+MergablePropertyAttribute
+NotificationAttribute
+ObjectDisposedException
+PersistableAttribute
+PersistableSupport
+PersistContentsAttribute
+PersisterAttribute
+PersistInfo
+PropertyChangedEventArgs
+PropertyChangedEventHandler Delegate
+PropertyDescriptor
+PropertyDescriptorCollection
+ProvidePropertyAttribute
+ReadOnlyAttribute
+RecommendedAsConfigurableAttribute
+ReferenceConverter
+RefreshEventArgs
+RefreshEventHandler Delegate
+RunInstallerAttribute
+ServerExplorerBrowsableAttribute
+ServerExplorerReadOnlyAttribute
+SingleConverter
+StringConverter
+SyntaxCheck
+TimeSpanConverter
+TypeConverter
+TypeConverter.StandardValuesCollection
+TypeConverterAttribute
+TypeDescriptor
+TypeListConverter
+ValidatingEventArgs
+ValidatingEventHandler Delegate
+System.ComponentModel.Design
+ActionType
+ActiveDocumentEventArgs
+ActiveDocumentEventHandler Delegate
+AliasEditor
+ArrayDialog
+ArrayEditor
+BatchOperationEventArgs
+BatchOperationEventHandler Delegate
+BinaryEditor
+BlankIntegerEditor
+ByteEditor
+ByteViewer
+CheckoutException
+CodePersister
+CodeStream
+CollectionEditor
+CommandID
+ComponentChangedEventArgs
+ComponentChangedEventHandler Delegate
+ComponentChangingEventArgs
+ComponentChangingEventHandler Delegate
+ComponentDesigner
+ComponentEventArgs
+ComponentEventHandler Delegate
+ComponentModelPersister
+ComponentModelPersister.LocalCache.LocalCacheItemComparer
+ComponentRenameEventArgs
+ComponentRenameEventHandler Delegate
+CompoundPropertyChangeActionUnit
+ContainerSelectorActiveEventHandler Delegate
+ContentAlignmentEditor
+ContentAlignmentEditor.EditControl
+CultureInfoEditor
+CurrencyEditor
+DatePickerEditor
+DatePickerEditor.DatePicker
+DateTimeEditor
+DateTimeFormatEditor
+DecimalEditor
+DesignerVerb
+DesigntimeLicenseContext
+DesigntimeLicenseContextSerializer
+DisplayMode
+DocumentCollection
+DocumentEventArgs
+DocumentEventHandler Delegate
+EventHandlerSetActionUnit
+GuidEditor
+HelpKeywordType
+IActionUnit Interface
+IApplicationExtensibilityService Interface
+ICheckoutService Interface
+ICodeNavigatorService Interface
+ICodePersisterTaskListService Interface
+IComponentChangeService Interface
+IComponentCodePersistanceService Interface
+ICompoundActionUnit Interface
+IDeferLoadService Interface
+IDesigner Interface
+IDesignerEventService Interface
+IDesignerFilter Interface
+IDesignerHost Interface
+IDesignerOptionService Interface
+IDictionaryService Interface
+IEditorSite Interface
+IEventPropertyService Interface
+IExtenderListService Interface
+IExtenderProviderService Interface
+IExtensibilityService Interface
+IFilePersistanceService Interface
+IHelpService Interface
+IInheritanceService Interface
+IMenuCommandService Interface
+ImmediateStringEditor
+InheritanceAttribute
+InheritanceLevel
+InheritanceService
+InheritedPropertyDescriptor
+IntegerEditor
+IReferenceService Interface
+ISelectionService Interface
+ITestCommandService Interface
+ITypeDescriptorFilterService Interface
+IUIActivationService Interface
+IUndoService Interface
+IValueProvider Interface
+IValueProviderCollection Interface
+IValueProviderService Interface
+Localizer
+MemberModifier
+MenuCommand
+NameEditor
+NonEditableReferenceEditor
+NotifyParentPropertyAttribute
+NumericFormatEditor
+NumericFormatTypeEditor
+ObjectPropertiesEditor
+ObjectSelectorEditor
+ObjectSelectorEditor.Selector
+ObjectSelectorEditor.SelectorNode
+OldArrayEditor
+OldCollectionEditor
+OldCollectionEditor.CollectionDialog
+ParenthesizePropertyNameAttribute
+PropertyChangeActionUnit
+PropertyTabAttribute
+PropertyTabScope
+PropertyValue
+ReadOnlyValueEditor
+ReferenceEditor
+RefreshProperties
+RefreshPropertiesAttribute
+ResourceValueProvider
+SelectionRules
+SelectionStyles
+SelectionTypes
+StandardCommands
+StandardToolWindows
+StringEditor
+StringListEditor
+TestCommand Delegate
+TimeSpanEditor
+ToolboxComponentsCreatedEvent
+ToolboxComponentsCreatedEventHandler Delegate
+ToolboxItemAttribute
+TypeChangedEventArgs
+TypeChangedEventHandler Delegate
+UIActivationStateEventArgs
+UIActivationStateEventHandler Delegate
+ValueEditorConverter
+ValueEditorHost
+ValueExpressionLevel
+ValueProvider
+ValueProviderCollection
+ValueProviderService
+VariantEditor
+System.ComponentModel.Design.CodeModel
+DelegateTypeInfo
+ICodeArrayCreateExpression Interface
+ICodeBlockComment Interface
+ICodeClass Interface
+ICodeClassImport Interface
+ICodeConstructor Interface
+ICodeDataMember Interface
+ICodeDelegate Interface
+ICodeDOMStatement Interface
+ICodeElement Interface
+ICodeElementLocation Interface
+ICodeElements Interface
+ICodeLocalVariableStatement Interface
+ICodeMember Interface
+ICodeMembers Interface
+ICodeMethod Interface
+ICodeMethodInvokeExpression Interface
+ICodeMethodInvokeStatement Interface
+ICodeNameReferenceExpression Interface
+ICodeNamespaceImport Interface
+ICodeObjectCreateExpression Interface
+ICodeParameter Interface
+ICodeParameters Interface
+ICodeProperty Interface
+ICodePropertySetStatement Interface
+ICodeReturnValueStatement Interface
+ICodeSourceFile Interface
+ICodeStatement Interface
+ICodeStatements Interface
+System.Configuration
+AppDomainSelector
+BaseConfigCollection
+BaseConfigItem
+ConfigException
+ConfigManager
+ConfigQuery
+FileSelector
+HttpSelector
+IConfigCollection Interface
+IConfigItem Interface
+LevelOfService
+LocalMachineSelector
+NullSelector
+PutFlags
+QueryCell
+QueryCellOp
+Selector
+System.Configuration.Assemblies
+AssemblyHash
+AssemblyHashAlgorithm
+AssemblyVersionCompatibility
+ProcessorID
+System.Configuration.Core
+BindingPolicy
+System.Configuration.Install
+AssemblyInstaller
+ComponentInstaller
+InstallContext
+Installer
+InstallerCollection
+InstallEventArgs
+InstallEventHandler Delegate
+InstallException
+TransactedInstaller
+UninstallAction
+WfcInstallContext
+System.Configuration.Interceptors
+HttpFileSelector
+IConfigMerger Interface
+IConfigReader Interface
+IConfigTransformer Interface
+ListAppend
+ListMerge
+ListMergeDirective
+ListPrepend
+ListSelector
+NativeCatalogInterceptor
+PropertyOverride
+RequestParamsSystem.Configuration.Schema
+QueryMeta
+System.Configuration.Web
+MimeImporterType
+System.Core
+IIndexedCollection Interface
+NativeMethods.ConHndlr Delegate
+NativeMethods.MSG
+NativeMethods.PROCESS_INFORMATION
+NativeMethods.SECURITY_ATTRIBUTES
+NativeMethods.STARTUPINFO
+NativeMethods.StructFormat
+NativeMethods.StructFormatEnum
+NativeMethods.TEXTMETRIC
+NativeMethods.WNDCLASS
+NativeMethods.WndProc Delegate
+PowerModeChangedEventArgs
+PowerModeChangedEventHandler Delegate
+PowerModes
+SessionEndedEventArgs
+SessionEndedEventHandler Delegate
+SessionEndingEventArgs
+SessionEndingEventHandler Delegate
+SessionEndReasons
+SystemEvents
+TimerElapsedEventArgs
+TimerElapsedEventHandler Delegate
+UNDONE
+UserPreferenceCategories
+UserPreferenceChangedEventArgs
+UserPreferenceChangedEventHandler Delegate
+System.Data
+AcceptRejectRule
+AdapterDesignerAttribute
+AggregateTypes
+BaseCollection
+CascadeAction
+ColumnsCollection
+CommandType
+Constraint
+ConstraintException
+ConstraintsCollection
+ConvertEventArgs
+ConvertEventHandler Delegate
+CurrentRowChangingEventArgs
+CurrentRowChangingEventHandler Delegate
+DataColumn
+DataColumnChangeEventArgs
+DataColumnChangeEventHandler Delegate
+DataCursorRowState
+DataCursorSort
+DataError
+DataException
+DataExpression
+DataFilter
+DataKey
+DataRelation
+DataRow
+DataRowAction
+DataRowChangeEventArgs
+DataRowChangeEventHandler Delegate
+DataRowState
+DataRowVersion
+DataRowView
+DataRowViewColumnDescriptor
+DataRowViewRelationDescriptor
+DataRowViewTypeDescriptor
+DataSet
+DataSetView
+DataSetViewListItem
+DataSetViewListItemTableDescriptor
+DataSetViewListItemTypeDescriptor
+DataSysDescriptionAttribute
+DataTable
+DataUtil
+DataView
+DataViewRowState
+DBCommandBehavior
+DBObjectState
+DeletedRowInaccessibleException
+DuplicateConstraintException
+DuplicateNameException
+EmptyDataSourceException
+EnforceConstraintException
+EnforceConstraintsRule
+EvaluateException
+ForeignKeyConstraint
+ICollectionInfo Interface
+IColumnMapping Interface
+IColumnMappings Interface
+ICurrencyList Interface
+IDataBuffer Interface
+IDataEditor Interface
+IDataErrorInfo Interface
+IDataList Interface
+IDataNavigator Interface
+IDataParameter Interface
+IDataReader Interface
+IDataRecord Interface
+IDataSetCommand Interface
+IDataWriter Interface
+IEditableList Interface
+IEditableObject Interface
+IFilter Interface
+IIndexedList Interface
+IListSource Interface
+ILiveList Interface
+INameTable Interface
+IndexEventArgs
+InRowChangingEventException
+InvalidBindingException
+InvalidConstraintException
+InvalidExpressionException
+InvalidRowsException
+IPresentedProperties Interface
+IPropertyDescriptor Interface
+IsolationLevel
+ISortedList Interface
+ITableMapping Interface
+ITableMappings Interface
+ITypedElements Interface
+ITypedList Interface
+ITypedObject Interface
+IUriResolver Interface
+ListChangedEventArgs
+ListChangedEventHandler Delegate
+ListChangedType
+MergeFailedEventArgs
+MergeFailedEventHandler Delegate
+MissingMappingAction
+MissingPrimaryKeyException
+MissingSchemaAction
+NoNullAllowedException
+ObjectStoreColumn
+ObjectStoreTable
+OriginalDataUneditableException
+ParameterDirection
+PositionChangingEventArgs
+PositionChangingEventHandler Delegate
+PropertiesCollection
+PropertyAttributes
+Range
+ReadOnlyException
+ReadState
+RelatedView
+RelationsCollection
+RowNotInTableException
+RowsCollection
+Rule
+SchemaType
+SortDirection
+SortOrder
+StateChangeEventArgs
+StateChangeEventHandler Delegate
+StreamFormats
+SyntaxErrorException
+TablesCollection
+TableSetting
+TableSettingsCollection
+TreePosition
+UniqueConstraint
+UpdateRowSource
+UpdateStatus
+UriResolver
+VersionNotFoundException
+XmlContent
+XmlOrder
+System.Data.ADO
+ADOCommand
+ADOCommandConverter
+ADOConnection
+ADODataReader
+ADODataSetCommand
+ADODBType
+ADOError
+ADOErrors
+ADOException
+ADOInfoMessageEventArgs
+ADOInfoMessageEventHandler Delegate
+ADOParameter
+ADOParameterConverter
+ADOParameters
+ADOProperties
+ADOProperty
+ADORowUpdatedEventArgs
+ADORowUpdatedEventHandler Delegate
+ADORowUpdatingEventArgs
+ADORowUpdatingEventHandler Delegate
+ADOSchemaMappingEventArgs
+ADOSchemaMappingEventHandler Delegate
+System.Data.Design
+AdapterDesignUtil
+ADPM
+ADPMessage
+BitMaskSelector
+CascadeValueEditor
+ColumnsCollectionEditor
+ColumnTypeEditor
+ConstraintsCollectionEditor
+DataSourceDesigner
+DataSourceValueEditor
+DataTableValueEditor
+DataViewRowStateEditor
+DBConnectionEditor
+DBParametersEditor
+ParentRelationValueEditor
+PrimaryKeyValueEditor
+RelationsCollectionEditor
+RowStateEditor
+TablesCollectionEditor
+UICreationHelper
+System.Data.Internal
+BooleanStorage
+ByteStorage
+CharStorage
+CurrencyStorage
+DataColumnMapping
+DataColumnMappingConverter
+DataColumnMappings
+DataSchemaChangedEvent
+DataSchemaChangedEventHandler Delegate
+DataSetCommand
+DataStorage
+DataTableMapping
+DataTableMappingConverter
+DataTableMappings
+DateTimeStorage
+DBCommand
+DBConnection
+DBDataReader
+DBDataSetCommand
+DecimalStorage
+DoubleStorage
+IDataParameters Interface
+IDBDataReader Interface
+InfoMessageEventArgs
+Int16Storage
+Int32Storage
+Int64Storage
+IProperties Interface
+IProperty Interface
+ObjectStorage
+RowUpdatedEventArgs
+RowUpdatingEventArgs
+SByteStorage
+SchemaChangedEventArgs
+SchemaChangedEventHandler Delegate
+SchemaChangingEventArgs
+SchemaChangingEventHandler Delegate
+SchemaMappingEventArgs
+SingleStorage
+SparseStorage
+StringStorage
+TimeSpanStorage
+UInt16Storage
+UInt32Storage
+UInt64Storage
+System.Data.SQL
+ConnectionHolder
+IGetDispenser Interface
+InfoMessageEventHandler Delegate
+IObjectControl Interface
+ISQLConnection Interface
+ISQLDataReader Interface
+ISQLDataRecord Interface
+ITransaction Interface
+ITransactionExport Interface
+ITransactionExportFactory Interface
+SQLCommand
+SQLCommandConverter
+SQLConnection
+SQLDataReader
+SQLDataSetCommand
+SQLDataType
+SQLError
+SQLErrors
+SQLException
+SQLInfoMessageEventArgs
+SQLParameter
+SQLParameterConverter
+SQLParameters
+SQLRowUpdatedEventArgs
+SQLRowUpdatedEventHandler Delegate
+SQLRowUpdatingEventArgs
+SQLRowUpdatingEventHandler Delegate
+SQLSchemaMappingEventArgs
+SQLSchemaMappingEventHandler Delegate
+System.Data.SQLTypes
+EBoolean
+INullable Interface
+SQLBinary
+SQLBit
+SQLBoolean
+SQLByte
+SQLDateTime
+SQLDouble
+SQLException
+SQLGuid
+SQLInt16
+SQLInt32
+SQLInt64
+SQLMoney
+SQLNullValueException
+SQLNumeric
+SQLSingle
+SQLString
+SQLTruncateException
+System.Data.XML
+AstNode
+AstNode.QueryType
+AstNode.RType
+Axis
+Axis.AxisType
+CoreXmlReader
+DataSetMapping
+DocumentEditor
+DocumentNavigator
+DocumentReader
+Filter
+Function
+Function.FunctionType
+Group
+MTNameTable
+NamespaceManager
+NameTable
+Operand
+Operator
+Operator.Op
+Trace
+ValidationDelegate Delegate
+XmlDocument
+XmlException
+XmlFidelity
+XmlNodeType
+XmlReader
+XmlScanner
+XmlSchemaCollection
+XmlWriter
+XPathException
+XPathHandler
+XPathScanner
+System.Data.XML.DOM
+DOMException
+IAttr Interface
+ICDATASection Interface
+ICharacterData Interface
+IComment Interface
+IDocument Interface
+IDocumentFragment Interface
+IDocumentType Interface
+IDOMImplementation Interface
+IElement Interface
+IEntity Interface
+IEntityReference Interface
+INamedNodeMap Interface
+INode Interface
+INodeList Interface
+IProcessingInstruction Interface
+IText Interface
+NodeType
+System.Data.XML.XPath
+Querytype
+System.Data.XML.XSLT
+Debug
+IDataTransform Interface
+NSParamList
+XsltException
+XslTransform
+System.Diagnostics
+BooleanSwitch
+ConditionalAttribute
+Counter
+CounterCreationData
+CounterCreationDataCollection
+CounterSample
+CounterSampleCalculator
+CountersData
+Debug
+DebuggableAmbivalentAttribute
+DebuggableAttribute
+Debugger
+DebuggerHiddenAttribute
+DebuggerStepThroughAttribute
+DefaultTraceListener
+EventLog
+EventLog.EntriesEnumerator
+EventLog.EventLogEntryCollection
+EventLogEntry
+EventLogEntryType
+EventLogEvent
+EventLogEventHandler Delegate
+EventLogInstaller
+EventLogNames
+EventLogTraceListener
+ICollectData Interface
+InstanceData
+InstancesData
+PerformanceCounter
+PerformanceCounterCategory
+PerformanceCounterInstaller
+PerformanceCounterManager
+PerformanceCounterType
+Process
+ProcessModule
+ProcessPriorityClass
+ProcessStartInfo
+ProcessThread
+ProcessWindowStyle
+SerializableRegistryKey
+StackFrame
+StackTrace
+Switch
+TextWriterTraceListener
+ThreadPriorityLevel
+ThreadState
+ThreadWaitReason
+Trace
+TraceLevel
+TraceListener
+TraceListeners
+TraceSwitch
+System.Diagnostics.SymbolStore
+ISymbolBinder Interface
+ISymbolDocument Interface
+ISymbolDocumentWriter Interface
+ISymbolMethod Interface
+ISymbolNamespace Interface
+ISymbolReader Interface
+ISymbolScope Interface
+ISymbolVariable Interface
+ISymbolWriter Interface
+SymAddressKind
+SymbolToken
+SymDocumentType
+SymLanguageType
+SymLanguageVendor
+System.DirectoryServices
+AdsiBinder
+DirectoryEntry
+DirectoryEntryCollection
+DirectoryEntryCollection.ChildEnumerator
+DirectoryEntryCollection.CollectionOverStringVariantProperty
+DirectoryEntryProperty
+DirectoryEntryPropertyCollection
+DirectoryEntryPropertyCollection.PropertyEnumerator
+DirectoryEntryPropertyValueCollection
+DirectorySearcher
+ReferralChasingOptions
+SearchResults
+SearchResults.ResultsEnumerator
+SearchResultsEntry
+SearchResultsProperty
+SearchResultsPropertyCollection
+SearchResultsPropertyCollection.SearchResultsPropertyEnumerator
+SearchResultsPropertyValueCollection
+SearchScope
+SortDirection
+SortOption
+System.Drawing
+Bitmap
+Brush
+Brushes
+BrushStyle
+Color
+ColorConverter
+ColorTranslator
+ContentAlignment
+Cursor
+CursorConverter
+Cursors
+Font
+FontConverter
+FontFamily
+FontStyle
+Graphics
+Graphics.DrawImageAbort Delegate
+Graphics.EnumerateMetafileProc Delegate
+GraphicsAdvancedAttribute
+GraphicsUnit
+Icon
+IconConverter
+Image
+Image.GetThumbnailImageAbort Delegate
+ImageAnimator
+ImageConverter
+KnownColor
+Pen
+Pens
+PenStyle
+Point
+PointConverter
+PointF
+PolyFillMode
+Rectangle
+RectangleConverter
+RectangleF
+Region
+Size
+SizeConverter
+SizeF
+SolidBrush
+StringAlignment
+StringFormat
+StringFormatFlags
+StringTrimming
+StringUnit
+SystemBrushes
+SystemColors
+SystemIcons
+SystemPens
+TextureBrush
+ToolboxBitmapAttribute
+System.Drawing.Design
+DrawingToolboxItem
+IPropertyValueUIService Interface
+IToolboxUser Interface
+PropertyValueUIHandler Delegate
+PropertyValueUIItem
+PropertyValueUIItemInvokeHandler Delegate
+ToolboxItem
+ToolboxItemInfoEnum
+UITypeEditor
+UITypeEditorEditStyle
+System.Drawing.Drawing2D
+AdjustableArrowCap
+Blend
+ColorBlend
+CombineMode
+CompositingMode
+CompositingQuality
+CoordinateSpace
+CustomLineCap
+DashStyle
+FillMode
+FlushIntention
+GraphicsContainer
+GraphicsPath
+GraphicsPathIterator
+GraphicsState
+HatchBrush
+HatchStyle
+InterpolationMode
+LinearGradientBrush
+LinearGradientMode
+LineCap
+LineJoin
+Matrix
+MatrixOrder
+PathData
+PathGradientBrush
+PathPointType
+PenAlignment
+PenType
+PixelOffsetMode
+QualityMode
+RegionData
+RenderingHint
+SmoothingMode
+WarpMode
+WrapMode
+System.Drawing.Imaging
+APMFileHeader
+BitmapData
+ColorAdjustType
+ColorChannelFlags
+ColorMap
+ColorMapType
+ColorMatrix
+ColorMatrixFlags
+ColorMode
+ColorPalette
+Decoder
+EmfPlusRecordType
+EmfType
+Encoder
+EncoderParameter
+EncoderParameters
+ImageAttributes
+ImageCodecFlags
+ImageCodecInfo
+ImageFlags
+ImageFormat
+ImageLockMode
+Metafile
+MetafileFrameUnit
+MetafileHeader
+MetafileType
+METAHEADER
+PaletteFlags
+PixelFormat
+PropertyItem
+ValueType
+System.Drawing.Printing
+Duplex
+InvalidPrinterException
+Margins
+MarginsConverter
+PageSettings
+PaperKind
+PaperSize
+PaperSource
+PaperSourceKind
+PreviewPageInfo
+PreviewPrintController
+PrintController
+PrintDocument
+PrinterResolution
+PrinterResolutionKind
+PrinterSettings
+PrinterSettings.PaperSizeCollection
+PrinterSettings.PaperSourceCollection
+PrinterSettings.PrinterResolutionCollection
+PrinterSettings.StringCollection
+PrinterUnit
+PrinterUnitConvert
+PrintEventArgs
+PrintEventHandler Delegate
+PrintPageEventArgs
+PrintPageEventHandler Delegate
+PrintRange
+QueryPageSettingsEventArgs
+QueryPageSettingsEventHandler Delegate
+StandardPrintController
+System.Drawing.Text
+FontCollection
+GenericFontFamilies
+HotkeyPrefix
+InstalledFontCollection
+LineSpacing
+PrivateFontCollection
+TextRenderingHint
+System.Globalization
+Calendar
+CalendarTable
+CharacterInfo
+CodePageEncoding
+CompareInfo
+CompareOptions
+CultureInfo
+CultureTypes
+DateTimeFormatInfo
+DateTimeStyles
+DaylightTime
+GregorianCalendar
+GregorianCalendarTypes
+HebrewCalendar
+HijriCalendar
+JapaneseCalendar
+JulianCalendar
+KoreanCalendar
+NumberFormatInfo
+NumberStyles
+RegionInfo
+SortKey
+StringInfo
+TextElementEnumerator
+TextInfo
+ThaiBuddhistCalendar
+UnicodeCategory
+System.IO
+BinaryReader
+BinaryWriter
+BufferedStream
+ChangedFilters
+Directory
+DirectoryNotFoundException
+EndOfStreamException
+File
+FileAccess
+FileMode
+FileNotFoundException
+FileShare
+FileStream
+FileSystemAttributes
+FileSystemEntry
+FileSystemEventArgs
+FileSystemEventHandler Delegate
+FileSystemWatcher
+InternalBufferOverflowException
+IOException
+MemoryStream
+PathTooLongException
+RenamedEventArgs
+RenamedEventHandler Delegate
+SeekOrigin
+Stream
+StreamReader
+StreamWriter
+StringReader
+StringWriter
+TextReader
+TextWriter
+WaitForChangedResult
+WatcherChangeTypes
+WatcherTarget
+System.IO.IsolatedStorage
+IsolatedStorage
+IsolatedStorageException
+IsolatedStorageFile
+IsolatedStorageFileStream
+IsolatedStorageScope
+System.Messaging
+AcknowledgeType
+Acknowledgment
+ActiveXMessageFormatter
+BinaryMessageFormatter
+CryptoProviderType
+DataSetMessageFormatter
+DataSetMessageFormatter.TargetTypeEditor
+DefaultPropertiesToSend
+EncryptionAlgorithm
+EncryptionRequired
+HashAlgorithm
+IMessageFormatter Interface
+Message
+MessagePriority
+MessagePropertyFilter
+MessageQueue
+MessageQueueCriteria
+MessageQueueException
+MessageQueueInstaller
+MessageQueuesEnumerator
+MessagesEnumerator
+MessageType
+PeekAsyncEventArgs
+PeekCompletedEventHandler Delegate
+ReceiveAsyncEventArgs
+ReceiveCompletedEventHandler Delegate
+SoapMessageFormatter
+System.Net
+AuthenticationManager
+AuthenticationScheme
+Authorization
+ConnectionModes
+CredentialCache
+DefaultControlObject
+DNS
+EndPoint Interface
+GlobalProxySelection
+HttpAsyncResult
+HttpContinueDelegate Delegate
+HttpExtension
+HttpStatusCode
+HttpWebRequest
+HttpWebResponse
+IAuthenticationModule Interface
+ICertificatePolicy Interface
+ICredentialLookup Interface
+IPAddress
+IPEndPoint
+IPHostEntry
+IProxyInfo Interface
+ISelectProxy Interface
+IWebRequestCreate Interface
+NetworkAccess
+NetworkCredential
+ProtocolVersion
+ProtocolViolationException
+ProxyData
+SChannelCred.Flags
+SChannelCred.Protocols
+ServicePoint
+ServicePointManager
+SingleCredential
+SocketPermission
+SocketsException
+SystemError
+TransportType
+URLFormatException
+WebException
+WebHeaders
+WebPermission
+WebRequest
+WebRequestFactory
+WebResponse
+WebStatus
+System.Net.Sockets
+AddressFamily
+InvalidSocketConstants
+LingerOption
+MulticastOption
+NetworkStream
+ProtocolFamily
+ProtocolType
+SelectMode
+Socket
+SocketErrors
+SocketMsgFlags
+SocketOption
+SocketShutdown
+SocketType
+TCPClient
+TCPListener
+UDPClient
+System.NewXml
+DataDocumentNavigator
+DocumentNavigator
+EntityHandling
+Formatting
+ReadState
+TreePosition
+Validation
+ValidationDelegate Delegate
+WhitespaceHandling
+WriteState
+XmlAttribute
+XmlAttributeCollection
+XmlCDataSection
+XmlCharacterData
+XmlComment
+XmlDataDocument
+XmlDocument
+XmlDocumentFragment
+XmlDocumentType
+XmlElement
+XmlEntity
+XmlEntityReference
+XmlImplementation
+XmlNamedNodeMap
+XmlNameTable Interface
+XmlNavigator
+XmlNode
+XmlNodeList
+XmlNodeType
+XmlNotation
+XmlProcessingInstruction
+XmlReader
+XmlResolver
+XmlSpace
+XmlText
+XmlTextReader
+XmlTextWriter
+XmlUrlResolver
+XmlWriter
+System.NewXml.XPath
+Querytype
+System.NewXml.Xsl
+XslTransform
+System.Reflection
+AmbiguousMatchException
+Assembly
+AssemblyCompanyAttribute
+AssemblyConfigurationAttribute
+AssemblyCopyrightAttribute
+AssemblyDefaultAliasAttribute
+AssemblyDescriptionAttribute
+AssemblyInformationalVersionAttribute
+AssemblyName
+AssemblyNameFlags
+AssemblyProductAttribute
+AssemblyTitleAttribute
+AssemblyTrademarkAttribute
+Binder
+BindingFlags
+CallingConventions
+ConstructorInfo
+CustomAttributeFormatException
+DefaultMemberAttribute
+EventAttributes
+EventInfo
+FieldAttributes
+FieldInfo
+ICustomAttributeProvider Interface
+InterfaceMapping
+InvalidFilterCriteriaException
+IReflect Interface
+MemberFilter Delegate
+MemberInfo
+MemberTypes
+MethodAttributes
+MethodBase
+MethodImplAttributes
+MethodInfo
+Missing
+Module
+ParameterAttributes
+ParameterInfo
+ParameterModifier
+Pointer
+PropertyAttributes
+PropertyInfo
+ReflectionTypeLoadException
+ResolveEventHandler Delegate
+ResourceAttributes
+StrongNameKeyPair
+TargetException
+TargetInvocationException
+TargetParameterCountException
+TypeAttributes
+TypeDelegator
+TypeFilter Delegate
+UnmanagedMarshal
+System.Reflection.Emit
+AssemblyBuilder
+AssemblyBuilderAccess
+ConstructorBuilder
+CustomAttributeBuilder
+EnumBuilder
+EventBuilder
+EventToken
+FieldBuilder
+FieldToken
+FlowControl
+ILGenerator
+Label
+LocalBuilder
+LocalToken
+MethodBuilder
+MethodRental
+MethodToken
+ModuleBuilder
+OpCode
+OpCodes
+OpCodeType
+OperandType
+PackingSize
+ParameterBuilder
+ParameterToken
+PEFileKinds
+PropertyBuilder
+PropertyToken
+SignatureHelper
+SignatureToken
+StackBehaviour
+StringToken
+TypeBuilder
+TypeToken
+System.Resources
+IResourceReader Interface
+IResourceWriter Interface
+MissingManifestResourceException
+ResourceManager
+ResourceReader
+ResourceSet
+ResourceWriter
+System.Runtime.InteropServices
+ArrayWithOffset
+CallConvCdecl
+CallConvFastcall
+CallConvStdcall
+CallConvThiscall
+CallingConvention
+CharSet
+ComAliasNameAttribute
+ComConversionLossAttribute
+ComEmulateAttribute
+COMEmulateException
+COMException
+ComImportAttribute
+ComInterfaceType
+ComRegisterFunctionAttribute
+ComSourceInterfacesAttribute
+ComUnregisterFunctionAttribute
+ComVisibleAttribute
+DispIdAttribute
+DllImportAttribute
+ExporterEventKind
+ExposeHResultAttribute
+ExtensibleClassFactory
+ExternalException
+FieldOffsetAttribute
+GCHandle
+GCHandleType
+GlobalObjectAttribute
+GuidAttribute
+HasDefaultInterfaceAttribute
+ICustomMarshaler Interface
+IDispatchImplAttribute
+IDispatchImplType
+IDLDesc
+ImportedFromTypeLibAttribute
+ImporterEventKind
+InAttribute
+InterfaceTypeAttribute
+InvalidComObjectException
+InvalidOleVariantTypeException
+ITypeLibConverter Interface
+ITypeLibExporterNotifySink Interface
+ITypeLibImporterNotifySink Interface
+LayoutKind
+LIBFLAGS
+Marshal
+MarshalAsAttribute
+MethodImplAttribute
+MethodImplOptions
+NoComRegistrationAttribute
+NoIDispatchAttribute
+ObjectCreationDelegate Delegate
+OutAttribute
+PInvokeMap
+PredeclaredAttribute
+PreserveSigAttribute
+ProgIdAttribute
+RegistrationServices
+Root
+SafeArrayTypeMismatchException
+SEHException
+StructLayoutAttribute
+SYSKIND
+TypeAttr
+TypeDesc
+TYPEFLAGS
+TYPEKIND
+TypeLibAttr
+TypeLibConverter
+TypeLibFuncAttribute
+TypeLibFuncFlags
+TypeLibTypeAttribute
+TypeLibTypeFlags
+TypeLibVarAttribute
+TypeLibVarFlags
+UCOMIConnectionPoint Interface
+UCOMIConnectionPointContainer Interface
+UCOMIEnumVARIANT Interface
+UCOMITypeInfo Interface
+UCOMITypeLib Interface
+UnmanagedType
+VarEnum
+VTableCallsNotSupportedException
+System.Runtime.InteropServices.Expando
+IExpando Interface
+System.Runtime.Remoting
+ChannelServices
+ConstructionCall
+ConstructionResponse
+Context
+ContextAttribute
+ContextProperty
+CrossContextDelegate Delegate
+Embedded
+Header
+HeaderHandler Delegate
+IActivator Interface
+IChannel Interface
+IChannelInfo Interface
+IChannelReceiver Interface
+IChannelSender Interface
+IConstructionCallMessage Interface
+IConstructionReturnMessage Interface
+IContextAttribute Interface
+IContextProperty Interface
+IContextPropertyActivator Interface
+IContributeClientContextSink Interface
+IContributeDynamicSink Interface
+IContributeEnvoySink Interface
+IContributeObjectSink Interface
+IContributeServerContextSink Interface
+IDynamicMessageSink Interface
+IDynamicProperty Interface
+IEnvoyInfo Interface
+ILease Interface
+IMessage Interface
+IMessageCtrl Interface
+IMessageSink Interface
+IMethodCallMessage Interface
+IMethodMessage Interface
+IMethodReturnMessage Interface
+IObjectHandle Interface
+IRemotingFormatter Interface
+IRemotingTypeInfo Interface
+ISchemaType Interface
+ISponsor Interface
+ITrackingHandler Interface
+Lease
+LeaseManager
+LeaseSink
+LeaseState
+LifetimeServices
+MessageSurrogateFilter Delegate
+MethodCall
+MethodResponse
+ObjectHandle
+ObjRef
+OneWayAttribute
+RealProxy
+RemotingException
+RemotingServices
+RemotingSurrogateSelector
+ReturnMessage
+SchemaType
+Synchronization
+ThreadAffinity
+TrackingServices
+URLAttribute
+WellKnownObjectMode
+XmlNamespaceEncoder
+System.Runtime.Serialization
+CloningService
+DeserializationEvent
+DeserializationEventHandler Delegate
+Formatter
+FormatterConverter
+FormatterServices
+IDeserializationEventListener Interface
+IFormatter Interface
+IFormatterConverter Interface
+IObjectReference Interface
+ISerializable Interface
+ISerializationSurrogate Interface
+ISurrogateSelector Interface
+ObjectIDGenerator
+ObjectManager
+SerializationBinder
+SerializationEntry
+SerializationException
+SerializationInfo
+SerializationInfoEnumerator
+StreamingContext
+StreamingContextStates
+SurrogateInfo
+SurrogateSelector
+System.Runtime.Serialization.Formatters
+ArrayTypeEnum
+Converter
+ElementTypeEnum
+FormatterEnums
+FormatterTopObjectStyle
+FormatterTypeStyle
+ISerParser Interface
+ISerWriter Interface
+ISoapMethodCall Interface
+ITrace Interface
+MemberTypeEnum
+MemberValueEnum
+NameInfo
+NameSpaceEnum
+ObjectPositionEnum
+ObjectReader
+ObjectTypeEnum
+ObjectWriter
+ParseRecord
+ParseStateEnum
+ParseTypeEnum
+PrimitiveTypeEnum
+SerializerTypeEnum
+SerObjectInfo
+SerTrace
+SoapMethodCall
+System.Runtime.Serialization.Formatters.Binary
+BinaryArrayTypeEnum
+BinaryFormatter
+BinarySerializer
+System.Security
+CodeAccessPermission
+DynamicSecurityMethodAttribute
+IEvidenceFactory Interface
+IPermission Interface
+ISecurityEncodable Interface
+ISecurityPolicyEncodable Interface
+IStackWalk Interface
+NamedPermissionSet
+PermissionSet
+SecurityElement
+SecurityException
+SecurityManager
+SecurityZone
+SuppressUnmanagedCodeSecurityAttribute
+UnverifiableCodeAttribute
+VerifierException
+XMLSyntaxException
+System.Security.Cryptography
+AsymmetricAlgorithm
+AsymmetricDecryptor
+AsymmetricEncryptor
+AsymmetricKeyExDeformatter
+AsymmetricKeyExFormatter
+AsymmetricSignatureDeformatter
+AsymmetricSignatureFormatter
+CipherMode
+CryptoConfig
+CryptoFileStream
+CryptographicException
+CryptographicObject
+CryptographicUnexpectedOperationException
+CryptoMemoryStream
+CryptoStorageClass
+CryptoStorageData
+CryptoStreamDeformatter
+CryptoStreamFormatter
+CSP_Parameters
+DecodeBase64
+DeriveBytes
+DES
+DES_CSP
+DSA
+DSA_CSP
+DSA_Signature_Deformatter
+DSA_Signature_Formatter
+EncodeAsBase64
+HashAlgorithm
+HMACSHA1
+ICryptoStream Interface
+KeyedHashAlgorithm
+KeySizes
+KeyStorageInCSP
+MAC_TripleDES
+MaskGenerationMethod
+MD5
+MD5_CSP
+PaddingMode
+PasswordDeriveBytes
+PKCS1_MaskGenerationMethod1
+PKCS7StreamDeformatter
+PKCS7StreamFormatter
+RandomNumberGenerator
+RC2
+RC2_CSP
+RNG_CSP
+RSA
+RSA_CSP
+RSA_CSP_Object
+RSA_OAEP_KeyExchange_Deformatter
+RSA_OAEP_KeyExchange_Formatter
+RSA_PKCS1_KeyExchange_Deformatter
+RSA_PKCS1_KeyExchange_Formatter
+RSA_PKCS1_Signature_Deformatter
+RSA_PKCS1_Signature_Formatter
+SHA1
+SHA1Managed
+SHA1_CSP
+SignatureDescription
+StorageMicrosoftCSP
+StorageXML
+StreamState
+SymmetricAlgorithm
+SymmetricStreamDecryptor
+SymmetricStreamEncryptor
+TripleDES
+TripleDES_CSP
+XMLKeyStorage
+System.Security.Cryptography.X509Certificates
+X509Certificate
+System.Security.Permissions
+CodeAccessSecurityAttribute
+EnvironmentPermission
+EnvironmentPermissionAccess
+EnvironmentPermissionAttribute
+FileDialogPermission
+FileDialogPermissionAttribute
+FileIOPermission
+FileIOPermissionAccess
+FileIOPermissionAttribute
+IsolatedStorageContainment
+IsolatedStorageFilePermission
+IsolatedStorageFilePermissionAttribute
+IsolatedStoragePermission
+IsolatedStoragePermissionAttribute
+IUnrestrictedPermission Interface
+PermissionSetAttribute
+PermissionState
+PrincipalPermission
+PrincipalPermissionAttribute
+PublisherIdentityPermission
+PublisherIdentityPermissionAttribute
+ReflectionPermission
+ReflectionPermissionAttribute
+ReflectionPermissionFlag
+RegistryPermission
+RegistryPermissionAccess
+RegistryPermissionAttribute
+SecurityAction
+SecurityAttribute
+SecurityPermission
+SecurityPermissionAttribute
+SecurityPermissionFlag
+SiteIdentityPermission
+SiteIdentityPermissionAttribute
+StrongNameIdentityPermission
+StrongNameIdentityPermissionAttribute
+StrongNamePublicKeyBlob
+UIPermission
+UIPermissionAttribute
+UIPermissionClipboard
+UIPermissionWindow
+URLIdentityPermission
+URLIdentityPermissionAttribute
+ZoneIdentityPermission
+ZoneIdentityPermissionAttribute
+System.Security.Policy
+AllMembershipCondition
+ApplicationDirectory
+ApplicationDirectoryMembershipCondition
+Evidence
+FirstMatchCodeGroup
+Hash
+HashMembershipCondition
+ICodeGroup Interface
+IIdentityPermissionFactory Interface
+IMembershipCondition Interface
+PermissionRequestEvidence
+PolicyException
+PolicyLevel
+PolicyStatement
+PolicyStatementAttribute
+Publisher
+PublisherMembershipCondition
+Site
+SiteMembershipCondition
+SkipVerificationMembershipCondition
+StrongName
+StrongNameMembershipCondition
+UnionCodeGroup
+Url
+URLMembershipCondition
+Zone
+ZoneMembershipCondition
+System.Security.Principal
+GenericIdentity
+GenericPrincipal
+IIdentity Interface
+IPrincipal Interface
+MTSPrincipal
+PrincipalPolicy
+SecurityCallContext
+SecurityCallers
+SecurityIdentity
+WindowsAccountType
+WindowsIdentity
+WindowsImpersonationContext
+WindowsPrincipal
+System.ServiceProcess
+NTServiceDirect.ENTRY
+NTServiceDirect.ENUM_SERVICE_STATUS
+NTServiceDirect.LSA_OBJECT_ATTRIBUTES
+NTServiceDirect.LSA_UNICODE_STRING
+NTServiceDirect.LSA_UNICODE_STRING_withPointer
+NTServiceDirect.QUERY_SERVICE_CONFIG
+NTServiceDirect.ServiceControlCallback Delegate
+NTServiceDirect.ServiceMainCallback Delegate
+NTServiceDirect.SERVICE_STATUS
+ServiceBase
+ServiceController
+ServiceControllerStatus
+ServiceInstaller
+ServiceInstallerDialog
+ServiceInstallerDialogResult
+ServiceProcessInstaller
+ServiceStart
+ServiceType
+System.Text
+ASCIIEncoding
+Decoder
+Encoder
+Encoding
+StringBuilder
+UnicodeEncoding
+UTF7Encoding
+UTF8Encoding
+System.Text.RegularExpressions
+Capture
+CaptureCollection
+Group
+Match
+MatchCollection
+MatchEvaluator Delegate
+Regex
+System.Threading
+ApartmentState
+AutoResetEvent
+Interlocked
+IOCompletionCallback Delegate
+LockCookie
+ManualResetEvent
+Monitor
+Mutex
+NativeOverlapped
+Overlapped
+ReaderWriterLock
+RegisteredWaitHandle
+SynchronizationLockException
+Thread
+ThreadAbortException
+ThreadExceptionEventArgs
+ThreadExceptionEventHandler Delegate
+ThreadInterruptedException
+ThreadPool
+ThreadPriority
+ThreadStart Delegate
+ThreadState
+ThreadStateException
+ThreadStopException
+Timeout
+Timer
+TimerCallback Delegate
+WaitCallback Delegate
+WaitHandle
+WaitOrTimerCallback Delegate
+System.Timers
+DailyPattern
+DaysOfMonthPattern
+DaysOfWeek
+IRecurrencePattern Interface
+MonthlyPattern
+Months
+OccurredEventArgs
+OccurredEventHandler Delegate
+OccurrenceInMonth
+RecurrencePattern
+RecurrencePatterns
+Schedule
+Timer
+WeeklyPattern
+System.Web
+CapabilitiesRule
+ConfigureCapabilities
+HttpApplication
+HttpApplicationState
+HttpBrowserCapabilities
+HttpBrowserCapabilities.SectionHandler
+HttpCacheability
+HttpCachePolicy
+HttpCachePolicySettings
+HttpCacheRevalidation
+HttpCacheValidateHandler Delegate
+HttpCacheVary
+HttpCapabilities
+HttpCertificate
+HttpClientCertificate
+HttpContext
+HttpCookie
+HttpCookieCollection
+HttpDebugHandler
+HttpException
+HttpExceptionInfo
+HttpFileCollection
+HttpForbiddenHandler
+HttpModuleCollection
+HttpNotFoundHandler
+HttpNotImplementedHandler
+HttpPostedFile
+HttpRequest
+HttpResponse
+HttpRuntime
+HttpServerUtility
+HttpStaticObjectsCollection
+HttpUrl
+HttpValidationStatus
+HttpWorkerRequest
+HttpWorkerRequest.EndOfSendNotification Delegate
+HttpWriter
+IHttpAsyncHandler Interface
+IHttpHandler Interface
+IHttpHandlerFactory Interface
+IHttpMapPath Interface
+IHttpModule Interface
+MyWeb
+PerfCounters.CounterEnum
+ProcessInfo
+ProcessModelInfo
+ProcessShutdownReason
+ProcessStatus
+StaticFileHandler
+TraceContext
+TraceModeEnum
+WebSysDescriptionAttribute
+System.Web.Caching
+Cache
+CacheDependency
+CacheItemPriorities
+CacheItemPriorityDecay
+CacheItemRemovedCallback Delegate
+CacheItemRemovedReason
+OutputCacheModule
+System.Web.Configuration
+ConfigurationException
+ConfigurationInput
+ConfigurationSystem
+ConfigXmlCursor
+ConfigXmlDocument
+ConfigXmlElement
+ConfigXmlException
+ConfigXmlTokenTable
+DictionarySectionHandler
+HttpConfigurationMap
+HttpConfigurationRecord
+HttpConfigurationSystem
+HttpHandlersSectionHandler
+HttpModulesConfigurationHandler
+IConfigurationSectionHandler Interface
+IgnoreSectionHandler
+SettingContainer
+SingleTagSectionHandler
+System.Web.Security
+AuthenticationModes
+CookieAuthentication
+CookieAuthenticationEvent
+CookieAuthenticationEventHandler Delegate
+CookieAuthenticationModule
+CookieAuthenticationTicket
+CookieAuthPasswordFormat
+CookieIdentity
+CustomAuthenticationEvent
+CustomAuthenticationEventHandler Delegate
+CustomAuthenticationModule
+CustomAuthenticationModule.SectionHandler
+DefaultAuthenticationEvent
+DefaultAuthenticationEventHandler Delegate
+DefaultAuthenticationModule
+FileAuthorizationModule
+PassportAuthenticationEvent
+PassportAuthenticationEventHandler Delegate
+PassportAuthenticationModule
+PassportIdentity
+UrlAuthorizationModule
+WindowsAuthenticationEvent
+WindowsAuthenticationEventHandler Delegate
+WindowsAuthenticationModule
+System.Web.Services
+WebMethodAttribute
+WebService
+WebServiceAttribute
+WebServiceDescriptionAttribute
+WebServicesConfiguration
+WebServicesConfigurationSectionHandler
+System.Web.Services.Description
+AnyMimeInfo
+AnyMimeInfoImporter
+FormInfoImporter
+FormInfoReflector
+HtmlFormElementInfo
+HtmlFormElementInfos
+HtmlFormInfo
+HtmlInputInfo
+HtmlInputType
+HtmlOptionInfo
+HtmlOptionInfos
+HtmlSelectInfo
+HttpGetProtocolInfo
+HttpGetProtocolInfoImporter
+HttpGetProtocolInfoReflector
+HttpGetRequestInfo
+HttpGetRequestResponseInfo
+HttpGetRequestResponseInfos
+HttpGetServiceInfo
+HttpMimeGroupInfo
+HttpParameterInfo
+HttpParameterInfos
+HttpPostProtocolInfo
+HttpPostProtocolInfoImporter
+HttpPostProtocolInfoReflector
+HttpPostRequestInfo
+HttpPostRequestResponseInfo
+HttpPostRequestResponseInfos
+HttpPostServiceInfo
+HttpProtocolInfoImporter
+HttpProtocolInfoReflector
+HttpResponseInfo
+ImportedParameter
+ImportedParameters
+ImportedReturn
+ImportInfo
+ImportInfos
+MimeInfo
+MimeInfoImporter
+MimeInfoReflector
+MimeInfos
+ProtocolInfo
+ProtocolInfoImporter
+ProtocolInfoReflector
+ProtocolInfos
+ServiceDescription
+ServiceDescriptions
+SoapAddressInfo
+SoapAddressInfos
+SoapExtendsInfo
+SoapExtendsInfos
+SoapFaultInfo
+SoapFaultInfos
+SoapImplementsInfo
+SoapImplementsInfos
+SoapInteractionInfo
+SoapInteractionInfos
+SoapInterfaceInfo
+SoapInterfaceInfos
+SoapMessageInfo
+SoapOneWayInfo
+SoapProtocolInfo
+SoapProtocolInfoImporter
+SoapProtocolInfoReflector
+SoapRequestInfo
+SoapRequestResponseInfo
+SoapResponseInfo
+SoapServiceInfo
+SoapTypeRefInfo
+TextInfo
+TextInfoImporter
+TextMatchInfo
+TextMatchInfos
+XmlMimeInfo
+XmlMimeInfoImporter
+XmlMimeInfoReflector
+System.Web.Services.Discovery
+DiscoveryInfo
+DiscoveryInfoSearchPattern
+DiscoveryItemInfo
+DiscoveryItemInfos
+DiscoveryReferenceInfo
+DiscoveryRequestHandler
+DiscoveryResolver
+DynamicDiscoveryInfo
+DynamicDiscoveryItemInfo
+DynamicDiscoveryItemInfos
+ExcludePathInfo
+ReferenceInfo
+ReferenceInfoItem
+ReferenceMap
+ReferenceMapItem
+ReferenceResolver
+SchemaReferenceInfo
+SchemaSearchPattern
+SearchPattern
+ServiceReferenceInfo
+ServiceResolver
+ServiceSearchPattern
+System.Web.Services.Protocols
+AnyReturnReader
+AsyncResult
+ClientProtocol
+Cookie
+CookieCollection
+DiscoveryServerProtocol
+HtmlFormParameterReader
+HtmlFormParameterWriter
+HttpClientProtocol
+HttpClientRequest
+HttpClientResponse
+HttpMethodAttribute
+HttpServerProtocol
+HttpServerRequest
+HttpServerResponse
+HttpServerValueCollection
+LogicalMethodInfo
+LogicalMethodTypes
+MatchAttribute
+MimeFormatter
+MimeParameterReader
+MimeParameterWriter
+MimeReturnReader
+MimeReturnWriter
+NopReturnReader
+PatternMatcher
+ServerProtocol
+ServerType
+SoapClientProtocol
+SoapException
+SoapMethodAttribute
+SoapParameterAttribute
+SoapReturnAttribute
+SoapServerProtocol
+TextReturnReader
+UrlEncodedParameterWriter
+UrlEncoder
+UrlParameterReader
+UrlParameterWriter
+ValueCollectionParameterReader
+WebServiceHandlerFactory
+WebServiceRedirectException
+WebServiceTimeoutException
+XmlReturnReader
+XmlReturnWriter
+System.Web.UI
+AttributeCollection
+AutomaticHandlerMethodInfos
+BaseControlBuilder
+BaseParser
+BatchDependencyWalker
+BatchTemplateParser
+BuildTemplateMethod Delegate
+ClientTarget
+CompilationConfiguration.SectionHandler
+CompiledTemplateBase
+CompiledTemplateBuilder
+ConstructorNeedsTagAttribute
+Control
+ControlBuilder
+ControlBuilderAttribute
+ControlCollection
+CssStyleCollection
+DataBinder
+DataBinding
+DataBindingCollection
+DataboundLiteralControl
+EncodingTypeEnum
+FieldDescriptor
+Html32TextWriter
+HtmlTextWriter
+IAttributeAccessor Interface
+ImageClickEventArgs
+ImageClickEventHandler Delegate
+INamingContainer Interface
+IndentedTextWriter
+IParserAccessor Interface
+IPostBackDataHandler Interface
+IPostBackEventHandler Interface
+IStateManager Interface
+ITagNameToTypeMapper Interface
+ITemplate Interface
+IValidator Interface
+ListItem
+ListItemCollection
+LiteralContentAttribute
+LiteralControl
+LosFormatter
+ObjectConverter
+ObjectTagBuilder
+Page
+ParsedTemplateData
+PersistenceMode
+PersistenceTypeAttribute
+PropertyBuilder
+PropertyConverter
+PropertySetter
+RenderMethod Delegate
+RootBuilder
+SimpleWebHandlerParser
+SourceReference
+StateBag
+TagPrefixAttribute
+TemplateAttribute
+TemplateBuilder
+TemplateParser
+TemplateParserParameters
+ToolboxDataAttribute
+TwoCharPeekableTextReader
+ValidationPropertyAttribute
+ValidatorCollection
+System.Web.UI.Design
+ControlDesigner
+DataBindingCollectionConverter
+DataBindingCollectionEditor
+DataSourceConverter
+DHTMLBehavior
+HtmlControlDesigner
+ImageUrlEditor
+ISourceViewEventSink Interface
+IWebFormsBuilderService Interface
+IWebFormsControlDesigner Interface
+IWebFormsDesigner Interface
+IWebFormServices Interface
+ReadWriteControlDesigner
+SourceViewEventSink
+TemplatedControlDesigner
+TemplateEditingFrame
+UnitConverter
+UrlEditor
+UserControlDesigner
+WebControlDesigner
+WebControlPersister
+XmlUrlEditor
+System.Web.UI.Design.WebControls
+AdRotatorDesigner
+BaseDataListComponentEditor
+BaseDataListDesigner
+BaseValidatorDesigner
+ButtonDesigner
+CalendarAutoFormatDialog
+CalendarDesigner
+CheckBoxDesigner
+DataGridComponentEditor
+DataGridDesigner
+DataListComponentEditor
+DataListDesigner
+DynamicImageDesigner
+HyperLinkDesigner
+LabelDesigner
+LinkButtonDesigner
+ListControlDesigner
+PageletDesigner
+PanelDesigner
+System.Web.UI.Design.WebControls.ListControls
+ColumnCollectionEditor
+System.Web.UI.HtmlControls
+HtmlAnchor
+HtmlButton
+HtmlContainerControl
+HtmlControl
+HtmlForm
+HtmlGenericControl
+HtmlImage
+HtmlInputButton
+HtmlInputCheckBox
+HtmlInputControl
+HtmlInputFile
+HtmlInputHidden
+HtmlInputImage
+HtmlInputRadioButton
+HtmlInputText
+HtmlSelect
+HtmlTable
+HtmlTableCell
+HtmlTableCellCollection
+HtmlTableRow
+HtmlTableRowCollection
+HtmlTextArea
+System.Web.UI.WebControls
+AdCreatedEventArgs
+AdCreatedEventHandler Delegate
+AdRotator
+BaseDataList
+BaseValidator
+BorderStyle
+BoundColumn
+Button
+ButtonColumn
+ButtonColumnType
+Calendar
+CalendarDay
+CalendarSelectionMode
+CheckBox
+CheckBoxList
+Column
+ColumnCollection
+CommandEventArgs
+CommandEventHandler Delegate
+CompareValidator
+CustomValidator
+DataGrid
+DataGridCommandEventArgs
+DataGridCommandEventHandler Delegate
+DataGridControlBuilder
+DataGridItem
+DataGridItemCollection
+DataGridItemCreatedEventArgs
+DataGridItemCreatedEventHandler Delegate
+DataGridPageChangedEventArgs
+DataGridPageChangedEventHandler Delegate
+DataGridPagerStyle
+DataGridSortCommandEventArgs
+DataGridSortCommandEventHandler Delegate
+DataKeyCollection
+DataList
+DataListCommandEventArgs
+DataListCommandEventHandler Delegate
+DataListControlBuilder
+DataListItem
+DataListItemCollection
+DataListItemCreatedEventArgs
+DataListItemCreatedEventHandler Delegate
+DayNameFormat
+DayRenderEventArgs
+DayRenderEventHandler Delegate
+DropDownList
+DynamicImage
+EditCommandColumn
+FirstDayOfWeek
+FontInfo
+FontNamesConverter
+FontSize
+FontUnit
+FontUnitConverter
+GeneratedImage
+GridLines
+HorizontalAlign
+HyperLink
+HyperLinkColumn
+IDesignerAccessor Interface
+Image
+ImageAlign
+ImageButton
+ImageGenerator
+ImageGeneratorBitDepth
+ImageGeneratorImageFormat
+IRepeatInfoUser Interface
+Label
+LinkButton
+ListBox
+ListControl
+ListItemType
+ListSelectionMode
+MonthChangedEventArgs
+MonthChangedEventHandler Delegate
+NextPrevFormat
+PagedDataSource
+Pagelet
+PagerMode
+PagerPosition
+Panel
+RadioButton
+RadioButtonList
+RangeValidator
+RegularExpressionConverter
+RegularExpressionValidator
+RepeatDirection
+Repeater
+RepeaterCommandEventArgs
+RepeaterCommandEventHandler Delegate
+RepeaterControlBuilder
+RepeaterItem
+RepeaterItemCollection
+RepeaterItemCreatedEventArgs
+RepeaterItemCreatedEventHandler Delegate
+RepeatInfo
+RepeatLayout
+RepeatMode
+RequiredFieldValidator
+SelectedDatesCollection
+ServerValidationFunction Delegate
+Style
+Table
+TableCell
+TableCellCollection
+TableHeaderCell
+TableItemStyle
+TableRow
+TableRowCollection
+TableStyle
+TargetConverter
+TemplateColumn
+TextAlign
+TextBox
+TextBoxMode
+TitleFormat
+Unit
+UnitType
+UrlRedirectResponse
+ValidatedControlConverter
+ValidationCompareOperator
+ValidationDataType
+ValidationSummary
+ValidationSummaryDisplayMode
+ValidatorDisplay
+VerticalAlign
+WebControl
+System.WinForms
+AccessibleEvents
+AccessibleNavigation
+AccessibleObject
+AccessibleRoles
+AccessibleSelection
+AccessibleStates
+AnchorStyles
+Appearance
+Application
+ArrangeDirection
+ArrangeStartingPosition
+AxHost
+AxHost.AxComponentEditor
+AxHost.AxFlags
+AxHost.AxPropertyDescriptor
+AxHost.State
+BindingManager
+BindingManager.HashKey
+BindingsCollection
+BitVector32
+BitVector32.Section
+BootMode
+Border
+Border3DSide
+Border3DStyle
+BorderConverter
+BorderStyle
+BoundsSpecified
+Button
+ButtonBase
+ButtonBorderStyle
+ButtonState
+CaptionButton
+CharacterCasing
+CheckBox
+CheckedListBox
+CheckedListBox.ObjectCollection
+CheckState
+Clipboard
+ColorDepth
+ColorDialog
+ColumnClickEventArgs
+ColumnClickEventHandler Delegate
+ColumnHeader
+ColumnHeaderStyle
+ComboBox
+ComboBox.ObjectCollection
+ComboBoxStyle
+CommonDialog
+ContainerControl
+ContextMenu
+Control
+Control.ControlCollection
+ControlBindingsCollection
+ControlEventArgs
+ControlEventHandler Delegate
+ControlPaint
+ControlStyles
+CreateParams
+CurrentChangingEventArgs
+CurrentChangingEventHandler Delegate
+DataFormats
+DataFormats.Format
+DataGrid
+DataGrid.HitTestInfo
+DataGrid.HitTestType
+DataGridAddNewRow
+DataGridBoolColumn
+DataGridCell
+DataGridColumn
+DataGridDropdownColumn
+DataGridLineStyle
+DataGridNavigationModes
+DataGridParentRowsLabelStyle
+DataGridPreferredColumnWidthTypeConverter
+DataGridRelationshipRow
+DataGridRow
+DataGridTable
+DataGridTextBox
+DataGridTextBoxColumn
+DataGridValueColumn
+DataObject
+DateBoldEventArgs
+DateBoldEventHandler Delegate
+DateRangeEventArgs
+DateRangeEventHandler Delegate
+DateTimeFormatEventArgs
+DateTimeFormatEventHandler Delegate
+DateTimeFormatQueryEventArgs
+DateTimeFormatQueryEventHandler Delegate
+DateTimePicker
+DateTimePickerFormats
+DateTimeUserStringEventArgs
+DateTimeUserStringEventHandler Delegate
+DateTimeWmKeyDownEventArgs
+DateTimeWmKeyDownEventHandler Delegate
+Day
+DialogResult
+DisplayType
+DockStyle
+DocumentReadyEventArgs
+DocumentReadyEventHandler Delegate
+DomainUpDown
+DomainUpDown.DomainUpDownItems
+DragAction
+DragDropEffects
+DragEventArgs
+DragEventHandler Delegate
+DrawItemEventArgs
+DrawItemEventHandler Delegate
+DrawItemState
+DrawMode
+Edge
+EdgeConverter
+EdgeStyle
+ErrorBlinkStyle
+ErrorEventArgs
+ErrorEventHandler Delegate
+ErrorIconAlignment
+ErrorProvider
+FeatureSupport
+FileDialog
+FilePersistEventArgs
+FilePersistEventHandler Delegate
+FileVersionInfo
+FlatStyle
+FloatMode
+FloodFillType
+FolderBrowserFolders
+FolderBrowserStyles
+FontDialog
+Form
+Form.ControlCollection
+FormatControl
+FormBorderStyle
+FormStartPosition
+FormWindowState
+FrameStyle
+GiveFeedbackEventArgs
+GiveFeedbackEventHandler Delegate
+GridColumnsCollection
+GridTablesCollection
+GridTablesFactory
+GroupBox
+Help
+HelpEventArgs
+HelpEventHandler Delegate
+HelpProvider
+HorizontalAlignment
+HScrollBar
+IBorderStyleEdges Interface
+IButtonControl Interface
+ICommandExecutor Interface
+IContainerControl Interface
+IDataGridEditingService Interface
+IDataGridHost Interface
+IDataObject Interface
+IFeatureSupport Interface
+ImageIndexConverter
+ImageList
+ImageList.ImageCollection
+ImageListStreamer
+IMEMode
+IMessageFilter Interface
+InputLangChangeEventArgs
+InputLangChangeEventHandler Delegate
+InputLangChangeRequestEventArgs
+InputLangChangeRequestEventHandler Delegate
+InputLanguage
+InvalidateEventArgs
+InvalidateEventHandler Delegate
+ItemActivation
+ItemBoundsPortion
+ItemChangedEventArgs
+ItemChangedEventHandler Delegate
+ItemCheckEventArgs
+ItemCheckEventHandler Delegate
+ItemDragEventArgs
+ItemDragEventHandler Delegate
+IWin32Window Interface
+KeyEventArgs
+KeyEventHandler Delegate
+KeyPressEventArgs
+KeyPressEventHandler Delegate
+Keys
+KeysConverter
+Label
+LabelEditEventArgs
+LabelEditEventHandler Delegate
+LayoutEventArgs
+LayoutEventHandler Delegate
+LeftRightAlignment
+LinkBehavior
+LinkClickEventArgs
+LinkClickEventHandler Delegate
+LinkLabel
+LinkLabel.Link
+LinkLabel.LinkCollection
+LinkLabelLinkClickedEventArgs
+LinkLabelLinkClickedEventHandler Delegate
+LinkState
+ListBinding
+ListBindingConverter
+ListBox
+ListBox.ObjectCollection
+ListBox.SelectedIndicesCollection
+ListBox.SelectedObjectCollection
+ListControl
+ListItem
+ListItemConverter
+ListManager
+ListManagerBindingsCollection
+ListPropertyConverter
+ListView
+ListView.ColumnHeaderCollection
+ListView.ListItemCollection
+ListView.SelectedListItemCollection
+ListViewAlignment
+MainMenu
+MDIClient
+MDIClient.ControlCollection
+MDILayout
+MeasureItemEventArgs
+MeasureItemEventHandler Delegate
+Menu
+Menu.MenuItemCollection
+MenuGlyph
+MenuItem
+MenuMerge
+Message
+MessageBox
+MethodInvoker Delegate
+MonthCalendar
+MonthCalendar.HitAreaEnum
+MonthCalendar.HitTestInfo
+MouseButtons
+MouseEventArgs
+MouseEventHandler Delegate
+MultiplexPanel
+MultiplexPanel.ControlCollection
+NativeWindow
+NavigateEventArgs
+NavigateEventHandler Delegate
+NodeLabelEditEventArgs
+NodeLabelEditEventHandler Delegate
+NumericUpDown
+OpacityConverter
+OpenFileDialog
+Orientation
+OSFeature
+PageSetupDialog
+PaintEventArgs
+PaintEventHandler Delegate
+Panel
+PictureBox
+PictureBoxSizeMode
+PositionModes
+PrintControllerWithStatusDialog
+PrintDialog
+PrintPreviewControl
+PrintPreviewDialog
+ProgressBar
+PropertyGrid
+PropertyGrid.GridToolBar
+PropertyGrid.SnappableControl
+PropertySort
+PropertyTabChangedEventArgs
+PropertyTabChangedEventHandler Delegate
+QueryContinueDragEventArgs
+QueryContinueDragEventHandler Delegate
+RadioButton
+ReadyStateEventArgs
+ReadyStateEventHandler Delegate
+RelatedListManager
+RequestResizeEventArgs
+RequestResizeEventHandler Delegate
+RichControl
+RichControl.ControlAccessibleObject
+RichControl.ControlCollection
+RichTextBox
+RichTextBoxFinds
+RichTextBoxIMEColor
+RichTextBoxIMEOptions
+RichTextBoxScrollBars
+RichTextBoxSelectionAttribute
+RichTextBoxSelectionTypes
+RichTextBoxStreamType
+RichTextBoxWordPunctuations
+RightToLeft
+SaveFileDialog
+Screen
+ScrollableControl
+ScrollableControl.DockPaddingEdges
+ScrollBar
+ScrollBars
+ScrollButton
+ScrollEventArgs
+ScrollEventArgsType
+ScrollEventHandler Delegate
+SelectionChangedEventArgs
+SelectionChangedEventHandler Delegate
+SelectionMode
+SelectionRange
+SelectionRangeConverter
+Shortcut
+SizeGripStyle
+SizeRelationship
+SortOrder
+Splitter
+SplitterEventArgs
+SplitterEventHandler Delegate
+StatusBar
+StatusBar.StatusBarPanelCollection
+StatusBarDrawItemEventArgs
+StatusBarDrawItemEventHandler Delegate
+StatusBarPanel
+StatusBarPanelAutoSize
+StatusBarPanelBorderStyle
+StatusBarPanelClickEventArgs
+StatusBarPanelClickEventHandler Delegate
+StatusBarPanelStyle
+SystemInformation
+TabAlignment
+TabAppearance
+TabBase
+TabControl
+TabControl.ControlCollection
+TabControl.TabPageCollection
+TabDrawMode
+TabItem
+TabPage
+TabPage.TabPageControlCollection
+TabSizeMode
+TabStrip
+TextBox
+TextBoxBase
+TickStyle
+Timer
+ToolBar
+ToolBar.ToolBarButtonCollection
+ToolBarAppearance
+ToolBarButton
+ToolBarButtonClickEventArgs
+ToolBarButtonClickEventHandler Delegate
+ToolBarButtonStyle
+ToolBarTextAlign
+ToolTip
+TrackBar
+TrayIcon
+TreeNode
+TreeNodeCollection
+TreeNodeConverter
+TreeView
+TreeViewAction
+TreeViewCancelEventArgs
+TreeViewCancelEventHandler Delegate
+TreeViewEventArgs
+TreeViewEventHandler Delegate
+TriangleDirection
+UpDownBase
+UserControl
+ValueEdit
+ValueEditorHost
+VerticalAlignment
+View
+ViewModelessEventArgs
+ViewModelessEventHandler Delegate
+ViewStateLoadEventArgs
+ViewStateLoadEventHandler Delegate
+ViewStateSaveEventArgs
+ViewStateSaveEventHandler Delegate
+VScrollBar
+WinFormsSecurity
+System.WinForms.ComponentModel
+BooleanReturnMethodInvoker Delegate
+CollectionInfo
+DateTimeFormat
+Format
+FormatEventArgs
+FormatEventHandler Delegate
+FormatInfo
+FormatMode
+GenericFormat
+IComponentEditorPageSite Interface
+IEditorHost Interface
+InstallerTypeAttribute
+NumericFormat
+OrderSelector
+RedirectValueEditor
+ThreadNotify
+TypeListEditor
+UserMode
+System.WinForms.Design
+ComponentEditorForm
+ComponentEditorPage
+EventsTab
+IComponentClipboardService Interface
+IMultiWindowService Interface
+IOverlayService Interface
+ISelectionUIHandler Interface
+ISelectionUIService Interface
+ISplitWindowService Interface
+IToolboxService Interface
+ITrayHolderService Interface
+IUIService Interface
+IWinFormsDesigner Interface
+IWinFormsEditorService Interface
+PropertyTab
+PropertyTab.ExtendedDescriptorPropertyDescriptor
+ToolboxItemCreatorCallback Delegate
+ValueEditorUITypeEditor
+WindowRemovedEventArgs
+WindowRemovedEventHandler Delegate
+WinFormsComponentEditor
+WinFormsToolboxItem
+WinFormValueEditor
+System.Xml
+XmlAttribute
+XmlAttributeCollection
+XmlAttributeEnumerator
+XmlCData
+XmlComment
+XmlContainer
+XmlContext
+XmlDocType
+XmlDocument
+XmlElement
+XmlException
+XmlHeader
+XmlIdent
+XmlNode
+XmlNodeEnumerator
+XmlNodeReader
+XmlNodeType
+XmlNodeWriter
+XmlPI
+XmlReader
+XmlString
+XmlText
+XmlTextReader
+XmlTextWriter
+XmlWriter
+System.Xml.Serialization
+XmlAnyElementAttribute
+XmlArrayAttribute
+XmlArrayItemAttribute
+XmlArrayItemAttributes
+XmlAttributeAttribute
+XmlAttributeEvent
+XmlAttributeEventHandler Delegate
+XmlAttributeOverrides
+XmlAttributes
+XmlElementAttribute
+XmlElementAttributes
+XmlEnumAttribute
+XmlIgnoreAttribute
+XmlMapping
+XmlMemberInfo
+XmlMemberMapping
+XmlMembersMapping
+XmlNodeEvent
+XmlNodeEventHandler Delegate
+XmlQualifiedName
+XmlReflectionImporter
+XmlRootAttribute
+XmlSchemaExporter
+XmlSchemaImporter
+XmlSerializationReader
+XmlSerializationWriter
+XmlSerializer
+XmlSerializerNamespaces
+XmlTextAttribute
+XmlTypeMapping
+System.Xml.Serialization.Code
+CodeDOMExpression
+CodeDOMMetadata
+CodeDOMWriter
+CodeExpression
+CodeFlags
+CodeIdentifier
+CodeIdentifiers
+CodeMetadata
+CodeWriter
+Compiler
+CSharpWriter
+XmlCodeExporter
+System.Xml.Serialization.Schema
+IXmlSchemaNamedItem Interface
+XmlSchema
+XmlSchemaAll
+XmlSchemaAnnotated
+XmlSchemaAnnotation
+XmlSchemaAnnotations
+XmlSchemaAny
+XmlSchemaAnyAttribute
+XmlSchemaAppInfo
+XmlSchemaAttribute
+XmlSchemaAttributeGroup
+XmlSchemaChoice
+XmlSchemaContent
+XmlSchemaContentProcessing
+XmlSchemaDataType
+XmlSchemaDocumentation
+XmlSchemaElement
+XmlSchemaEncodingFacet
+XmlSchemaEncodingFacetTypes
+XmlSchemaEnumerationFacet
+XmlSchemaFacet
+XmlSchemaGroup
+XmlSchemaGroupBase
+XmlSchemaImport
+XmlSchemaInclude
+XmlSchemaItems
+XmlSchemaLengthFacet
+XmlSchemaMaxBoundFacet
+XmlSchemaMaxExclusiveFacet
+XmlSchemaMaxInclusiveFacet
+XmlSchemaMaxLengthFacet
+XmlSchemaMinBoundFacet
+XmlSchemaMinExclusiveFacet
+XmlSchemaMinInclusiveFacet
+XmlSchemaMinLengthFacet
+XmlSchemaNamedAttributeGroup
+XmlSchemaNamedDataType
+XmlSchemaNamedGroup
+XmlSchemaNamedType
+XmlSchemaNotation
+XmlSchemaNumericFacet
+XmlSchemaOccuringItem
+XmlSchemaPatternFacet
+XmlSchemaPeriodFacet
+XmlSchemaPrecisionFacet
+XmlSchemas
+XmlSchemaScaleFacet
+XmlSchemaSequence
+XmlSchemaTopItems
+XmlSchemaType
+XmlSchemaTypeBlock
+XmlSchemaTypeDerivation
+#KEYWORD=Preprocessor Directives
+^#if
+^#else
+^#elif
+^#endif
+^#define
+^#undef
+^#warning
+^#error
+^#line
+^#region
+^#endregion
+
+#Keyword10=
+
+#Keyword2=
+
+#Keyword3=
+
+#Keyword4=
+
+#Keyword5=
+
+#Keyword6=
+
+#Keyword7=
+
+#Keyword8=
+
+#Keyword9=
+#KeywordColor1=008000
+#KeywordColor10=000000
+#KeywordColor2=800000
+#KeywordColor3=000000
+#KeywordColor4=000000
+#KeywordColor5=000000
+#KeywordColor6=000000
+#KeywordColor7=000000
+#KeywordColor8=000000
+#KeywordColor9=000000
+#KeywordStyles1=[]
+#KeywordStyles10=[]
+#KeywordStyles2=[]
+#KeywordStyles3=[]
+#KeywordStyles4=[]
+#KeywordStyles5=[]
+#KeywordStyles6=[]
+#KeywordStyles7=[]
+#KeywordStyles8=[]
+#KeywordStyles9=[]
+#LineComment1=
+#LineComment1StartColumn=0
+#LineComment2=
+#LineComment2StartColumn=0
+#NumberColor=800080
+#NumberStyles=[]
+#OctalPrefix=
+
+#Operator=
+#OperatorColor=000000
+#OperatorStyles=[]
+#Options=[soUseDefaultTabSize,soUseDefaultIndentSize,soUseDefaultSpacesForTab]
+#StringChar=
+#StringColor=FFFF00
+#StringStyles=[]
+#SubSyntaxBlockBegin=
+#SubSyntaxBlockEnd=
+#SubSyntaxName=
+#SymbolColor=20000000
+#SymbolStyles=[]
+#SyntaxName=C#
+#TabSize=2
