@@ -1,11 +1,13 @@
 
-R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
-Copyright (C) 2016 The R Foundation for Statistical Computing
-Platform: i386-w64-mingw32/i386 (32-bit)
+R version 3.4.1 (2017-06-30) -- "Single Candle"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -27,24 +29,6 @@ Type 'q()' to quit R.
 > 
 > #source("C:/NMa/TabRename.R")
 > source("C:/NMa/PP1.R")
-There were 12 warnings (use warnings() to see them)
-> source("C:/NMa/PP2.R")
-> source("C:/NMa/PP3.R")
-There were 12 warnings (use warnings() to see them)
-> source("C:/NMa/PP4.R")
-The following object is masked _by_ .GlobalEnv:
-
-    ID
-
-There were 50 or more warnings (use warnings() to see the first 50)
-> source("C:/NMa/PP5.R")
-Condition Number is 23889.1688264332. Consider standardization !
-Condition Number is 23889.1688264332. Consider standardization !
-There were 32 warnings (use warnings() to see them)
-> source("C:/NMa/PPa.R")
-> source("C:/NMa/PPb.R")
-> source("C:/NMa/PPc.R")
-> 
-> proc.time()
-   user  system elapsed 
-   7.84    2.62   30.62 
+Error in (Line1 + 1):(Line2 - 1) : argument of length 0
+Calls: source -> withVisible -> eval -> eval -> ParseItemName
+Execution halted

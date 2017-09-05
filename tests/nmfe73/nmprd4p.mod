@@ -1,0 +1,68 @@
+GFORTRAN module version '6' created from FSUBS.f90 on Tue Sep 05 14:47:37 2017
+MD5:8d4e08b32639991af9b19316cd7c0108 -- If you edit this, you'll get what you deserve.
+
+(() () () () () () () () () () () () () () () () () () () () () () ()
+() () () ())
+
+()
+
+()
+
+()
+
+()
+
+()
+
+(2 'a00031' 'nmprd4p' 'a00031' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+3 'a00032' 'nmprd4p' 'a00032' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+4 'a00034' 'nmprd4p' 'a00034' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+5 'a00035' 'nmprd4p' 'a00035' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+6 'a00041' 'nmprd4p' 'a00041' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+7 'a00042' 'nmprd4p' 'a00042' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () ()
+() 0 0)
+8 'assocnmprd4' 'nmprd4p' 'assocnmprd4' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0
+() () 0 () () () 0 0)
+9 'cl' 'nmprd4p' 'cl' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+10 'com' 'nmprd4p' 'com' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 8 0 0 REAL ()) 0 0 ()
+(1 0 DEFERRED () ()) 0 () () () 0 0)
+11 'dpsize' 'sizes' 'dpsize' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 INTEGER ()) 0 0 () (CONSTANT (
+INTEGER 4 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
+12 'k' 'nmprd4p' 'k' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+13 'ka' 'nmprd4p' 'ka' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+14 'nmprd4' 'nmprd4' 'nmprd4' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+15 'nmprd4p' 'nmprd4p' 'nmprd4p' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+16 'sc' 'nmprd4p' 'sc' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+17 'sizes' 'sizes' 'sizes' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+18 'vrbl' 'nmprd4' 'vrbl' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN EXPLICIT-SAVE 0 0 ALLOCATABLE DIMENSION TARGET) (REAL 8 0 0 REAL
+()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+19 'y' 'nmprd4p' 'y' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+EXPLICIT-SAVE 0 0 POINTER) (REAL 8 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+)
+
+('a00031' 0 2 'a00032' 0 3 'a00034' 0 4 'a00035' 0 5 'a00041' 0 6 'a00042'
+0 7 'assocnmprd4' 0 8 'cl' 0 9 'com' 0 10 'dpsize' 0 11 'k' 0 12 'ka' 0
+13 'nmprd4' 0 14 'nmprd4p' 0 15 'sc' 0 16 'sizes' 0 17 'vrbl' 0 18 'y' 0
+19)

@@ -1,13 +1,15 @@
 @echo off
 REM =================================================== KSBAE MODIFICATION BEGIN
 set Editor="C:\Program Files (x86)\AcroSoft\AcroEdit\AcroEdit.exe"
-set Rcmd="c:\Program Files\R\R-3.4.1\bin\x64\Rcmd.exe"
+set Rcmd="C:\Program Files\R\R-3.4.1\bin\x64\Rcmd.exe"
 set NMaDir=C:\NMa
-set dir=c:\nm73g64
+set ModelNo=%2
 REM =================================================== KSBAE MODIFICATION END
 
+set dir=c:\nm74g64
 set f=gfortran
-set op= -O3 -ffast-math
+set op=-O3 -finit-integer=0 -ffast-math -m64 -mpc64
+
 
 set lfile=%dir%\license\nonmem.lic
 set ndir=%dir%\nm
@@ -37,13 +39,14 @@ goto checki
 :checko
 echo Usage:
 echo Usage:
-echo nmfe73 infile outfile [-background] [-PARAFILE=file.pnm] [-licfile=filename]
-echo [-prsame] [-prdefault] [-prcompile] [-tprdefault] [-trskip] 
+echo nmfe74 infile outfile [-background] [-PARAFILE=file.pnm] [-licfile=filename]
+echo [-prsame] [-prdefault] [-prcompile] [-tprdefault] [-trskip] [-nobuild]
 echo [-maxlim=0, 1, 2, or 3] [-locfile=file.bat]
 echo [-rundir=dirname]
 echo [-runpdir=dirname] [-nmexec=filename] [-xmloff]
+echo [-parafprint=0-99999] [-simparon] [-flushtime>=0.0)
 echo "Default:"
-echo nmfe73 infile outfile
+echo nmfe74 infile outfile
 echo   -licfile=%lfile%
 echo   -prsame \(if possible\; else -prcompile\)
 echo   -rundir=%cd%
@@ -71,6 +74,7 @@ for /F "delims=" %%n in (prdefault.set) do set prdefault=%%n
 for /F "delims=" %%n in (maxlim.set) do set maxlim=%%n
 for /F "delims=" %%n in (tprdefault.set) do set tprdefault=%%n
 for /F "delims=" %%n in (prcompile.set) do set prcompile=%%n
+for /F "delims=" %%n in (nobuild.set) do set nobuild=%%n
 for /F "delims=" %%n in (licfile.set) do set licfile=%%n
 if not "%licfile%" == "0" set lfile=%licfile%
 for /F "delims=" %%n in (locfile.set) do set locfile=%%n
@@ -81,7 +85,6 @@ if "%rundir%"=="%cd%" goto lbegin
 REM =================================================== KSBAE MODIFICATION BEGIN
 MD "%rundir%"
 COPY "%1" "%rundir%"
-REM COPY "*.CSV" "%rundir%" -> USE UPPER FOLDER DATA FILE with prefix "../"
 IF EXIST "%rundir%\PRINT.OUT" DEL "%rundir%\PRINT.OUT"
 REM =================================================== KSBAE MODIFICATION END
 
@@ -91,21 +94,25 @@ set exitcode=103
 goto exit
 :lrundir
 echo Changing directory to %rundir%
-del background.set  2>trash.out
-del licfile.set  2>trash.out
-del nmexec.set  2>trash.out
-del parafile.set  2>trash.out
-del prcompile.set  2>trash.out
-del prdefault.set  2>trash.out
-del locfile.set  2>trash.out
-del maxlim.set  2>trash.out
-del tprdefault.set  2>trash.out
-del prsame.set  2>trash.out
-del rundir.set  2>trash.out
-del runpdir.set  2>trash.out
-del trskip.set  2>trash.out
-del worker.set  2>trash.out
-del xmloff.set  2>trash.out
+del background.set  2>trash.tmp
+del licfile.set  2>trash.tmp
+del nmexec.set  2>trash.tmp
+del parafile.set  2>trash.tmp
+del prcompile.set  2>trash.tmp
+del nobuild.set  2>trash.tmp
+del prdefault.set  2>trash.tmp
+del locfile.set  2>trash.tmp
+del maxlim.set  2>trash.tmp
+del parafprint.set  2>trash.tmp
+del flushtime.set  2>trash.tmp
+del simparon.set  2>trash.tmp
+del tprdefault.set  2>trash.tmp
+del prsame.set  2>trash.tmp
+del rundir.set  2>trash.tmp
+del runpdir.set  2>trash.tmp
+del trskip.set  2>trash.tmp
+del worker.set  2>trash.tmp
+del xmloff.set  2>trash.tmp
 pushd "%rundir%"
 if not %errorlevel%==0 set exitcode=104
 if not %errorlevel%==0 goto exit
@@ -134,11 +141,17 @@ if exist FREPORT del FREPORT
 if exist gfcompile.bat del gfcompile.bat
 if exist LINK.LNK del LINK.LNK
 if exist %f%.txt del %f%.txt
+if "%nobuild%"=="1" goto ldelnonmemskip
 if exist %nmexec% del %nmexec%
+:ldelnonmemskip
 if exist FMSG del FMSG
 echo Starting NMTRAN
 if "%tprdefault%"=="1" set prdefault=1
-%dir%\tr\nmtran.exe %prdefault% %tprdefault% %maxlim% < %1 >FMSG
+rem %dir%\tr\nmtran.exe %prdefault% %tprdefault% %maxlim% < %1 >FMSG
+rem %dir%\util\nmtran_presort < %1 | %dir%\tr\nmtran.exe %prdefault% %tprdefault% %maxlim% %1 >FMSG
+%dir%\util\nmtran_presort < %1 >tempzzzz
+%dir%\tr\nmtran.exe <tempzzzz %prdefault% %tprdefault% %maxlim% %1 >FMSG
+del tempzzzz
 if %errorlevel%==2 set prdefault=0
 if "%prdefault%"=="0" goto nmtranc
 set prcompile=0
@@ -172,6 +185,7 @@ set pdir=%dir%\pr
 set rdir=%dir%\resource
 
 :predpp4
+if "%nobuild%"=="1" goto compile
 rem the modified NMLINK7.exe can optionally accept arguments from the command line, rather than to
 rem take settings from path.for.  This makes NMLINK7 more flexible.
 %dir%\util\NMLINK7.exe none \  .%obj%
@@ -208,10 +222,11 @@ set ld_library_path=
 rem compile FSUBS.f90, and link into libraries, etc., to make nonmem.exe
 rem Note that the /I switch is used, so that mod files do not need to be copied from resource directory.
 
+if "%nobuild%"=="1" goto liskip2
 rem New section to statically allocate predpp on-the-fly
 if '%prdefault%'=='1' goto lpredskip
 if '%prsame%'=='1' goto lpredskip
-del nmprd4p.mod 2>trash.out
+del nmprd4p.mod 2>trash.tmp
 del compile.lnk 2>trash.tmp
 %dir%\util\COMPILE7.exe %dir%\pr  \  .%obj%
 
@@ -222,11 +237,11 @@ if not exist %tempdir%\PRSIZES.%obj% goto lpreddo
 if not exist %tempdir%\PRGLOBALP.%obj% goto lpreddo
 if not exist %tempdir%\prpnm.%obj% goto lpreddo
 if not exist %tempdir%\MUMODEL.%obj% goto lpreddo
-fc PRSIZES.f90 %tempdir%\PRSIZES.f90 >trash.out
+fc PRSIZES.f90 %tempdir%\PRSIZES.f90 >trash.tmp
 if not %errorlevel%==0 goto lpreddo
-fc compile.lnk %tempdir%\compile.lnk >trash.out
+fc compile.lnk %tempdir%\compile.lnk >trash.tmp
 if not %errorlevel%==0 goto lpreddo
-fc link.lnk %tempdir%\link.lnk >trash.out
+fc link.lnk %tempdir%\link.lnk >trash.tmp
 if not %errorlevel%==0 goto lpreddo
 goto lpredskip
 
@@ -234,33 +249,33 @@ goto lpredskip
 echo Recompiling certain components.
 if exist %tempdir% rd %tempdir% /s /q
 mkdir %tempdir%
-copy link.lnk %tempdir%\ >trash.out
-copy linkc.lnk %tempdir%\ >trash.out
-copy compile.lnk %tempdir%\ >trash.out
-copy PRSIZES.f90 %tempdir%\ >trash.out
+copy link.lnk %tempdir%\ >trash.tmp
+copy linkc.lnk %tempdir%\ >trash.tmp
+copy compile.lnk %tempdir%\ >trash.tmp
+copy PRSIZES.f90 %tempdir%\ >trash.tmp
 set nmcdir=%cd%
 cd %tempdir%
-copy %dir%\resource\PRGLOBALP.f90  >trash.out
-copy %dir%\resource\*.mod  >trash.out
-copy %dir%\resource\total.inc  >trash.out
-copy %dir%\pr\MUMODEL.f90  >trash.out
-copy %dir%\pr\prpnm.f90  >trash.out
+copy %dir%\resource\PRGLOBALP.f90  >trash.tmp
+copy %dir%\resource\*.mod  >trash.tmp
+copy %dir%\resource\total.inc  >trash.tmp
+copy %dir%\pr\MUMODEL.f90  >trash.tmp
+copy %dir%\pr\prpnm.f90  >trash.tmp
 %f% %comp% %op% PRSIZES.f90
 %f% %comp% %op% PRGLOBALP.f90
-del *.szz  2>trash.out
+del *.szz  2>trash.tmp
 echo hello >MUMODEL.szz
 start /B cmd.exe /C %dir%\util\startc.bat %f% MUMODEL.f90 %comp% %op% 
 echo hello >prpnm.szz
 start /B cmd.exe /C %dir%\util\startc.bat %f% prpnm.f90 %comp% %op% 
-for /F "delims=" %%n in (linkc.lnk) do copy %dir%\pr\%%n  >trash.out
-for /F "delims=" %%n in (compile.lnk) do copy %%n.f90  >trash.out
+for /F "delims=" %%n in (linkc.lnk) do copy %dir%\pr\%%n  >trash.tmp
+for /F "delims=" %%n in (compile.lnk) do copy %%n.f90  >trash.tmp
 for /F "delims=" %%I in (compile.lnk) do echo hello >%%~nI.szz
 for /F "delims=" %%I in (compile.lnk) do start /B cmd.exe /C %dir%\util\startc.bat %f% %%I.f90 %comp% %op%
 echo starting wait
 :waitloop
 if exist *.szz goto waitloop
 echo ending wait
-rem copy *.%obj% ..\ > trash.out
+rem copy *.%obj% ..\ > trash.tmp
 cd %nmcdir%
 rem End new section to statically allocate predpp on-the-fly
 echo Exiting lpreddo
@@ -270,15 +285,16 @@ if not "%compile_type%"=="gf" goto liskip2
 echo Compiling FSUBS
 %f% %comp% %op% -I%tempdir% -I%dir%\resource FSUBS.f90
 :liskip2
-del nmmpi.bat 2>trash.out
+del nmmpi.bat 2>trash.tmp
 rem NONMEM_MPI.exe is called just to check what transfer type is to be used, and make sure .pnm file is syntactiaclly okay.
-del PARALLEL.pnm 2>trash.out
+del PARALLEL.pnm 2>trash.tmp
 %dir%\util\NONMEM_MPI.exe %1 %3 -licfile=%lfile% -check %* -nmexec=%nmexec%
 if %errorlevel%==1 goto lmpi
 if not %errorlevel%==0 set exitcode=109
 if not %errorlevel%==0 goto exite
 
-:lfile
+:lcompile
+if "%nobuild%"=="1" goto lidone3
 Echo Building NONMEM Executable
 if "%compile_type%"=="gf" goto liskip3
 %f% %op% /Fe%nmexec%  %s% %ndir%\pnm_mpid.%obj% /include:%tempdir% /include:%dir%\resource @link.lnk  %rdir%\PRGLOBALP.%obj% %pdir%\MUMODEL.%obj% %dir%\util\PARALLEL.%obj% %pdir%\prpnm.%obj% %n% %u% %dir%\resource\resource.lib > %f%.txt
@@ -296,7 +312,13 @@ rem nonmem is invoked with the control stream file name as an argument.  This al
 rem to have by default the control stream root name.
 rem Console directed output can be redirected to an output file by adding a pipe to the command: >myconsole.txt
 echo Starting nonmem execution ...
+:lexec
 %nmexec% %1 %3 -licfile=%lfile% %* -nmexec=%nmexec%
+if exist output goto error0
+echo Failure of NONMEM execution. Trying again.
+%dir%\util\sleep.exe 1000
+goto lcompile
+:error0
 if not %errorlevel%==0 set exitcode=114
 goto lgoon
 
@@ -308,6 +330,8 @@ if defined old_path2 set path=%old_path2%
 set old_path2=%path%
 set path=%mpibinpath%;%path%
 
+:mpicompile
+if "%nobuild%"=="1" goto lidone4
 Echo Building NONMEM Executable
 if "%compile_type%"=="gf" goto liskip4
 %f% %op% /Fe%nmexec%  %s% %dir%\mpi\mpi_wini\pnm_mpi.%obj% /include:%tempdir% /include:%dir%\resource @link.lnk %rdir%\PRGLOBALP.%obj% %pdir%\MUMODEL.%obj%  %dir%\util\PARALLEL.%obj% %pdir%\prpnm.%obj% %n% %mpilib% %u% %dir%\resource\resource.lib > %f%.txt
@@ -319,7 +343,7 @@ call gfcompile.bat %f% %dir% o %tempdir% %rdir% %pdir% %dir%\util %nmexec%
 :lidone4
 if not exist %nmexec% set exitcode=111
 if not exist %nmexec% goto exite
-del nmmpi.bat 2>trash.out
+del nmmpi.bat 2>trash.tmp
 rem Now NONMEM_MPI.exe is called again, to create nmmpi.bat file for mpi transfer type.
 rem NONMEM_MPI.exe has to be called again for mpi methods, beause it copies nonmem.exe to worker directories.
 rem This could not be done until nonmem.exe was created.
@@ -335,6 +359,11 @@ if exist nmmpi.bat call nmmpi.bat %1 %3 -licfile=%lfile% %* -nmexec=%nmexec%
 if not exist nmmpi.bat %nmexec% %1 %3 -licfile=%lfile% %* -nmexec=%nmexec%
 if %errorlevel%==0 goto lgoon
 if %errorlevel%==1 goto lgoon
+if exist output goto mpierror0
+echo Failure of NONMEM execution. Trying again.
+%dir%\util\sleep.exe 1000
+goto mpicompile
+:mpierror0
 set exitcode=115
 
 :lgoon
@@ -342,10 +371,13 @@ REM =================================================== KSBAE MODIFICATION BEGIN
 IF EXIST OUTPUT %NMaDir%\PRINT4.EXE < OUTPUT
 IF EXIST PRINTOUT REN PRINTOUT PRINT.OUT
 %Rcmd% BATCH %NMaDir%\PP.R
-REM IF EXIST sdtab REN sdtab sdtab%modelname%
+IF EXIST ??tab ren ??tab ??tab%ModelNo%
+IF EXIST ??tab*.OUT ren ??tab*.OUT ??tab*.
+IF EXIST ??tab*. copy ??tab* ..
 IF EXIST nonmem.exe DEL nonmem.exe
 REM =================================================== KSBAE MODIFICATION END
 
+echo Done with nonmem execution
 rem changed 4/2008
 rem copy %2 +%1 +output %2
 copy %2 +newline +output %2 >trash.tmp
@@ -366,6 +398,7 @@ echo No nonmem execution.
 if exist %f%.txt echo There may be error messages in file %f%.txt.
 
 :exit
+del trash.tmp
 if defined old_path2 set path=%old_path2%
 if defined old_path set path=%old_path%
 set old_path=
@@ -381,9 +414,9 @@ popd
 verify > NUL
 
 REM =================================================== KSBAE MODIFICATION BEGIN
-REM ECHO 
+ECHO 
 PAUSE
 %Editor% "%rundir%\PRINT.OUT"
 REM =================================================== KSBAE MODIFICATION END
 
-REM exit /b %exitcode%
+exit /b %exitcode%
