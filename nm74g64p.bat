@@ -1,7 +1,7 @@
 @echo off
 REM =================================================== KSBAE MODIFICATION BEGIN
 set Editor="C:\Program Files (x86)\AcroSoft\AcroEdit\AcroEdit.exe"
-set Rcmd="C:\Program Files\R\R-3.4.1\bin\x64\Rcmd.exe"
+set Rcmd="C:\Program Files\R\R-3.4.2\bin\x64\Rcmd.exe"
 set NMaDir=C:\NMa
 set ModelNo=%2
 REM =================================================== KSBAE MODIFICATION END
