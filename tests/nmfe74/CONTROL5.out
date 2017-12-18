@@ -1,5 +1,5 @@
-2017-12-13 
-오후 05:03
+2017-12-18 
+오후 06:01
 $PROB  THEOPHYLLINE   POPULATION DATA
 $INPUT      ID DOSE=AMT TIME CP=DV WT
 $DATA       THEOPP
@@ -43,10 +43,9 @@ NM-TRAN MESSAGES
  CALLS, OR $PK'S CALLING PROTOCOL SHOULD BE CHANGED.
   
 License Registered to: Asan Medical Center
-Expiration Date:    14 DEC 2017
-Current Date:       13 DEC 2017
-  **** WARNING!!! Days until program expires :   1 ****
-  **** CONTACT idssoftware@iconplc.com FOR RENEWAL ****
+Expiration Date:    14 DEC 2018
+Current Date:       18 DEC 2017
+Days until program expires : 361
 1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.4.1
  ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
  CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
@@ -288,7 +287,7 @@ Current Date:       13 DEC 2017
   
  #TERE:
  Elapsed estimation  time in seconds:     0.04
- Elapsed covariance  time in seconds:     0.01
+ Elapsed covariance  time in seconds:     0.02
  Elapsed postprocess time in seconds:     0.00
 1
  
@@ -2518,7 +2517,7 @@ TIME      .                                        *      .                     
   2.50E+01. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
           .         .         .         .         .         .         .         .         .         .         .
  Elapsed finaloutput time in seconds:     0.07
- #CPUT: Total CPU Time in Seconds,        0.172
+ #CPUT: Total CPU Time in Seconds,        0.203
 Stop Time: 
-2017-12-13 
-오후 05:03
+2017-12-18 
+오후 06:01
