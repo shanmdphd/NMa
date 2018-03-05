@@ -1,5 +1,7 @@
 # NMa: NONMEM Assistants
 
+Acroedit을 사용하여 NONMEM을 더 쉽게 쓸 수 있다.
+
 ## 설명
 
 - `nm74g64p.bat`: 배교수님이 만든 batch로서 각종 PDF를 만들어 낼 수 있다.
@@ -12,11 +14,18 @@
 In the `tests` folder, run this line.
 
 ```
-nmfe73 CONTROL5 REPORT5.txt
-nmfe74 CONTROL5 REPORT5.txt
+cd nmfe73
+sh make.sh
 ```
 
+```
+cd nmfe74
+sh make.sh
+```
 
+```
+make copy
+```
 
 ## nm74g64p.bat
 
@@ -24,7 +33,7 @@ nmfe74 CONTROL5 REPORT5.txt
 @echo off
 REM =================================================== KSBAE MODIFICATION BEGIN
 set Editor="C:\Program Files (x86)\AcroSoft\AcroEdit\AcroEdit.exe"
-set Rcmd="C:\Program Files\R\R-3.4.1\bin\x64\Rcmd.exe"
+set Rcmd="C:\Program Files\R\R-3.4.2\bin\x64\Rcmd.exe"
 set NMaDir=C:\NMa
 set ModelNo=%2
 REM =================================================== KSBAE MODIFICATION END
