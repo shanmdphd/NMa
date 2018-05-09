@@ -1,6 +1,6 @@
 
-R version 3.4.3 (2017-11-30) -- "Kite-Eating Tree"
-Copyright (C) 2017 The R Foundation for Statistical Computing
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -49,21 +49,11 @@ The following object is masked _by_ .GlobalEnv:
 
 There were 50 or more warnings (use warnings() to see the first 50)
 > source("C:/NMa/PP5.R")
-Error in x.raw[, 1] : incorrect number of dimensions
-Calls: source -> withVisible -> eval -> eval -> mlr2
-In addition: Warning messages:
-1: In if (MatLines != 0) { :
-  the condition has length > 1 and only the first element will be used
-2: In if (MatLines != 0) { :
-  the condition has length > 1 and only the first element will be used
-3: In if (MatLines != 0) { :
-  the condition has length > 1 and only the first element will be used
-4: In if (MatLines != 0) { :
-  the condition has length > 1 and only the first element will be used
-5: In par(defpar) : graphical parameter "cin" cannot be set
-6: In par(defpar) : graphical parameter "cra" cannot be set
-7: In par(defpar) : graphical parameter "csi" cannot be set
-8: In par(defpar) : graphical parameter "cxy" cannot be set
-9: In par(defpar) : graphical parameter "din" cannot be set
-10: In par(defpar) : graphical parameter "page" cannot be set
-Execution halted
+There were 30 warnings (use warnings() to see them)
+> source("C:/NMa/PPa.R")
+> source("C:/NMa/PPb.R")
+> source("C:/NMa/PPc.R")
+> 
+> proc.time()
+   user  system elapsed 
+   5.67    0.63    8.26 
