@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</title>
+  <meta name="description" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="pirana-.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 계량약리학과 NONMEM</a></li>
+<li class="chapter" data-level="2" data-path="-.html"><a href="-.html"><i class="fa fa-check"></i><b>2</b> 프로그램 설치 및 연동</a><ul>
+<li class="chapter" data-level="2.1" data-path="-.html"><a href="-.html#nonmem-"><i class="fa fa-check"></i><b>2.1</b> NONMEM 설치</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="-.html"><a href="-.html#windows-"><i class="fa fa-check"></i><b>2.1.1</b> Windows에서 설치</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-.html"><a href="-.html#macos-"><i class="fa fa-check"></i><b>2.1.2</b> MacOS에서 설치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-.html"><a href="-.html#psn-"><i class="fa fa-check"></i><b>2.2</b> PsN 설치</a></li>
+<li class="chapter" data-level="2.3" data-path="-.html"><a href="-.html#r--r-studio-"><i class="fa fa-check"></i><b>2.3</b> R 및 R studio 설치</a></li>
+<li class="chapter" data-level="2.4" data-path="-.html"><a href="-.html#pirana-"><i class="fa fa-check"></i><b>2.4</b> Pirana 설치</a></li>
+<li class="chapter" data-level="2.5" data-path="-.html"><a href="-.html#pirana--"><i class="fa fa-check"></i><b>2.5</b> Pirana에 프로그램 연동</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="pirana-.html"><a href="pirana-.html"><i class="fa fa-check"></i><b>3</b> Pirana를 이용한 집단약동학 모델링 매뉴얼</a><ul>
+<li class="chapter" data-level="3.1" data-path="pirana-.html"><a href="pirana-.html#--"><i class="fa fa-check"></i><b>3.1</b> 기본 모델 구축</a></li>
+<li class="chapter" data-level="3.2" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.2</b> 모델 개선</a></li>
+<li class="chapter" data-level="3.3" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.3</b> 기본모델 선정</a></li>
+<li class="chapter" data-level="3.4" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.4</b> 공변량 스크리닝</a></li>
+<li class="chapter" data-level="3.5" data-path="pirana-.html"><a href="pirana-.html#---psn-scm-"><i class="fa fa-check"></i><b>3.5</b> 공변량 모델 설계: PsN의 SCM 이용</a></li>
+<li class="chapter" data-level="3.6" data-path="pirana-.html"><a href="pirana-.html#visual-predictive-check-vpc-"><i class="fa fa-check"></i><b>3.6</b> Visual predictive check (VPC) 실행</a></li>
+<li class="chapter" data-level="3.7" data-path="pirana-.html"><a href="pirana-.html#goodness-of-fit-gof-"><i class="fa fa-check"></i><b>3.7</b> Goodness of fit (GOF) 작성</a></li>
+<li class="chapter" data-level="3.8" data-path="pirana-.html"><a href="pirana-.html#bootstrap-"><i class="fa fa-check"></i><b>3.8</b> Bootstrap 실행</a></li>
+<li class="chapter" data-level="3.9" data-path="pirana-.html"><a href="pirana-.html#section-3.9"><i class="fa fa-check"></i><b>3.9</b> 시뮬레이션</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-4.html"><a href="section-4.html"><i class="fa fa-check"></i><b>4</b> 참고문헌</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-4" class="section level1">
+<h1><span class="header-section-number">4</span> 참고문헌</h1>
+<ol style="list-style-type: decimal">
+<li>A. J. Boeckmann, et al. NONMEM Users Guide-Part Ⅴ, 2013</li>
+<li>Pirana Installation guide and manual, March 29, 2015</li>
+<li>PsN installation, <a href="http://uupharmacometrics.github.io/PsN/install.html" class="uri">http://uupharmacometrics.github.io/PsN/install.html</a></li>
+<li>SCM user guide, revised 2016-09-06</li>
+<li>VPC and NPC user guide, revised 2017-02-23</li>
+<li>Bootstrap user guide, revised 2016-05-30</li>
+<li>Package ‘Xpose4’ user guide, revised 2017-06-17</li>
+<li>약물계량학을 활용한 집단약동학 분석과 시뮬레이션 SOP, March, 2013</li>
+</ol>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pirana-.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

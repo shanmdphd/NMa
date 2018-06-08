@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</title>
+  <meta name="description" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="-.html">
+<link rel="next" href="section-4.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 계량약리학과 NONMEM</a></li>
+<li class="chapter" data-level="2" data-path="-.html"><a href="-.html"><i class="fa fa-check"></i><b>2</b> 프로그램 설치 및 연동</a><ul>
+<li class="chapter" data-level="2.1" data-path="-.html"><a href="-.html#nonmem-"><i class="fa fa-check"></i><b>2.1</b> NONMEM 설치</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="-.html"><a href="-.html#windows-"><i class="fa fa-check"></i><b>2.1.1</b> Windows에서 설치</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-.html"><a href="-.html#macos-"><i class="fa fa-check"></i><b>2.1.2</b> MacOS에서 설치</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-.html"><a href="-.html#psn-"><i class="fa fa-check"></i><b>2.2</b> PsN 설치</a></li>
+<li class="chapter" data-level="2.3" data-path="-.html"><a href="-.html#r--r-studio-"><i class="fa fa-check"></i><b>2.3</b> R 및 R studio 설치</a></li>
+<li class="chapter" data-level="2.4" data-path="-.html"><a href="-.html#pirana-"><i class="fa fa-check"></i><b>2.4</b> Pirana 설치</a></li>
+<li class="chapter" data-level="2.5" data-path="-.html"><a href="-.html#pirana--"><i class="fa fa-check"></i><b>2.5</b> Pirana에 프로그램 연동</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="pirana-.html"><a href="pirana-.html"><i class="fa fa-check"></i><b>3</b> Pirana를 이용한 집단약동학 모델링 매뉴얼</a><ul>
+<li class="chapter" data-level="3.1" data-path="pirana-.html"><a href="pirana-.html#--"><i class="fa fa-check"></i><b>3.1</b> 기본 모델 구축</a></li>
+<li class="chapter" data-level="3.2" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.2</b> 모델 개선</a></li>
+<li class="chapter" data-level="3.3" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.3</b> 기본모델 선정</a></li>
+<li class="chapter" data-level="3.4" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.4</b> 공변량 스크리닝</a></li>
+<li class="chapter" data-level="3.5" data-path="pirana-.html"><a href="pirana-.html#---psn-scm-"><i class="fa fa-check"></i><b>3.5</b> 공변량 모델 설계: PsN의 SCM 이용</a></li>
+<li class="chapter" data-level="3.6" data-path="pirana-.html"><a href="pirana-.html#visual-predictive-check-vpc-"><i class="fa fa-check"></i><b>3.6</b> Visual predictive check (VPC) 실행</a></li>
+<li class="chapter" data-level="3.7" data-path="pirana-.html"><a href="pirana-.html#goodness-of-fit-gof-"><i class="fa fa-check"></i><b>3.7</b> Goodness of fit (GOF) 작성</a></li>
+<li class="chapter" data-level="3.8" data-path="pirana-.html"><a href="pirana-.html#bootstrap-"><i class="fa fa-check"></i><b>3.8</b> Bootstrap 실행</a></li>
+<li class="chapter" data-level="3.9" data-path="pirana-.html"><a href="pirana-.html#section-3.9"><i class="fa fa-check"></i><b>3.9</b> 시뮬레이션</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-4.html"><a href="section-4.html"><i class="fa fa-check"></i><b>4</b> 참고문헌</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pirana----" class="section level1">
+<h1><span class="header-section-number">3</span> Pirana를 이용한 집단약동학 모델링 매뉴얼</h1>
+<p>Pirana는 모델파일을 복제하거나, 수정하여 모델을 수행한 후, 수행 결과를 손쉽게 확인할 수 있도록 할 수 있게 해 준다(그림 22). 또한 모델 개발 과정 중에 단계적으로 구축한 모델을 체계적으로 관리할 수 있는 작업공간을 제공해 주며, VPC 및 bootstraping 등의 기능도 수행할 수 있으므로, 특히 모델 구축 경험이 적은 사용자에게 복잡한 프로그램을 좀 더 편리하게 사용할 수 있도록 해 준다.</p>
+<div id="--" class="section level2">
+<h2><span class="header-section-number">3.1</span> 기본 모델 구축</h2>
+<p>기본모델은 대상 의약품의 일반적인 약동학 특성(구획수, 1차흡수, 선형 소실 등)을 설명하고, 개인간 변이와 간단한 잔차 모델 등을 포함하는 기본적인 구조 모델이다. NONMEM으로 기본 모델을 구축하기 위해서 먼저 분석에 사용할 데이터 셋을 구성하여 csv 파일 형태로 저장하고, 메모장이나 문서편집 프로그램을 이용해서 기본 모델 파일을 만든다. 기본 모델은 Control stream의 서식으로 작성되며, 그 구성은 다음과 같다(표 1). 모델 파일은 확장자를 .mod 또는 .ctl로 저장하여야 NONMEM이나 Pirana에서 모델 파일로 인식할 수 있다.</p>
+<p>본 책자에서는 프로그램의 구축 및 구동에 대한 내용에 중점을 두어 설명하므로, 데이터 셋 작성 및 모델 파일의 Control stream 각 항목의 세부적인 내용은 2013년도에 발간된 “약물계량학을 활용한 집단약동학 분석과 시뮬레이션 SOP” 또는 “NONMEM Users Guide V”를 참조할 것을 권장한다. Pirana에서 NONMEM을 구동하기 위해서 우선 Pirana를 실행하여 작업 화면으로 들어간다. 찾기 버튼을 눌러 모델 파일(.mod 또는 .ctl)과 데이터 파일(.csv)이 들어 있는 폴더를 선택한다. 이 때 모델파일과 데이터 파일은 같은 폴더 안에 위치해야 한다. 모델을 구동하는 방법은 해당 모델 파일을 선택 후 마우스 우클릭하여, NONMEM⟶nmfe73를 실행 하거나 PsN⟶execute를 실행한다. 또는 해당 모델 파일을 선택하여 메뉴에 있는 NONMEM 실행 단축 아이콘과 PsN 단축 아이콘을 클릭한다. (그림 23)</p>
+<p>NONMEM이 실행되면 도스창이 나타나면서 실행 결과가 화면에 표시된다. 화면 상단에 Iteration No와 Objective Function Value(Objective value)가 표시되고, 매 Iteration 시마다 추정된 파라미터의 추정값과 Gradient가 화면에 나타나며, 최종 추정이 완료되면 “All runs finished / submitted” 메시지와 estimation, covariance에 걸린 시간이 초단위로 표시된다. (그림 24)</p>
+<p>Pirana에서 모델 수행 결과를 확인하기 위해서는 새로고침 아이콘()을 누르면 수행한 모델의 결과가 반영되어 화면에 도출된다. Pirana에서는 모델의 수행 결과의 성공여부 및 오류상태를 알파벳 기호로 나타내며, 각 기호의 의미는 다음과 같다. (표 2)</p>
+<p>기본 모델 수행 결과가 S와 C가 나타나면 오류없이 모델의 최적화가 이루어졌다고 볼 수 있다. 모델의 결과를 확인하기 위하여 다음과 같이 해당 모델의 우클릭 후 ⟶ model ⟶ parameter estimates 를 클릭한다. 또는 모델 클릭 후 ⟶ 왼쪽 상단의 표 모양 아이콘() 클릭한다 (그림 25). 여러 모델을 같이 클릭하면 각 모델의 추정값을 같이 비교하여 볼 수도 있다 (그림 26). 또는 pirana 창의 오른쪽 Estimates 탭에서 집단대표값(THETA), 개인간 변이(OMEGA) 및 개체내 변이(SIGMA)의 추정값을 확인할 수 있다.</p>
+<p>데이터 셋이나 모델 수행으로 생성된 결과의 데이터를 검토해 보고자 하는 경우에 다음과 같이 모델의 우클릭 ⟶ model ⟶ “open data inspector” 클릭 ⟶ 보고자 하는 자료 클릭하거나, 모델 클릭 ⟶ 왼쪽 상단의 그래프 모양 아이콘 () 클릭 ⟶ 보고자 하는 자료 클릭한다. (그림 27, 28)</p>
+</div>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">3.2</span> 모델 개선</h2>
+<p>최적의 기본 모델을 구축하기 위해서는 비교적 단순한 모델에서 시작해서 점차 다양한 약동학적 파라미터를 추가하여 모델이 개선되는 정도를 비교하게 된다. 기존 모델 수행 결과를 토대로 모델의 일부를 수정하거나 변수를 추가 하여 보다 복잡한 모델을 단계적으로 구축해 나간다. 기존 모델을 토대로 수정된 모델을 만들고자 할 때, 기존 모델을 선택한 후 마우스 오른쪽 버튼으로 File actions → Duplicate를 클릭하거나 복사 단축 아이콘()을 클릭 하여 “Duplicate” 선택한다(그림 29). 이때 기존 모델은 Reference model이 되고, reference model의 추정값을 새로 만드는 모델의 초기값으로 반영하려면, “Use final parameter estimates from reference model” 항목에 체크한다.</p>
+</div>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">3.3</span> 기본모델 선정</h2>
+<p>데이터 셋을 가장 잘 설명하는 기본 모델을 선정하기 위해 OFV(Objective Function Value, 목적함수값)와 VPC(Visual Predictive Check) 등의 여러 가지 방법을 복합적으로 사용하여 평가할 수 있다. OFV는 데이터에 대한 모델의 적합도를 수치화한 것으로, 하나의 파라미터가 추가될 때 OFV가 3.84 이상 감소한다면 파라미터가 추가된 모델이 데이터에 대해 통계적으로 유의하게 적합하다는 것을 뜻한다. (그림 30)</p>
+<p>VPC는 시뮬레이션에 기반한 방법으로 모델이 데이터 셋을 적절히 반영할 경우에 시뮬레이션된 데이터가 원래의 데이터와 분포 특징이 비슷하게 나타난다. VPC 수행 방법은 이 메뉴얼의 “6. VPC 실행”에서 설명하고 있다. (그림 31)</p>
+<p>이 외에도 GOF(Goodness of fit) plot으로 모델의 적합성을 판단할 수 있다. 관측값(DV)과 예측값(PRED)간의 관계를 나타내는 그래프, 시간 및 예측값(PRED) 대 가중잔차(WRES)와 조건부가중잔차(CWRES) 그래프를 통해 모델을 평가할 수 있다. (그림 32)</p>
+</div>
+<div id="-" class="section level2">
+<h2><span class="header-section-number">3.4</span> 공변량 스크리닝</h2>
+<p>기본 모델을 선정한 후에 약동학에 영향을 미치는 공변량을 추가하여 데이터 셋을 보다 잘 설명하고, 집단간의 약동학 차이를 규명하기 위한 공변량 모델을 구축한다. 공변량이 어떤 약동학 파라미터에 영향을 미치는지 탐색을 위해 우선 탐색 대상이 되는 공변량들 간의 관계를 파악하는 것이 필요하다. 모델 파일에 $TABLE 블록을 사용하여 관심 대상인 parameter와 ETA 및 대상 공변량을 표 형태의 결과물로 출력해 낸 후 R을 이용하여 상관관계를 분석할 수 있다. (표 3)</p>
+<p>$TABLE을 활용하여 표를 생성하면 파일의 확장자가 지정되어 있지 않으므로 파일을 엑셀로 실행한 후에 첫 줄을 지우고, 첫 행을 블록 지정하여 ‘데이터 ⟶ 텍스트나누기 ⟶ 너비가 일정함’으로 행을 나눈 후에 .csv 확장자로 저장한다. (그림 33)</p>
+<p>Pirana에서 모델 실행하면 표 형식의 결과 파일이 생성되므로, Pirana Files ⟶ 해당 모델의 run number 우클릭 → Open in → R gui를 차례대로 클릭하면 R studio 창이 열리고, 여기에서 R code 블록 지정 ⟶ Run → console 창에서 ‘6(Covariate model)’ 입력 및 Enter → ‘4(Parameter vs covariates)’ 입력 및 Enter 한 후 Plot 창에서 결과를 확인할 수 있다 (그림 34, 35).</p>
+<p>다음으로 R package인 “psych”, “ggplot2” 등을 이용하여 여러 변수들 간의 관계를 비교할 수 있다. “psych”를 사용하여 연속형 변수 간의 상관관계 그래프와 상관계수를 산출할 수 있으며, “psych”를 이용하여 코딩한 R 파일의 예시와 실행 후의 결과 그래프는 다음과 같다 (표 4, 그림 36).</p>
+<p>“ggplot2”의 경우는 범주형 변수에 따른 연속형 변수의 분포를 시각화하는데 사용할 수 있다. R package “ggplot2”를 이용하여 코딩한 R 파일의 예시와 실행 후의 결과 그래프는 다음과 같다 (표 5, 그림 37).</p>
+<p>이러한 공변량 스크리닝 과정을 통해, 어떤 공변량이 어떤 파라미터에 영향을 미칠 것인지 미리 탐색해 볼 수 있으며, 이후의 공변량 테스트 과정에서 서로 상관관계가 있는 공변량을 중복하여 테스트 하는 것을 방지할 수 있다.</p>
+</div>
+<div id="---psn-scm-" class="section level2">
+<h2><span class="header-section-number">3.5</span> 공변량 모델 설계: PsN의 SCM 이용</h2>
+<p>공변량의 체계적인 평가와 선택을 위한 방법 중 하나로 전진선택법(forward selection)으로 공변량을 단계적으로 추가한 뒤 후진제거법(backward elimination)으로 유효하지 않은 공변량을 제거해 나가는 방법이 있다. Pirana에서 PsN의 SCM(Stepwise Covariate Modeling)을 이용하여 수행할 수 있다. 전진선택에서는 공변량을 모델에 한 개씩 추가하여 각각의 공변량 효과를 각각의 파라미터에 대해 평가하는 것이다. 후진제거의 경우, 각 공변량 효과를 한 번에 하나씩 모델로부터 제거하면서 평가를 수행한다. Pirana에서 SCM을 수행하기 위해서는 configuration file을 만들어 데이터 셋 및 모델파일과 동일한 폴더내에 저장하여야 한다. Configuration fie의 예시는 표 6에 나타내었으며, 확장자가 .scm 이어야 pirana에서 인식 가능하다.</p>
+<p>Pirana에서 대상 모델을 우클릭한 후 PsN, Covariates, SCM을 차례대로 클릭하면 PsN Toolkit(scm) 창이 열리고, SCM config file이 제대로 선택되었는지 확인하고 실행버튼을 클릭한다. (그림 38, 39)</p>
+<p>SCM 수행 후 “scmlog” 파일을 메모장 또는 엑셀로 실행하면 SCM 과정과 결과를 확인할 수 있다. (그림 40)</p>
+</div>
+<div id="visual-predictive-check-vpc-" class="section level2">
+<h2><span class="header-section-number">3.6</span> Visual predictive check (VPC) 실행</h2>
+<p>VPC는 모델을 기반으로 시뮬레이션 할 데이터 셋을 생성하여 대상 모델에 적용한 결과와 실제 관측 데이터를 비교하여 모델을 진단하는 방법으로 하나의 그래프에 예측된 혈중농도와 관측된 혈중농도를 겹쳐 그려 모델의 적합성을 확인할 수 있다. VPC를 실행하기 위해 대상 모델을 우클릭 후, PsN, Model diagnostics, vpc를 차례대로 클릭한다(그림 41). PsN Toolkit (vpc) 창이 열리고, 이 때 PsN command line에서 VPC 실행을 위한 옵션을 지정한 후 VPC를 수행한다. (표 7, 그림 42)</p>
+<p>VPC 수행 후 PsN_vpc_plots.R 파일을 실행하거나 R studio를 이용하여 VPC plot을 확인할 수 있다. 먼저 PsN command line에서 지정한 폴더에서 PsN_vpc_plots.R 파일을 실행하면 R studio 로 연결된다(그림 43). R studio에서 왼쪽 상단의 script를 모두 블록 지정하여 Run 클릭하면 같은 폴더내에 VPC plot이 .pdf 파일로 생성된다. (그림 44)</p>
+<p>또는 VPC 결과 파일이 생성된 후 R studio 프로그램을 실행 하여 표 8의 R code를 입력하고 실행하면 VPC 그래프가 생성된다. Plots ⟶ Export ⟶ “Save as Image” 또는 “Save as PDF” 선택하면 VPC plot을 파일로 저장 할 수 있다. (그림 45)</p>
+<p>VPC plot에서 실선은 혈중농도 예측치의 중위수, 위·아래의 점선은 각각 5번째와 95번째 백분위수의 값을 나타내고, 빨간색 음영은 예측치 중위수의 95% 신뢰구간, 파란색 음영은 각각 5번째, 95번째 백분위수의 95% 신뢰구간을 나타낸다. 원형의 점들은 혈중농도 관측치를 나타낸다.</p>
+</div>
+<div id="goodness-of-fit-gof-" class="section level2">
+<h2><span class="header-section-number">3.7</span> Goodness of fit (GOF) 작성</h2>
+<p>GOF는 집단예측값과 개인예측값을 실제 관측값과 비교하거나 가중잔차 대 예측값의 산점도 등을 통해 모델의 적합성을 확인할 수 있다. Pirana에서 모델 수행 후에 얻어진 결과 파일을 이용하여 pirana에서 제공하는 메뉴를 이용하거나 직접 R 프로그램에서 GOF를 실행할 수 있다. 직접적으로 pirana를 이용하는 방법으로 pirana 오른쪽 상단 “scripts” 탭 클릭 ⟶ Basic_GOF 활성화 → 원하는 GOF plot을 더블 클릭하여 pdf 파일로 얻을 수 있다. (그림 46)</p>
+<p>또는 모델 파일에 $TABLE 작성하여 결과 표 생성 확인 후 pirana 오른쪽 상단 “Files” 탭 클릭 → “xpose” 입력 → 대상 모델 우클릭 → Open in → R GUI → R studio와 연동되어 R 코드 생성 → 전체 블록지정 후 Run → R studio의 오른쪽 하단 Plots → Export → “Save as Image” 또는 “Save as PDF” 선택하면 VPC plot이 파일로 생성된다. (그림 47)</p>
+<p>R 프로그램에서 실행하는 방법은 모델 파일에 $TABLE 작성하여 결과 표 생성되었는지 확인한 후에 R package “ggplot2”을 이용하여 GOF plot을 그릴 수 있다. 이 방법을 사용하면 GOF의 디자인 맞춤화가 가능하다는 것이 장점이다. (표 9, 그림 48)</p>
+</div>
+<div id="bootstrap-" class="section level2">
+<h2><span class="header-section-number">3.8</span> Bootstrap 실행</h2>
+<p>Bootstrap은 대상 모델의 데이터 셋으로부터 N개의 새로운 데이터 셋을 복원추출하여 생성한 다음 생성된 데이터 셋을 모델에 적합 시키는 방법이다. pirana에서 실행하는 방법은 대상 모델을 우클릭 한 후 PsN, Model diagnostics, bootstrap을 순서대로 클릭한다(그림 49). PsN Toolkit (bootstrap)이 뜨면 PsN command line에 있는 옵션을 조절하여 bootstrap를 수행한다(표 10, 그림 50)</p>
+<p>※ PsN command line(default)는 아래와 같음</p>
+<p>Bootstrap의 결과는 지정된 폴더 내의 “bootstrap_results.csv” 파일로 저장 되며, 대상 모델의 약동학 파라미터 추정값과 bootstrap을 통해 도출된 파라미터의 중앙값과 95% 예측구간(5∼95th percentile)과 데이터 셋의 수렴율을 확인할 수 있다. (그림 51)</p>
+</div>
+<div id="section-3.9" class="section level2">
+<h2><span class="header-section-number">3.9</span> 시뮬레이션</h2>
+<p>시뮬레이션은 개발한 모델을 다양한 시나리오에 적용하여 결과를 예측하기 위해 수행한다. 시뮬레이션을 수행하기 위해 대상 모델과 모델을 적용할 새로운 시나리오가 반영된 데이터 셋이 필요하다. 시뮬레이션을 실시하고자 하는 시나리오에 해당하는 데이터 셋을 아래와 같이 R 코드를 이용하여 생성할 수 있으며(표 11), R 코드를 실행하면 확장자가 csv인 데이터 셋이 생성된다.</p>
+<p>이 데이터 셋은 기존 모델에 사용하는 데이터 셋과 달리 DV 값을 제거하여 시뮬레이션의 결과로 DV가 추정될 수 있도록 해야 한다. (그림 52)</p>
+<p>시뮬레이션을 위한 모델은 다음의 모델 예시와 같이 theta, eta, sigma 값이 최종 모델의 추정 값으로 고정되어야 하며, 모델링 시엔 파라미터 추정을 위해 $ESTIMATION 블록과 $COVARIANCE 블록을 사용하였으나 시뮬레이션 시 두 블록 대신 <span class="math inline">\(SIMULATION(\)</span>SIM) 블록을 사용한다. 또한 시뮬레이션 수행 결과를 R로 불러와서 통계분석을 하거나 그래프를 그릴 수 있도록 $TABLE을 활용하여 표를 생성한다. (표 12)</p>
+<p>데이터 셋과 모델이 생성되면 시뮬레이션을 수행할 수 있다. Pirana에서 시뮬레이션 대상 모델을 클릭한 후 왼쪽 위의 복제(duplicate) 아이콘을 클릭하면 Duplicate 창이 뜨고, 3가지 옵션에 체크하면 시뮬레이션을 위한 모델이 생성된다. 생성된 모델을 우클릭하여 NONMEM(→nmfe) 또는 PsN(→execute)으로 실행할 수 있다. (그림 53)</p>
+<p>시뮬레이션 실행 후 생성된 표를 활용하여 R package “PK” 혹은 “NonCompart”를 이용하여 NCA(Non-compartmental analysis, 비구획분석)를 할 수 있으며, 그 결과 AUC, MRT, T1/2, Vd, Cmax, Tmax를 구할 수 있다. (표 13, 표 14)</p>
+<p>R package “ggplot2”을 이용하여 시뮬레이션 예측값의 5, 50, 95번째 백분위수에 대한 그래프를 그릴 수 있으며, 한 plot 안에 여러 가지 시나리오 그래프도 그릴 수 있다. 아래에 각각의 R 코드 예시를 보여주고 있다. (표 14, 15 및 그림 54, 55)</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
