@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2013-10-11T18:46:17.833</nm:start_datetime>
+<nm:control_stream><![CDATA[
+$PROBLEM Dose Superposition ctlss
+$INPUT ID TIME CMT AMT DV ADDL II SS
+$DATA ssaddl_dat IGNORE=@
+$SUBROUTINES ADVAN6 TOL=6 TRANS1
+$ABBR  DERIV2=NO
+$ABBR DECLARE DOWHILE I
+$ABBR DECLARE DOWHILE NDOSE
+
+$MODEL COMP=ABS ;(DEFDOSE)
+       COMP=CENTRAL;(DEFOBS)
+       COMP=PERI
+$abbr declare dosetime(1000),dose(1000),ipt(1000)
+$PK
+
+CALLFL=-2
+IF (ss == 1 ) THEN  ; SS dose record
+IF (NEWIND < 2) NDOSE=1
+ NDOSE=NDOSE+0
+ DOWHILE (NDOSE<=10)  ; Insert 10 earlier doses
+ dosetime(NDOSE)=TIME-II*(NDOSE-1)
+ DOSE(NDOSE)=AMT
+ NDOSE=NDOSE+1
+ ENDDO
+ENDIF
+
+IF (dostim > 0) THEN  ; ADDL dose record
+ dosetime(NDOSE)=dostim  ; dostim is the time of the addl dose
+ DOSE(NDOSE)=AMT
+ NDOSE=NDOSE+1
+ENDIF
+
+IF (dostim == 0 .and. amt > 0 .and. ss==0 ) THEN  ; transient non-ss dose
+ DOSE(NDOSE)=AMT
+ dosetime(NDOSE)=TIME  ; TIME is the time of the transient dose
+ NDOSE=NDOSE+1
+ENDIF
+CL = THETA(1)*EXP(ETA(1))
+V2 = THETA(2)*EXP(ETA(2))
+Q  = THETA(3)
+V3 = THETA(4)
+KA = THETA(8)*EXP(ETA(6))
+
+K=CL/V2
+S2 =V2
+K23=Q/V2
+K32=Q/V3
+
+;--------ABSORPTION MODEL-----------
+F1=0
+MTT  = THETA(5)*EXP(ETA(4))
+NN   = THETA(6)*EXP(ETA(5))
+BIO  = THETA(7)*EXP(ETA(3))
+KTR  = (NN+1)/MTT
+
+NFAC=SQRT(2*3.1416)*NN**(NN+0.5)*(EXP(-NN))*(1+1/(12*NN))
+KINPT=BIO*KTR**(NN+1)/NFAC
+
+$DES
+INPT=0
+I=1
+DOWHILE (I<NDOSE)
+IPT(i)=0
+IF (T>=dosetime(I)) IPT(I)=DOSE(I)*(T-dosetime(I))**NN*EXP(-KTR*(T-dosetime(I)))
+INPT=INPT+IPT(I)
+I=I+1
+ENDDO
+
+ DADT(1)=KINPT*INPT-KTR*A(1)
+ DADT(2)=KTR*A(1)-K23*A(2)-K*A(2)+K32*A(3)
+ DADT(3)=K23*A(2)-K32*A(3)
+$ERROR
+
+Y = F*EXP(EPS(1))
+a1=A(1)
+a2=A(2)
+a3=A(3)
+
+$THETA
+4 ;CL
+3 ;V2
+1 ;Q
+2 ;V3
+10 ;MTT
+5 ;NN
+0.85 ;BIO
+1 ; KA
+
+$OMEGA 1 1 1 1 1 1
+$SIGMA 1
+$TABLE  TIME AMT INPT a1 a2 a3 FILE=ssaddl_tab
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+
+ (WARNING  97) A RANDOM QUANTITY IS RAISED TO A POWER. IF THE RESULT AFFECTS
+ THE VALUE OF THE OBJECTIVE FUNCTION, THE USER SHOULD ENSURE THAT THE
+ RANDOM QUANTITY IS NEVER 0 WHEN THE POWER IS < 1.
+
+ (WARNING  99) A RANDOM QUANTITY IS USED AS A POWER. IF THE RESULT AFFECTS
+ THE VALUE OF THE OBJECTIVE FUNCTION, THE USER SHOULD ENSURE THAT THE
+ QUANTITY RAISED TO THE POWER IS NOT 0.
+
+ (DATA WARNING   4) RECORD         3, DATA ITEM   5, CONTENTS:
+ THE DV DATA ITEM IS NULL, BUT THE MDV DATA ITEM IS 0 AND NO $SIMULATION
+ RECORD IS PRESENT.
+
+ (DATA WARNING   4) RECORD         4, DATA ITEM   5, CONTENTS:
+ THE DV DATA ITEM IS NULL, BUT THE MDV DATA ITEM IS 0 AND NO $SIMULATION
+ RECORD IS PRESENT.
+
+ (DATA WARNING   4) RECORD         5, DATA ITEM   5, CONTENTS:
+ THE DV DATA ITEM IS NULL, BUT THE MDV DATA ITEM IS 0 AND NO $SIMULATION
+ RECORD IS PRESENT.
+
+ (DATA WARNING   4) RECORD         6, DATA ITEM   5, CONTENTS:
+ THE DV DATA ITEM IS NULL, BUT THE MDV DATA ITEM IS 0 AND NO $SIMULATION
+ RECORD IS PRESENT.
+
+ (WARNING  48) DES-DEFINED ITEMS ARE COMPUTED ONLY WHEN EVENT TIME
+ INCREASES. E.G., DISPLAYED VALUES ASSOCIATED WITH THE FIRST EVENT RECORD
+ OF AN INDIVIDUAL RECORD ARE COMPUTED WITH (THE LAST ADVANCE TO) AN EVENT
+ TIME OF THE PRIOR INDIVIDUAL RECORD.
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.3beta7.0(P) beta version 11'>
+<nm:license_information><![CDATA[
+License Registered to: Temporary license for NONMEM7.3.0 installation
+Expiration Date:    22 DEC 2013
+Current Date:       11 OCT 2013
+Days until program expires :  71
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.3beta7.0(P) beta version 11
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem1='0' nm:iteration1='0' nm:superproblem2='0' nm:iteration2='0'>
+<nm:problem_title>Dose Superposition ctlss</nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+ Dose Superposition ctlss
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:        6
+ NO. OF DATA ITEMS IN DATA SET:  10
+ ID DATA ITEM IS DATA ITEM NO.:   1
+ DEP VARIABLE IS DATA ITEM NO.:   5
+ MDV DATA ITEM IS DATA ITEM NO.: 10
+0INDICES PASSED TO SUBROUTINE PRED:
+   9   2   4   0   8   7   3   0   0   0   6
+0LABELS FOR DATA ITEMS:
+ ID TIME CMT AMT DV ADDL II SS EVID MDV
+0(NONBLANK) LABELS FOR PRED-DEFINED ITEMS:
+ INPT a1 a2 a3
+0FORMAT FOR DATA:
+ (8E5.0,2F2.0)
+
+ TOT. NO. OF OBS RECS:        4
+ TOT. NO. OF INDIVIDUALS:      1
+0LENGTH OF THETA:   8
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   6
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+   0.4000E+01  0.3000E+01  0.1000E+01  0.2000E+01  0.1000E+02  0.5000E+01  0.8500E+00  0.1000E+01
+0INITIAL ESTIMATE OF OMEGA:
+ 0.1000E+01
+ 0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.1000E+01
+0INITIAL ESTIMATE OF SIGMA:
+ 0.1000E+01
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+ SEED NUMBER (SEED):    11456
+ RANMETHOD:
+ MC SAMPLES (ESEED):    300
+ WRES SQUARE ROOT TYPE:            EIGENVALUE
+0-- TABLE   1 --
+ PRINTED:               YES
+ FOR TABLE FILE,
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+0USER-CHOSEN ITEMS:
+ TIME AMT INPT a1 a2 a3
+1DOUBLE PRECISION PREDPP VERSION 7.3beta7.0(P) beta version 11
+
+ GENERAL NONLINEAR KINETICS MODEL (ADVAN6)
+0MODEL SUBROUTINE USER-SUPPLIED - ID NO. 9999
+0MAXIMUM NO. OF BASIC PK PARAMETERS:   6
+0COMPARTMENT ATTRIBUTES
+ COMPT. NO.   FUNCTION   INITIAL    ON/OFF      DOSE      DEFAULT    DEFAULT
+                         STATUS     ALLOWED    ALLOWED    FOR DOSE   FOR OBS.
+    1         ABS          ON         YES        YES        YES        NO
+    2         CENTRAL      ON         YES        YES        NO         YES
+    3         PERI         ON         YES        YES        NO         NO
+    4         OUTPUT       OFF        YES        NO         NO         NO
+0GENERAL STEADY STATE (SS) ROUTINE IS BEING USED
+0NRD VALUE FROM SUBROUTINE TOL:   6
+1
+ ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+ COMPT. NO.                             INDICES
+              SCALE      BIOAVAIL.   ZERO-ORDER  ZERO-ORDER  ABSORB
+                         FRACTION    RATE        DURATION    LAG
+    1            *           8           *           *           *
+    2            7           *           *           *           *
+    3            *           *           *           *           *
+    4            *           -           -           -           -
+             - PARAMETER IS NOT ALLOWED FOR THIS MODEL
+             * PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+               WILL DEFAULT TO ONE IF APPLICABLE
+0DATA ITEM INDICES USED BY PRED ARE:
+   EVENT ID DATA ITEM IS DATA ITEM NO.:      9
+   TIME DATA ITEM IS DATA ITEM NO.:          2
+   DOSE AMOUNT DATA ITEM IS DATA ITEM NO.:   4
+   STEADY STATE DATA ITEM IS DATA ITEM NO.:  8
+   INTERVAL DATA ITEM IS DATA ITEM NO.:      7
+   ADDL. DOSES DATA ITEM IS DATA ITEM NO.:   6
+   COMPT. NO. DATA ITEM IS DATA ITEM NO.:    3
+
+0PK SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ PK SUBROUTINE CALLED AT NONEVENT (ADDITIONAL AND LAGGED) DOSE TIMES.
+0ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+0DES SUBROUTINE USES COMPACT STORAGE MODE.
+]]></nm:problem_information>
+<nm:estimation nm:number='1' nm:type='1'>
+<nm:table_series>1</nm:table_series>
+<nm:estimation_method>fo</nm:estimation_method>
+<nm:estimation_title>First Order (Evaluation)</nm:estimation_title>
+<nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
+<nm:final_objective_function>26.8726221557721</nm:final_objective_function>
+<nm:theta>
+<nm:val nm:name='1'>4.00000000000000</nm:val>
+<nm:val nm:name='2'>3.00000000000000</nm:val>
+<nm:val nm:name='3'>1.00000000000000</nm:val>
+<nm:val nm:name='4'>2.00000000000000</nm:val>
+<nm:val nm:name='5'>10.0000000000000</nm:val>
+<nm:val nm:name='6'>5.00000000000000</nm:val>
+<nm:val nm:name='7'>0.850000000000000</nm:val>
+<nm:val nm:name='8'>1.00000000000000</nm:val>
+</nm:theta>
+<nm:omega>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='6'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='6'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omega>
+<nm:sigma>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigma>
+<nm:omegac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='6'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='6'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omegac>
+<nm:sigmac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigmac>
+</nm:estimation>
+<nm:table nm:number='1'>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='LINE NO.'>1.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='AMT'>1000.00000000000</nm:col>
+<nm:col nm:cname='INPT'>190237.971524648</nm:col>
+<nm:col nm:cname='a1'>128.721343588870</nm:col>
+<nm:col nm:cname='a2'>60.9473267801876</nm:col>
+<nm:col nm:cname='a3'>40.6922459430716</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>20.3157755933959</nm:col>
+<nm:col nm:cname='RES'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='WRES'>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='LINE NO.'>2.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>5.00000000000000</nm:col>
+<nm:col nm:cname='AMT'>500.000000000000</nm:col>
+<nm:col nm:cname='INPT'>208932.734118769</nm:col>
+<nm:col nm:cname='a1'>93.1911142206347</nm:col>
+<nm:col nm:cname='a2'>41.4253356325538</nm:col>
+<nm:col nm:cname='a3'>30.5422013176040</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>13.8084452108513</nm:col>
+<nm:col nm:cname='RES'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='WRES'>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='LINE NO.'>3.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>24.0000000000000</nm:col>
+<nm:col nm:cname='AMT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='INPT'>204098.535936275</nm:col>
+<nm:col nm:cname='a1'>143.228358353788</nm:col>
+<nm:col nm:cname='a2'>70.3912078452845</nm:col>
+<nm:col nm:cname='a3'>50.3498756788454</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>23.4637359484282</nm:col>
+<nm:col nm:cname='RES'>-23.4637359484282</nm:col>
+<nm:col nm:cname='WRES'>-0.340291035424453</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='LINE NO.'>4.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>25.0000000000000</nm:col>
+<nm:col nm:cname='AMT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='INPT'>165514.493506691</nm:col>
+<nm:col nm:cname='a1'>123.952287273398</nm:col>
+<nm:col nm:cname='a2'>63.5035374290308</nm:col>
+<nm:col nm:cname='a3'>48.0517847127165</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>21.1678458096770</nm:col>
+<nm:col nm:cname='RES'>-21.1678458096770</nm:col>
+<nm:col nm:cname='WRES'>-0.265917702753284</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='LINE NO.'>5.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>48.0000000000000</nm:col>
+<nm:col nm:cname='AMT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='INPT'>190238.430209766</nm:col>
+<nm:col nm:cname='a1'>128.722430081152</nm:col>
+<nm:col nm:cname='a2'>60.9510547541578</nm:col>
+<nm:col nm:cname='a3'>40.7006410805817</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>20.3170182513859</nm:col>
+<nm:col nm:cname='RES'>-20.3170182513859</nm:col>
+<nm:col nm:cname='WRES'>-0.377115921672083</nm:col>
+</nm:row>
+<nm:row nm:rname='6'>
+<nm:col nm:cname='LINE NO.'>6.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>53.0000000000000</nm:col>
+<nm:col nm:cname='AMT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='INPT'>208932.773700530</nm:col>
+<nm:col nm:cname='a1'>93.1912188804333</nm:col>
+<nm:col nm:cname='a2'>41.4259285545683</nm:col>
+<nm:col nm:cname='a3'>30.5436143570709</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>13.8086428515228</nm:col>
+<nm:col nm:cname='RES'>-13.8086428515228</nm:col>
+<nm:col nm:cname='WRES'>-0.260636494404393</nm:col>
+</nm:row>
+</nm:table>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2013-10-11T18:46:18.239</nm:stop_datetime>
+<nm:total_cputime>0.328</nm:total_cputime>
+</nm:output>

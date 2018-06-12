@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2013-09-30T14:14:40.432</nm:start_datetime>
+<nm:control_stream><![CDATA[
+;Model Desc:  ar1newsim.ctl: revision of ar1sim01mod.ctl high autocorr
+;Project Name: testprob.08.08.08
+;Project ID: None
+
+$PROB  ar1sim01mod
+$ABBR DECLARE T(NO)
+$ABBR DECLARE DOWHILE J
+$ABBR declare integer i
+$INPUT CX ID DOSE=AMT TIME CP=DV WT MDV
+$DATA THEOxlarge.csv IGNORE=C
+
+$SUBROUTINES  ADVAN2
+
+$PK
+;THETA(1)=MEAN ABSORPTION RATE CONSTANT (1/HR)
+;THETA(2)=MEAN ELIMINATION RATE CONSTANT (1/HR)
+;THETA(3)=SLOPE OF CLEARANCE VS WEIGHT RELATIONSHIP (LITERS/HR/KG)
+;SCALING PARAMETER=VOLUME/WT SINCE DOSE IS WEIGHT-ADJUSTED
+   CALLFL=1
+   KA=THETA(1)*DEXP(ETA(1))
+   K=THETA(2)*DEXP(ETA(2))
+   CL=THETA(3)*WT*DEXP(ETA(3))
+   SC=CL/K/WT
+
+$ERROR
+IF (ICALL.EQ.4) THEN
+IF(NEWIND.NE.2)I=0
+IF(MDV.EQ.0)THEN
+   I=I+1
+   T(I)=TIME
+   J=1
+   DO WHILE (J <= I)
+  CORRL2(J,1)=EXP(-THETA(4)*(TIME-T(J)))
+   J=J+1
+   ENDDO
+ENDIF
+CALL SIMEPS(EPS)
+ENDIF
+   Y=F+F*EPS(1)
+
+$THETA
+(.1,3,5)      ;[KA]
+(.008,.08,.5) ;[KE]
+(.004,.04,.9) ;[CL]
+(0,.05,1)      ;[Ar-parameter]
+
+
+$OMEGA
+ .09      ;[P]
+$OMEGA BLOCK(2)
+ .09      ;[P]
+ .04      ;[F]
+ .09      ;[P]
+
+$SIGMA
+ .04         ;[P]
+
+$SIM (4831923) ONLY
+
+$TABLE CX ID DOSE TIME CP WT MDV
+  NOPRINT
+  ONEHEADER
+  NOAPPEND
+  FILE=ar1newsim.dat
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+
+ (WARNING  43) THE $PK BLOCK REQUESTS "CALL ONCE PER INDIVIDUAL RECORD", BUT
+ DATA ITEMS ARE USED IN THE $PK BLOCK. VALUES OF THESE DATA ITEMS
+ SUBSEQUENT TO THOSE FROM THE FIRST EVENT RECORD WILL BE IGNORED.  IF THIS
+ IS NOT APPROPRIATE, THE CALL DATA ITEM CAN BE USED TO OBTAIN ADDITIONAL
+ CALLS, OR $PK'S CALLING PROTOCOL SHOULD BE CHANGED.
+
+ (WARNING  116) A SIMULATION BLOCK ASSIGNS VALUES TO CORRL2 AND CALLS
+ SIMEPS.  THE DEFAULT CALL TO SIMEPS WILL BE OMITTED.
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.3beta7.0(P)'>
+<nm:license_information><![CDATA[
+License Registered to: IDS NONMEM 7 TEAM
+Expiration Date:     2 JUN 2030
+Current Date:       30 SEP 2013
+Days until program expires :6087
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.3beta7.0(P)
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem1='0' nm:iteration1='0' nm:superproblem2='0' nm:iteration2='0'>
+<nm:problem_title>ar1sim01mod</nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+ ar1sim01mod
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:      660
+ NO. OF DATA ITEMS IN DATA SET:   8
+ ID DATA ITEM IS DATA ITEM NO.:   2
+ DEP VARIABLE IS DATA ITEM NO.:   5
+ MDV DATA ITEM IS DATA ITEM NO.:  7
+0INDICES PASSED TO SUBROUTINE PRED:
+   8   4   3   0   0   0   0   0   0   0   0
+0LABELS FOR DATA ITEMS:
+ CX ID DOSE TIME CP WT MDV EVID
+0FORMAT FOR DATA:
+ (7E6.0,1F2.0)
+
+ TOT. NO. OF OBS RECS:      600
+ TOT. NO. OF INDIVIDUALS:     60
+0LENGTH OF THETA:   4
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS BLOCK FORM:
+  1
+  0  2
+  0  2  2
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+ LOWER BOUND    INITIAL EST    UPPER BOUND
+  0.1000E+00     0.3000E+01     0.5000E+01
+  0.8000E-02     0.8000E-01     0.5000E+00
+  0.4000E-02     0.4000E-01     0.9000E+00
+  0.0000E+00     0.5000E-01     0.1000E+01
+0INITIAL ESTIMATE OF OMEGA:
+ BLOCK SET NO.   BLOCK                                                                    FIXED
+        1                                                                                   NO
+                  0.9000E-01
+        2                                                                                   NO
+                  0.9000E-01
+                  0.4000E-01   0.9000E-01
+0INITIAL ESTIMATE OF SIGMA:
+ 0.4000E-01
+0SIMULATION STEP OMITTED:    NO
+ OBJ FUNC EVALUATED:         NO
+0SIMULATION RANDOM METHOD SELECTED (RANMETHOD): DEFAULT
+ SOURCE   1:
+   SEED1:       4831923   SEED2:             0   PSEUDO-NORMAL
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+ SEED NUMBER (SEED):    11456
+ RANMETHOD:
+ MC SAMPLES (ESEED):    300
+ WRES SQUARE ROOT TYPE:            EIGENVALUE
+0-- TABLE   1 --
+04 COLUMNS APPENDED:     NO
+ PRINTED:                NO
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+0USER-CHOSEN ITEMS:
+ CX ID DOSE TIME CP WT MDV
+1DOUBLE PRECISION PREDPP VERSION 7.3beta7.0(P)
+
+ ONE COMPARTMENT MODEL WITH FIRST-ORDER ABSORPTION (ADVAN2)
+0MAXIMUM NO. OF BASIC PK PARAMETERS:   3
+0BASIC PK PARAMETERS (AFTER TRANSLATION):
+   ELIMINATION RATE (K) IS BASIC PK PARAMETER NO.:  1
+   ABSORPTION RATE (KA) IS BASIC PK PARAMETER NO.:  3
+
+0COMPARTMENT ATTRIBUTES
+ COMPT. NO.   FUNCTION   INITIAL    ON/OFF      DOSE      DEFAULT    DEFAULT
+                         STATUS     ALLOWED    ALLOWED    FOR DOSE   FOR OBS.
+    1         DEPOT        OFF        YES        YES        YES        NO
+    2         CENTRAL      ON         NO         YES        NO         YES
+    3         OUTPUT       OFF        YES        NO         NO         NO
+1
+ ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+ COMPT. NO.                             INDICES
+              SCALE      BIOAVAIL.   ZERO-ORDER  ZERO-ORDER  ABSORB
+                         FRACTION    RATE        DURATION    LAG
+    1            *           *           *           *           *
+    2            4           *           *           *           *
+    3            *           -           -           -           -
+             - PARAMETER IS NOT ALLOWED FOR THIS MODEL
+             * PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+               WILL DEFAULT TO ONE IF APPLICABLE
+0DATA ITEM INDICES USED BY PRED ARE:
+   EVENT ID DATA ITEM IS DATA ITEM NO.:      8
+   TIME DATA ITEM IS DATA ITEM NO.:          4
+   DOSE AMOUNT DATA ITEM IS DATA ITEM NO.:   3
+
+0PK SUBROUTINE CALLED ONCE PER INDIVIDUAL RECORD.
+ PK SUBROUTINE NOT CALLED AT NONEVENT (ADDITIONAL OR LAGGED) DOSE TIMES.
+0ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+]]></nm:problem_information>
+<nm:simulation_information><![CDATA[
+1
+ SIMULATION STEP PERFORMED
+ SOURCE  1:
+    SEED1:     991927458   SEED2:             0
+]]></nm:simulation_information>
+<nm:estimation nm:number='1' nm:type='1'>
+<nm:table_series>0</nm:table_series>
+</nm:estimation>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2013-09-30T14:14:40.572</nm:stop_datetime>
+<nm:total_cputime>0.140</nm:total_cputime>
+</nm:output>

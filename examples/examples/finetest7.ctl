@@ -1,0 +1,12 @@
+$PROB RUN# example6 (from r2compl)
+$INPUT C SET ID JID TIME DV=CONC DOSE=AMT RATE EVID MDV CMT WT
+$DATA finetest.csv IGNORE=C
+$FINEDATA NEVAL=-1 AXIS=TIME(LIN) WT=LIN MISSING=-99,.,S
+          file=finetest7.csv
+
+$PROB RUN# example6 (from r2compl)
+$INPUT C SET ID JID TIME DV=CONC DOSE=AMT RATE EVID MDV CMT WT
+$DATA finetest7.csv IGNORE=C
+$FINEDATA tstart=0 TSTOP=50 NEVAL=250 AXIS=TIME(LIN) CMT=1,3 WT=LINR,PREV MISSING=-99,.,S
+          file=finetest7a.csv
+

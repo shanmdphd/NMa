@@ -1,0 +1,12 @@
+#ID  TIME AMT DV     EVID
+1  .0    10   .      1               rec 1
+1  .25   .  2.44     0               rec 2
+1  .5    .  5.24     0               rec 3
+1  .75   .  5.57     0               rec 4
+1  1     .  5.85     0               rec 5
+#ID TIME AMT DV     EVID
+2  .0    10   .      1               rec 1
+2  .25   .  2.44     0               rec 2
+2  .5    .  5.24     0               rec 3
+2  .75   .  5.57     0               rec 4
+2  1     .  5.85     0               rec 5

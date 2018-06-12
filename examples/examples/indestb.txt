@@ -1,0 +1,19 @@
+$PROB  THEOPHYLLINE POPULATION DATA; Analysis of Individuals
+$INPUT      ID DOSE=AMT TIME CP=DV WT
+$DATA       THEOPP RECS=ID NOREWIND
+;NOREWIND: data set will be read starting after the previous individual
+
+$THETA  (0.001,3) (0.001,.2) (0.001,.1)
+$OMEGA .2
+
+;For single subject data OMEGA is residual variance
+
+$EST MAXEVAL=450  PRINT=5
+
+$COV SPECIAL MATRIX=R PRINT=E
+;SPECIAL is required to obtain the variance-covariance matrix for single-subject data
+
+$TABLE ID DOSE WT TIME NOPRINT FORWARD NOHEADER FILE=indestb.tab
+
+$TABLE ID KA K CL SC NOPRINT FIRSTONLY FORWARD NOAPPEND NOHEADER
+FILE=indestb.par

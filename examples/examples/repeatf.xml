@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2013-09-30T15:02:09.700</nm:start_datetime>
+<nm:control_stream><![CDATA[
+; This example is discussed in Repetition_1 example (repeti1.exa)
+; in the online help directory.
+; It demonstrates the use of RPT_ and RPTON
+; When data item RPT_=n and PRED sets rpto=-n with the same record,
+; repeated calls are made to PRED using this one record.
+; This is used to compute the factorial of the value in KRPT.
+;
+$PROB
+$INPT ID TIME DV MDV RPT_ KRPT
+$DATA repeatf.dat IGNORE=@
+$PRED
+   F=THETA(1)*EXP(ETA(1)) ; default value
+
+   prdfl=1 ; required with RPT_
+   IF (RPT_.EQ.1) RPTO=-1     ; tells NONMEM to repeat this record
+   RPTON=KRPT                 ; tells how many times to repeat this record.
+   last=0                     ; when last=1, this is the last call with repeated record
+   IF (RPTI .EQ. 0) THEN      ; not a repeated call
+    factorial=1
+    count=0                   ; count calls with repeated records
+   ELSE                       ; repeated call
+    count=count+1             ; count calls with repeated records
+    factorial=factorial*count
+    IF (count == rpton) last=1  ; identify the last call with repeated record
+   ENDIF
+   IF (last==1) F=factorial*EXP(ETA(2))  ; prediction=KRPT! (factorial of KRPT)
+
+  Y=F+EPS(1)
+
+$THETA 2
+$OMEGA .1 .1
+$SIGMA .1
+$TABLE RPT_ KRPT PRED NOAPPEND FILE=repeatf.tab
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.3beta7.0(P)'>
+<nm:license_information><![CDATA[
+License Registered to: IDS NONMEM 7 TEAM
+Expiration Date:     2 JUN 2030
+Current Date:       30 SEP 2013
+Days until program expires :6087
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.3beta7.0(P)
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem1='0' nm:iteration1='0' nm:superproblem2='0' nm:iteration2='0'>
+<nm:problem_title></nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:        8
+ NO. OF DATA ITEMS IN DATA SET:   6
+ ID DATA ITEM IS DATA ITEM NO.:   1
+ DEP VARIABLE IS DATA ITEM NO.:   3
+ MDV DATA ITEM IS DATA ITEM NO.:  4
+ RPT DATA ITEM IS DATA ITEM NO.:  5
+0LABELS FOR DATA ITEMS:
+ ID TIME DV MDV RPT_ KRPT
+0FORMAT FOR DATA:
+ (6E2.0)
+
+ TOT. NO. OF OBS RECS:        8
+ TOT. NO. OF INDIVIDUALS:      2
+0LENGTH OF THETA:   1
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   2
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+   0.2000E+01
+0INITIAL ESTIMATE OF OMEGA:
+ 0.1000E+00
+ 0.0000E+00   0.1000E+00
+0INITIAL ESTIMATE OF SIGMA:
+ 0.1000E+00
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+ SEED NUMBER (SEED):    11456
+ RANMETHOD:
+ MC SAMPLES (ESEED):    300
+ WRES SQUARE ROOT TYPE:            EIGENVALUE
+0-- TABLE   1 --
+04 COLUMNS APPENDED:     NO
+ PRINTED:               YES
+ FOR TABLE FILE,
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+0USER-CHOSEN ITEMS:
+ RPT_ KRPT PRED
+]]></nm:problem_information>
+<nm:estimation nm:number='1' nm:type='1'>
+<nm:table_series>1</nm:table_series>
+<nm:estimation_method>fo</nm:estimation_method>
+<nm:estimation_title>First Order (Evaluation)</nm:estimation_title>
+<nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
+<nm:final_objective_function>284.944266634957</nm:final_objective_function>
+<nm:theta>
+<nm:val nm:name='1'>2.00000000000000</nm:val>
+</nm:theta>
+<nm:omega>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>0.100000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.100000000000000</nm:col>
+</nm:row>
+</nm:omega>
+<nm:sigma>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>0.100000000000000</nm:col>
+</nm:row>
+</nm:sigma>
+<nm:omegac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>0.316227766016838</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.316227766016838</nm:col>
+</nm:row>
+</nm:omegac>
+<nm:sigmac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>0.316227766016838</nm:col>
+</nm:row>
+</nm:sigmac>
+</nm:estimation>
+<nm:table nm:number='1'>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='LINE NO.'>1.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='KRPT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>2.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='LINE NO.'>2.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>1.00000000000000</nm:col>
+<nm:col nm:cname='KRPT'>4.00000000000000</nm:col>
+<nm:col nm:cname='PRED'>24.0000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='LINE NO.'>3.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='KRPT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>2.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='LINE NO.'>4.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>1.00000000000000</nm:col>
+<nm:col nm:cname='KRPT'>3.00000000000000</nm:col>
+<nm:col nm:cname='PRED'>6.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='LINE NO.'>5.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='KRPT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>2.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='6'>
+<nm:col nm:cname='LINE NO.'>6.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>1.00000000000000</nm:col>
+<nm:col nm:cname='KRPT'>4.00000000000000</nm:col>
+<nm:col nm:cname='PRED'>24.0000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='7'>
+<nm:col nm:cname='LINE NO.'>7.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='KRPT'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>2.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='8'>
+<nm:col nm:cname='LINE NO.'>8.00000000000000</nm:col>
+<nm:col nm:cname='RPT_'>1.00000000000000</nm:col>
+<nm:col nm:cname='KRPT'>3.00000000000000</nm:col>
+<nm:col nm:cname='PRED'>6.00000000000000</nm:col>
+</nm:row>
+</nm:table>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2013-09-30T15:02:09.794</nm:stop_datetime>
+<nm:total_cputime>0.109</nm:total_cputime>
+</nm:output>

@@ -1,0 +1,64 @@
+;Model Desc:  ar1newsim.ctl: revision of ar1sim01mod.ctl high autocorr
+;Project Name: testprob.08.08.08
+;Project ID: None
+
+$PROB  ar1sim01mod
+$ABBR DECLARE T(NO)
+$ABBR DECLARE DOWHILE J
+$ABBR declare integer i
+$INPUT CX ID DOSE=AMT TIME CP=DV WT MDV
+$DATA THEOxlarge.csv IGNORE=C
+
+$SUBROUTINES  ADVAN2
+
+$PK
+;THETA(1)=MEAN ABSORPTION RATE CONSTANT (1/HR)
+;THETA(2)=MEAN ELIMINATION RATE CONSTANT (1/HR)
+;THETA(3)=SLOPE OF CLEARANCE VS WEIGHT RELATIONSHIP (LITERS/HR/KG)
+;SCALING PARAMETER=VOLUME/WT SINCE DOSE IS WEIGHT-ADJUSTED
+   CALLFL=1
+   KA=THETA(1)*DEXP(ETA(1))
+   K=THETA(2)*DEXP(ETA(2))
+   CL=THETA(3)*WT*DEXP(ETA(3))
+   SC=CL/K/WT
+
+$ERROR
+IF (ICALL.EQ.4) THEN
+IF(NEWIND.NE.2)I=0
+IF(MDV.EQ.0)THEN
+   I=I+1
+   T(I)=TIME
+   J=1
+   DO WHILE (J <= I)
+  CORRL2(J,1)=EXP(-THETA(4)*(TIME-T(J)))
+   J=J+1
+   ENDDO
+ENDIF
+CALL SIMEPS(EPS)
+ENDIF
+   Y=F+F*EPS(1)
+
+$THETA  
+(.1,3,5)      ;[KA]
+(.008,.08,.5) ;[KE]
+(.004,.04,.9) ;[CL]
+(0,.05,1)      ;[Ar-parameter]
+
+
+$OMEGA
+ .09      ;[P]
+$OMEGA BLOCK(2)
+ .09      ;[P]
+ .04      ;[F]
+ .09      ;[P]
+
+$SIGMA  
+ .04         ;[P]
+
+$SIM (4831923) ONLY
+
+$TABLE CX ID DOSE TIME CP WT MDV 
+  NOPRINT
+  ONEHEADER
+  NOAPPEND
+  FILE=ar1newsim.dat

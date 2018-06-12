@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2010-03-09T19:32:01.549</nm:start_datetime>
+<nm:control_stream><![CDATA[
+$PROBLEM PK ODE HANDS ON ONE
+
+$INPUT ID TIME DV AMT CMT FLAG
+
+$DATA   sde6.csv
+        IGNORE=@
+
+$SUBROUTINE ADVAN6 TOL 10 DP
+
+$MODEL
+       COMP = (CENTRAL);
+
+$PK
+  IF(NEWIND.NE.2) OT = 0
+
+  TVCL  = THETA(1)
+  CL    = TVCL*EXP(ETA(1))
+
+  TVVD  = THETA(2)
+  VD    = TVVD*EXP(ETA(2))
+
+
+$DES
+ DADT(1) = - CL/VD*A(1) ;+SGW1
+
+$ERROR
+
+     IPRED = A(1)/VD
+     IRES  = DV - IPRED
+     W     = THETA(3)
+     IWRES = IRES/W
+     Y     = IPRED+W*EPS(1)
+
+$THETA (0,10)               ;1 CL
+$THETA (0,32)               ;2 VD
+$THETA (0, 2)               ;4 SIGMA
+
+$OMEGA 0.1                  ;1 CL
+$OMEGA 0.01                 ;2 VD
+
+$SIGMA 1 FIX                ; PK
+
+$EST MAXEVAL=9999 METHOD=1 LAPLACE NUMERICAL SLOW INTER NOABORT SIGDIGITS=3 PRINT=1 MSFO=sde6.msf
+$COV MATRIX=R
+
+$TABLE ID TIME FLAG AMT CMT IPRED IRES IWRES
+       ONEHEADER NOPRINT FILE=sde6.fit
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+ CREATING MUMODEL ROUTINE...
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.2pcd'>
+<nm:license_information><![CDATA[
+License Registered to: IDS NONMEM 7 TEAM
+Expiration Date:     2 JUN 2030
+Current Date:        9 MAR 2010
+Days until program expires :7383
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.2pcd
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem='0' nm:iteration='0'>
+<nm:problem_title>PK ODE HANDS ON ONE</nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+ PK ODE HANDS ON ONE
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:      570
+ NO. OF DATA ITEMS IN DATA SET:   8
+ ID DATA ITEM IS DATA ITEM NO.:   1
+ DEP VARIABLE IS DATA ITEM NO.:   3
+ MDV DATA ITEM IS DATA ITEM NO.:  8
+0INDICES PASSED TO SUBROUTINE PRED:
+  7  2  4  0  0  0  5  0  0
+  0  0
+0LABELS FOR DATA ITEMS:
+ ID TIME DV AMT CMT FLAG EVID MDV
+0(NONBLANK) LABELS FOR PRED-DEFINED ITEMS:
+ IPRE    IRES    IWRE
+0FORMAT FOR DATA:
+ (6E10.0,2F2.0)
+
+ TOT. NO. OF OBS RECS:      540
+ TOT. NO. OF INDIVIDUALS:     30
+0LENGTH OF THETA:  3
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:  2
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:  1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+ LOWER BOUND    INITIAL EST    UPPER BOUND
+  0.0000E+00     0.1000E+02     0.1000E+07
+  0.0000E+00     0.3200E+02     0.1000E+07
+  0.0000E+00     0.2000E+01     0.1000E+07
+0INITIAL ESTIMATE OF OMEGA:
+ 0.1000E+00
+ 0.0000E+00   0.1000E-01
+0INITIAL ESTIMATE OF SIGMA:
+ 0.1000E+01
+0SIGMA CONSTRAINED TO BE THIS INITIAL ESTIMATE
+0ESTIMATION STEP OMITTED:           NO
+ SLOW GRADIENT METHOD USED:        YES
+ CONDITIONAL ESTIMATES USED:       YES
+ CENTERED ETA:                      NO
+ EPS-ETA INTERACTION:              YES
+ LAPLACIAN OBJ. FUNC.:             YES
+ NUMERICAL 2ND DERIVATIVES:        YES
+ NO. OF FUNCT. EVALS. ALLOWED:       9999
+ NO. OF SIG. FIGURES REQUIRED:       3
+ INTERMEDIATE PRINTOUT:            YES
+ ESTIMATE OUTPUT TO MSF:           YES
+ ABORT WITH PRED EXIT CODE 1:       NO
+ IND. OBJ. FUNC. VALUES SORTED:     NO
+0COVARIANCE STEP OMITTED:    NO
+ R MATRIX SUBSTITUTED:      YES
+ S MATRIX SUBSTITUTED:       NO
+ EIGENVLS. PRINTED:          NO
+ COMPRESSED FORMAT:          NO
+ SLOW GRADIENT METHOD USED: YES
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+0-- TABLE  1 --
+ PRINTED:                NO
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+0USER-CHOSEN ITEMS:
+ ID TIME FLAG AMT CMT IPRED IRES IWRES
+
+ THE FOLLOWING LABELS ARE EQUIVALENT
+ PRED=PREDI
+ RES=RESI
+ WRES=WRESI
+1DOUBLE PRECISION PREDPP VERSION 7.2pcd
+
+ GENERAL NONLINEAR KINETICS MODEL (ADVAN6)
+0MODEL SUBROUTINE USER-SUPPLIED - ID NO. 9999
+0MAXIMUM NO. OF BASIC PK PARAMETERS:   2
+0COMPARTMENT ATTRIBUTES
+ COMPT. NO.   FUNCTION   INITIAL    ON/OFF      DOSE      DEFAULT    DEFAULT
+                         STATUS     ALLOWED    ALLOWED    FOR DOSE   FOR OBS.
+    1         CENTRAL      ON         YES        YES        YES        YES
+    2         OUTPUT       OFF        YES        NO         NO         NO
+0NRD VALUE FROM SUBROUTINE TOL:  10
+1
+ ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+ COMPT. NO.                             INDICES
+              SCALE      BIOAVAIL.   ZERO-ORDER  ZERO-ORDER  ABSORB
+                         FRACTION    RATE        DURATION    LAG
+    1           *           *           *           *           *
+    2           *           -           -           -           -
+             - PARAMETER IS NOT ALLOWED FOR THIS MODEL
+             * PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+               WILL DEFAULT TO ONE IF APPLICABLE
+0DATA ITEM INDICES USED BY PRED ARE:
+   EVENT ID DATA ITEM IS DATA ITEM NO.:      7
+   TIME DATA ITEM IS DATA ITEM NO.:          2
+   DOSE AMOUNT DATA ITEM IS DATA ITEM NO.:   4
+   COMPT. NO. DATA ITEM IS DATA ITEM NO.:    5
+
+0PK SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ PK SUBROUTINE NOT CALLED AT NONEVENT (ADDITIONAL OR LAGGED) DOSE TIMES.
+0ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+0ERROR SUBROUTINE INDICATES THAT DERIVATIVES OF COMPARTMENT AMOUNTS ARE USED.
+0DES SUBROUTINE USES COMPACT STORAGE MODE.
+]]></nm:problem_information>
+<nm:estimation nm:number='1' nm:type='0'>
+<nm:table_series>1</nm:table_series>
+<nm:estimation_method>laplace_cei</nm:estimation_method>
+<nm:estimation_title>Laplacian Conditional Estimation with Interaction</nm:estimation_title>
+<nm:monitor>
+<nm:obj nm:iteration='0'>1535.20801780055</nm:obj>
+<nm:obj nm:iteration='1'>1399.88231136503</nm:obj>
+<nm:obj nm:iteration='2'>1398.51680433665</nm:obj>
+<nm:obj nm:iteration='3'>1397.05241578690</nm:obj>
+<nm:obj nm:iteration='4'>1396.09824618494</nm:obj>
+<nm:obj nm:iteration='5'>1395.94840208739</nm:obj>
+<nm:obj nm:iteration='6'>1366.37435006047</nm:obj>
+<nm:obj nm:iteration='7'>1363.71335471160</nm:obj>
+<nm:obj nm:iteration='8'>1363.21953021977</nm:obj>
+<nm:obj nm:iteration='9'>1363.13720606023</nm:obj>
+<nm:obj nm:iteration='10'>1363.13252721478</nm:obj>
+<nm:obj nm:iteration='11'>1363.13246366955</nm:obj>
+<nm:obj nm:iteration='12'>1363.13246224197</nm:obj>
+<nm:obj nm:iteration='13'>1363.13246224197</nm:obj>
+<nm:obj nm:iteration='14'>1363.13246224197</nm:obj>
+</nm:monitor>
+<nm:estimation_elapsed_time>11.72</nm:estimation_elapsed_time>
+<nm:termination_status>0</nm:termination_status>
+<nm:termination_information><![CDATA[
+0MINIMIZATION SUCCESSFUL
+ NO. OF FUNCTION EVALUATIONS USED:      103
+ NO. OF SIG. DIGITS IN FINAL EST.:  3.0
+]]></nm:termination_information>
+<nm:etabar>
+<nm:row>
+<nm:col>-2.419211807191068E-004</nm:col>
+<nm:col>-3.527133435767113E-003</nm:col>
+</nm:row>
+</nm:etabar>
+<nm:etabarse>
+<nm:row>
+<nm:col>5.727219191932675E-002</nm:col>
+<nm:col>6.313209982451164E-002</nm:col>
+</nm:row>
+</nm:etabarse>
+<nm:etabarpval>
+<nm:row>
+<nm:col>0.996629675020468</nm:col>
+<nm:col>0.955445948126618</nm:col>
+</nm:row>
+</nm:etabarpval>
+<nm:etashrink>
+<nm:row>
+<nm:col>0.452944736865078</nm:col>
+<nm:col>0.202172777195926</nm:col>
+</nm:row>
+</nm:etashrink>
+<nm:epsshrink>
+<nm:row>
+<nm:col>5.47743355056525</nm:col>
+</nm:row>
+</nm:epsshrink>
+<nm:covariance_information><![CDATA[
+]]></nm:covariance_information>
+<nm:covariance_status nm:error='0' nm:numnegeigenvalues='-1' nm:mineigenvalue='0.000000000000000E+000' nm:maxeigenvalue='0.000000000000000E+000' nm:rms='0.000000000000000E+000'/>
+<nm:covariance_elapsed_time>4.08</nm:covariance_elapsed_time>
+<nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
+<nm:final_objective_function>1363.13246224197</nm:final_objective_function>
+<nm:theta>
+<nm:val>10.6516948568492</nm:val>
+<nm:val>32.4215933471837</nm:val>
+<nm:val>1.75068034162039</nm:val>
+</nm:theta>
+<nm:omega>
+<nm:row>
+<nm:col>0.102724795637551</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.124194627320813</nm:col>
+</nm:row>
+</nm:omega>
+<nm:sigma>
+<nm:row>
+<nm:col>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigma>
+<nm:omegac>
+<nm:row>
+<nm:col>0.320507091399787</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.352412581104610</nm:col>
+</nm:row>
+</nm:omegac>
+<nm:sigmac>
+<nm:row>
+<nm:col>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigmac>
+<nm:thetase>
+<nm:val>0.631674532278430</nm:val>
+<nm:val>2.05171750799910</nm:val>
+<nm:val>5.612907571362313E-002</nm:val>
+</nm:thetase>
+<nm:omegase>
+<nm:row>
+<nm:col>2.481326710317139E-002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>10000000000.0000</nm:col>
+<nm:col>3.329997639701399E-002</nm:col>
+</nm:row>
+</nm:omegase>
+<nm:sigmase>
+<nm:row>
+<nm:col>10000000000.0000</nm:col>
+</nm:row>
+</nm:sigmase>
+<nm:omegacse>
+<nm:row>
+<nm:col>3.870938860479127E-002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>10000000000.0000</nm:col>
+<nm:col>4.724572586574212E-002</nm:col>
+</nm:row>
+</nm:omegacse>
+<nm:sigmacse>
+<nm:row>
+<nm:col>10000000000.0000</nm:col>
+</nm:row>
+</nm:sigmacse>
+<nm:covariance>
+<nm:header>
+<nm:name>THETA1</nm:name>
+<nm:name>THETA2</nm:name>
+<nm:name>THETA3</nm:name>
+<nm:name>OMEGA(1,1)</nm:name>
+<nm:name>OMEGA(1,2)</nm:name>
+<nm:name>OMEGA(2,2)</nm:name>
+<nm:name>SIGMA(1,1)</nm:name>
+</nm:header>
+<nm:row>
+<nm:col>0.399012714729174</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-1.886806628315051E-003</nm:col>
+<nm:col>4.20954473263002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-6.767807742143711E-004</nm:col>
+<nm:col>-1.666845589784041E-003</nm:col>
+<nm:col>3.150473140465638E-003</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>8.524737316119560E-004</nm:col>
+<nm:col>-8.891858225030899E-005</nm:col>
+<nm:col>-1.301867318590673E-005</nm:col>
+<nm:col>6.156982243333273E-004</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-1.928280391384534E-004</nm:col>
+<nm:col>8.716353002543027E-004</nm:col>
+<nm:col>-2.290531188429553E-005</nm:col>
+<nm:col>1.416562037350752E-005</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>1.108888428041689E-003</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+</nm:covariance>
+<nm:correlation>
+<nm:header>
+<nm:name>THETA1</nm:name>
+<nm:name>THETA2</nm:name>
+<nm:name>THETA3</nm:name>
+<nm:name>OMEGA(1,1)</nm:name>
+<nm:name>OMEGA(1,2)</nm:name>
+<nm:name>OMEGA(2,2)</nm:name>
+<nm:name>SIGMA(1,1)</nm:name>
+</nm:header>
+<nm:row>
+<nm:col>0.631674532278430</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-1.455849431951187E-003</nm:col>
+<nm:col>2.05171750799910</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-1.908827814784583E-002</nm:col>
+<nm:col>-1.447404488852832E-002</nm:col>
+<nm:col>5.612907571362313E-002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>5.438807495325043E-002</nm:col>
+<nm:col>-1.746590181929574E-003</nm:col>
+<nm:col>-9.347487296369425E-003</nm:col>
+<nm:col>2.481326710317139E-002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-9.167119480765297E-003</nm:col>
+<nm:col>1.275772746140607E-002</nm:col>
+<nm:col>-1.225474823044305E-002</nm:col>
+<nm:col>1.714382491271620E-002</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>3.329997639701399E-002</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+</nm:correlation>
+<nm:invcovariance>
+<nm:header>
+<nm:name>THETA1</nm:name>
+<nm:name>THETA2</nm:name>
+<nm:name>THETA3</nm:name>
+<nm:name>OMEGA(1,1)</nm:name>
+<nm:name>OMEGA(1,2)</nm:name>
+<nm:name>OMEGA(2,2)</nm:name>
+<nm:name>SIGMA(1,1)</nm:name>
+</nm:header>
+<nm:row>
+<nm:col>2.51476666990850</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>1.161660907347103E-003</nm:col>
+<nm:col>0.237644363824646</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.530021605138457</nm:col>
+<nm:col>0.124803966017898</nm:col>
+<nm:col>317.663832243256</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>-3.48179647878944</nm:col>
+<nm:col>3.959635463861803E-002</nm:col>
+<nm:col>5.85192859031274</nm:col>
+<nm:col>1629.61334990852</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.491814221080842</nm:col>
+<nm:col>-0.184524830098945</nm:col>
+<nm:col>6.48100589357563</nm:col>
+<nm:col>-21.3333864713912</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>902.440947832931</nm:col>
+</nm:row>
+<nm:row>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+<nm:col>0.000000000000000E+000</nm:col>
+</nm:row>
+</nm:invcovariance>
+</nm:estimation>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2010-03-09T19:32:18.674</nm:stop_datetime>
+</nm:output>

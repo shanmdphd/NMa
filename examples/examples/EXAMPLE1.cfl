@@ -1,0 +1,78 @@
+;/*****************************************************************/
+;/                           NONMEM TEST RUN                      /
+;/                                                                /
+;/                           EXAMPLE1: SHORT RUN                  /
+;/*****************************************************************/
+
+$PROB EXEMPLE1 SHORT RUN
+$INPUT ID TIME THEO DAY AM DV CMT AMT RATE=DROP MDV EVID DOSE AGE WT HT BMI TAD BLQ TRUF OCC ID2 GEN=DROP
+$DATA DATA1.data IGNORE=# IGNORE=(BLQ.EQ.1)
+$SUBROUTINE ADVAN4 TRANS4    ; 2cpt with CL V
+ 
+$PK
+
+IF(AM.EQ.1) PM=0
+IF(AM.EQ.0) PM=1
+
+TVCL = THETA(1)              ; typical value of CL
+TVV2 = THETA(2)              ; typical value of V2
+CL   = TVCL*EXP(ETA(1))      ; indiv value of CL
+V2   = TVV2*EXP(ETA(2))      ; indiv value of V2
+TVV3 = THETA(7)              ; typical value of V3
+TVQ  = THETA(8)              ; typical value of Q 
+V3   = TVV3*EXP(ETA(5))      ; indiv value of V3
+Q    = TVQ*EXP(ETA(6))       ; indiv value of Q
+PMKA = THETA(9)*PM
+KA   = THETA(5)*(1+PMKA)*EXP(ETA(3))  ; indiv value of KA
+ALAG1= THETA(6)*EXP(ETA(4))  ; indiv value of ALAG1
+S2   = V2/1000               ; conversion of AMT(mg) into conc°(ng/mL)
+PMF1 = THETA(10)*PM
+F1   = 1*(1+PMF1)*EXP(ETA(7))
+
+
+$ERROR
+IPRED = F
+IRES = IPRED-DV
+W=(F*F*THETA(3)**2+THETA(4)**2)**0.5   ; mixed error model
+IWRES = IRES/W
+Y=F+W*ERR(1)
+ 
+$THETA (0,200,600)          ; 1. CL (lower bound,ies,upper bound)
+       (0,50,500)           ; 2. V2  (lower bound,ies)
+       (0,0.2,1)            ; 3. PROP
+       0.0001 FIX           ; 4. ADD
+       (0,0.2,1)            ; 5. KA 
+       (0,0.2,1)            ; 6. ALAG1
+       (0,1000,3000)         ; 7. V3
+       (0,50,1000)          ; 8. Q
+       (-2,-0.2,2)           ; 9. PMKA
+       (-2,1,5)           ;10. PMF1
+;#CL V2 PROP ADD KA ALAG1 V3 Q PMKA PMF1
+
+$OMEGA 0.1                  ; variance for ETA(1)CL,ies
+       0.1                  ; variance for ETA(2)V2,ies
+       0.1                  ; variance for ETA(3)KA,ies
+       0 FIX                ; variance for ETA(4)ALAG1,ies
+       0.1                  ; variance for ETA(5)V3,ies
+       0 FIX                  ; variance for ETA(6)Q,ies
+       0.01                ; variance for ETA(7)F1,ies
+;#IIV_CL IIV_V2 IIV_KA IIV_ALAG1 IIV_V3 IIV_Q IIV_F1
+
+$SIGMA 1 FIX               ; variance prop res error ERR(1), ies
+;#ERR_FIX
+
+$EST METHOD=1 INTER MAXEVAL=9999 POSTHOC PRINT=5 NOABORT
+MSFO=EXAMPLE1.msfo
+        
+$COVA                      ; calcul of SE of estimate
+
+$TAB ID AMT TIME IPRED IWRES DV TVCL TVV2 KA ALAG1 TVV3 TVQ PMKA PMF1
+ETA1 ETA2 ETA3 ETA4 ETA5 ETA6 ETA7
+DV PRED RES WRES
+FILE=EXAMPLE1.TAB 
+ONEHEADER NOPRINT
+;#ID AMT TIME IPRED IWRES DV TVCL TVV KA ALAG1  TVV3 TVQ PMKA PMF1
+;#IIV_CL IIV_V2 IIV_KA IIV_ALAG1 IIV_V3 IIV_Q IIV_F1
+;#DV PRED RES WRES
+
+

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2013-09-30T18:27:28.801</nm:start_datetime>
+<nm:control_stream><![CDATA[
+; SSONEDOSE.CTL
+;
+$PROBLEM DOSE SUPERPOSITION WITH STEADY STATE, USING AN SS RECORD.
+; THIS IS AN EXAMPLE OF STEADY STATE WITH MULTIPLE BOLUS  DOSES
+; INTO A TRANSIT COMPARTMENT.
+; COMPARE OUTPUT WITH SSMULTIDOSE.CTL
+$INPUT ID TIME CMT AMT DV II SS
+$DATA ssonedose.dat IGNORE=@
+$SUBROUTINES ADVAN6 TOL=10 TRANS1
+
+$MODEL COMP=ABS; (DEFDOSE)
+       COMP=CENTRAL ;(DEFOBS)
+       COMP=PERI
+$ABBR DECLARE DOWHILE I
+$ABBR DECLARE REAL DOSETIME,DOSE,DELTAT,ABI,DESTOL
+
+$PK
+CALLFL=-2
+DESTOL=10**(-17) ; DES SHOULD COMPUTE MORE SIG. DIGITS THAN THE TOL VALUE
+
+IF (SS == 1 ) THEN  ; SS DOSE RECORD
+DOSETIME=TIME
+DOSE=AMT
+IIVAL=II
+ENDIF
+
+CL = THETA(1)*EXP(ETA(1))
+V2 = THETA(2)*EXP(ETA(2))
+Q  = THETA(3)
+V3 = THETA(4)
+
+K=CL/V2
+S2 =V2
+K23=Q/V2
+K32=Q/V3
+
+;--------ABSORPTION MODEL-----------
+F1=0
+MTT  = THETA(5)*EXP(ETA(4))
+NN   = THETA(6)*EXP(ETA(5))
+BIO  = THETA(7)*EXP(ETA(3))
+KTR  = (NN+1)/MTT
+
+NFAC=SQRT(2*3.1416)*NN**(NN+0.5)*(EXP(-NN))*(1+1/(12*NN))
+KINPT=BIO*KTR**(NN+1)/NFAC
+
+$DES
+; DES ADDS DRUG FROM IMPLIED DOSES GOING BACK IN TIME TILL
+; THE AMOUNT IS NEGLIGIBLE (ABS(IPT) < DESTOL)
+; THE VALUE OF DESTOL WAS SET EXPERIMENTALLY, TO AVOID ERROR MESSAGE
+; NUMERICAL DIFFICULTIES WITH INTEGRATION ROUTINE
+; FROM PREDPP.
+; THE COUNTER I IS USED TO PREVENT A RUNAWAY SITUATION.
+ABI=1
+INPT=0
+DELTAT=T-DOSETIME-IIVAL
+I=1
+DOWHILE (I < 999 .AND. ABI >= DESTOL )
+IPT=0
+; IT IS IMPORTANT TO COMPUTE DELTAT HERE, BEFORE THE IF/ENDIF
+DELTAT=DELTAT+IIVAL
+IF (DELTAT>0) THEN
+IPT=DOSE*DELTAT**NN*EXP(-KTR*DELTAT)
+INPT=INPT+IPT
+ABI=ABS(IPT)
+ENDIF
+I=I+1
+ENDDO
+
+ DADT(1)=KINPT*INPT-KTR*A(1)
+ DADT(2)=KTR*A(1)-K23*A(2)-K*A(2)+K32*A(3)
+ DADT(3)=K23*A(2)-K32*A(3)
+
+$ERROR
+
+Y = F*EXP(EPS(1))
+
+$THETA
+4 ;CL
+3 ;V2
+1 ;Q
+2 ;V3
+10 ;MTT
+5 ;NN
+0.85 ;BIO
+$OMEGA 1 1 1 1 1
+$SIGMA 1
+$TABLE  ID TIME FORMAT=S1PE18.11 FILE=ssonedose.tab
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+
+ (WARNING  26) THE DERIVATIVE OF THE ABSOLUTE VALUE OF A RANDOM VARIABLE IS
+ BEING COMPUTED. IF THE ABSOLUTE VALUE AFFECTS THE VALUE OF THE OBJECTIVE
+ FUNCTION, THE USER SHOULD ENSURE THAT THE RANDOM VARIABLE IS ALWAYS
+ POSITIVE OR ALWAYS NEGATIVE.
+
+ (WARNING  97) A RANDOM QUANTITY IS RAISED TO A POWER. IF THE RESULT AFFECTS
+ THE VALUE OF THE OBJECTIVE FUNCTION, THE USER SHOULD ENSURE THAT THE
+ RANDOM QUANTITY IS NEVER 0 WHEN THE POWER IS < 1.
+
+ (WARNING  99) A RANDOM QUANTITY IS USED AS A POWER. IF THE RESULT AFFECTS
+ THE VALUE OF THE OBJECTIVE FUNCTION, THE USER SHOULD ENSURE THAT THE
+ QUANTITY RAISED TO THE POWER IS NOT 0.
+
+ (DATA WARNING   4) RECORD         2, DATA ITEM   5, CONTENTS:
+ THE DV DATA ITEM IS NULL, BUT THE MDV DATA ITEM IS 0 AND NO $SIMULATION
+ RECORD IS PRESENT.
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.3beta7.0(P)'>
+<nm:license_information><![CDATA[
+License Registered to: IDS NONMEM 7 TEAM
+Expiration Date:     2 JUN 2030
+Current Date:       30 SEP 2013
+Days until program expires :6087
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.3beta7.0(P)
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem1='0' nm:iteration1='0' nm:superproblem2='0' nm:iteration2='0'>
+<nm:problem_title>DOSE SUPERPOSITION WITH STEADY STATE, USING AN SS RECORD.</nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+ DOSE SUPERPOSITION WITH STEADY STATE, USING AN SS RECORD.
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:        2
+ NO. OF DATA ITEMS IN DATA SET:   9
+ ID DATA ITEM IS DATA ITEM NO.:   1
+ DEP VARIABLE IS DATA ITEM NO.:   5
+ MDV DATA ITEM IS DATA ITEM NO.:  9
+0INDICES PASSED TO SUBROUTINE PRED:
+   8   2   4   0   7   6   3   0   0   0   0
+0LABELS FOR DATA ITEMS:
+ ID TIME CMT AMT DV II SS EVID MDV
+0FORMAT FOR DATA:
+ (7E5.0,2F2.0)
+
+ TOT. NO. OF OBS RECS:        1
+ TOT. NO. OF INDIVIDUALS:      1
+0LENGTH OF THETA:   7
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   5
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+   0.4000E+01  0.3000E+01  0.1000E+01  0.2000E+01  0.1000E+02  0.5000E+01  0.8500E+00
+0INITIAL ESTIMATE OF OMEGA:
+ 0.1000E+01
+ 0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.0000E+00   0.1000E+01
+ 0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.1000E+01
+0INITIAL ESTIMATE OF SIGMA:
+ 0.1000E+01
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+ SEED NUMBER (SEED):    11456
+ RANMETHOD:
+ MC SAMPLES (ESEED):    300
+ WRES SQUARE ROOT TYPE:            EIGENVALUE
+0-- TABLE   1 --
+ PRINTED:               YES
+ FOR TABLE FILE,
+ HEADER:                YES
+ FILE TO BE FORWARDED:   NO
+ FORMAT:                S1PE18.11
+ LFORMAT:
+ RFORMAT:
+0USER-CHOSEN ITEMS:
+ ID TIME
+1DOUBLE PRECISION PREDPP VERSION 7.3beta7.0(P)
+
+ GENERAL NONLINEAR KINETICS MODEL (ADVAN6)
+0MODEL SUBROUTINE USER-SUPPLIED - ID NO. 9999
+0MAXIMUM NO. OF BASIC PK PARAMETERS:   7
+0COMPARTMENT ATTRIBUTES
+ COMPT. NO.   FUNCTION   INITIAL    ON/OFF      DOSE      DEFAULT    DEFAULT
+                         STATUS     ALLOWED    ALLOWED    FOR DOSE   FOR OBS.
+    1         ABS          ON         YES        YES        YES        NO
+    2         CENTRAL      ON         YES        YES        NO         YES
+    3         PERI         ON         YES        YES        NO         NO
+    4         OUTPUT       OFF        YES        NO         NO         NO
+0GENERAL STEADY STATE (SS) ROUTINE IS BEING USED
+0NRD VALUE FROM SUBROUTINE TOL:  10
+1
+ ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+ COMPT. NO.                             INDICES
+              SCALE      BIOAVAIL.   ZERO-ORDER  ZERO-ORDER  ABSORB
+                         FRACTION    RATE        DURATION    LAG
+    1            *           9           *           *           *
+    2            8           *           *           *           *
+    3            *           *           *           *           *
+    4            *           -           -           -           -
+             - PARAMETER IS NOT ALLOWED FOR THIS MODEL
+             * PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+               WILL DEFAULT TO ONE IF APPLICABLE
+0ERROR IN LOG Y IS MODELED
+0DATA ITEM INDICES USED BY PRED ARE:
+   EVENT ID DATA ITEM IS DATA ITEM NO.:      8
+   TIME DATA ITEM IS DATA ITEM NO.:          2
+   DOSE AMOUNT DATA ITEM IS DATA ITEM NO.:   4
+   STEADY STATE DATA ITEM IS DATA ITEM NO.:  7
+   INTERVAL DATA ITEM IS DATA ITEM NO.:      6
+   COMPT. NO. DATA ITEM IS DATA ITEM NO.:    3
+
+0PK SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ PK SUBROUTINE CALLED AT NONEVENT (ADDITIONAL AND LAGGED) DOSE TIMES.
+0DURING SIMULATION, ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ OTHERWISE, ERROR SUBROUTINE CALLED ONCE IN THIS PROBLEM.
+0DES SUBROUTINE USES COMPACT STORAGE MODE.
+]]></nm:problem_information>
+<nm:estimation nm:number='1' nm:type='1'>
+<nm:table_series>1</nm:table_series>
+<nm:estimation_method>fo</nm:estimation_method>
+<nm:estimation_title>First Order (Evaluation)</nm:estimation_title>
+<nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
+<nm:final_objective_function>7.47161351539155</nm:final_objective_function>
+<nm:theta>
+<nm:val nm:name='1'>4.00000000000000</nm:val>
+<nm:val nm:name='2'>3.00000000000000</nm:val>
+<nm:val nm:name='3'>1.00000000000000</nm:val>
+<nm:val nm:name='4'>2.00000000000000</nm:val>
+<nm:val nm:name='5'>10.0000000000000</nm:val>
+<nm:val nm:name='6'>5.00000000000000</nm:val>
+<nm:val nm:name='7'>0.850000000000000</nm:val>
+</nm:theta>
+<nm:omega>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omega>
+<nm:sigma>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigma>
+<nm:omegac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='5'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omegac>
+<nm:sigmac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigmac>
+</nm:estimation>
+<nm:table nm:number='1'>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='LINE NO.'>1.00000000000000</nm:col>
+<nm:col nm:cname='ID'>1.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>20.3157755947625</nm:col>
+<nm:col nm:cname='RES'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='WRES'>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='LINE NO.'>2.00000000000000</nm:col>
+<nm:col nm:cname='ID'>1.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>12.0000000000000</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>20.3157755947624</nm:col>
+<nm:col nm:cname='RES'>-20.3157755947624</nm:col>
+<nm:col nm:cname='WRES'>-0.570135010682617</nm:col>
+</nm:row>
+</nm:table>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2013-09-30T18:27:29.379</nm:stop_datetime>
+<nm:total_cputime>0.530</nm:total_cputime>
+</nm:output>

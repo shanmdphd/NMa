@@ -1,0 +1,43 @@
+FILE    FSTREAM                                                                 
+PROB    EHC using MTIME for the flag                                            
+DATA       1   0  37   9   0                                                    
+ITEM       1   4   9  11   1   0   0   0   0   0  14   0   0   0   0            
+INDX       8   3   2   0   0   6   0   0   0   0   7                            
+XVID       0   0   0   0   0                                                    
+LABL                   ID,                DOSE,                TIME             
+                       CP,                  WT,                  II             
+                     ADDL,                EVID,                 MDV             
+     ,,                                                                         
+     ,,                                                                         
+     ,,                                                                         
+     ,                  A1,                  A2                                 
+                       A3,                  A4                                  
+LBW1 IWRS,IPRD,IRS                                                              
+     NPRED,NRES,NWRES                                                           
+     NIWRES,NIPRED,NIRES                                                        
+     CPRED,CRES,CWRES                                                           
+     CIWRES,CIPRED,CIRES                                                        
+     PREDI,RESI,WRESI                                                           
+     IWRESI,IPREDI,IRESI                                                        
+     CPREDI,CRESI,CWRESI                                                        
+     CIWRESI,CIPREDI,CIRESI                                                     
+     EPRED,ERES,EWRES                                                           
+     EIWRES,EIPRED,EIRES                                                        
+     NPDE,ECWRES,NPD                                                            
+     OBJI                                                                       
+FORM                                                                            
+(8E7.0,1F2.0)                                                                   
+STRC       9   7   1   0   0   1   0   1   0                                    
+THCN       0   0   0   0                                                        
+THTA     1.000000000000000E+00, 1.000000000000000E+00, 1.000000000000000E+00    
+         1.000000000000000E+01, 1.000000000000000E+00, 1.000000000000000E+00    
+         1.000000000000000E+00, 3.000000000000000E+00, 5.000000000000000E+00    
+DIAG     1.000000000000000E+00, 1.000000000000000E+00, 1.000000000000000E+00    
+         1.000000000000000E+00, 1.000000000000000E+00, 1.000000000000000E+00    
+         1.000000000000000E+00                                                  
+DIAG     4.000000000000000E-01                                                  
+TABL       1   1                                                                
+TABL   1   5     3 0    23 0    24 0    25 0    26 0                            
+           0   1   0   0   1           0           0             0              
+FRML    
+FRMR    

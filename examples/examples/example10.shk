@@ -1,0 +1,72 @@
+TABLE NO.     1: Iterative Two Stage (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1  5.49843E-09  1.91086E-08  1.60563E-08
+            2            1  1.43827E-02  1.56057E-02  1.69426E-02
+            3            1  1.00000E+00  9.99999E-01  9.99999E-01
+            4            1  1.64520E+01  2.81667E+00  1.61671E+00
+            5            1  1.28732E+01  0.00000E+00  0.00000E+00
+            6            1  1.64520E+01  2.81667E+00  1.61670E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  3.01973E+01  5.55400E+00  3.20728E+00
+            9            1  3.01973E+01  5.55400E+00  3.20727E+00
+           10            1  2.40892E+01  0.00000E+00  0.00000E+00
+TABLE NO.     2: Importance Sampling (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1 -1.27592E-03 -4.49021E-04 -1.67727E-04
+            2            1  1.48489E-02  1.56359E-02  1.69157E-02
+            3            1  9.31525E-01  9.77090E-01  9.92089E-01
+            4            1  1.71846E+01  2.91447E+00  1.57696E+00
+            5            1  1.35297E+01  0.00000E+00  0.00000E+00
+            6            1  1.72780E+01  2.84921E+00  1.65234E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  3.14161E+01  5.74400E+00  3.12905E+00
+            9            1  3.15708E+01  5.61725E+00  3.27738E+00
+           10            1  2.52289E+01  0.00000E+00  0.00000E+00
+TABLE NO.     3: Objective Function Evaluation by Importance Sampling (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1 -2.88958E-04 -2.72031E-04 -1.24711E-04
+            2            1  1.48200E-02  1.56228E-02  1.69100E-02
+            3            1  9.84444E-01  9.86108E-01  9.94116E-01
+            4            1  1.73456E+01  2.99598E+00  1.61039E+00
+            5            1  1.35263E+01  0.00000E+00  0.00000E+00
+            6            1  1.73295E+01  2.85298E+00  1.64837E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  3.16824E+01  5.90220E+00  3.19485E+00
+            9            1  3.16559E+01  5.62456E+00  3.26956E+00
+           10            1  2.52230E+01  0.00000E+00  0.00000E+00
+TABLE NO.     4: Stochastic Approximation Expectation-Maximization (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1 -1.66327E-06 -1.34452E-06 -1.33766E-06
+            2            1  1.48482E-02  1.56209E-02  1.69109E-02
+            3            1  9.99911E-01  9.99931E-01  9.99937E-01
+            4            1  1.71780E+01  2.85875E+00  1.64078E+00
+            5            1  1.35182E+01  0.00000E+00  0.00000E+00
+            6            1  1.71774E+01  2.85866E+00  1.64082E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  3.14052E+01  5.63578E+00  3.25464E+00
+            9            1  3.14042E+01  5.63560E+00  3.25473E+00
+           10            1  2.52089E+01  0.00000E+00  0.00000E+00
+TABLE NO.     5: Objective Function Evaluation by Importance Sampling (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1 -5.93957E-05 -2.50398E-05  2.04195E-05
+            2            1  1.48183E-02  1.56196E-02  1.69108E-02
+            3            1  9.96802E-01  9.98721E-01  9.99037E-01
+            4            1  1.73449E+01  2.86697E+00  1.64152E+00
+            5            1  1.35004E+01  0.00000E+00  0.00000E+00
+            6            1  1.72919E+01  2.86022E+00  1.64642E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  3.16813E+01  5.65174E+00  3.25609E+00
+            9            1  3.15937E+01  5.63863E+00  3.26573E+00
+           10            1  2.51782E+01  0.00000E+00  0.00000E+00
+TABLE NO.     7: Laplacian Conditional Estimation with Interaction (No Prior): Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1 -2.84231E-02  2.28892E-03  5.50539E-03
+            2            1  1.45196E-02  1.56295E-02  1.69201E-02
+            3            1  5.02807E-02  8.83567E-01  7.44896E-01
+            4            1  1.61252E+01  2.62839E+00  1.39685E+00
+            5            1  1.29814E+01  0.00000E+00  0.00000E+00
+            6            1  1.68369E+01  2.82398E+00  1.63060E+00
+            7            1  2.88000E+02  2.88000E+02  2.88000E+02
+            8            1  2.96501E+01  5.18770E+00  2.77420E+00
+            9            1  3.08389E+01  5.56821E+00  3.23460E+00
+           10            1  2.42777E+01  0.00000E+00  0.00000E+00

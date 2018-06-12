@@ -1,0 +1,600 @@
+      MODULE NMPRD4P
+      USE SIZES, ONLY: DPSIZE
+      USE NMPRD4,ONLY: VRBL
+      IMPLICIT NONE
+      SAVE
+      REAL(KIND=DPSIZE), DIMENSION (:),POINTER ::COM
+      REAL(KIND=DPSIZE), POINTER ::inter,KA,KE,CL,S2,K41,K23,K32,K1G
+      REAL(KIND=DPSIZE), POINTER ::FLAG,A1,A2,A3,A4,Y,A00032,A00034
+      REAL(KIND=DPSIZE), POINTER ::A00036,A00038,A00040,A00042,A00044
+      REAL(KIND=DPSIZE), POINTER ::A00054,A00053,A00043,A00048,A00060
+      REAL(KIND=DPSIZE), POINTER ::A00062,A00064,A00066,A00068,A00070
+      REAL(KIND=DPSIZE), POINTER ::A00072,A00074,A00075,A00076,A00077
+      REAL(KIND=DPSIZE), POINTER ::A00078,A00079,A00080,A00081,A00082
+      REAL(KIND=DPSIZE), POINTER ::A00083,A00084,A00085,A00086,E00006
+      REAL(KIND=DPSIZE), POINTER ::E00007,F00081,F00082,E00011,E00015
+      REAL(KIND=DPSIZE), POINTER ::E00014,F00083,F00084,F00085,F00086
+      REAL(KIND=DPSIZE), POINTER ::F00087,E00021,E00022,F00088,F00089
+      REAL(KIND=DPSIZE), POINTER ::E00025,E00026,F00091,F00090,D00031
+      REAL(KIND=DPSIZE), POINTER ::D00032,D00033,D00034,D00035,C00031
+      CONTAINS
+      SUBROUTINE ASSOCNMPRD4
+      COM=>VRBL
+      inter=>COM(00001);KA=>COM(00002);KE=>COM(00003);CL=>COM(00004)
+      S2=>COM(00005);K41=>COM(00006);K23=>COM(00007);K32=>COM(00008)
+      K1G=>COM(00009);FLAG=>COM(00010);A1=>COM(00011);A2=>COM(00012)
+      A3=>COM(00013);A4=>COM(00014);Y=>COM(00015);A00032=>COM(00016)
+      A00034=>COM(00017);A00036=>COM(00018);A00038=>COM(00019)
+      A00040=>COM(00020);A00042=>COM(00021);A00044=>COM(00022)
+      A00054=>COM(00023);A00053=>COM(00024);A00043=>COM(00025)
+      A00048=>COM(00026);A00060=>COM(00027);A00062=>COM(00028)
+      A00064=>COM(00029);A00066=>COM(00030);A00068=>COM(00031)
+      A00070=>COM(00032);A00072=>COM(00033);A00074=>COM(00034)
+      A00075=>COM(00035);A00076=>COM(00036);A00077=>COM(00037)
+      A00078=>COM(00038);A00079=>COM(00039);A00080=>COM(00040)
+      A00081=>COM(00041);A00082=>COM(00042);A00083=>COM(00043)
+      A00084=>COM(00044);A00085=>COM(00045);A00086=>COM(00046)
+      E00006=>COM(00047);E00007=>COM(00048);F00081=>COM(00049)
+      F00082=>COM(00050);E00011=>COM(00051);E00015=>COM(00052)
+      E00014=>COM(00053);F00083=>COM(00054);F00084=>COM(00055)
+      F00085=>COM(00056);F00086=>COM(00057);F00087=>COM(00058)
+      E00021=>COM(00059);E00022=>COM(00060);F00088=>COM(00061)
+      F00089=>COM(00062);E00025=>COM(00063);E00026=>COM(00064)
+      F00091=>COM(00065);F00090=>COM(00066);D00031=>COM(00067)
+      D00032=>COM(00068);D00033=>COM(00069);D00034=>COM(00070)
+      D00035=>COM(00071);C00031=>COM(00072)
+      END SUBROUTINE ASSOCNMPRD4
+      END MODULE NMPRD4P
+      SUBROUTINE MODEL (IDNO,NCM,NPAR,IR,IATT,LINK)                           
+      USE PRMOD_CHAR, ONLY: NAME                                              
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      INTEGER(KIND=ISIZE) :: IDNO,NCM,NPAR,IR,IATT,LINK,I,J                   
+      DIMENSION :: IATT(IR,*),LINK(IR,*)                                      
+      SAVE
+      INTEGER(KIND=ISIZE), DIMENSION (4,7) :: MOD
+      CHARACTER(LEN=8), DIMENSION(4) :: CMOD
+      DATA MOD/&                                                              
+      0,1,1,1,&
+      1,0,1,1,&
+      1,1,1,1,&
+      0,1,0,0,&
+      1,0,0,0,&
+      0,0,0,0,& 
+      0,0,0,0/
+      DATA CMOD/ &
+      'DEPOT   ',&
+      'CENTRAL ',&
+      'PERIPH  ',&
+      'GALL    '/
+      FORALL (I=1:4) NAME(I)=CMOD(I)
+      FORALL (I=1:4,J=1:7) IATT(I,J)=MOD(I,J)
+      IDNO=9999                                                               
+      NCM=  4
+      NPAR=006
+      RETURN
+      END
+      SUBROUTINE PK(ICALL,IDEF,THETA,IREV,EVTREC,NVNT,INDXS,IRGG,GG,NETAS)      
+      USE NMPRD4P
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      USE NMPRD_REAL,ONLY: ETA,EPS                                            
+      USE NMPRD_INT, ONLY: MSEC=>ISECDER,MFIRST=>IFRSTDER,COMACT,COMSAV,IFIRSTEM
+      USE NMPRD_INT, ONLY: MDVRES,ETASXI,NPDE_MODE
+      USE NMPRD_REAL, ONLY: DV_LOQ
+      USE NMPRD_INT, ONLY: IQUIT
+      USE PROCM_INT, ONLY: NEWIND=>PNEWIF                                       
+      USE PROCM_REAL,ONLY: DOSTIM,DDOST,D2DOST
+      USE PROCM_REAL,ONLY: DOSREC
+      USE NMBAYES_REAL, ONLY: LDF                                             
+      USE PROCM_INT, ONLY: MNOW=>MTNOW,MPAST=>MTPAST,MNEXT=>MTNEXT      
+      USE PKERR_REAL,ONLY: MTIME                                        
+      USE PRMOD_INT, ONLY: MTDIFF                                             
+      IMPLICIT REAL(KIND=DPSIZE) (A-Z)                                          
+      REAL(KIND=DPSIZE) :: EVTREC                                               
+      SAVE
+      INTEGER(KIND=ISIZE) :: FIRSTEM
+      INTEGER(KIND=ISIZE) :: ICALL,IDEF,IREV,NVNT,INDXS,IRGG,NETAS              
+      DIMENSION :: IDEF(7,*),THETA(*),EVTREC(IREV,*),INDXS(*),GG(IRGG,GPKD+1,*) 
+      FIRSTEM=IFIRSTEM
+      IF (ICALL <= 1) THEN                                                      
+      CALL ASSOCNMPRD4
+      IDEF(  1,001)= -9
+      IDEF(  1,002)= -2
+      IDEF(  1,003)=  0
+      IDEF(  1,004)=  0
+      IDEF(  2,003)=  8
+      IDEF(  2,004)=  9
+      IDEF(  3,002)=  7
+      CALL GETETA(ETA)                                                          
+      IF (IQUIT == 1) RETURN                                                    
+      RETURN                                                                    
+      ENDIF                                                                     
+      IF (NEWIND /= 2) THEN
+      IF (ICALL == 4) THEN
+      CALL SIMETA(ETA)
+      ELSE
+      CALL GETETA(ETA)
+      ENDIF
+      IF (IQUIT == 1) RETURN
+      ENDIF
+ !  level            0
+      IF (DOSTIM == 0) THEN
+      WT=EVTREC(NVNT,005)
+      II=EVTREC(NVNT,006)
+      ELSE
+      WT=EVTREC(NVNT,005)
+      II=DOSREC(006)
+      ENDIF
+      IF(II >  0.D0)THEN 
+      inter=II 
+      ENDIF 
+      B00004=DEXP(ETA(001)) 
+      KA=THETA(001)*B00004 
+      B00005=DEXP(ETA(002)) 
+      KE=THETA(002)*B00005 
+      B00006=DEXP(ETA(003)) 
+      CL=THETA(003)*WT*B00006 
+      S2=CL/KE/WT 
+      B00016=DEXP(ETA(004)) 
+      K41=THETA(004)*B00016 
+      B00017=DEXP(ETA(005)) 
+      K23=THETA(005)*B00017 
+      B00018=DEXP(ETA(006)) 
+      K32=THETA(006)*B00018 
+      B00019=DEXP(ETA(007)) 
+      K1G=THETA(007)*B00019 
+      IF(NEWIND <= 1.D0)THEN 
+      MTIME(001)=THETA(008) 
+      MTIME(002)=MTIME(001)+THETA(009) 
+      ELSE 
+      MTIME(001)=MTIME(001) 
+      MTIME(002)=MTIME(002) 
+      ENDIF 
+      IF(MNOW == 2)THEN 
+      MTIME(001)=MTIME(001)+inter 
+      MTIME(002)=MTIME(002)+inter 
+      MTDIFF=1 
+      ENDIF 
+      P00001=KA 
+      P00002=K41 
+      P00003=KE 
+      P00004=K23 
+      P00005=K32 
+      P00006=K1G 
+      IF (FIRSTEM == 1) THEN
+!                      A00032 = DERIVATIVE OF KA W.R.T. ETA(001)
+      A00032=THETA(001)*B00004 
+!                      A00036 = DERIVATIVE OF KE W.R.T. ETA(002)
+      A00036=THETA(002)*B00005 
+      B00007=THETA(003)*WT 
+!                      A00040 = DERIVATIVE OF CL W.R.T. ETA(003)
+      A00040=B00007*B00006 
+      B00008=1.D0/KE/WT 
+!                      A00043 = DERIVATIVE OF S2 W.R.T. ETA(003)
+      A00043=B00008*A00040 
+      B00009=-CL/KE/KE/WT 
+!                      A00044 = DERIVATIVE OF S2 W.R.T. ETA(002)
+      A00044=B00009*A00036 
+!                      A00060 = DERIVATIVE OF K41 W.R.T. ETA(004)
+      A00060=THETA(004)*B00016 
+!                      A00064 = DERIVATIVE OF K23 W.R.T. ETA(005)
+      A00064=THETA(005)*B00017 
+!                      A00068 = DERIVATIVE OF K32 W.R.T. ETA(006)
+      A00068=THETA(006)*B00018 
+!                      A00072 = DERIVATIVE OF K1G W.R.T. ETA(007)
+      A00072=THETA(007)*B00019 
+!                      A00075 = DERIVATIVE OF P00001 W.R.T. ETA(001)
+      A00075=A00032 
+!                      A00077 = DERIVATIVE OF P00002 W.R.T. ETA(004)
+      A00077=A00060 
+!                      A00079 = DERIVATIVE OF P00003 W.R.T. ETA(002)
+      A00079=A00036 
+!                      A00081 = DERIVATIVE OF P00004 W.R.T. ETA(005)
+      A00081=A00064 
+!                      A00083 = DERIVATIVE OF P00005 W.R.T. ETA(006)
+      A00083=A00068 
+!                      A00085 = DERIVATIVE OF P00006 W.R.T. ETA(007)
+      A00085=A00072 
+      GG(001,1,1)=P00001
+      GG(001,002,1)=A00075
+      GG(002,1,1)=P00002
+      GG(002,005,1)=A00077
+      GG(003,1,1)=P00003
+      GG(003,003,1)=A00079
+      GG(004,1,1)=P00004
+      GG(004,006,1)=A00081
+      GG(005,1,1)=P00005
+      GG(005,007,1)=A00083
+      GG(006,1,1)=P00006
+      GG(006,008,1)=A00085
+      GG(007,1,1)=S2
+      GG(007,003,1)=A00044
+      GG(007,004,1)=A00043
+      GG(008,1,1)=MTIME(001)
+      GG(009,1,1)=MTIME(002)
+      ELSE
+      GG(001,1,1)=P00001
+      GG(002,1,1)=P00002
+      GG(003,1,1)=P00003
+      GG(004,1,1)=P00004
+      GG(005,1,1)=P00005
+      GG(006,1,1)=P00006
+      GG(007,1,1)=S2
+      GG(008,1,1)=MTIME(001)
+      GG(009,1,1)=MTIME(002)
+      ENDIF
+      IF (MSEC == 1) THEN
+!                      A00034 = DERIVATIVE OF A00032 W.R.T. ETA(001)
+      A00034=THETA(001)*B00004 
+!                      A00038 = DERIVATIVE OF A00036 W.R.T. ETA(002)
+      A00038=THETA(002)*B00005 
+!                      A00042 = DERIVATIVE OF A00040 W.R.T. ETA(003)
+      A00042=B00007*B00006 
+      B00012=-1.D0/KE/KE/WT 
+!                      A00047 = DERIVATIVE OF B00008 W.R.T. ETA(002)
+      A00047=B00012*A00036 
+!                      A00048 = DERIVATIVE OF A00043 W.R.T. ETA(003)
+      A00048=B00008*A00042 
+      B00013=-1.D0/KE/KE/WT 
+!                      A00049 = DERIVATIVE OF B00009 W.R.T. ETA(003)
+      A00049=B00013*A00040 
+      B00014=CL/KE/KE/KE/WT 
+!                      A00050 = DERIVATIVE OF B00009 W.R.T. ETA(002)
+      A00050=B00014*A00036 
+      B00015=CL/KE/KE/KE/WT 
+!                      A00051 = DERIVATIVE OF B00009 W.R.T. ETA(002)
+      A00051=B00015*A00036+A00050 
+!                      A00052 = DERIVATIVE OF A00044 W.R.T. ETA(002)
+      A00052=A00036*A00051 
+!                      A00053 = DERIVATIVE OF A00044 W.R.T. ETA(003)
+      A00053=A00036*A00049 
+!                      A00054 = DERIVATIVE OF A00044 W.R.T. ETA(002)
+      A00054=B00009*A00038+A00052 
+!                      A00062 = DERIVATIVE OF A00060 W.R.T. ETA(004)
+      A00062=THETA(004)*B00016 
+!                      A00066 = DERIVATIVE OF A00064 W.R.T. ETA(005)
+      A00066=THETA(005)*B00017 
+!                      A00070 = DERIVATIVE OF A00068 W.R.T. ETA(006)
+      A00070=THETA(006)*B00018 
+!                      A00074 = DERIVATIVE OF A00072 W.R.T. ETA(007)
+      A00074=THETA(007)*B00019 
+!                      A00076 = DERIVATIVE OF A00075 W.R.T. ETA(001)
+      A00076=A00034 
+!                      A00078 = DERIVATIVE OF A00077 W.R.T. ETA(004)
+      A00078=A00062 
+!                      A00080 = DERIVATIVE OF A00079 W.R.T. ETA(002)
+      A00080=A00038 
+!                      A00082 = DERIVATIVE OF A00081 W.R.T. ETA(005)
+      A00082=A00066 
+!                      A00084 = DERIVATIVE OF A00083 W.R.T. ETA(006)
+      A00084=A00070 
+!                      A00086 = DERIVATIVE OF A00085 W.R.T. ETA(007)
+      A00086=A00074 
+      GG(001,002,002)=A00076
+      GG(002,005,005)=A00078
+      GG(003,003,003)=A00080
+      GG(004,006,006)=A00082
+      GG(005,007,007)=A00084
+      GG(006,008,008)=A00086
+      GG(007,003,003)=A00054
+      GG(007,004,003)=A00053
+      GG(007,004,004)=A00048
+      ENDIF
+      RETURN
+      END
+      SUBROUTINE ERROR (ICALL,IDEF,THETA,IREV,EVTREC,NVNT,INDXS,F,G,HH)       
+      USE NMPRD4P
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      USE NMPRD_REAL,ONLY: ETA,EPS                                            
+      USE NMPRD_INT, ONLY: MSEC=>ISECDER,MFIRST=>IFRSTDER,IQUIT,IFIRSTEM
+      USE NMPRD_INT, ONLY: MDVRES,ETASXI,NPDE_MODE
+      USE NMPRD_REAL, ONLY: DV_LOQ
+      USE NMPRD_INT, ONLY: NEWL2
+      USE PROCM_INT, ONLY: NEWIND=>PNEWIF                                       
+      USE PROCM_REAL,ONLY: TSTATE
+      USE PROCM_REAL,ONLY: A=>AMNT,DAETA,D2AETA
+      IMPLICIT REAL(KIND=DPSIZE) (A-Z)                                        
+      REAL(KIND=DPSIZE) :: EVTREC                                             
+      SAVE
+      INTEGER(KIND=ISIZE) :: ICALL,IDEF,IREV,NVNT,INDXS                       
+      DIMENSION :: IDEF(*),THETA(*),EVTREC(IREV,*),INDXS(*)                   
+      REAL(KIND=DPSIZE) :: G(GERD,*),HH(HERD,*)                               
+      INTEGER(KIND=ISIZE) :: FIRSTEM
+      FIRSTEM=IFIRSTEM
+      IF (ICALL <= 1) THEN                                                    
+      CALL ASSOCNMPRD4
+      IDEF(2)=-1
+      IDEF(3)=000
+      RETURN
+      ENDIF
+      IF (ICALL == 4) THEN
+      IF (NEWL2 == 1) THEN
+      CALL SIMEPS(EPS)
+      IF (IQUIT == 1) RETURN
+      ENDIF
+      ENDIF
+ !  level            0
+      A1=A(1) 
+      A2=A(2) 
+      A3=A(3) 
+      A4=A(4) 
+      Y=F+EPS(001) 
+!                      C00031 = DERIVATIVE OF Y W.R.T. EPS(001)
+      C00031=1.D0 
+      IF (FIRSTEM == 1) THEN !1
+      ENDIF !1
+      HH(001,1)=C00031
+      F=Y
+      RETURN
+      END
+      SUBROUTINE TOL(NRD)
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      DIMENSION :: NRD(*)
+      INTEGER(KIND=ISIZE) :: NRD
+      NRD(1)=6 
+      CALL TOLC(NRD(1))
+      RETURN
+      END
+      SUBROUTINE DES (A,P,T,DADT,IR,DA,DP,DT)                                 
+      USE NMPRD4P
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      USE NMPRD_INT, ONLY: IERPRD,NETEXT,IQUIT                                
+      USE NMPRD_CHAR,ONLY: ETEXT                                              
+      USE NMPRD_INT, ONLY: MSEC=>ISECDER,MFIRST=>IFRSTDER,IFIRSTEM
+      USE NMPRD_INT, ONLY: MDVRES,ETASXI,NPDE_MODE
+      USE NMPRD_REAL, ONLY: DV_LOQ
+      USE PRMOD_INT, ONLY: ICALL=>ICALLD,IDEFD,IDEFA
+      USE PROCM_INT, ONLY: MNOW=>MTNOW,MPAST=>MTPAST,MNEXT=>MTNEXT      
+      USE PKERR_REAL,ONLY: MTIME                                        
+      USE PRMOD_INT, ONLY: MTDIFF                                             
+      IMPLICIT REAL(KIND=DPSIZE) (A-Z)                                        
+      SAVE
+      INTEGER(KIND=ISIZE) :: IR                                               
+      DIMENSION :: A(*),P(*),DADT(*),DA(IR,*),DP(IR,*),DT(*)                  
+      INTEGER(KIND=ISIZE) :: FIRSTEM
+      FIRSTEM=IFIRSTEM
+      IF (ICALL == 1) THEN
+      CALL ASSOCNMPRD4
+      IDEFD(1)=  0
+      IDEFD(2)=0
+      DA(   1,1)=0014280    
+      DA(   2,1)=0014637    
+      DA(   3,1)=0028441    
+      DA(   4,1)=0028560    
+      DA(   5,1)=0028679    
+      DA(   6,1)=0042721    
+      DA(   7,1)=0042840    
+      DA(   8,1)=0056882    
+      DA(   9,1)=0057120    
+      DA(  10,1)=0014311    
+      DA(  11,1)=0028472    
+      DA(  12,1)=0028593    
+      DA(  13,1)=0028594    
+      DA(  14,1)=0028596    
+      DA(  15,1)=0042755    
+      DA(  16,1)=0056918    
+      DA(  17,1)=0028714    
+      DA(  18,1)=0042875    
+      DA(  19,1)=0014669    
+      DA(  20,1)=0057152    
+      DA(  21,1)=0
+      DP(   1,1)=0014280    
+      DP(   2,1)=0014399    
+      DP(   3,1)=0028441    
+      DP(   4,1)=0028679    
+      DP(   5,1)=0028798    
+      DP(   6,1)=0028917    
+      DP(   7,1)=0029036    
+      DP(   8,1)=0042959    
+      DP(   9,1)=0043078    
+      DP(  10,1)=0056882    
+      DP(  11,1)=0057358    
+      DP(  12,1)=0
+      DT(   1)=0
+      RETURN
+      ENDIF
+ !  level            0
+ !  level            0
+      FLAG=MPAST(001)-MPAST(002) 
+      DADT(1)=-P(001)*A(1)+P(002)*A(4)*FLAG 
+      DADT(2)=P(001)*A(1)-P(003)*A(2)-P(004)*A(2)+P(005)*A(3)-P(006)* &
+      A(2) 
+      DADT(3)=P(004)*A(2)-P(005)*A(3) 
+      DADT(4)=P(006)*A(2)-P(002)*A(4)*FLAG 
+      IF (FIRSTEM == 1) THEN ! 1
+!                      E00006 = DERIVATIVE OF DADT(1) W.R.T. A(001)
+      E00006=-P(001) 
+      B00001=P(002)*FLAG 
+!                      E00007 = DERIVATIVE OF DADT(1) W.R.T. A(004)
+      E00007=B00001 
+!                      F00081 = DERIVATIVE OF DADT(1) W.R.T. P(001)
+      F00081=-A(1) 
+      B00003=A(4)*FLAG 
+!                      F00082 = DERIVATIVE OF DADT(1) W.R.T. P(002)
+      F00082=B00003 
+!                      E00011 = DERIVATIVE OF DADT(2) W.R.T. A(001)
+      E00011=P(001) 
+!                      E00012 = DERIVATIVE OF DADT(2) W.R.T. A(002)
+      E00012=-P(003) 
+!                      E00013 = DERIVATIVE OF DADT(2) W.R.T. A(002)
+      E00013=-P(004)+E00012 
+!                      E00014 = DERIVATIVE OF DADT(2) W.R.T. A(003)
+      E00014=P(005) 
+!                      E00015 = DERIVATIVE OF DADT(2) W.R.T. A(002)
+      E00015=-P(006)+E00013 
+!                      F00083 = DERIVATIVE OF DADT(2) W.R.T. P(001)
+      F00083=A(1) 
+!                      F00084 = DERIVATIVE OF DADT(2) W.R.T. P(003)
+      F00084=-A(2) 
+!                      F00085 = DERIVATIVE OF DADT(2) W.R.T. P(004)
+      F00085=-A(2) 
+!                      F00086 = DERIVATIVE OF DADT(2) W.R.T. P(005)
+      F00086=A(3) 
+!                      F00087 = DERIVATIVE OF DADT(2) W.R.T. P(006)
+      F00087=-A(2) 
+!                      E00021 = DERIVATIVE OF DADT(3) W.R.T. A(002)
+      E00021=P(004) 
+!                      E00022 = DERIVATIVE OF DADT(3) W.R.T. A(003)
+      E00022=-P(005) 
+!                      F00088 = DERIVATIVE OF DADT(3) W.R.T. P(004)
+      F00088=A(2) 
+!                      F00089 = DERIVATIVE OF DADT(3) W.R.T. P(005)
+      F00089=-A(3) 
+!                      E00025 = DERIVATIVE OF DADT(4) W.R.T. A(002)
+      E00025=P(006) 
+      B00005=-P(002)*FLAG 
+!                      E00026 = DERIVATIVE OF DADT(4) W.R.T. A(004)
+      E00026=B00005 
+!                      F00090 = DERIVATIVE OF DADT(4) W.R.T. P(006)
+      F00090=A(2) 
+      B00007=-A(4)*FLAG 
+!                      F00091 = DERIVATIVE OF DADT(4) W.R.T. P(002)
+      F00091=B00007 
+      ENDIF !1
+      IF (MSEC == 1) THEN 
+!                      E00008 = DERIVATIVE OF F00081 W.R.T. A(001)
+      E00008=-1.D0 
+!                      E00010 = DERIVATIVE OF F00082 W.R.T. A(004)
+      E00010=FLAG 
+!                      E00016 = DERIVATIVE OF F00083 W.R.T. A(001)
+      E00016=1.D0 
+!                      E00017 = DERIVATIVE OF F00084 W.R.T. A(002)
+      E00017=-1.D0 
+!                      E00018 = DERIVATIVE OF F00085 W.R.T. A(002)
+      E00018=-1.D0 
+!                      E00019 = DERIVATIVE OF F00086 W.R.T. A(003)
+      E00019=1.D0 
+!                      E00020 = DERIVATIVE OF F00087 W.R.T. A(002)
+      E00020=-1.D0 
+!                      E00023 = DERIVATIVE OF F00088 W.R.T. A(002)
+      E00023=1.D0 
+!                      E00024 = DERIVATIVE OF F00089 W.R.T. A(003)
+      E00024=-1.D0 
+!                      E00027 = DERIVATIVE OF F00090 W.R.T. A(002)
+      E00027=1.D0 
+!                      E00028 = DERIVATIVE OF B00007 W.R.T. A(004)
+      E00028=-FLAG 
+!                      E00029 = DERIVATIVE OF F00091 W.R.T. A(004)
+      E00029=E00028 
+      ENDIF !msec
+      IF (FIRSTEM == 1) THEN !2
+      DA(   1,1)=E00006
+      DA(   2,1)=E00007
+      DA(   3,1)=E00011
+      DA(   4,1)=E00015
+      DA(   5,1)=E00014
+      DA(   6,1)=E00021
+      DA(   7,1)=E00022
+      DA(   8,1)=E00025
+      DA(   9,1)=E00026
+      DP(   1,1)=F00081
+      DP(   2,1)=F00082
+      DP(   3,1)=F00083
+      DP(   4,1)=F00084
+      DP(   5,1)=F00085
+      DP(   6,1)=F00086
+      DP(   7,1)=F00087
+      DP(   8,1)=F00088
+      DP(   9,1)=F00089
+      DP(  10,1)=F00091
+      DP(  11,1)=F00090
+      ENDIF !2
+      IF (MSEC == 1) THEN
+      DA(  10,1)=E00008
+      DA(  11,1)=E00016
+      DA(  12,1)=E00017
+      DA(  13,1)=E00018
+      DA(  14,1)=E00020
+      DA(  15,1)=E00023
+      DA(  16,1)=E00027
+      DA(  17,1)=E00019
+      DA(  18,1)=E00024
+      DA(  19,1)=E00010
+      DA(  20,1)=E00029
+      ENDIF
+      RETURN
+      END
+      SUBROUTINE FSIZESR(NAME_FSIZES,F_SIZES)
+      USE SIZES, ONLY: ISIZE
+      INTEGER(KIND=ISIZE), DIMENSION(*) :: F_SIZES
+      CHARACTER(LEN=*),    DIMENSION(*) :: NAME_FSIZES
+      NAME_FSIZES(01)='LTH'; F_SIZES(01)=9
+      NAME_FSIZES(02)='LVR'; F_SIZES(02)=8
+      NAME_FSIZES(03)='LVR2'; F_SIZES(03)=0
+      NAME_FSIZES(04)='LPAR'; F_SIZES(04)=38
+      NAME_FSIZES(05)='LPAR3'; F_SIZES(05)=0
+      NAME_FSIZES(06)='NO'; F_SIZES(06)=0
+      NAME_FSIZES(07)='MMX'; F_SIZES(07)=1
+      NAME_FSIZES(08)='LNP4'; F_SIZES(08)=0
+      NAME_FSIZES(09)='LSUPP'; F_SIZES(09)=1
+      NAME_FSIZES(10)='LIM7'; F_SIZES(10)=0
+      NAME_FSIZES(11)='LWS3'; F_SIZES(11)=0
+      NAME_FSIZES(12)='MAXIDS'; F_SIZES(12)=1
+      NAME_FSIZES(13)='LIM1'; F_SIZES(13)=0
+      NAME_FSIZES(14)='LIM2'; F_SIZES(14)=0
+      NAME_FSIZES(15)='LIM3'; F_SIZES(15)=0
+      NAME_FSIZES(16)='LIM4'; F_SIZES(16)=0
+      NAME_FSIZES(17)='LIM5'; F_SIZES(17)=0
+      NAME_FSIZES(18)='LIM6'; F_SIZES(18)=0
+      NAME_FSIZES(19)='LIM8'; F_SIZES(19)=0
+      NAME_FSIZES(20)='LIM11'; F_SIZES(20)=0
+      NAME_FSIZES(21)='LIM13'; F_SIZES(21)=0
+      NAME_FSIZES(22)='LIM15'; F_SIZES(22)=0
+      NAME_FSIZES(23)='LIM16'; F_SIZES(23)=0
+      NAME_FSIZES(24)='MAXRECID'; F_SIZES(24)=200
+      NAME_FSIZES(25)='PC'; F_SIZES(25)=30
+      NAME_FSIZES(26)='PCT'; F_SIZES(26)=30
+      NAME_FSIZES(27)='PIR'; F_SIZES(27)=700
+      NAME_FSIZES(28)='PD'; F_SIZES(28)=50
+      NAME_FSIZES(29)='PAL'; F_SIZES(29)=50
+      NAME_FSIZES(30)='MAXFCN'; F_SIZES(30)=1000000
+      NAME_FSIZES(31)='MAXIC'; F_SIZES(31)=90
+      NAME_FSIZES(32)='PG'; F_SIZES(32)=80
+      NAME_FSIZES(33)='NPOPMIXMAX'; F_SIZES(33)=0
+      NAME_FSIZES(34)='MAXOMEG'; F_SIZES(34)=7
+      NAME_FSIZES(35)='MAXPTHETA'; F_SIZES(35)=10
+      NAME_FSIZES(36)='MAXITER'; F_SIZES(36)=20
+      NAME_FSIZES(37)='ISAMPLEMAX'; F_SIZES(37)=0
+      NAME_FSIZES(38)='DIMTMP'; F_SIZES(38)=0
+      NAME_FSIZES(39)='DIMCNS'; F_SIZES(39)=0
+      NAME_FSIZES(40)='DIMNEW'; F_SIZES(40)=0
+      NAME_FSIZES(41)='PDT'; F_SIZES(41)=5
+      NAME_FSIZES(42)='LADD_MAX'; F_SIZES(42)=0
+      NAME_FSIZES(43)='MAXSIDL'; F_SIZES(43)=0
+      NAME_FSIZES(44)='NTT'; F_SIZES(44)=9
+      NAME_FSIZES(45)='NOMEG'; F_SIZES(45)=7
+      NAME_FSIZES(46)='NSIGM'; F_SIZES(46)=1
+      NAME_FSIZES(47)='PPDT'; F_SIZES(47)=4
+      RETURN
+      END SUBROUTINE FSIZESR
+      SUBROUTINE MUMODEL2(THETA,MU_,ICALL,IDEF,NEWIND,&
+      EVTREC,DATREC,IREV,NVNT,INDXS,F,G,H,IRGG,GG,NETAS)
+      USE NMPRD4P
+      USE SIZES,     ONLY: DPSIZE,ISIZE
+      USE PRDIMS,    ONLY: GPRD,HPRD,GERD,HERD,GPKD
+      USE NMPRD_REAL,ONLY: ETA,EPS
+      USE NMPRD_INT, ONLY: MSEC=>ISECDER,MFIRST=>IFRSTDER,COMACT,COMSAV,IFIRSTEM
+      USE NMPRD_INT, ONLY: MDVRES,ETASXI,NPDE_MODE
+      USE NMPRD_REAL, ONLY: DV_LOQ
+      USE NMPRD_INT, ONLY: IQUIT
+      USE PROCM_REAL,ONLY: DOSTIM,DDOST,D2DOST
+      USE PROCM_REAL,ONLY: DOSREC
+      USE NMBAYES_REAL, ONLY: LDF
+      USE PROCM_INT, ONLY: MNOW=>MTNOW,MPAST=>MTPAST,MNEXT=>MTNEXT
+      USE PKERR_REAL,ONLY: MTIME
+      USE PRMOD_INT, ONLY: MTDIFF
+      IMPLICIT REAL(KIND=DPSIZE) (A-Z)
+      REAL(KIND=DPSIZE)   :: MU_(*)
+      INTEGER NEWIND
+      REAL(KIND=DPSIZE) :: EVTREC
+      SAVE
+      INTEGER(KIND=ISIZE) :: FIRSTEM
+      INTEGER(KIND=ISIZE) :: ICALL,IDEF,IREV,NVNT,INDXS,IRGG,NETAS
+      DIMENSION :: IDEF(7,*),THETA(*),EVTREC(IREV,*),INDXS(*),GG(IRGG,GPKD+1,*)
+      RETURN
+      END
+

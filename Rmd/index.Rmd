@@ -63,8 +63,8 @@ cd nm743CD
 
 Now proceed to instruction 5 below for the SETUP74 command with the following options:
 
-- Option cd (source path) should be $HOME/Downloads/nm743CD
-- Option h (NONMEM 7.4 directory) is up to you. $HOME/nm743 is suggested.
+- Option cd (source path) should be `$HOME/Downloads/nm743CD`
+- Option h (NONMEM 7.4 directory) is up to you. `$HOME/nm743` is suggested.
 
 If gfortran is installed, the command would be as follows:
 
@@ -72,13 +72,14 @@ If gfortran is installed, the command would be as follows:
 /bin/bash SETUP74 $HOME/Downloads/nm743CD $HOME/nm743 gfortran
 ```
 
-NONMEM 7.4 will be installed in directory nm743, in the user’s home directory.
+NONMEM 7.4 will be installed in directory nm743, in the user's home directory.
 Any new terminal window that is opened will
  
 ## PsN 설치
- PsN은 Perl-Speaks-Nonmem의 줄임말로 NONMEM을 이용한 비선형 혼합효과 모델의 개발에 필요한 Perl 모듈과 프로그램을 모아서 조합해 놓은 프로그램이다. PsN은 무료로 사용가능 한 open source 소프트웨어로, PsN 웹사이트에서 다운로드 받아서 설치한다. 
-※ PsN 다운로드 사이트 : https://uupharmacometrics.github.io/PsN (그림 7)
 
+PsN은 Perl-Speaks-Nonmem의 줄임말로 NONMEM을 이용한 비선형 혼합효과 모델의 개발에 필요한 Perl 모듈과 프로그램을 모아서 조합해 놓은 프로그램이다. PsN은 무료로 사용가능 한 open source 소프트웨어로, PsN 웹사이트에서 다운로드 받아서 설치한다. 
+
+※ PsN 다운로드 사이트 : https://uupharmacometrics.github.io/PsN (그림 7)
 
  PsN을 설치하기 전에 NONMEM 프로그램과 Perl module이 컴퓨터에 설치되어 있어야 한다. NONMEM의 설치는 앞에서 설명하였고, 윈도우즈 운영체계에서 Perl module의 설치는 다음과 같다. 
 
@@ -86,9 +87,13 @@ Any new terminal window that is opened will
 
 
 2) 설치가 되면 자동적으로 Perl package manager (ppm) 파일이 생성되고 이 파일을 실행하여 PsN에 필요한 다음의 3가지 perl module을 설치한다. (그림 9)
+
+```
 MooseX::Params::Validate 
 Math::Random 
 Statistics::Distribution
+```
+
 ※ PPM이 깔린 폴더의 경로 중 한글 이름이 있는 경우 실행되지 않을 수 있으므로 이런 경우, 도스창에서 C:\>'set ACTIVEPERL_PPM_HOME=c:/perl/temp' 입력하여 경로를 지정해 준 후 'ppm‘을 쳐서 실행한다.
 
 
@@ -200,36 +205,30 @@ R studio는 R을 사용하기 편리하도록 구동해 주는 프로그램이�
  이러한 공변량 스크리닝 과정을 통해, 어떤 공변량이 어떤 파라미터에 영향을 미칠 것인지 미리 탐색해 볼 수 있으며, 이후의 공변량 테스트 과정에서 서로 상관관계가 있는 공변량을 중복하여 테스트 하는 것을 방지할 수 있다.
 
 ## 공변량 모델 설계: PsN의 SCM 이용
- 공변량의 체계적인 평가와 선택을 위한 방법 중 하나로 전진선택법(forward selection)으로 공변량을 단계적으로 추가한 뒤 후진제거법(backward elimination)으로 유효하지 않은 공변량을 제거해 나가는 방법이 있다. Pirana에서 PsN의 SCM(Stepwise Covariate Modeling)을 이용하여 수행할 수 있다. 전진선택에서는 공변량을 모델에 한 개씩 추가하여 각각의 공변량 효과를 각각의 파라미터에 대해 평가하는 것이다. 후진제거의 경우, 각 공변량 효과를 한 번에 하나씩 모델로부터 제거하면서 평가를 수행한다. 
- Pirana에서 SCM을 수행하기 위해서는 configuration file을 만들어 데이터 셋 및 모델파일과 동일한 폴더내에 저장하여야 한다. Configuration fie의 예시는 표 6에 나타내었으며, 확장자가 .scm 이어야 pirana에서 인식 가능하다. 
 
- Pirana에서 대상 모델을 우클릭한 후 PsN, Covariates, SCM을 차례대로 클릭하면 PsN Toolkit(scm) 창이 열리고, SCM config file이 제대로 선택되었는지 확인하고 실행버튼을 클릭한다. (그림 38, 39)
+공변량의 체계적인 평가와 선택을 위한 방법 중 하나로 전진선택법(forward selection)으로 공변량을 단계적으로 추가한 뒤 후진제거법(backward elimination)으로 유효하지 않은 공변량을 제거해 나가는 방법이 있다. 
+Pirana에서 PsN의 SCM(Stepwise Covariate Modeling)을 이용하여 수행할 수 있다. 
+전진선택에서는 공변량을 모델에 한 개씩 추가하여 각각의 공변량 효과를 각각의 파라미터에 대해 평가하는 것이다. 
+후진제거의 경우, 각 공변량 효과를 한 번에 하나씩 모델로부터 제거하면서 평가를 수행한다. 
 
+Pirana에서 SCM을 수행하기 위해서는 configuration file을 만들어 데이터 셋 및 모델파일과 동일한 폴더내에 저장하여야 한다. Configuration fie의 예시는 표 6에 나타내었으며, 확장자가 .scm 이어야 pirana에서 인식 가능하다. 
 
+Pirana에서 대상 모델을 우클릭한 후 PsN, Covariates, SCM을 차례대로 클릭하면 PsN Toolkit(scm) 창이 열리고, SCM config file이 제대로 선택되었는지 확인하고 실행버튼을 클릭한다. (그림 38, 39)
 
- 
- SCM 수행 후 “scmlog” 파일을 메모장 또는 엑셀로 실행하면 SCM 과정과 결과를 확인할 수 있다. (그림 40)
+SCM 수행 후 `scmlog` 파일을 메모장 또는 엑셀로 실행하면 SCM 과정과 결과를 확인할 수 있다. (그림 40)
 
 ## Visual predictive check (VPC) 실행
- VPC는 모델을 기반으로 시뮬레이션 할 데이터 셋을 생성하여 대상 모델에 적용한 결과와 실제 관측 데이터를 비교하여 모델을 진단하는 방법으로 하나의 그래프에 예측된 혈중농도와 관측된 혈중농도를 겹쳐 그려 모델의 적합성을 확인할 수 있다. 
- VPC를 실행하기 위해 대상 모델을 우클릭 후, PsN, Model diagnostics, vpc를 차례대로 클릭한다(그림 41). PsN Toolkit (vpc) 창이 열리고, 이 때 PsN command line에서 VPC 실행을 위한 옵션을 지정한 후 VPC를 수행한다. (표 7, 그림 42) 
 
-
-
-
-
-
-
- VPC 수행 후 PsN_vpc_plots.R 파일을 실행하거나 R studio를 이용하여 VPC plot을 확인할 수 있다. 
- 먼저 PsN command line에서 지정한 폴더에서 PsN_vpc_plots.R 파일을 실행하면 R studio 로 연결된다(그림 43). R studio에서 왼쪽 상단의 script를 모두 블록 지정하여 Run 클릭하면 같은 폴더내에 VPC plot이 .pdf 파일로 생성된다. (그림 44) 
+VPC는 모델을 기반으로 시뮬레이션 할 데이터 셋을 생성하여 대상 모델에 적용한 결과와 실제 관측 데이터를 비교하여 모델을 진단하는 방법으로 하나의 그래프에 예측된 혈중농도와 관측된 혈중농도를 겹쳐 그려 모델의 적합성을 확인할 수 있다. 
+VPC를 실행하기 위해 대상 모델을 우클릭 후, PsN, Model diagnostics, vpc를 차례대로 클릭한다(그림 41). 
+PsN Toolkit (vpc) 창이 열리고, 이 때 PsN command line에서 VPC 실행을 위한 옵션을 지정한 후 VPC를 수행한다. (표 7, 그림 42) 
  
+VPC 수행 후 PsN_vpc_plots.R 파일을 실행하거나 R studio를 이용하여 VPC plot을 확인할 수 있다. 
+먼저 PsN command line에서 지정한 폴더에서 PsN_vpc_plots.R 파일을 실행하면 R studio 로 연결된다(그림 43). R studio에서 왼쪽 상단의 script를 모두 블록 지정하여 Run 클릭하면 같은 폴더내에 VPC plot이 .pdf 파일로 생성된다. (그림 44) 
 
- 또는 VPC 결과 파일이 생성된 후 R studio 프로그램을 실행 하여 표 8의 R code를 입력하고 실행하면 VPC 그래프가 생성된다. Plots ⟶ Export ⟶ “Save as Image” 또는 “Save as PDF” 선택하면 VPC plot을 파일로 저장 할 수 있다. (그림 45)
+또는 VPC 결과 파일이 생성된 후 R studio 프로그램을 실행 하여 표 8의 R code를 입력하고 실행하면 VPC 그래프가 생성된다. Plots ⟶ Export ⟶ “Save as Image” 또는 “Save as PDF” 선택하면 VPC plot을 파일로 저장 할 수 있다. (그림 45)
 
-
-
-
- VPC plot에서 실선은 혈중농도 예측치의 중위수, 위·아래의 점선은 각각 5번째와 95번째 백분위수의 값을 나타내고, 빨간색 음영은 예측치 중위수의 95% 신뢰구간, 파란색 음영은 각각 5번째, 95번째 백분위수의 95% 신뢰구간을 나타낸다. 원형의 점들은 혈중농도 관측치를 나타낸다. 
+VPC plot에서 실선은 혈중농도 예측치의 중위수, 위·아래의 점선은 각각 5번째와 95번째 백분위수의 값을 나타내고, 빨간색 음영은 예측치 중위수의 95% 신뢰구간, 파란색 음영은 각각 5번째, 95번째 백분위수의 95% 신뢰구간을 나타낸다. 원형의 점들은 혈중농도 관측치를 나타낸다. 
 
 ## Goodness of fit (GOF) 작성
  GOF는 집단예측값과 개인예측값을 실제 관측값과 비교하거나 가중잔차 대 예측값의 산점도 등을 통해 모델의 적합성을 확인할 수 있다.  Pirana에서 모델 수행 후에 얻어진 결과 파일을 이용하여 pirana에서 제공하는 메뉴를 이용하거나 직접 R 프로그램에서 GOF를 실행할 수 있다.
@@ -272,7 +271,7 @@ R studio는 R을 사용하기 편리하도록 구동해 주는 프로그램이�
  시뮬레이션 실행 후 생성된 표를 활용하여 R package “PK” 혹은 “NonCompart”를 이용하여 NCA(Non-compartmental analysis, 비구획분석)를 할 수 있으며, 그 결과 AUC, MRT, T1/2, Vd, Cmax, Tmax를 구할 수 있다. (표 13, 표 14)
 
 
- R package “ggplot2”을 이용하여 시뮬레이션 예측값의 5, 50, 95번째 백분위수에 대한 그래프를 그릴 수 있으며, 한 plot 안에 여러 가지 시나리오 그래프도 그릴 수 있다. 아래에 각각의 R 코드 예시를 보여주고 있다. (표 14, 15 및 그림 54, 55)
+R package “ggplot2”을 이용하여 시뮬레이션 예측값의 5, 50, 95번째 백분위수에 대한 그래프를 그릴 수 있으며, 한 plot 안에 여러 가지 시나리오 그래프도 그릴 수 있다. 아래에 각각의 R 코드 예시를 보여주고 있다. (표 14, 15 및 그림 54, 55)
 
 # 참고문헌
 

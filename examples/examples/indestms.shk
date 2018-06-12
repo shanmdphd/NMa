@@ -1,0 +1,9 @@
+TABLE NO.     1: Laplacian Conditional Estimation with Interaction: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1  2.18989E+00  8.92475E-02  4.15683E-02
+            2            1  6.30495E-01  4.02460E-03  2.79936E-03
+            3            1  5.14225E-04  6.4678E-109  7.38048E-50
+            4            1  9.97719E+01  9.99985E+01  9.99990E+01
+            5            1  1.00000E-10  0.00000E+00  0.00000E+00
+            6            1  5.77585E-05  1.07147E-08  1.01881E-09
+            7            1  1.20000E+01  1.20000E+01  1.20000E+01

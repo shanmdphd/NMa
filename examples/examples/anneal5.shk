@@ -1,0 +1,18 @@
+TABLE NO.     1: Importance Sampling: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)       ETA(4)
+            1            1 -2.21140E-03 -1.40611E-03  9.81454E-04  0.00000E+00
+            2            1  5.10151E-02  2.90527E-02  3.86176E-02  0.00000E+00
+            3            1  9.65424E-01  9.61398E-01  9.79724E-01  1.00000E+00
+            4            1  3.13152E+01  4.42904E+01  2.18375E+01  0.00000E+00
+            5            1  2.22676E+01  0.00000E+00  0.00000E+00  0.00000E+00
+            6            1  3.27890E+01  4.71453E+01  2.15116E+01  0.00000E+00
+            7            1  1.00000E+02  1.00000E+02  1.00000E+02  0.00000E+00
+TABLE NO.     2: Objective Function Evaluation by Importance Sampling: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)       ETA(4)
+            1            1  1.87169E-03  2.97721E-03  3.15454E-03  0.00000E+00
+            2            1  5.03033E-02  2.84496E-02  3.85689E-02  0.00000E+00
+            3            1  9.70319E-01  9.16655E-01  9.34814E-01  1.00000E+00
+            4            1  3.22736E+01  4.54468E+01  2.19362E+01  0.00000E+00
+            5            1  2.60467E+01  0.00000E+00  0.00000E+00  0.00000E+00
+            6            1  3.24565E+01  4.75346E+01  2.20974E+01  0.00000E+00
+            7            1  1.00000E+02  1.00000E+02  1.00000E+02  0.00000E+00

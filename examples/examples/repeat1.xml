@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE nm:output SYSTEM "output.dtd">
+<nm:output
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
+xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
+>
+<nm:start_datetime>2013-09-30T15:01:52.321</nm:start_datetime>
+<nm:control_stream><![CDATA[
+; This example is discussed in Repetition_1 example (repeti1.exa)
+; in the online help directory.
+; It demonstrates the use of RPTO variable
+;
+ $PROB repeat1
+ $INPT ID TIME AMT DV EVID
+ $DATA repeat1.dat NULL=.
+ $SUB ADVAN6 TOL=5
+ $MODEL COMP=(DEPOT DEFDOSE) COMP=(CENTRAL DEFOBS)
+
+ $INFN
+ IF (ICALL.EQ.0) RPTO=1      ;enables use of repetition feature
+ $PK
+ KA=THETA(1)*EXP(ETA(1))
+ K =THETA(2)*EXP(ETA(2))
+ C =THETA(3)
+ V =THETA(4)*EXP(ETA(4))
+ S2=V
+ IF (RPTI.EQ.0) TI=TIME
+ IF (NEWIND.EQ.2) RPTO=-1
+
+ $DES
+ DADT(1)=-KA*A(1)
+ D=EXP(-K*(TI-T)**C)
+ DADT(2)=D*KA*A(1)
+
+ $ERROR
+ Y=F+EPS(1)
+
+ $THETA 2 1 1 2
+ $OMEGA 1 2 (1 FIX) 1
+ $SIGMA 1
+ $TABLE TIME TI
+]]></nm:control_stream>
+<nm:nmtran><![CDATA[
+
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+]]></nm:nmtran>
+<nm:nonmem nm:version='7.3beta7.0(P)'>
+<nm:license_information><![CDATA[
+License Registered to: IDS NONMEM 7 TEAM
+Expiration Date:     2 JUN 2030
+Current Date:       30 SEP 2013
+Days until program expires :6087
+]]></nm:license_information>
+<nm:program_information><![CDATA[
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.3beta7.0(P)
+ ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
+ CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
+ AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
+ PERFORMED BY NOUS INFOSYSTEMS.
+]]></nm:program_information>
+<nm:problem nm:number='1' nm:subproblem='0' nm:superproblem1='0' nm:iteration1='0' nm:superproblem2='0' nm:iteration2='0'>
+<nm:problem_title>repeat1</nm:problem_title>
+<nm:problem_information><![CDATA[
+
+ PROBLEM NO.:         1
+ repeat1
+0DATA CHECKOUT RUN:              NO
+ DATA SET LOCATED ON UNIT NO.:    2
+ THIS UNIT TO BE REWOUND:        NO
+ NO. OF DATA RECS IN DATA SET:       10
+ NO. OF DATA ITEMS IN DATA SET:   6
+ ID DATA ITEM IS DATA ITEM NO.:   1
+ DEP VARIABLE IS DATA ITEM NO.:   4
+ MDV DATA ITEM IS DATA ITEM NO.:  6
+0INDICES PASSED TO SUBROUTINE PRED:
+   5   2   3   0   0   0   0   0   0   0   0
+0LABELS FOR DATA ITEMS:
+ ID TIME AMT DV EVID MDV
+0(NONBLANK) LABELS FOR PRED-DEFINED ITEMS:
+ TI
+0FORMAT FOR DATA:
+ (5E5.0,1F2.0)
+
+ TOT. NO. OF OBS RECS:        8
+ TOT. NO. OF INDIVIDUALS:      2
+0LENGTH OF THETA:   4
+0DEFAULT THETA BOUNDARY TEST OMITTED:    NO
+0OMEGA HAS BLOCK FORM:
+  1
+  0  2
+  0  0  3
+  0  0  0  4
+0DEFAULT OMEGA BOUNDARY TEST OMITTED:    NO
+0SIGMA HAS SIMPLE DIAGONAL FORM WITH DIMENSION:   1
+0DEFAULT SIGMA BOUNDARY TEST OMITTED:    NO
+0INITIAL ESTIMATE OF THETA:
+   0.2000E+01  0.1000E+01  0.1000E+01  0.2000E+01
+0INITIAL ESTIMATE OF OMEGA:
+ BLOCK SET NO.   BLOCK                                                                    FIXED
+        1                                                                                   NO
+                  0.1000E+01
+        2                                                                                   NO
+                  0.2000E+01
+        3                                                                                  YES
+                  0.1000E+01
+        4                                                                                   NO
+                  0.1000E+01
+0INITIAL ESTIMATE OF SIGMA:
+ 0.1000E+01
+0TABLES STEP OMITTED:    NO
+ NO. OF TABLES:           1
+0-- TABLE   1 --
+ PRINTED:               YES
+ FORMAT:                S1PE11.4
+ LFORMAT:
+ RFORMAT:
+0USER-CHOSEN ITEMS:
+ TIME TI
+1DOUBLE PRECISION PREDPP VERSION 7.3beta7.0(P)
+
+ GENERAL NONLINEAR KINETICS MODEL (ADVAN6)
+0MODEL SUBROUTINE USER-SUPPLIED - ID NO. 9999
+0MAXIMUM NO. OF BASIC PK PARAMETERS:   4
+0COMPARTMENT ATTRIBUTES
+ COMPT. NO.   FUNCTION   INITIAL    ON/OFF      DOSE      DEFAULT    DEFAULT
+                         STATUS     ALLOWED    ALLOWED    FOR DOSE   FOR OBS.
+    1         DEPOT        ON         YES        YES        YES        NO
+    2         CENTRAL      ON         YES        YES        NO         YES
+    3         OUTPUT       OFF        YES        NO         NO         NO
+0NRD VALUE FROM SUBROUTINE TOL:   5
+1
+ ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+ COMPT. NO.                             INDICES
+              SCALE      BIOAVAIL.   ZERO-ORDER  ZERO-ORDER  ABSORB
+                         FRACTION    RATE        DURATION    LAG
+    1            *           *           *           *           *
+    2            5           *           *           *           *
+    3            *           -           -           -           -
+             - PARAMETER IS NOT ALLOWED FOR THIS MODEL
+             * PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+               WILL DEFAULT TO ONE IF APPLICABLE
+0DATA ITEM INDICES USED BY PRED ARE:
+   EVENT ID DATA ITEM IS DATA ITEM NO.:      5
+   TIME DATA ITEM IS DATA ITEM NO.:          2
+   DOSE AMOUNT DATA ITEM IS DATA ITEM NO.:   3
+
+0PK SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ PK SUBROUTINE NOT CALLED AT NONEVENT (ADDITIONAL OR LAGGED) DOSE TIMES.
+0DURING SIMULATION, ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+ OTHERWISE, ERROR SUBROUTINE CALLED ONCE IN THIS PROBLEM.
+0DES SUBROUTINE USES COMPACT STORAGE MODE.
+]]></nm:problem_information>
+<nm:estimation nm:number='1' nm:type='1'>
+<nm:table_series>1</nm:table_series>
+<nm:estimation_method>fo</nm:estimation_method>
+<nm:estimation_title>First Order (Evaluation)</nm:estimation_title>
+<nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
+<nm:final_objective_function>12.8864490784994</nm:final_objective_function>
+<nm:theta>
+<nm:val nm:name='1'>2.00000000000000</nm:val>
+<nm:val nm:name='2'>1.00000000000000</nm:val>
+<nm:val nm:name='3'>1.00000000000000</nm:val>
+<nm:val nm:name='4'>2.00000000000000</nm:val>
+</nm:theta>
+<nm:omega>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>2.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omega>
+<nm:sigma>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigma>
+<nm:omegac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>1.41421356237310</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>1.00000000000000</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='1'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='2'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='3'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='4'>1.00000000000000</nm:col>
+</nm:row>
+</nm:omegac>
+<nm:sigmac>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='1'>1.00000000000000</nm:col>
+</nm:row>
+</nm:sigmac>
+</nm:estimation>
+<nm:table nm:number='1'>
+<nm:row nm:rname='1'>
+<nm:col nm:cname='LINE NO.'>1.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='TI'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='RES'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='WRES'>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row nm:rname='2'>
+<nm:col nm:cname='LINE NO.'>2.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.250000000000000</nm:col>
+<nm:col nm:cname='TI'>0.250000000000000</nm:col>
+<nm:col nm:cname='DV'>2.44000000000000</nm:col>
+<nm:col nm:cname='PRED'>1.72270123315437</nm:col>
+<nm:col nm:cname='RES'>0.717298766845631</nm:col>
+<nm:col nm:cname='WRES'>-0.579688948085643</nm:col>
+</nm:row>
+<nm:row nm:rname='3'>
+<nm:col nm:cname='LINE NO.'>3.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.500000000000000</nm:col>
+<nm:col nm:cname='TI'>0.500000000000000</nm:col>
+<nm:col nm:cname='DV'>5.24000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.38651216175147</nm:col>
+<nm:col nm:cname='RES'>2.85348783824853</nm:col>
+<nm:col nm:cname='WRES'>0.766877383100840</nm:col>
+</nm:row>
+<nm:row nm:rname='4'>
+<nm:col nm:cname='LINE NO.'>4.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.750000000000000</nm:col>
+<nm:col nm:cname='TI'>0.750000000000000</nm:col>
+<nm:col nm:cname='DV'>5.57000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.49236389405959</nm:col>
+<nm:col nm:cname='RES'>3.07763610594041</nm:col>
+<nm:col nm:cname='WRES'>0.573905079969967</nm:col>
+</nm:row>
+<nm:row nm:rname='5'>
+<nm:col nm:cname='LINE NO.'>5.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>1.00000000000000</nm:col>
+<nm:col nm:cname='TI'>1.00000000000000</nm:col>
+<nm:col nm:cname='DV'>5.85000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.32544154681286</nm:col>
+<nm:col nm:cname='RES'>3.52455845318714</nm:col>
+<nm:col nm:cname='WRES'>0.865901431671079</nm:col>
+</nm:row>
+<nm:row nm:rname='6'>
+<nm:col nm:cname='LINE NO.'>6.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='TI'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='DV'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='PRED'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='RES'>0.000000000000000E+000</nm:col>
+<nm:col nm:cname='WRES'>0.000000000000000E+000</nm:col>
+</nm:row>
+<nm:row nm:rname='7'>
+<nm:col nm:cname='LINE NO.'>7.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.250000000000000</nm:col>
+<nm:col nm:cname='TI'>0.250000000000000</nm:col>
+<nm:col nm:cname='DV'>2.44000000000000</nm:col>
+<nm:col nm:cname='PRED'>1.72270123315437</nm:col>
+<nm:col nm:cname='RES'>0.717298766845631</nm:col>
+<nm:col nm:cname='WRES'>-0.579688948085643</nm:col>
+</nm:row>
+<nm:row nm:rname='8'>
+<nm:col nm:cname='LINE NO.'>8.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.500000000000000</nm:col>
+<nm:col nm:cname='TI'>0.500000000000000</nm:col>
+<nm:col nm:cname='DV'>5.24000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.38651216175147</nm:col>
+<nm:col nm:cname='RES'>2.85348783824853</nm:col>
+<nm:col nm:cname='WRES'>0.766877383100840</nm:col>
+</nm:row>
+<nm:row nm:rname='9'>
+<nm:col nm:cname='LINE NO.'>9.00000000000000</nm:col>
+<nm:col nm:cname='TIME'>0.750000000000000</nm:col>
+<nm:col nm:cname='TI'>0.750000000000000</nm:col>
+<nm:col nm:cname='DV'>5.57000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.49236389405959</nm:col>
+<nm:col nm:cname='RES'>3.07763610594041</nm:col>
+<nm:col nm:cname='WRES'>0.573905079969967</nm:col>
+</nm:row>
+<nm:row nm:rname='10'>
+<nm:col nm:cname='LINE NO.'>10.0000000000000</nm:col>
+<nm:col nm:cname='TIME'>1.00000000000000</nm:col>
+<nm:col nm:cname='TI'>1.00000000000000</nm:col>
+<nm:col nm:cname='DV'>5.85000000000000</nm:col>
+<nm:col nm:cname='PRED'>2.32544154681286</nm:col>
+<nm:col nm:cname='RES'>3.52455845318714</nm:col>
+<nm:col nm:cname='WRES'>0.865901431671079</nm:col>
+</nm:row>
+</nm:table>
+</nm:problem>
+</nm:nonmem>
+<nm:stop_datetime>2013-09-30T15:01:52.415</nm:stop_datetime>
+<nm:total_cputime>0.078</nm:total_cputime>
+</nm:output>

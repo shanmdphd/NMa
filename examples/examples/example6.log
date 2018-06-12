@@ -1,0 +1,499 @@
+PARAFILE=mpiwini8.pnm, PROTOCOL=MPI, NODES= 4
+TABLE NO.     1: First Order Conditional Estimation with Interaction (No Prior): Goal Function=MINIMUM VALUE OF OBJECTIVE FUNCTION: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+ ITERATION            0
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       38 ON WORKER2: OK
+ STARTING SUBJECTS         39 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       38 ON WORKER2
+ COLLECTING SUBJECTS       39 TO       50 ON WORKER3
+ ITERATION            0
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       38 ON WORKER2: OK
+ STARTING SUBJECTS         39 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       38 ON WORKER2
+ COLLECTING SUBJECTS       39 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.03
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:01:00.76
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.22
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:09:54.88
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:10:34.72
+ 
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:01:12.49
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.03
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.37
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:16:17.08
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:16:59.17
+ 
+ ITERATION           20
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           20
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ ITERATION           20
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:22.90
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.47
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:20:29.23
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:21:13.25
+ 
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.02
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:24.68
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.55
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:24:39.00
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:25:25.02
+ 
+ ITERATION           40
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ ITERATION           40
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           40
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:23.67
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:02.05
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:28:27.97
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:29:14.32
+ 
+ ITERATION           50
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           50
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ ITERATION           50
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.05
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:22.71
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:02.16
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:32:23.81
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:33:11.26
+ 
+ ITERATION           60
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           60
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ ITERATION           60
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.02
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.29
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.08
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:02.23
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:32:53.58
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:33:41.27
+ 
+ ITERATION           63
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ ITERATION           63
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+PARAFILE=mpiwini8.pnm, PROTOCOL=MPI, NODES= 4
+COVARIANCE STEP : Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+ ITERATION            0
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       38 ON WORKER2: OK
+ STARTING SUBJECTS         39 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       38 ON WORKER2
+ COLLECTING SUBJECTS       39 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.02
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.52
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.11
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:01:10.68
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:34:58.15
+ 
+ ITERATION           10
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.47
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.12
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:02:30.15
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:36:17.95
+ 
+ ITERATION           20
+ STARTING SUBJECTS          1 TO       12 ON MANAGER: OK
+ STARTING SUBJECTS         13 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       12 ON MANAGER
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       13 TO       26 ON WORKER1
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.29
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.17
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:03:43.16
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:37:31.98
+ 
+ ITERATION           30
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.63
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.20
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:04:57.82
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:38:47.50
+ 
+ ITERATION           40
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       27 ON WORKER1: OK
+ STARTING SUBJECTS         28 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       28 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       14 TO       27 ON WORKER1
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.66
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.23
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:06:12.08
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:40:02.23
+ 
+ ITERATION           50
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.66
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.27
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:07:25.74
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:41:16.41
+ 
+ ITERATION           60
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.22
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.33
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:08:39.31
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:42:30.82
+ 
+ ITERATION           70
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.55
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.33
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:09:54.04
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:43:45.79
+ 
+ ITERATION           80
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.50
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.33
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:11:08.73
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:45:00.99
+ 
+ ITERATION           90
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.96
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.33
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:11:24.45
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:45:16.73
+ 
+ ITERATION           92
+ STARTING SUBJECTS          1 TO       13 ON MANAGER: OK
+ STARTING SUBJECTS         14 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       13 ON MANAGER
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       14 TO       26 ON WORKER1
+ Tot. mngr. proc.   Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Load         Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Total Computation  Time for this  Iteration  (DDD:HH:MM:SS.DD) 000:00:00:07.68
+ Accum. mngr. proc. Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.00
+ Accumulated Load   Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:00:00.33
+ Accumulated Comp.  Time among all Iterations (DDD:HH:MM:SS.DD) 000:00:11:32.13
+ Accumulated CPU    Time of present job       (DDD:HH:MM:SS.DD) 000:00:45:24.46
+ 
+ ITERATION           93
+ STARTING SUBJECTS          1 TO       14 ON MANAGER: OK
+ STARTING SUBJECTS         15 TO       26 ON WORKER1: OK
+ STARTING SUBJECTS         27 TO       39 ON WORKER2: OK
+ STARTING SUBJECTS         40 TO       50 ON WORKER3: OK
+ COLLECTING SUBJECTS        1 TO       14 ON MANAGER
+ COLLECTING SUBJECTS       15 TO       26 ON WORKER1
+ COLLECTING SUBJECTS       27 TO       39 ON WORKER2
+ COLLECTING SUBJECTS       40 TO       50 ON WORKER3

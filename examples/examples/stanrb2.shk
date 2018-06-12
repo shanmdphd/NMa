@@ -1,0 +1,9 @@
+TABLE NO.     1: Iterative Two Stage: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+TYPE          SUBPOP       ETA(1)       ETA(2)       ETA(3)
+            1            1  1.11208E-03 -1.08639E-01  1.69092E-01
+            2            1  3.90298E-03  1.16869E-02  9.10654E-03
+            3            1  7.75698E-01  1.48534E-20  6.22878E-77
+            4            1  8.34318E+01  5.03889E+01  6.13428E+01
+            5            1  3.10035E+01  0.00000E+00  0.00000E+00
+            6            1  6.82019E-01  2.03764E+01  1.93285E+01
+            7            1  9.00000E+02  9.00000E+02  9.00000E+02

@@ -1,0 +1,47 @@
+; Used for comparing single versus parallel computing for FOCE method.
+$PROB RUN# Example 1 (from samp5l)
+$INPUT C SET ID JID TIME  DV=CONC AMT=DOSE RATE EVID MDV CMT CLX V1X QX V2X SDIX SDSX
+$DATA example1b.csv IGNORE=C
+
+$SUBROUTINES ADVAN3 TRANS4
+
+$PK
+MU_1=THETA(1)
+MU_2=THETA(2)
+MU_3=THETA(3)
+MU_4=THETA(4)
+CL=DEXP(MU_1+ETA(1))
+V1=DEXP(MU_2+ETA(2))
+Q=DEXP(MU_3+ETA(3))
+V2=DEXP(MU_4+ETA(4))
+S1=V1
+
+$ERROR
+Y = F + F*EPS(1)
+
+; Initial values of THETA
+$THETA 
+(0.001, 2.0) ;[LN(CL)]
+(0.001, 2.0) ;[LN(V1)]
+(0.001, 2.0) ;[LN(Q)]
+(0.001, 2.0) ;[LN(V2)]
+;INITIAL values of OMEGA
+$OMEGA BLOCK(4)
+0.15   ;[P]
+0.01  ;[F]
+0.15   ;[P]
+0.01  ;[F]
+0.01  ;[F]
+0.15   ;[P]
+0.01  ;[F]
+0.01  ;[F]
+0.01  ;[F]
+0.15   ;[P]
+;Initial value of SIGMA
+$SIGMA 
+(0.6 )   ;[P]
+
+$EST METHOD=1 INTERACTION NSIG=3 NOABORT MAXEVAL=9999  PRINT=1
+$COV MATRIX=R PRINT=E UNCONDITIONAL SIRSAMPLE=1000 
+     SIRPRINT=100 IACCEPT=1.0 SIRDF=0.0 IACCEPTL=0.01 RANMETHOD=3
+;     FILE=sirsample.sir format=,E13.6
