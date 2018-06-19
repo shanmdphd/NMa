@@ -74,7 +74,15 @@ If gfortran is installed, the command would be as follows:
 
 NONMEM 7.4 will be installed in directory nm743, in the user's home directory.
 Any new terminal window that is opened will
- 
+
+### CentOS에서 설치 (에디슨 bulb 포함)
+
+기본적으로 MacOS와 동일하다. `~/Downloads/nm743CD`에 파일을 복사하고 다음을 실행한다.
+
+```
+/bin/bash SETUP74 $HOME/Downloads/nm743CD $HOME/nm743 gfortran
+```
+
 ## PsN 설치
 
 PsN은 Perl-Speaks-Nonmem의 줄임말로 NONMEM을 이용한 비선형 혼합효과 모델의 개발에 필요한 Perl 모듈과 프로그램을 모아서 조합해 놓은 프로그램이다. PsN은 무료로 사용가능 한 open source 소프트웨어로, PsN 웹사이트에서 다운로드 받아서 설치한다. 
