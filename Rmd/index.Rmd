@@ -1,5 +1,5 @@
----
-title: 계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-
+--- 
+title: "계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-"
 css: style.css
 ---
 
@@ -21,11 +21,12 @@ NONMEM을 사용하기 위해서는 라이선스를 받아야 하며, ICON 사�
 라이선스는 1년 단위로 갱신한다.
 
 ※ NONMEM 라이선스 요청 이메일 주소: IDSSoftware@iconplc.com
+
  라이선스를 받으면, ICON사의 NONMEM 프로그램 다운받는 사이트로 들어가서, 설치할 컴퓨터의 사양에 맞는 설치파일을 다운로드한다. 
 
 ### Windows에서 설치
 
-윈도우즈 운영체계가 32비트인 경우에는 ‘nonmem730_gfortran460.exe', 64비트는 ‘nonmem730_64gfortran463.exe'를 다운받는다. (그림 1)
+윈도우즈 운영체계가 32비트인 경우에는 ‘nonmem743_gfortran460.exe', 64비트는 ‘nonmem743_64gfortran463.exe'를 다운받는다. (그림 1)
 
 ※ NONMEM 프로그램 사이트 : https://nonmem.iconplc.com 
 

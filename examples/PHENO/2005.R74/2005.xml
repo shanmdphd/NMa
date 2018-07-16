@@ -5,7 +5,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://namespaces.oreilly.com/xmlnut/address output.xsd"
 xmlns:nm="http://namespaces.oreilly.com/xmlnut/address"
 >
-<nm:start_datetime>2018-05-09T10:36:44.882</nm:start_datetime>
+<nm:start_datetime>2018-07-16T16:55:22.338</nm:start_datetime>
 <nm:control_stream><![CDATA[
 $PROB PHENOBARBITAL IV P:ROOT F:BASE
 $INPUT ID TIME AMT BWT APGA DV MDV EVID
@@ -60,8 +60,8 @@ $TAB ID APGA
 <nm:license_information><![CDATA[
 License Registered to: Asan Medical Center
 Expiration Date:    14 DEC 2018
-Current Date:        9 MAY 2018
-Days until program expires : 215
+Current Date:       16 JUL 2018
+Days until program expires : 148
 ]]></nm:license_information>
 <nm:program_information><![CDATA[
 1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.4.1
@@ -371,11 +371,11 @@ Days until program expires : 215
 <nm:col nm:cname='EPS1'>37.922315306267684</nm:col>
 </nm:row>
 </nm:epsshrinkvr>
-<nm:estimation_elapsed_time>3.16</nm:estimation_elapsed_time>
+<nm:estimation_elapsed_time>1.07</nm:estimation_elapsed_time>
 <nm:covariance_information><![CDATA[
 ]]></nm:covariance_information>
 <nm:covariance_status nm:error='0' nm:numnegeigenvalues='-1' nm:mineigenvalue='0.0000000000000000' nm:maxeigenvalue='0.0000000000000000' nm:rms='0.0000000000000000'/>
-<nm:covariance_elapsed_time>0.63</nm:covariance_elapsed_time>
+<nm:covariance_elapsed_time>0.39</nm:covariance_elapsed_time>
 <nm:final_objective_function_text>MINIMUM VALUE OF OBJECTIVE FUNCTION</nm:final_objective_function_text>
 <nm:final_objective_function>685.52519205060185</nm:final_objective_function>
 <nm:theta>
@@ -611,10 +611,10 @@ Days until program expires : 215
 </nm:estimation>
 <nm:post_process_times>
 <nm:post_elapsed_time>0.02</nm:post_elapsed_time>
-<nm:finaloutput_elapsed_time>1.06</nm:finaloutput_elapsed_time>
+<nm:finaloutput_elapsed_time>0.34</nm:finaloutput_elapsed_time>
 </nm:post_process_times>
 </nm:problem>
 </nm:nonmem>
-<nm:stop_datetime>2018-05-09T10:36:49.847</nm:stop_datetime>
-<nm:total_cputime>2.387</nm:total_cputime>
+<nm:stop_datetime>2018-07-16T16:55:24.304</nm:stop_datetime>
+<nm:total_cputime>1.872</nm:total_cputime>
 </nm:output>

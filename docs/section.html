@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</title>
+  <meta name="description" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="section-4.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 계량약리학과 NONMEM</a></li>
+<li class="chapter" data-level="2" data-path="-.html"><a href="-.html"><i class="fa fa-check"></i><b>2</b> 프로그램 설치 및 연동</a><ul>
+<li class="chapter" data-level="2.1" data-path="-.html"><a href="-.html#nonmem-"><i class="fa fa-check"></i><b>2.1</b> NONMEM 설치</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="-.html"><a href="-.html#windows-"><i class="fa fa-check"></i><b>2.1.1</b> Windows에서 설치</a></li>
+<li class="chapter" data-level="2.1.2" data-path="-.html"><a href="-.html#macos-"><i class="fa fa-check"></i><b>2.1.2</b> MacOS에서 설치</a></li>
+<li class="chapter" data-level="2.1.3" data-path="-.html"><a href="-.html#centos---bulb-"><i class="fa fa-check"></i><b>2.1.3</b> CentOS에서 설치 (에디슨 bulb 포함)</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="-.html"><a href="-.html#psn-"><i class="fa fa-check"></i><b>2.2</b> PsN 설치</a></li>
+<li class="chapter" data-level="2.3" data-path="-.html"><a href="-.html#r--r-studio-"><i class="fa fa-check"></i><b>2.3</b> R 및 R studio 설치</a></li>
+<li class="chapter" data-level="2.4" data-path="-.html"><a href="-.html#pirana-"><i class="fa fa-check"></i><b>2.4</b> Pirana 설치</a></li>
+<li class="chapter" data-level="2.5" data-path="-.html"><a href="-.html#pirana--"><i class="fa fa-check"></i><b>2.5</b> Pirana에 프로그램 연동</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="pirana-.html"><a href="pirana-.html"><i class="fa fa-check"></i><b>3</b> Pirana를 이용한 집단약동학 모델링 매뉴얼</a><ul>
+<li class="chapter" data-level="3.1" data-path="pirana-.html"><a href="pirana-.html#--"><i class="fa fa-check"></i><b>3.1</b> 기본 모델 구축</a></li>
+<li class="chapter" data-level="3.2" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.2</b> 모델 개선</a></li>
+<li class="chapter" data-level="3.3" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.3</b> 기본모델 선정</a></li>
+<li class="chapter" data-level="3.4" data-path="pirana-.html"><a href="pirana-.html#-"><i class="fa fa-check"></i><b>3.4</b> 공변량 스크리닝</a></li>
+<li class="chapter" data-level="3.5" data-path="pirana-.html"><a href="pirana-.html#---psn-scm-"><i class="fa fa-check"></i><b>3.5</b> 공변량 모델 설계: PsN의 SCM 이용</a></li>
+<li class="chapter" data-level="3.6" data-path="pirana-.html"><a href="pirana-.html#visual-predictive-check-vpc-"><i class="fa fa-check"></i><b>3.6</b> Visual predictive check (VPC) 실행</a></li>
+<li class="chapter" data-level="3.7" data-path="pirana-.html"><a href="pirana-.html#goodness-of-fit-gof-"><i class="fa fa-check"></i><b>3.7</b> Goodness of fit (GOF) 작성</a></li>
+<li class="chapter" data-level="3.8" data-path="pirana-.html"><a href="pirana-.html#bootstrap-"><i class="fa fa-check"></i><b>3.8</b> Bootstrap 실행</a></li>
+<li class="chapter" data-level="3.9" data-path="pirana-.html"><a href="pirana-.html#section-3.9"><i class="fa fa-check"></i><b>3.9</b> 시뮬레이션</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-4.html"><a href="section-4.html"><i class="fa fa-check"></i><b>4</b> 참고문헌</a></li>
+<li class="chapter" data-level="5" data-path="section.html"><a href="section.html"><i class="fa fa-check"></i><b>5</b> 2015</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">계량약리학 분석을 위한 NONMEM 사용 매뉴얼- 프로그램 설치 및 실행-</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section" class="section level1">
+<h1><span class="header-section-number">5</span> 2015</h1>
+<p>초보자를 위한
+NONMEM 설치 및 운영 매뉴얼</p>
+<p>NONMEM Installation &amp; Operation Manual</p>
+<p>2005년</p>
+<p>NONMEMⓇ 설치 및 운영 매뉴얼</p>
+<p>머 리 말
+약물동태(pharmacokinetics) 분야는 약물이 체내에서 흡수·분포·대사·배설 등 약물의 체내 운명이 어떻게 되는지를 연구하는 분야로서, 이에 대한 자료는 의약품의 안전성·유효성 입증을 위한 자료로서도 요구되고 있습니다. 일반적으로 동일한 약물 투여량으로 대상 피험자에게 투여시 개인별 약물 농도가 다르게 나타납니다. 이는 피험자의 신체적, 병태생리학적, 치료학적 상태, 즉 체중, 배설, 대사기능 또는 동시투약제제와 같은 인자들이 투여량과 약물농도간의 상관관계에 영향을 미치기 때문입니다. 이와 같이 동일 임상 사용량으로 피험자에게 투여시 개인별 약물농도가 다르게 나타나는 원인과 상관성을 연구하는 학문이 집단약동학(population pharmacokinetics)이며, 이러한 연구를 통해 개개 피험자별로 최적의 투약량을 설정할 수 있도록 합니다.
+최근 세계적으로 집단약동학적 접근법의 중요성을 인식하고 있으며, 미국의 경우 실제 의약품의 표기사항에 이를 반영하고 있습니다. 하지만, 집단약동학적 접근법에 주로 이용되는 NONMEM이라는 소프트웨어는 아직 DOS 환경에서 작동되고 있어서 설치 및 운영에 많은 어려움이 있으며, 많은 통계, 수학, 컴퓨터 및 약물동태학적 지식을 요구하여 몇 년에 걸친 교육을 받은 연구자도 완전히 이해하고 쉽게 활용하기가 어려운 실정입니다.
+이에 국립독성연구원 대사약리팀에서는 초보자를 위한 자세한 NONMEM 매뉴얼을 국내 최초로 작성하여 보급하고자 하며, 향후 이 매뉴얼이 NONMEM 활용도를 증진시켜서 국내 집단약동학 연구 및 국내 관련 연구분야의 성장에 많은 기여를 할 것으로 기대하고 있습니다.
+끝으로 본 매뉴얼 작성을 위하여 수고해 주신 서울아산병원의 배균섭 교수님께 특별히 감사의 말씀을 드리며, 관련 연구자들의 많은 활용이 있기를 바랍니다.</p>
+<p>2005년 월 일</p>
+<p>국립독성연구원장</p>
+<p>목 차</p>
+<p>NONMEMⓇ 설치 매뉴얼</p>
+<p>Ⅰ. 매뉴얼을 읽기 전에 3
+1. 사용자에게 기대되는 최소한의 컴퓨터 활용능력 수준 3
+2. NONMEM의 구매 3
+Ⅱ. 설치 이전에 준비해야할 사항 4
+Ⅲ. 설치 순서 5
+1. [시작] 메뉴 형식 정하기 5
+2. 바탕화면에 [Windows 탐색기]의 바로가기 만들기 6
+3. [Windows 탐색기]의 속성 정하기 7
+4. 바탕화면에 <a href="도스창">명령 프롬프트</a> 생성 10
+5. G77 설치 12
+6. AcroEdit 설치 16
+7. NONMEM V 기본설치 18
+8. NONMEM V 최적화 - NMUTIL 활용하기 38
+9. Acroedit 최적화 1 - 사용자도구 만들기 40
+10. AcroEdit 최적화 2 - 문법강조 하기 45
+11. C:폴더 교정 48
+12. 재설치하기(Reinstall) 48
+13. 삭제하기(Remove) 48</p>
+<p>NONMEMⓇ 운영 매뉴얼</p>
+<p>Ⅰ. 도 입 51
+Ⅱ. Theophylline 예제 67
+Ⅲ. Phenobarbital 예제 84</p>
+<p>NONMEMⓇ 설치 매뉴얼
+NONMEM V Level 1.1 Installation Manual
+I. 매뉴얼을 읽기 전에</p>
+<ol style="list-style-type: decimal">
+<li>사용자에게 기대되는 최소한의 컴퓨터 활용능력 수준
+매뉴얼을 읽기 전에 다음과 같은 컴퓨터의 기본적인 기능은 활용할 줄 알아야 합니다.</li>
+</ol>
+<p>● 마우스 버튼의 클릭과 더블클릭의 이 무엇인지 알아야 합니다.
+● 파일의 선택과 실행의 이 무엇인지 알아야 합니다.
+● 윈도우 탐색기를 실행할 수 있어야 합니다.
+● 하드디스크 내 폴더(디렉토리)를 탐색, 생성, 삭제할 수 있어야 합니다.
+● 파일을 원하는 폴더(디렉토리)로 복사, 삭제할 수 있어야 합니다.
+● 인터넷 익스플로러(웹브라우저)를 사용할 수 있어야 합니다.
+● MS-Word, MS-Powerpoint, MS-Excel과 같은 일반적인 프로그램에서 파일을 열고, 저장하거나 다른 이름으로 저장할 수 있어야 합니다.
+● 제어판을 열수 있어야 합니다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>NONMEM의 구매
+공식전인 판매사이트인 <a href="http://www.globomax.com/nonmem.htm" class="uri">http://www.globomax.com/nonmem.htm</a> 에 접속하여 지시대로 구입한다. NONMEM 구매후 원본 디스켓을 손상 입히지 않기 위해 깨끗한 컴퓨터에서 1부의 복사본을 만들어 작업하도록 한다. (주의! 많은 경우 플로피 디스크 드라이브를 오래 사용하지 않았기 때문에 먼지가 많아서, 플로피 디스켓을 영구히 못쓰게 만드는 경우가 종종 있다.)</li>
+</ol>
+<ol start="2" style="list-style-type: upper-roman">
+<li>설치 이전에 준비해야할 사항</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><p>NONMEM V Level 1.1 3.5“ 플로피 디스켓 5장</p></li>
+<li><p>최신으로 update된 한글 MS-Windows XP 운영체제가 설치된 PC</p></li>
+<li><p>Acrobat reader(<a href="http://www.adobe.com" class="uri">http://www.adobe.com</a>) 등 PDF 파일을 읽을 수 있는 프로그램</p></li>
+<li><p>웹 브라우징이 가능한 PC 또는 아래 필요한 소프트웨어가 담긴 저장매체(CD-ROM, USB 등)</p></li>
+<li><p>인터넷에서 다운로드 받을 소프트웨어
+(1) G77: 아래 주소에서 다운로드 받는다.
+<a href="http://www.engineering.usu.edu/cee/faculty/gurro/Classes/Classes_Fall2002/Fortran77/g77.zip" class="uri">http://www.engineering.usu.edu/cee/faculty/gurro/Classes/Classes_Fall2002/Fortran77/g77.zip</a></p></li>
+</ol>
+<p>부연: NONMEM을 구동하기 위해서는 Fortran compiler가 있어야 한다. 이를 위해 Digital fortran이나 G77을 사용할 수 있는데, Digital fortran은 상용이며 크기가 크므로, 무료이면서 크기가 작은(2.1MB) G77을 사용하도록 한다. 가장 많이 사용되는 두 제품은 성능은 거의 차이가 없다. G77은 무료이지만, 인터넷 상에서 구하기 쉽지 않으므로, 위 주소에서 구할 수 없는 경우에는 주변에 이미 NONMEM을 설치해서 사용하고 있는 곳에 부탁하거나, 울산의대 임상약리학교실 배균섭(<a href="mailto:ksbae@amc.seoul.kr">ksbae@amc.seoul.kr</a>)에 연락하여 받을 수 있다.</p>
+<pre><code>(2) AcroEdit: http://www.acrosoft.pe.kr 에서 무료로 다운로드 받는다.
+
+(3) Official bug list: http://www.globomax.com/nonmem.htm 에서 다운로드 받을 수 있다.</code></pre>
+<p>Bug란 컴퓨터 소프트웨어상의 논리적 결함(오류)을 의미하는데, NONMEM에도 일부 있다. 수치계산의 결과가 다르게 되는 경우는 거의 없지만, 아예 결과가 산출되지 않는 경우가 있으므로 알려진 오류는 수정한 후 설치하도록 하겠다.</p>
+<ol start="3" style="list-style-type: upper-roman">
+<li>설치하기</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><p>[시작] 메뉴 형식 정하기</p></li>
+<li>화면 좌측 하단의 [시작] 메뉴에 마우스 포인터()를 위치한 후 마우스의 우측 버튼을 클릭한다.</li>
+</ol>
+<ul>
+<li>향후 별다른 언급이 없는 클릭은 모두 마우스의 좌측(왼쪽) 버튼을 의미한다. (일반적으로 마우스는 오른손잡이용으로 설정되어 있으므로 별다른 문제가 없으나 마우스가 왼손잡이용으로 설정된 경우는 클릭할 버튼이 위 설명과 반대이다.)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>그림과 같은 메뉴가 나오면 [속성] 메뉴를 선택한다.</li>
+</ol>
+<ul>
+<li><p>선택이란 마우스 포인터를 선택할 메뉴 또는 아이콘(그림메뉴) 위에 위치한 후 마우스의 왼쪽 버튼을 1회 누르는(클릭하는) 것을 의미한다.</p>
+<pre><code> 클릭2
+
+
+클릭1</code></pre></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>[시작메뉴]라는 라디오버튼을 누른 후, [확인] 버튼을 누른다. 이렇게 시작메뉴를 설정한 것은 이후 따라하기에서 화면이 다르게 나오는 것을 방지하기 위한 것으로, 이러하게 설정한 경우의 효과를 아는 경우에는 이번 따라하기는 하지 않아도 무방하다.</li>
+</ol>
+<p>부연
+위에서 [이전 시작 메뉴]를 선택한 경우에는 메뉴양식이 조금 다를 뿐 아니라, 바탕화면에 [내 문서], [내 컴퓨터], [내 네트워크 환경]이라는 아이콘이 생긴다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>바탕화면에 [Windows 탐색기]의 바로가기 만들기</p></li>
+<li><p>화면 좌측 하단의 [시작] -&gt; [모든 프로그램]을 차례대로 클릭한다.</p></li>
+</ol>
+<p>우클릭</p>
+<ol start="2" style="list-style-type: decimal">
+<li>[보조프로그램]을 선택하거나 글자위에 잠시 머무르면 하위 메뉴 창들이 열린다. -&gt; [Windows 탐색기]위에 마우스 포인터를 위치한 후 마우스 우측 버튼을 누른(우클릭) 후 하위메뉴에서 [보내기]를 선택하고, 그 하위에서 [바탕화면에 바로가기 만들기]를 선택한다.</li>
+</ol>
+<p>3.바탕화면에 좌측그림과 같은 Windows 탐색기가 생성되었음을 확인한다.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>[Windows 탐색기]의 속성 정하기</p>
+<p>클릭</p></li>
+<li><p>윈도우 탐색기를 연후 폴더 버튼을 누른다.</p></li>
+</ol>
+<p>폴더 버튼을 누르면 그림과 같이 화면 좌측에 폴더구조가 나타난다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>좌측 그림과 같이 [자세히] 보기 형식으로 변경한다.</p></li>
+<li><p>[보기] -&gt; [상태 표시줄] 메뉴를 선택한다. 그러면 탐색기 하단부위에 현재 상태를 보여주는 줄이 하나 생긴다.</p></li>
+<li><p>[도구] -&gt; [폴더 옵션] 메뉴를 선택한다.</p>
+<p>클릭</p></li>
+<li><p>새로 나타난 윈도우에서 [Windows 기본 폴더 사용]을 선택한다.</p>
+<p>클릭1</p>
+<p>클릭2</p></li>
+<li><p>[보기] 탭을 선택한 후 [내 컴퓨터에 제어판 표시]를 체크한다.</p>
+<p>클릭2</p>
+<p>클릭1</p></li>
+<li><p>우측 트랙바를 끌어내려서 [알려진 파일 형식의 파일 확장면 숨기기]에 체크표시가 된 것을 한 번 눌러서 체크표시를 없앤다. 이후 [모든 폴더에 적용] 버튼을 눌러 이후 열리는 모든 [Windows 탐색기]에 영향을 미치도록 한다.</p></li>
+<li><p>확인 창에서 [예]를 선택한다.</p></li>
+<li><p>바탕화면에 <a href="도스창">명령 프롬프트</a> 생성</p></li>
+<li><p>컴퓨터 바탕화면 (대부분의 경우)좌측 최하단에 [시작]이라는 메뉴를 마우스 왼쪽 버튼으로 클릭한다. 이후 [모든 프로그램]을 선택한다. 또는 마우스 포인터를 [모든 프로그램] 글자 위에 조금 머무른다.</p></li>
+</ol>
+<p>우클릭</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>[보조프로그램]을 선택하거나 글자위에 잠시 머무르면 하위 메뉴 창들이 열린다. -&gt; [명령 프롬프트]위에 마우스 포인터를 위치한 후 마우스 우측 버튼을 누른 (우클릭)후 하위메뉴에서 [보내기]를 선택하고, 그 하위에서 [바탕화면에 바로가기 만들기]를 선택한다.</p></li>
+<li><p>(확인) 바탕화면을 보면 그림과 같은 [명령 프롬프트] 아이콘이 생겨있다.</p></li>
+</ol>
+<p>위에서 ‘￦’ 표시는 ‘’ 와 동일한 뜻이다. 이는 현재의 [명령 프롬프트]가 한글을 지원함을 의미한다. 하지만, 우리는 영문만을 사용할 것이므로 표시되는 문자의 ‘코드 페이지’를 영문으로 하는 것이 편리하다. 또한 시작 폴더도 아래와 같이 길고 복잡한 형태가 아니라 ‘C:’(C:￦NMV)가 되도록 하는 것이 편리하다. 그러기 위해서는 다음의 과정을 추가적으로 실시한다. [윈도우 탐색기]에서 C:‘NMV’라는 이름의 폴더를 만들어 둔다. ’숨겨져 있습니다‘라는 내용의 표시가 나오면 표시하도록 선택한다. (탐색기에서 새로운 폴더 만드는 방법은 기본적인 컴퓨터 서적을 참고하거나 주변에 물어본다).
+4. 바탕화면의 [명령 프롬프트]에 마우스 포인터를 대고 마우스 왼쪽 버튼을 빠르게 두 번 연속으로 누른다(버튼을 두 번 연속 빠르게 누르는 것을 ‘더블클릭’이라 한다). 그러면 그림과 유사한 화면이 나타날 것이다. (여기에서 사용자 이름은 모두 다르다.) 이제 우측상단의 ’x’ 표시를 눌러 창을 닫는다.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>바탕화면의 [명령 프롬프트]에 마우스 포인터를 대고 마우스 우측 버튼을 누르면 그림과 같은 메뉴가 나타난다. 나타난 메뉴에서 [속성] 메뉴를 선택한다.</p></li>
+<li><p>그림과 같은 윈도우가 나타나면 [바로 가기] 탭을 선택하고, [시작 위치]부분을 그림처럼 ‘C:’로 채워 넣는다. (입력내용에 따옴표는 포함하지 않는다. ‘’ 기호는 ‘￦‘ 기호와 동일함에 유의한다.)</p></li>
+<li><p>[옵션]이라는 탭을 선택해보면 [현재 코드 페이지]가 ‘949 (ANSI /OEM 한국어)’로 되어 있다. 바로 우측의 아래 화살표를 눌러 그림과 같이 ‘437 (OEM 미국)’으로 변경하고, 하단부 [확인] 버튼을 눌러 종료하고 나온다.</p></li>
+<li><p>(확인) 조금 전에 속성을 수정한 바탕화면의 [명령 프롬프트]를 더블클릭하면 그림과 같은 화면이 나타나야 한다.</p></li>
+<li><p>G77 설치</p></li>
+<li><p>G77을 인터넷 검색이나 주변에 사용하고 있는 분으로부터 받으면 대개 그림과 같은 압축파일의 형태(여기서는 확장자가 .zip)로 되어 있다.</p></li>
+<li><p>마우스 우측 버튼을 눌러 그림과 같은 메뉴가 나오는데, [압축 풀기]라는 메뉴를 선택한다. (MS-Windows XP는 압축을 하거나 푸는 기능을 윈도우가 내장하고 있지만, ALzip과 같은 압축 소프트웨어가 이미 설치되어 있는 경우에는 그런 소프트웨어를 사용하여도 된다.)</p></li>
+<li><p>마법사가 시작되면 [다음]버튼을 눌러 계속한다.</p>
+<pre><code>여기       입력</code></pre></li>
+</ol>
+<p>PV4. 압축을 풀어서 넣을 폴더를 아래 왼쪽 그림의 마우스가 가리키는 위치에 ’C:'라고 입력하여 지정한다. [다음]버튼을 계속 누른다.</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>[다음]버튼을 계속 누른후 그림과 같은 화면이 나오면 [마침]버튼을 눌러 종료한다.</p></li>
+<li><p>(폴더확인) 압축을 푼 파일에서 [폴더]를 표시하면 그림과 같이 보여야 정상이다. 즉, C:G77폴더가 있고, 그 아래에 ‘bin’, ‘doc’, ‘lib’ 폴더가 있어야 하는데, 그렇지 않다면 적절히 이동하여 G77의 위치를 맞춘다.</p></li>
+<li><p>[제어판]의 [시스템]을 더블 클릭하여 선택한다. (바탕화면의 [내 컴퓨터] 속성을 열어도 동일한 결과를 얻는다. 속성은 대개 마우스의 우측 버튼을 누른 후 나오는 메뉴에 있다.)</p>
+<p>클릭</p>
+<p>클릭</p></li>
+<li><p>[고급]탭을 선택하면 아래 왼쪽과 같은 화면이 나오는데, 여기에서 하단부의 [환경변수] 버튼을 클릭한다.</p>
+<p>클릭</p></li>
+<li><p>그림과 같이 아래 화살표를 눌러 [Path]라고 쓰인 행을 찾는다.</p>
+<p>클릭1</p>
+<p>클릭2</p></li>
+<li><p>’Path’라는 행을 선택(마우스 좌측 버튼으로 한 번 클릭)하고 우측하단의 [편집] 버튼을 누른다.</p></li>
+</ol>
+<ul>
+<li>주의: ‘;C:77’ 앞부분은 컴퓨터에 따라 다르다.</li>
+</ul>
+<ol start="11" style="list-style-type: decimal">
+<li><p>[변수 값]에 ‘;C:77’을 추가시켜 넣는다. 첫 입력은 세미콜론임과 앞부분은 지워지지 않도록 유의한다. 이전 입력을 지워지지 않게 하려면 키보드상의 우측 화살표를 누르면 된다. 입력 후에는 [확인]버튼을 누른다.</p></li>
+<li><p>[새로 만들기] 버튼을 누른다.</p></li>
+<li><p>새로 나타난 팝업 윈도우에 그림과 같은 내용을 입력하고, [확인]버튼을 누른다. 변수 이름 ‘LIBRARY_PATH’에 밑줄이 있음에 유의한다. 이후 나오는 윈도우에도 모두 [확인]을 눌러 종료시킨다.</p></li>
+<li><p>(확인) [명령 프롬프트]를 열고 ‘g77󰏀’을 입력했을 때 ’g77: No input files’와 같은 에러메시지가 나오면 정상적으로 설치되었다는 것을 의미한다. 좌측의 [명령 프롬프트]는 [시작]-&gt;[모든 프로그램]-&gt;[보조프로그램]에서 실행한 것이지만, 여러분은 C:시작하는 바탕화면의 [명령 프롬프트]를 사용하는 것이 편리하다. 󰏀는 입력후 키보드 상의 ’엔터‘키를 입력하는 것을 의미한다.</p></li>
+</ol>
+<p>15 (다르게 확인하는 방법) [명령 프롬프트]에서 ‘cd77󰏀’을 입력하고 ‘dir󰏀’ 명령어를 실행하면 그림과 같은 내용이 보인다.</p>
+<p>16.‘g77 mytest1.f󰏀’라고 입력하면 ’a.exe’가 생성된다. (생성확인은 dir󰏀 명령어 이용) ‘a.exe’를 실행하기 위해서는 ’a󰏀’를 입력한다. 질문이 나오고 지시대로 숫자를 입력하여 그림과 같은 화면이 나오면 정상적으로 설치된 것이다.</p>
+<ol start="6" style="list-style-type: decimal">
+<li>AcroEdit 설치</li>
+</ol>
+<p>1.http://www.acrosoft.pe.kr 사이트에서 그림과 같이 다운로드를 받는다.
+(이전 버전이 설치되어 재설치 하는 경우에 먼저 프로그램을 제거하는 것이 바람직하다.)</p>
+<ol start="2" style="list-style-type: decimal">
+<li>다운로드를 시작할 때 [저장] 버튼을 누른다.</li>
+</ol>
+<p>위에서 [실행]을 선택한 경우 게시자를 확인할 수 없다는 메시지가 나온다.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>저장후 실행을 하거나, 저장하지 않고 바로 실행하는 경우 아래와 같은 첫 두 화면에서 [예] 버튼과 [확인] 버튼을 누른다.</p></li>
+<li><p>기본적인 옵션으로 설치를 완료한다.
+설치완료시점에 ReadMe.txt 파일의 내용을 보여준다.
+다음에 AcroEdit을 사용할 때 동일한 내용이 또 보이지 않게 하려면 현재 열린 파일명에다 마우스 우측버튼 클릭하여 닫으면 된다.</p></li>
+<li><p>다음에 acroedit을 사용할 때 위 내용이 보이지 않게 하려면 현재 열린 파일명에다 마우스 우측버튼 클릭으로 닫으면 된다.</p></li>
+<li><p>NONMEM V 기본설치</p></li>
+<li><p>플로피 디스켓 1번을 ‘C: NMV’ 폴더에 복사</p></li>
+<li><p>플로피 디스켓 3번을 ‘C: NMV’ 폴더에 복사</p></li>
+<li><p>복사중에 그림과 같은 확인 메시지가 나오면 ‘예’를 선택한다. 실제로 2개는 동일한 파일이므로 [아니오]를 선택해도 무방하다.</p></li>
+<li><p>Help guide 1번 디스켓을 ‘C:’ 폴더에 복사한다. 이를 위해서는 탐색기로 C:HELP라는 폴더를 작성해야 한다. Help guide 2번 디스켓(DOS tools)은 MS-Windows XP에서 정상적으로 작동하지 않는다.</p></li>
+</ol>
+<p>클릭</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>AcroEdit에서 [파일]-&gt;[열기]메뉴를 이용하여 ‘C:’폴더에 있는 ‘NMD’ 파일(이하 ‘C:’와 같이 표현)을 연다. 이 때 [열기] 창에서 하단부의 [파일형식]을 ‘모든 파일(<em>.</em>)’로 변경하고 C:폴더로 이동해야 CONTROL파일이 보인다.</p></li>
+<li><p>‘CDCN’이라는 문자열을 그림과 같이 [찾기] 메뉴로 찾는다.</p></li>
+</ol>
+<p>[CDCN 문자열을 찾은 후의 모습]</p>
+<ol start="7" style="list-style-type: decimal">
+<li>문법 오류 1 수정
+아래와 같이 현재의 1039번 행에 [수정후]화면과 같이 줄 ‘EXTERNAL SCALE’을 추가로 입력한다.
+[수정전]</li>
+</ol>
+<p>*부연: 1039행의 ’DATA ~’바로 앞에 커서를 두고 엔터를 누르면 1행이 추가될 여백이 마련된다.
+[수정후]</p>
+<ol start="8" style="list-style-type: decimal">
+<li>문법오류 2 수정
+CDCN1을 찾아서 아래 그림처럼 1133번행(수정과거력에 따라 행번호는 약간씩 달라질 수 있다.)을 추가한다.</li>
+</ol>
+<p>[수정후]</p>
+<ol start="9" style="list-style-type: decimal">
+<li>문법 오류 3 수정
+아래 5309행처럼 마지막에 쉼표(,)가 없는데, 쉼표를 추가한다.
+[수정전]</li>
+</ol>
+<p>[수정후]</p>
+<ol start="10" style="list-style-type: decimal">
+<li>문법 오류 4 수정
+아래 6657행처럼 마지막에 쉼표(,)가 없는데, 쉼표를 추가한다.
+[수정전]</li>
+</ol>
+<p>[수정후]</p>
+<ol start="11" style="list-style-type: decimal">
+<li><p>문법 오류 5 수정
+18820 행에 ‘EXTERNAL SCALE’행을 추가한다.
+[수정후]</p></li>
+<li><p>G77 문법에 따른 수정 1
+아래 그림처럼 [처음부터] 찾기로 [시작 위치]를 설정한후 ’CDFLU’를 찾는다.</p></li>
+</ol>
+<p>아래 그림처럼 수정한다.
+[수정전]</p>
+<p>[수정후]</p>
+<ol start="13" style="list-style-type: decimal">
+<li><p>G77 문법에 따른 수정 2
+45행의 ‘con’이라는 부분을 ’CONOUT$’,로 변경한다. 이때 대소문자가 맞도록 주의한다.
+[수정후]</p></li>
+<li><p>nmg77.bat 파일 수정
+C:77.bat 열어서 아래 줄(34번 행)을 삭제한다.</p></li>
+<li>다음 표와 같이 각 파일에서 Official bug를 수정할 부분을 찾아 수정한다.
+공식 오류 목록(Official bug list)는 <a href="http://www.globomax.com/nonmem.htm" class="uri">http://www.globomax.com/nonmem.htm</a> 에서 다운로드 받을 수 있다. NONMEM오류라고 된 부분은 C:파일을 수정하고, NMTRAN 오류는 C:파일을 수정하고, PREDPP 오류는 C:2 파일을 수정하면 된다. 이부분이 가장 시간이 많이 소요되는 부분이므로 이미 수정된 파일을 구할 수 있으면 편리하다.</li>
+</ol>
+<ul>
+<li>NMD, TRAN, PPD2 파일 편집시 주의사항 !: NONMEM은 FORTRAN77문법으로 되어 있으며, FORTRAN77에서는 세로 줄(열)을 정확히 맞추어 주어야 한다. 즉, 조금이라도 좌우로 비뚤어지게 되면 안 되니 띄워쓰기 등에 각별히 주의해야 한다. 따로 표기하지 않는 경우에는 포트란77문법상 모두 7열부터 입력해야 한다. 루틴을 찾을 때는 아래 표기된 루틴이름앞에 CD라는 문자를 덧붙여서 찾아야 한다. 즉 ‘OBETA’라는 루틴은 ‘CDOBETA’를 찾으면 된다.</li>
+</ul>
+<p>NMD 파일중 수정할 부분 (2005년 10월 31일 현재)</p>
+<p>공식오류
+번호
+루틴이름
+대략의
+행번호
+수정 전
+수정 후
+2
+OBETA
+12653
+라벨 30이 붙은 행 뒤에 다음 행으로 추가
+NRETA=K
+NAETA=NRE1-NRETA
+3
+FNLETA
+5071
+DO 342 I=1,LM1
+DO 342 I=1,MCMAX
+6
+SUPER
+20493,
+20573
+I2=0가 2회 나오는데 각각 그 앞에 행으로 추가
+IF (I2.EQ.1) CLOSE (UN(2))
+6
+SUPER
+20504,
+20584
+I3=0가 2회 나오는데 각각 그 앞에 행으로 추가
+IF (I3.EQ.1) CLOSE (UN(3))
+6
+SUPER
+20515,
+20595
+I4=0가 2회 나오는데 각각 그 앞에 행으로 추가
+IF (I4.EQ.1) CLOSE (UN(4))
+10
+OBJ2
+14929
+IQ=0
+IF (MODE.EQ.2) THEN
+IF (MODE.NE.3) THEN
+IQ=0
+12
+NP4F
+11730
+IF
+(ICOM4.EQ.1.AND.JJ.EQ.1.AND.I.EQ.1)
+THEN
+가 2회 나오는데 2번째 것을 변경
+IF
+(ICOM4.EQ.1.AND.JJ.EQ.1.AND.I.EQ.1.AND.MCALL.EQ.1) THEN
+13
+COMMRG
+1683
+CALL DAT1 (1,0,0)
+CALL DAT1 (INX+1,0,0)
+14
+COMMRG
+1571
+IF (INIT4.NE.0) THEN
+DO 159 K=1,INIT4
+IF (IDAT66.EQ.1) THEN
+DO 159 K=1,NP4A</p>
+<p>TRAN파일중 수정할 부분</p>
+<p>공식오류
+번호
+루틴이름
+대략의
+행번호
+수정 전
+수정 후
+11
+GENERC
+9007
+PINFNM=INFNAM
+IF (INFNAM.NE.’
+‘.AND.INFNAM.NE.’*‘)
+PINFNM=INFNAM
+14
+READ3
+21635
+ELSEIF
+(VALUE(KK+J).GE.1000.0.AND.WIDE.NE.’Y’) THEN
+ELSEIF
+(VALUE(KK+J).GE.1000.0.AND.WIDE.NE.’Y’.AND.NSP.EQ.1) THEN
+15
+READF
+22022
+INTEGER
+WU,LONGID,LAST20,LYWARN,MAXMSG 행 뒤에 다음 행으로 추가
+COMMON/COMEND/ENDFIL
+LOGICAL ENDFIL
+15
+READF
+22160
+IF
+(INOBS.GT.9999.AND.WIDE.EQ.’Y’) CALL ERRMSG(283,‘’,1)
+IF
+(INOBS.GT.9999.AND.WIDE.EQ.’Y’.AND..NOT.ENDFIL)
+(줄바꾸고 6열부터 시작)
+X CALL ERRMSG(283,‘’,1)
+15
+GETITM
+11803
+INTEGER INFORT,INWARN 행 뒤에 다음 1행을 추가
+COMMON/COMEND/ENDFIL
+15
+CHKDAT
+1155
+IF (MKFDAT.AND.INOBS.GT.K9999) THEN 행 뒤에 다음 2행 추가
+FINFLG=1
+IF (WIDE.NE.’Y’) THEN
+15
+CHKDAT
+1162
+위 6행 뒤에
+FINFLG=1
+를 변경
+ENDIF
+17
+GENCOM
+6397
+WRITE(LINE,‘(A,I4.4,A)’)
+‘DIMENSION COM(’,COMMAX,‘)’
+(줄바꿈)
+LL=19
+WRITE(LINE,‘(A,I6.6,A)’)
+‘DIMENSION COM(’,COMMAX,‘)’
+(줄바꿈)
+LL=21
+24
+GENERC
+8530
+INTEGER I,J,K,KK,II,IU(99)
+직전에 2행 추가
+COMMON/COM34/FIXTM,FRSTRC,DROPDT
+LOGICAL FIXTM,FRSTRC,DROPDT
+24
+GENERC
+8544
+RHSPOS(I)=IDRPTR(-RHSPOS(I))
+직후에 1행 추가
+IF (DROPDT)
+RHSPOS(I)=RHSPOS(I)-2
+26
+CPYOLD
+2584
+KSAVE=KKK
+KCOUNT=KCOUNT+1
+GOTO 991
+IF (KIF.EQ.0) THEN
+KSAVE=KKK
+KCOUNT=KCOUNT+1
+GOTO 991
+ENDIF
+27
+GETTKN
+13603
+IF (ITEM2.EQ.’-‘) THEN
+ITEM(LI+1:)=’-‘IF
+(ITEM2.EQ.’-‘.OR.ITEM2.EQ.’+’) THEN (줄바꿈)
+ITEM(LI+1:)=ITEM2</p>
+<p>PPD2 파일중 수정할 부분</p>
+<p>공식오류
+번호
+루틴이름
+대략의 행번호
+수정 전
+수정 후
+2
+SS6
+9612
+DOUBLE PRECISION
+DAINV(PM,PM),C(PM,PC),DAWK(PM,PM)
+DOUBLE PRECISION
+DAINV(PM,PM),C(PM,PE),DAWK(PM,PM)
+2
+SS9
+10508
+DOUBLE PRECISION
+DAINV(PM,PM),C(PM,PC),DAWK(PM,PM)
+DOUBLE PRECISION
+DAINV(PM,PM),C(PM,PE),DAWK(PM,PM)</p>
+<p>몇몇 주요 변경사항을 그림으로 표시하면 다음과 같다.</p>
+<p>NMD 오류 2번 수정후</p>
+<p>NMD 오류 3번 수정후</p>
+<p>NMD 오류 10번 수정후</p>
+<p>NMD 오류 13번 수정후</p>
+<p>NMD 오류 14번 수정후</p>
+<p>TRAN 오류 11번 수정후</p>
+<p>TRAN 오류 14번 수정후</p>
+<p>TRAN 오류 15번중 첫번째 수정후</p>
+<p>TRAN 오류 15번중 세번째 수정후</p>
+<p>TRAN 오류 15번중 네번째 수정후</p>
+<p>TRAN 오류 17번 수정후</p>
+<p>TRAN 오류 24번중 첫번째 수정후</p>
+<p>TRAN 오류 16번 수정후</p>
+<p>TRAN 오류 27번 수정후</p>
+<p>PPD2 오류 2번 수정후</p>
+<ol start="16" style="list-style-type: decimal">
+<li>바탕화면의 [명령 프롬프트]를 열고 C:폴더에서 ‘setup a c nmv g77 y󰏀’를 입력한다. 이루 ’Press any key to continue . . . ’라는 메시지에서는 아무 키(주로 스페이스바)나 누른다.</li>
+</ol>
+<p>설치 종료 후에는 화면과 같이 오류가 없어야 한다.</p>
+<p>위의 CONTROL5와 같은 파일을 NONMEM 문법에 맞게 작성된 control 파일이라 하고, nmfe5.bat은 이를 컴파일하고 실행하는 batch파일이다. THEOPP는 control 파일 내에 그 이름이 지정된 data file이다. Control파일과 data file의 이름은 사용자가 편리하도록 바꾸어 사용할 수 있다.
+17. 설치 직후 C:폴더의 내용이 그림과 같은지 확인한다. ‘cd run󰏀’ 와 ’dir󰏀’ 명령어로 확인한다.</p>
+<p>report5는 NONMEM실행결과를 저장할 파일이름이다. 이 파일이름도 사용자가 원하는 것으로 정해줄 수 있다.
+18. 제대로 실행되는 지 확인하기 위해 ‘nmfe5 control5 report5󰏀’를 입력한다.</p>
+<p>위에서 report5가 생겨져 있는데, AcroEdit에서 불러오면 그 결과를 볼 수 있다. 한 번 탐색해 보길 권한다.
+19. 화면과 같은 양식으로 나오면 정상적으로 설치된 것이다.</p>
+<ol start="8" style="list-style-type: decimal">
+<li>NONMEM V 최적화 - NMUTIL 활용하기
+[CONTROL5 파일을 Acroedit에서 열어 본 모습]</li>
+</ol>
+<p>[결과파일인 REPORT5 파일을 열어 본 모습]</p>
+<p>주목!: 위에서 첫 열이 대부분 공백이거나, ‘1’, ‘0’, ‘+’이 보인다. 이는 과거 유닉스와 132컬럼 도트프린터시절 출력 조절에 영향을 미치는 기호인데, 현재 화면에서 보거나 Acroedit으로 출력하는 경우에는 이런 기호가 오히려 성가시다. 따라서, 이를 제거하기 위해서는 아래와 같은 추가작업을 실시한다.</p>
+<p>부연:
+ㄱ) sep &lt; nmutil: C:내의 포트란 소스프로그램을 분리한다.
+ㄴ) g77 print.for: print.for 를 컴파일하여 a.exe를 생성한다.
+ㄷ) ren a.exe print.exe: 생성된 a.exe를 print.exe 라는 이름으로 변경한다.
+1. C:print.exe의 생성.
+바탕화면의 [명령 프롬프트]를 령고 C:폴더에서 아래 세 줄의 명령어를 입력한다.
+‘sep &lt; nmutil󰏀’
+‘g77 print.for󰏀’
+‘ren a.exe print.exe󰏀’
+이 때 띄어쓰기에도 유의한다.
+[수정전]
+2. C:5.bat 파일과 C:5. bat 을 그림과 같이 수정한다.
+[수정후]
+부연:
+이렇게 하면 향후 결과파일들에 print.exe가 한 번 더 처리하여 불필요한 프린터 제어문자를 제거해 주고, 화면상 더 깨끗하게 결과 파일을 볼 수 있다.</p>
+<ol start="9" style="list-style-type: decimal">
+<li>Acroedit 최적화 1 - 사용자도구 만들기
+과거에는 우리가 작성한 NONMEM control파일을 실행시켜보려면 매번 <a href="도스창">명령 프롬프트</a>으로 나가 일일이 입력하고 도스의 edit이라는 명령어를 이용해서 결과를 확인했다. Control파일의 작성 역시 도스의 edit명령어를 사용했는데 매우 불편하다(지금도 사용가능하다). 이후 편집기를 ‘메모장(노트패드)’, ‘Write(워드패드)’ 등을 이용했으나 이도 행번호가 표시되지 않는 등 불편한 점이 많았다. 이제는 대부분의 NONMEM user는 자신에게 맞는 편집기(editor) 프로그램을 사용하고 있는데, 대표적인 것이 PFE(programmer’s file editor, 유료), UltraEdit(유료), AcroEdit(무료) 등이다. 이러한 편집기들의 편리한 기능은 원하는 부분을 쉽게 찾고 변경하는 것 뿐 아니라, 프로그램 소스파일의 편집을 훨씬 더 편리하게 하는 기능들이 많다. 그 중에 대표적인 ‘사용자도구 만들기’와 ‘문법강조기능’을 활요해 보기로 한다.</li>
+</ol>
+<p>사용자도구 만들기는 매번 [명령 프롬프트]로 나가서 작업할 필요가 없도록 만들어 준다. 사용자가 만든 도구 버튼을 누르기만 하면 AcroEdit이 알아서 나머지 일을 하는 것이다. 만드는 절차는 다음과 같다.</p>
+<ol style="list-style-type: decimal">
+<li><p>AcroEdit 상단의 [도구] 메뉴를 선택하면 그림과 같은 dropdown list가 나타난다. 여기에서 [사용자 도구 설정] 메뉴를 선택한다.</p></li>
+<li><p>새 윈도우가 나타나면 [추가] 버튼을 누른다.</p></li>
+<li><p>새 윈도우에 입력해 넣고, 하단부의 옵션을 그림과 같이 되도록 선택한다. 이후 [확인] 버튼을 누른다. 여기에서 단축키 부분은 그냥 입력되지 않고 실제의 ‘F5’키를 눌러야 한다.</p></li>
+<li><p>제대로 되었다면 그림과 같은 NMV RUN이라는 새로운 사용자 도구가 생긴다. [닫기]버튼을 눌러 나온다.</p></li>
+<li><p>C:5.bat을 g.bat이라는 다른 이름으로 저장하고 아래와 같이 편집한다.
+53행에 ‘ECHO’(공백포함) 부분을 넣고, (마지막 입력커서 위치이동 없이) 아래 마우스 포인터가 가리키는 지점의 A라고 쓰인 아이콘을 누른다.</p>
+<p>클릭</p></li>
+<li><p>아래 화면과 같이 좌측에 ASCII표가 나오면 7번 문자를 택해서 넣는다. 그러면 검은 점 표시가 나온다.</p>
+<p>클릭</p></li>
+<li><p>ECHO 가 입력된 아래 줄에 두 줄을 추가하되 오타가 없이 정확하게 입력한다.
+[수정전]</p></li>
+</ol>
+<p>[수정후]</p>
+<ol start="10" style="list-style-type: decimal">
+<li>AcroEdit 최적화 2 - 문법강조 하기</li>
+</ol>
+<p>부연:
+NONMEM.stx 파일은 NONMEM상의 키워드(예약어)들과 AcroEdit의 문법파일(stx파일)작성법을 알면 직접 제작할 수 있다. C:Files폴더내의 다른 .stx파일을 AcroEdit으로 열어보면 작성 예를 볼 수 있다.
+1. 외부에서 받은 NONMEM.stx 파일을 C:Files AcroSoft폴더에 넣는다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>[도구] -&gt; [환경설정]을 선택한다.</p>
+<p>클릭</p>
+<p>클릭</p></li>
+</ol>
+<p>입력</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>[일반] -&gt; [열기]탭을 선택한 후 우측하단의 기본 확장자를 CTL로 설정한다.
+이렇게 하면 AcroEdit에 사용하는 확장자를 기본적으로 .CTL이 된다.</p>
+<p>클릭</p></li>
+<li><p>[문법 강조]를 선택하고 [추가]버튼을 누른다. 이후 저장해 둔 NONMEM.stx 파일을 지정해 주면 .CTL파일의 문법을 강조해서 화면에 표시할 수 있게 된다.</p></li>
+<li><p>(문법강조 확인) CONTROL파일을 열어서 [파일]-&gt;[다른 이름으로 저장] 메뉴를 선택하여 ‘CONTROL5.CTL’ 파일로 저장하면 NONMEM 키워드들이 컬러로 표시된다.</p></li>
+</ol>
+<p>클릭</p>
+<pre><code> 클릭 </code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>다시 [환경 설정] 화면으로 돌아가서 [편집기] -&gt; [글꼴 및 색]을 선택한후 [변경]을 누른다.</p></li>
+<li><p>표시되는 폰트를 가독성이 좋은 fixedsys로 변경한다. [확인] 버튼들을 누르면서 창을 닫고 나온다.</p></li>
+<li><p>(확인) Fixedsys 폰트로 변경후 화면</p></li>
+<li><p>C:폴더 교정
+NONMEM에서 help를 사용하기 위해서는 아래와 같이 ‘C:’ 폴더에서 ‘nmhelp <찾고자 하는 키워드>’를 입력하면 된다.</p></li>
+</ol>
+<p>하지만, 현재 제공되는 NONMEM help는 공식적으로 MS-Windows XP에서 제대로 작동하지 않는다. 원인은 ‘C:’폴더에 있는 gawk.exe와 grep.exe가 구버전으로서 MS-Windows에서는 작동하지 않는데다가 사용법도 약간 달라졌기 때문인데, 이를 교정하기 위해서는 최신의 gawk.exe와 grep.exe를 구하고(무료임), C:.C를 grep의 새 사용법에 맞게 수정후 재컴파일해주어야 한다. 이것은 C언어를 잘 아는 프로그래머가 아니면 어려운 작업이므로 이미 MS-Windows상에서 재컴파일된 NMHELP.exe를 gawk.exe, grep.exe와 함께 기존 사용자로부터 제공받는 것이 좋다.</p>
+<ol start="12" style="list-style-type: decimal">
+<li><p>재설치하기(Reinstall)
+1) C:폴더의 하위폴더들인 nm, pr, tr, tl, run 폴더들을 모두 삭제한다. (주로 윈도우 탐색기 이용)
+2) [명령 프롬프트]를 열고 C:폴더에서 ‘setup a c nmv g77 y󰏀’ 를 다시 입력한다.</p></li>
+<li><p>삭제하기(Remove)
+1) NONMEM V 삭제방법
+C:폴더 전체를 삭제한다.(주로 윈도우 탐색기 이용)</p></li>
+</ol>
+<pre><code>2) G77 삭제방법
+C:\G77 폴더 전체를 삭제한다.(주로 윈도우 탐색기 이용)
+
+3) AcroEdit 삭제방법 
+[시작] -&gt; [모든 프로그램] -&gt; [AcroSoft] -&gt; [AcroEdit]에서 [AcroEdit 삭제] 메뉴를 이용해서 삭제한다.</code></pre>
+<p>NONMEMⓇ 운영 매뉴얼
+NONMEM V Level 1.1 Installation Manual
+I. 도 입</p>
+<p>NONMEM을 설치하면 C:폴더에 CONTROL1부터 CONTROL7까지의 파일이 있다.
+CONTROL1 ~ 2 예문은 현재 거의 사용되지 않는 문법이며 CONTROL3 ~ 7 예문은 현재도 잘 동작한다.</p>
+<p>FILE NULL
+PROB SIMPLE NONLINEAR REGRESSION OF CP VS TIME DATA FROM ONE SUBJECT
+DATA 0 0 10 3
+ITEM 0 3 0 0 1
+LABL DOSE TIME CP
+FORM
+(3F10.0)
+320 .27 1.71
+320 .52 7.91
+320 1.0 8.31
+320 1.92 8.33
+320 3.5 6.85
+320 5.02 6.08
+320 7.03 5.4
+320 9.0 4.55
+320 12.0 3.01
+320 24.3 .90
+STRC 3 1 1
+THCN 1
+THTA 1.7 .102 29.
+LOWR .4 .025 10.
+UPPR 7. .4 80.
+DIAG 2
+ESTM 0 240 4 2
+COVR 0
+TABL 0 1
+TABL 1 2
+SCAT 0 4
+SCAT 2 3
+SCAT 2 4
+SCAT 2 5
+SCAT 3 4 1
+표 . CONTROL1 파일의 내용</p>
+<p>FILE NULL
+PROB THEOPHYLLINE SINGLE SUBJECT DATA
+DATA 0 0 11 6
+ITEM 6 3 5 11 1
+INDX 4 2 1
+LABL DOSE TIME CP EVID MDV ID
+FORM
+(4F7.0,1X,F1.0,1X,F2.0)
+320 .0 1 1 1
+.27 1.71 0 0 1
+.52 7.91 0 0 2
+1. 8.31 0 0 3
+1.92 8.33 0 0 4
+3.5 6.85 0 0 5
+5.02 6.08 0 0 6
+7.03 5.4 0 0 7
+9. 4.55 0 0 8
+12. 3.01 0 0 9
+24.3 .90 0 0 10
+STRC 3 1 0 1
+THCN 1
+THTA 1.7 .102 29.
+LOWR 0. 0. 0.
+UPPR +1000000+1000000+1000000
+DIAG 2
+ESTM 0 240 3 2
+COVR 0 0 0 0 1
+TABL 0 1
+TABL 1 2
+SCAT 0 4
+SCAT 2 3
+SCAT 2 7
+SCAT 2 8
+SCAT 3 7 0 0 0 1
+표 . CONTROL2 파일의 내용</p>
+<p>현재는 NMTRAN 덕분에 위와 같이 알아보기 어려운 형태로 NONMEM control 파일을 작성하지 않아도 된다. 즉, NMTRAN이 CONTROL3~7과 같은 파일을 CONTROL1~2와 같은 파일로 변환시켜 준다.</p>
+<p>$PROBLEM THEOPHYLLINE SINGLE SUBJECT DATA
+$INPUT DOSE=AMT TIME CP=DV
+$DATA DATA3
+$SUBROUTINES ADVAN2</p>
+<p>$PK
+CALLFL=1
+KA=THETA(1)
+K=THETA(2)
+SC=THETA(3)</p>
+<p>$ERROR
+Y=F+ERR(1)</p>
+<p>$THETA (0,1.7) (0,.102) (0,29)</p>
+<p>$ESTIMATION MAXEVAL=240 PRINT=2
+$COVR
+$TABLE TIME
+$SCAT CP VS TIME
+$SCAT PRED VS TIME
+$SCAT RES VS TIME
+$SCAT PRED VS CP UNIT
+표 . CONTROL3 파일의 내용</p>
+<p>$표시는 하나의 절(clause)을 의미한다. NONMEM control 파일은 이와 같은 절들로 이루어져 있고 각 절들의 이름은 첫 4글자만 써도 동일한 의미를 갖는다.</p>
+<p>$PROBLEM
+문제의 이름이 무엇인지 쓴다. NONMEM 소프트웨어에는 의미가 없고 우리에게만 의미를 가진다.
+$INPUT
+자료 파일의 열 이름(column name)을 나타낸다. 이중에 AMT는 용량, TIME은 시간, DV는 dependent variable의 약자로서 집단약동학에서는 주로 약물농도를 의미한다.
+$DATA
+자료 파일의 이름을 가리킨다.
+$SUBROUTINES
+미분방정식의 형태로 나타나는 약동학 문제를 해결하고자 할 때는 약동학(미분방정식)을 위해 특별히 고안된 $SUBROUTINES를 이용해서 문제를 해결한다. 이러한 서브루틴을 통틀어서 PREDPP(PREDiction for Population Pharmacokinetics)라 한다.
+$PK
+각 약동학 파라미터들이 어떻게 theta(고정효과)들로 표시되는 지 나타내는 절이다. 또는 eta(무작위효과)들도 함께 표현할 수 있다.
+$ERROR
+$PK에서 고정효과와 개체간 무작위효과를 표현하고 있다면, $ERROR에서는 위 구조모형에서 설명하지 못하는 final residual에 대한 모형이다.
+$THETA
+Theta들의 초기값과 한계값을 설정해 준다.
+$ESTIMATION
+Theta와 eta들의 점 추정치를 구한다. MAXEVAL은 평가하는 횟수의 최대치를 나타낸다.
+$COVARIANCE
+위에서 추정한 theta및 eta들의 표준오차(standard error)를 구한다.
+$TABLE
+계산 결과값들은 표의 형태로 받아보게 한다. $TABLE구문은 여러개 나올 수 있다.
+$SCATTER
+텍스트 문자를 이용해서 그래프를 그린다. 일반 문자를 그대로 쓰므로 출력물의 면적이 매우 크다.
+표 . CONTROL3 파일에 사용된 절(clause)들에 대한 설명</p>
+<pre><code>320    .0     .
+ .     .27   1.71
+ .     .52   7.91
+ .    1.     8.31
+ .    1.92   8.33
+ .    3.5    6.85
+ .    5.02   6.08
+ .    7.03   5.4
+ .    9.     4.55
+ .   12.     3.01
+ .   24.3     .90</code></pre>
+<p>표 . DATA3 파일의 내용</p>
+<p>$DATA에서 정한 DATA3 파일의 내용은 위 표와 같다. 3개의 열로 이루어져 있으며, 이들의 이름이 $INPUT에 있는 대로 각각 AMT, TIME, DV가 된다. 약물 투여시가 시간 0이 되며, 이때의 농도 역시 0이었다. 피험자는 한 명이므로 ID라는 컬럼은 없다.</p>
+<p>$SUBROUTINE에는 ADVAN 루틴들과 TRANS 루틴들이다. ADVAN routine들은 1에서 12까지 있는데, 각 경우의 의미는 다음과 같다.</p>
+<p>루틴이름
+용 도
+ADVAN1
+1 comparment model 정맥투여
+ADVAN2
+1 comparment model 경구투여(또는 first order absorption)
+ADVAN3
+2 compartment model 정맥투여
+ADVAN4
+2 compartment model 경구투여
+ADVAN5
+일반적인 다구획 선형 모형(general multi-compartment linear model)
+ADVAN6
+일반적인 다구획 비선형 모형
+ADVAN7
+일반적인 다구획 선형 모형이되 고유치(eigenvalue)가 실수인 경우
+ADVAN8
+일반적인 다구획 비선형 모형이되 stiff differential equation인 경우
+ADVAN9
+일반적인 다구획 비선형 모형이되 평형(equilibrium) 구획이 있는 경우
+ADVAN10
+Michaelis-Menten Elimination 정맥투여
+ADVAN11
+3 compartment model 정맥투여
+ADVAN12
+3 compartment model 경구투여
+표 . ADAN 루틴들의 용도</p>
+<p>위에서 특이한 것은 ADVAN5~9까지 루틴을 활용하면 약동학 모형 뿐 아니라, 미분방정식의 형태로 표현되는 공학적인 문제나 물리, 화학적인 문제를 복잡한 통계개념(비선형 혼합효과 모형, nonlinear mixed effects model)을 가미해서 모두 풀 수 있다는 점이다.</p>
+<p>TRAN 루틴들은 micro-constant, macro-constant 또는 primary PK parameters(Vd, CL, F, Ka)를 가운데 상호 변환을 위해 필요한 것이다. 개별 ADVAN 루틴들에 따라 사용할 수 있는 TRAN 루틴들이 다르므로 이에 대해서는 nmhelp를 활용하도록 한다.</p>
+<p>$PK에서는 ADVAN과 TRAN에 따라서 예약어들이 있는데 대표적인 것은 다음과 같다. 각 예약어들간의 관계는 nmhelp를 이용한다.</p>
+<p>K CL V Ka K12 K21 Q VSS V1 V2 AOB ALPHA BETA GAMMA K23 K32 K24 K42 V3 VM KM K13 K31 S1 S2 S3 S4 S5 F0 F1 F2 F3 F4 R1 R2 R3 R4 D1 D2 D3 D4 ALAG1 ALAG2 ALAG3 ALAG4
+표 . $PK에서 사용되는 예약어들</p>
+<p>위에서 S는 scale factor, 각 숫자는 구획번호를 의미하는데 K12는 1번 구획에서 2번 구획으로 가는 속도상수를 의미한다. D는 투약지속시간(duration), R은 투약속도(rate), F는 생체이용률(bioavailability)를 의미한다. VM은 Vmax, ALAG는 흡수지연시간(absorption lag time)을 의미한다.</p>
+<p>$ERROR에서는 주로 epsilon(EPS)를 어떻게 구조모형에 결합시킬 지를 결정하는 곳이다. 이것이 꼭 intraindividual variability를 의미하는 것은 아니다. 매 투약마다 일어나는 변이를 interoccasional variability라고 하는데, 이도 eta로 표현할 수 있는데, 표현하지 않는 경우 epsilon에 포함된다.
+앞의 CONTROL3을 실행시킨 결과는 다음과 같다. (NONMEM 설치 매뉴얼에 지시한 대로 설치하였다면, 실행시키는 방법은 간단하다. AcroEdit에서 CONTROL3 파일을 연 후, 좌측 상단의 [NMV RUN]이라는 버튼만 눌러주면 된다. CONTROL3 파일을 CONTROL3.CTL이라는 다른 이름으로 저장하면 키워드가 컬러로 표시될 수도 있다.)</p>
+<p>[CONTROL3의 실행결과]
+NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) DOUBLE PRECISION NONMEM VERSION V LEVEL 1.1
+DEVELOPED AND PROGRAMMED BY STUART BEAL AND LEWIS SHEINER</p>
+<p>PROBLEM NO.: 1
+THEOPHYLLINE SINGLE SUBJECT DATA</p>
+<p>DATA CHECKOUT RUN: NO
+DATA SET LOCATED ON UNIT NO.: 2
+THIS UNIT TO BE REWOUND: NO
+NO. OF DATA RECS IN DATA SET: 11
+NO. OF DATA ITEMS IN DATA SET: 6
+ID DATA ITEM IS DATA ITEM NO.: 6
+DEP VARIABLE IS DATA ITEM NO.: 3
+MDV DATA ITEM IS DATA ITEM NO.: 5</p>
+<p>INDICES PASSED TO SUBROUTINE PRED:
+4 2 1 0 0 0 0 0 0
+0 0</p>
+<p>LABELS FOR DATA ITEMS:
+DOSE TIME CP EVID MDV .ID.</p>
+<p>FORMAT FOR DATA:
+(3E5.0,3F2.0)</p>
+<p>TOT. NO. OF OBS RECS: 10
+TOT. NO. OF INDIVIDUALS: 10</p>
+<p>LENGTH OF THETA: 3</p>
+<p>OMEGA HAS SIMPLE DIAGONAL FORM WITH DIMENSION: 1</p>
+<p>INITIAL ESTIMATE OF THETA:
+LOWER BOUND INITIAL EST UPPER BOUND
+0.0000E+00 0.1700E+01 0.1000E+07
+0.0000E+00 0.1020E+00 0.1000E+07
+0.0000E+00 0.2900E+02 0.1000E+07</p>
+<p>ESTIMATION STEP OMITTED: NO
+NO. OF FUNCT. EVALS. ALLOWED: 240
+NO. OF SIG. FIGURES REQUIRED: 3
+INTERMEDIATE PRINTOUT: YES
+ESTIMATE OUTPUT TO MSF: NO</p>
+<p>COVARIANCE STEP OMITTED: NO
+EIGENVLS. PRINTED: NO
+SPECIAL COMPUTATION: YES
+COMPRESSED FORMAT: NO</p>
+<p>TABLES STEP OMITTED: NO
+NO. OF TABLES: 1</p>
+<p>– TABLE 1 –
+PRINTED: YES</p>
+<p>USER-CHOSEN ITEMS
+IN THE ORDER THEY WILL APPEAR IN THE TABLE:
+TIME</p>
+<p>SCATTERPLOT STEP OMITTED: NO
+FAMILIES OF SCATTERPLOTS: 4</p>
+<p>– SCATTERPLOT 1 –
+UNIT SLOPE LINE: NO</p>
+<p>ITEMS TO BE SCATTERED: TIME CP</p>
+<p>– SCATTERPLOT 2 –
+UNIT SLOPE LINE: NO</p>
+<p>ITEMS TO BE SCATTERED: TIME PRED</p>
+<p>– SCATTERPLOT 3 –
+UNIT SLOPE LINE: NO</p>
+<p>ITEMS TO BE SCATTERED: TIME RES</p>
+<p>– SCATTERPLOT 4 –
+UNIT SLOPE LINE: YES</p>
+<p>ITEMS TO BE SCATTERED: CP PRED
+DOUBLE PRECISION PREDPP VERSION IV LEVEL 1.1</p>
+<p>ONE COMPARTMENT MODEL WITH FIRST-ORDER ABSORPTION (ADVAN2)</p>
+<p>MAXIMUM NO. OF BASIC PK PARAMETERS: 3</p>
+<p>BASIC PK PARAMETERS (AFTER TRANSLATION):
+ELIMINATION RATE (K) IS BASIC PK PARAMETER NO.: 1
+ABSORPTION RATE (KA) IS BASIC PK PARAMETER NO.: 3</p>
+<p>COMPARTMENT ATTRIBUTES
+COMPT. NO. FUNCTION INITIAL ON/OFF DOSE DEFAULT DEFAULT
+STATUS ALLOWED ALLOWED FOR DOSE FOR OBS.
+1 DEPOT OFF YES YES YES NO
+2 CENTRAL ON NO YES NO YES
+3 OUTPUT OFF YES NO NO NO</p>
+<p>ADDITIONAL PK PARAMETERS - ASSIGNMENT OF ROWS IN GG
+COMPT. NO. INDICES
+SCALE BIOAVAIL. ZERO-ORDER ZERO-ORDER ABSORB
+FRACTION RATE DURATION LAG
+1 * * * * <em>
+2 4 </em> * * <em>
+3 </em> - - - -
+- PARAMETER IS NOT ALLOWED FOR THIS MODEL
+* PARAMETER IS NOT SUPPLIED BY PK SUBROUTINE;
+WILL DEFAULT TO ONE IF APPLICABLE</p>
+<p>DATA ITEM INDICES USED BY PRED ARE:
+EVENT ID DATA ITEM IS DATA ITEM NO.: 4
+TIME DATA ITEM IS DATA ITEM NO.: 2
+DOSE AMOUNT DATA ITEM IS DATA ITEM NO.: 1</p>
+<p>PK SUBROUTINE CALLED ONCE PER INDIVIDUAL RECORD.
+PK SUBROUTINE NOT CALLED AT NONEVENT (ADDITIONAL OR LAGGED) DOSE TIMES.</p>
+<p>DURING SIMULATION, ERROR SUBROUTINE CALLED WITH EVERY EVENT RECORD.
+OTHERWISE, ERROR SUBROUTINE CALLED ONCE IN THIS PROBLEM.</p>
+<hr />
+<hr />
+<p>******************** INITIAL PARAMETER ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<p>THETA - VECTOR OF FIXED EFFECTS PARAMETERS *********</p>
+<pre><code>       TH 1      TH 2      TH 3
+
+    1.70E+00  1.02E-01  2.90E+01</code></pre>
+<p>OMEGA - COV MATRIX FOR RANDOM EFFECTS - ETAS ********</p>
+<pre><code>       ETA1</code></pre>
+<p>ETA1 1.17E+00</p>
+<p>NONMEM output의 첫 부분은 주로 우리의 control 파일의 내용이 무엇인지 정형화 시켜 다시 한 번 보여준다(확인하여 준다). 대개 ’INITIAL PARAMETER ESTIMATE’까지가 이 부분에 해당한다. 비선형회귀(Nonlinear regression)는 풀이 방법의 특성상 선형회귀와 달리 초기값(initial parameter estimate)가 꼭 필요하다.</p>
+<p>MONITORING OF SEARCH:</p>
+<p>ITERATION NO.: 0 OBJECTIVE VALUE: 0.1157E+02 NO. OF FUNC. EVALS.: 5
+CUMULATIVE NO. OF FUNC. EVALS.: 5
+PARAMETER: 0.1000E+00 0.1000E+00 0.1000E+00 0.1000E+00
+GRADIENT: 0.3497E+02 -0.3743E+03 -0.1010E+04 0.1997E+00</p>
+<p>ITERATION NO.: 2 OBJECTIVE VALUE: 0.9278E+01 NO. OF FUNC. EVALS.: 9
+CUMULATIVE NO. OF FUNC. EVALS.: 23
+PARAMETER: 0.1048E+00 0.1037E+00 0.1037E+00 0.9811E-01
+GRADIENT: 0.7190E+01 0.6597E+02 0.3337E+02 0.3909E+02</p>
+<p>ITERATION NO.: 4 OBJECTIVE VALUE: 0.9004E+01 NO. OF FUNC. EVALS.:11
+CUMULATIVE NO. OF FUNC. EVALS.: 44
+PARAMETER: 0.1084E+00 0.9972E-01 0.1059E+00 0.8736E-01
+GRADIENT: 0.6816E+01 0.6472E+02 0.1652E+03 -0.2858E+01</p>
+<p>ITERATION NO.: 6 OBJECTIVE VALUE: 0.8941E+01 NO. OF FUNC. EVALS.: 6
+CUMULATIVE NO. OF FUNC. EVALS.: 58
+PARAMETER: 0.1065E+00 0.1000E+00 0.1049E+00 0.8750E-01
+GRADIENT: 0.4874E+00 -0.1576E+01 -0.2946E+01 -0.6793E+00</p>
+<p>ITERATION NO.: 8 OBJECTIVE VALUE: 0.8941E+01 NO. OF FUNC. EVALS.: 8
+CUMULATIVE NO. OF FUNC. EVALS.: 72
+PARAMETER: 0.1065E+00 0.1001E+00 0.1049E+00 0.8765E-01
+GRADIENT: -0.1300E+01 -0.2428E+01 -0.1462E+02 -0.1628E+00</p>
+<p>ITERATION NO.: 10 OBJECTIVE VALUE: 0.8940E+01 NO. OF FUNC. EVALS.:10
+CUMULATIVE NO. OF FUNC. EVALS.: 92
+PARAMETER: 0.1068E+00 0.9985E-01 0.1051E+00 0.8768E-01
+GRADIENT: 0.8144E-02 -0.7247E-03 -0.2813E-01 -0.1163E-01</p>
+<p>ITERATION NO.: 11 OBJECTIVE VALUE: 0.8940E+01 NO. OF FUNC. EVALS.: 0
+CUMULATIVE NO. OF FUNC. EVALS.: 92
+PARAMETER: 0.1068E+00 0.9985E-01 0.1051E+00 0.8768E-01
+GRADIENT: 0.8144E-02 -0.7247E-03 -0.2813E-01 -0.1163E-01</p>
+<p>MINIMIZATION SUCCESSFUL
+NO. OF FUNCTION EVALUATIONS USED: 92
+NO. OF SIG. DIGITS IN FINAL EST.: 4.6</p>
+<p>NONMEM output의 둘째 부분은 ‘MONITORING OF SEARCH’부터이며 최적화(최대화 또는 최소화)하는 과정을 보여준다. 위 예에서는 ITERATION NO는 2씩 증가하면서 보이는데, $ESTIMATION에서 PRINT=2로 지정해 주었기 때문이다. ITERATION 결과 값 자체가 주기성을 띌 수 있으므로 대개 소수를 적어주는데 PRINT=5정도가 적당한 값이라 생각된다.</p>
+<p>OBJECTIVE VALUE란 NONMEM이 ELS(extended least square) 방법을 쓰는데 이의 목적함수 값(objective function value)을 의미한다(자세한 이론적인 배경은 다른 것을 참고한다). NONMEM의 Objective function value는 정규근사 경우의 likelihood값과 비례하는 값이다. 즉, -2 Log Likelihood를 기준으로 하였을 때는 어떤 상수만큼 뺀 것과 동일하다. 따라서, 두 모형(model)간에 포함관계에 있을 때 NONMEM의 objective function value의 차이는 곧 likelihood ratio test(우도비 검정)에 사용할 수 있다.</p>
+<p>CUMULATIVE NO. OF FUNC. EVALS는 $ESTIMATION에서 지정한 MAXEVAL수를 넘을 수 없으며 최대는 9999회이다.</p>
+<p>최소화 과정중에 표시되는 PARAMETER는 THETAs, ETAs, off-diagnoal ETAs, EPSs들을 순서대로 나타낸 것이지만 그 값은 우리들이 준 값과 scale이 다르다. 초기에는 모두 0.1로 시작하도록 Scaled and Trasnformed Parameter(STP) Value들이다.</p>
+<p>마지막에 MINIMIZATION SUCCESSFUL이라는 메시지를 보는 것이 중요하다. 여기에서 마지막 estimation의 유효숫자가 4.9자리로 3자리를 넘으면 대개 양호한 것으로 판단한다.</p>
+<hr />
+<hr />
+<p>******************** MINIMUM VALUE OF OBJECTIVE FUNCTION ********************
+******************** ********************
+************************************************************************************************************************</p>
+<p>************************************************** 8.940 **************************************************</p>
+<p>목적함수의 최소값은 작을 수록 좋다. 자료가 아주 깨끗한 경우에는 음수도 나올 수 있다.</p>
+<hr />
+<hr />
+<p>******************** FINAL PARAMETER ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<p>THETA - VECTOR OF FIXED EFFECTS PARAMETERS *********</p>
+<pre><code>       TH 1      TH 2      TH 3
+
+    1.94E+00  1.02E-01  3.20E+01</code></pre>
+<p>OMEGA - COV MATRIX FOR RANDOM EFFECTS - ETAS ********</p>
+<pre><code>       ETA1</code></pre>
+<p>ETA1 8.99E-01</p>
+<p>위 섹션은 파라미터 값들에 대한 점 추정치(point estimate)이다. Theta들은 상수인 반면, Eta들은 평균은 0이고 분산이 위의 점 추정치들인 정규분포를 따른다고 생각한다. 이들의 분산-공분산행렬을 NONMEM에서는 OMEGA라고 이름을 붙였다. 이번 예제와 같이 1명분의 자료이거나, 여러 명의 자료이더라도 한 사람당 1포인트의 자료만 있는 경우에는 Epsilon(즉, 이의 분산-공분산인 SIGMA)은 사용하지 않고 Eta로서 분산을 표현한다.</p>
+<hr />
+<hr />
+<p>******************** STANDARD ERROR OF ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<p>THETA - VECTOR OF FIXED EFFECTS PARAMETERS *********</p>
+<pre><code>       TH 1      TH 2      TH 3
+
+    6.29E-01  7.37E-03  1.25E+00</code></pre>
+<p>OMEGA - COV MATRIX FOR RANDOM EFFECTS - ETAS ********</p>
+<pre><code>       ETA1</code></pre>
+<p>ETA1 5.45E-01</p>
+<p>위 점 추정치들에 대한 표준오차(standard error)들이다.</p>
+<hr />
+<hr />
+<p>******************** COVARIANCE MATRIX OF ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<pre><code>       TH 1      TH 2      TH 3      OM11</code></pre>
+<p>TH 1 3.95E-01</p>
+<p>TH 2 -3.37E-03 5.43E-05</p>
+<p>TH 3 4.91E-01 -7.90E-03 1.57E+00</p>
+<p>OM11 -1.53E-01 2.64E-03 -4.56E-01 2.97E-01</p>
+<p>위 행렬의 대각원소에다 제곱근을 취한 것이 개별 파라미터 점 추정치의 표준오차이다.</p>
+<hr />
+<hr />
+<p>******************** CORRELATION MATRIX OF ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<pre><code>       TH 1      TH 2      TH 3      OM11</code></pre>
+<p>TH 1 1.00E+00</p>
+<p>TH 2 -7.28E-01 1.00E+00</p>
+<p>TH 3 6.24E-01 -8.55E-01 1.00E+00</p>
+<p>OM11 -4.48E-01 6.59E-01 -6.67E-01 1.00E+00</p>
+<p>분산-공분산 행렬에서 대각원소로 표준화한 상관행렬이다. Off-diagonal(비대각) 원소들은 -1에서 +1사이의 값을 가지게 된다.</p>
+<hr />
+<hr />
+<p>******************** INVERSE COVARIANCE MATRIX OF ESTIMATE ********************
+******************** ********************
+************************************************************************************************************************</p>
+<pre><code>       TH 1      TH 2      TH 3      OM11</code></pre>
+<p>TH 1 5.40E+00</p>
+<p>TH 2 3.42E+02 9.41E+04</p>
+<p>TH 3 -7.87E-02 3.14E+02 2.55E+00</p>
+<p>OM11 -3.83E-01 -1.80E+02 1.08E+00 6.44E+00</p>
+<p>분산-공분산 행렬의 역행렬이다. 여기에서는 Fisher’s Information Matrix와 값은 다르지만 동일한 의미를 갖는다. 즉, theta2의 값이 가장 크므로 우리가 가진 자료는 theta2에 대한 정보가 가장 풍부하다고 할 수 있다.</p>
+<hr />
+<hr />
+<p>******************** TABLES OF DATA AND PREDICTIONS ********************
+******************** ********************
+************************************************************************************************************************</p>
+<p>TABLE NO. 1</p>
+<p>LINE NO. TIME CP PRED RES WRES</p>
+<p>1 0.00E+00 0.00E+00 0.00E+00 0.00E+00 0.00E+00</p>
+<p>2 2.70E-01 1.71E+00 4.02E+00 -2.31E+00 -2.43E+00</p>
+<p>3 5.20E-01 7.91E+00 6.16E+00 1.75E+00 1.85E+00</p>
+<p>4 1.00E+00 8.31E+00 8.01E+00 2.98E-01 3.15E-01</p>
+<p>5 1.92E+00 8.33E+00 8.42E+00 -9.15E-02 -9.65E-02</p>
+<p>6 3.50E+00 6.85E+00 7.38E+00 -5.26E-01 -5.55E-01</p>
+<p>7 5.02E+00 6.08E+00 6.33E+00 -2.49E-01 -2.63E-01</p>
+<p>8 7.03E+00 5.40E+00 5.16E+00 2.40E-01 2.53E-01</p>
+<p>9 9.00E+00 4.55E+00 4.22E+00 3.27E-01 3.45E-01</p>
+<p>10 1.20E+01 3.01E+00 3.11E+00 -1.03E-01 -1.08E-01</p>
+<p>11 2.43E+01 9.00E-01 8.91E-01 8.79E-03 9.27E-03</p>
+<p>이와 같은 파일들은 개별 파일로도 저장할 수 있으며, MS-EXCEL, SAS, S-plus, R과 같은 소프트웨어에서 쉽게 읽어 그림을 그릴 수 있게 한다.</p>
+<hr />
+<hr />
+<p>******************** SCATTERS ********************
+******************** ********************
+************************************************************************************************************************</p>
+<pre><code>         CP VS. TIME</code></pre>
+<p>8.00E-01 2.34E+00 3.88E+00 CP 5.42E+00 6.96E+00 8.50E+00
+. . . . . .
+. . . . . . . . . . .
+-1.00E+00. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. .
+. * .
+. * .
+. * .
+. .
+. * .
+. .
+. .
+. * .
+4.20E+00. ..
+. .
+. * .
+. .
+. .
+. * .
+. .
+. .
+. .
+. * .
+9.40E+00. ..
+. .
+. .
+. .
+. .
+TIME . * .
+. .
+. .
+. .
+. .
+1.46E+01. ..
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+1.98E+01. ..
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+.* .
+2.50E+01. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . .</p>
+<p>혈장농도(CP)와 시간(TIME)의 관계를 플로팅했다. 특이한 것은 세로축에서 아래로 내려올수록 값이 크다. 즉, 시간-농도 프로파일이 90도 시계방향으로 회전하여 있다.</p>
+<pre><code>       PRED VS. TIME</code></pre>
+<p>-1.00E-01 1.64E+00 3.38E+00 PRED 5.12E+00 6.86E+00 8.60E+00
+. . . . . .
+. . . . . . . . . . .
+-1.00E+00. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. .
+.* * .
+. * .
+. * .
+. .
+. * .
+. .
+. .
+. * .
+4.20E+00. ..
+. .
+. * .
+. .
+. .
+. * .
+. .
+. .
+. .
+. * .
+9.40E+00. ..
+. .
+. .
+. .
+. .
+TIME . * .
+. .
+. .
+. .
+. .
+1.46E+01. ..
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+1.98E+01. ..
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. .
+. * .
+2.50E+01. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . .</p>
+<p>예측혈장농도(PRED)와 시간(TIME)의 관계를 플로팅했다. 이전 그래프와 유사한 형태인 것으로 보아 구조모형(structural model)에 특별한 이상이 없음을 시사한다. 이전과 마찬가지로 특이하게 세로축에서 아래로 내려올수록 값이 크다. 즉, 시간-농도 프로파일이 90도 시계방향으로 회전하여 있다.</p>
+<pre><code>       RES  VS. TIME</code></pre>
+<p>-2.40E+00 -1.56E+00 -7.20E-01 RES 1.20E-01 9.60E-01 1.80E+00
+. . . . . .
+. . . . . . . . . . .
+-1.00E+00. . . . . . . . . . . . . . . . . . . . . . . . . . . . … . . . . . . . . . . . . . . . . . . . . .
+. . .
+. * . .
+. . <em>.
+. . </em> .
+. . .
+. * . .
+. . .
+. . .
+. * . .
+4.20E+00. . ..
+. . .
+. * . .
+. . .
+. . .
+. . * .
+. . .
+. . .
+. . .
+. . * .
+9.40E+00. . ..
+. . .
+. . .
+. . .
+. . .
+TIME . * . .
+. . .
+. . .
+. . .
+. . .
+1.46E+01. . ..
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+1.98E+01. . ..
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. . .
+. * .
+2.50E+01. . . . . . . . . . . . . . . . . . . . . . . . . . . . … . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . .</p>
+<p>잔차(RES)와 시간(TIME)의 관계를 플로팅했다. 가운데 세로선은 0인 지점을 나타낸다. 0을 중심으로 좌우로 고르게 퍼져 있어야 제대로 모형화(modeling) 했다고 볼 수 있다.</p>
+<pre><code>       PRED VS.   CP</code></pre>
+<p>8.00E-01 2.34E+00 3.88E+00 PRED 5.42E+00 6.96E+00 8.50E+00
+. . . . . .
+. . . . . . . . . . .
+7.00E-01. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+.<em>. .
+. . .
+. . .
+. . .
+. . .
+. . </em> .
+. . .
+. . .
+. . .
+2.26E+00. . ..
+. . .
+. . .
+. . .
+. . .
+. * .
+. . .
+. . .
+. . .
+. . .
+3.82E+00. . ..
+. . .
+. . .
+. . .
+. . .
+CP . * . .
+. . .
+. . .
+. . .
+. . .
+5.38E+00. * . ..
+. . .
+. . .
+. . .
+. . * .
+. . .
+. . .
+. . .
+. . .
+. . * .
+6.94E+00. . ..
+. . .
+. . .
+. . .
+. . .
+. . .
+. * . .
+. . .
+. . .
+. * *.
+8.50E+00. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . .</p>
+<p>혈장농도의 예측값(PRED)와 관측값(CP)의 관계를 플로팅했다. 가운데 대각선은 기울기가 1인 직선(unit slope line)을 나타낸다. 기울기가 1인 직선을 중심으로 자료들이 고르게 퍼져 있어야 제대로 모형화(modeling) 했다고 볼 수 있다.</p>
+<p>Ⅱ. Theophylline 예제</p>
+<p>12명의 사람에서 theophylline을 경구로 1회 투약하고, 약 11회에 걸쳐 혈장약물농도를 측정하였다. 결과는 그림 1과 같았고, 자료는 표 1 ~ 3에 걸쳐 나타내었다.</p>
+<p>그림 . 12명의 사람에 theophylline을 1회 경구로 투약한 후 농도 프로파일(1~12는 피험자 번호, 가로축은 시간, 세로축은 혈장약물농도)</p>
+<p>피험자 번호
+체중
+1
+79.6
+2
+72.4
+3
+70.5
+4
+72.7
+5
+54.6
+6
+80
+7
+64.6
+8
+70.5
+9
+86.4
+10
+58.2
+11
+65
+12
+60.5
+표 8. 인구학적 정보</p>
+<p>피험자 번호
+투약시간
+용량(mg/Kg)
+1
+0
+4.02
+2
+0
+4.4
+3
+0
+4.53
+4
+0
+4.4
+5
+0
+5.86
+6
+0
+4
+7
+0
+4.95
+8
+0
+4.53
+9
+0
+3.1
+10
+0
+5.5
+11
+0
+4.92
+12
+0
+5.3
+표 9. 투약 정보</p>
+<p>피험자 번호
+투약후 경과시간
+혈장약물농도(μg/L)
+1
+0
+0.74
+1
+0.25
+2.84
+1
+0.57
+6.57
+1
+1.12
+10.5
+1
+2.02
+9.66
+1
+3.82
+8.58
+1
+5.1
+8.36
+1
+7.03
+7.47
+1
+9.05
+6.89
+1
+12.12
+5.94
+1
+24.37
+3.28
+2
+0
+0
+2
+0.27
+1.72
+2
+0.52
+7.91
+2
+1
+8.31
+2
+1.92
+8.33
+2
+3.5
+6.85
+2
+5.02
+6.08
+2
+7.03
+5.4
+2
+9
+4.55
+2
+12
+3.01
+2
+24.3
+0.9
+3
+0
+0
+3
+0.27
+4.4
+3
+0.58
+6.9
+3
+1.02
+8.2
+3
+2.02
+7.8
+3
+3.62
+7.5
+3
+5.08
+6.2
+3
+7.07
+5.3
+3
+9
+4.9
+3
+12.15
+3.7
+표 10. 혈장약물농도 측정결과</p>
+<p>피험자 번호
+투약후 경과시간
+혈장약물농도(μg/L)
+3
+24.17
+1.05
+4
+0
+0
+4
+0.35
+1.89
+4
+0.6
+4.6
+4
+1.07
+8.6
+4
+2.13
+8.38
+4
+3.5
+7.54
+4
+5.02
+6.88
+4
+7.02
+5.78
+4
+9.02
+5.33
+4
+11.98
+4.19
+4
+24.65
+1.15
+5
+0
+0
+5
+0.3
+2.02
+5
+0.52
+5.63
+5
+1
+11.4
+5
+2.02
+9.33
+5
+3.5
+8.74
+5
+5.02
+7.56
+5
+7.02
+7.09
+5
+9.1
+5.9
+5
+12
+4.37
+5
+24.35
+1.57
+6
+0
+0
+6
+0.27
+1.29
+6
+0.58
+3.08
+6
+1.15
+6.44
+6
+2.03
+6.32
+6
+3.57
+5.53
+6
+5
+4.94
+6
+7
+4.02
+6
+9.22
+3.46
+6
+12.1
+2.78
+6
+23.85
+0.92
+7
+0
+0.15
+7
+0.25
+0.85
+7
+0.5
+2.35
+7
+1.02
+5.02
+7
+2.02
+6.58
+7
+3.48
+7.09
+7
+5
+6.66
+7
+6.98
+5.25
+7
+9
+4.39
+7
+12.05
+3.53
+7
+24.22
+1.15
+8
+0
+0
+8
+0.25
+3.05
+8
+0.52
+3.05
+8
+0.98
+7.31
+8
+2.02
+7.56</p>
+<p>피험자 번호
+투약후 경과시간
+혈장약물농도(μg/L)
+8
+3.53
+6.59
+8
+5.05
+5.88
+8
+7.15
+4.73
+8
+9.07
+4.57
+8
+12.1
+3
+8
+24.12
+1.25
+9
+0
+0
+9
+0.3
+7.37
+9
+0.63
+9.03
+9
+1.05
+7.14
+9
+2.02
+6.33
+9
+3.53
+5.66
+9
+5.02
+5.67
+9
+7.17
+4.24
+9
+8.8
+4.11
+9
+11.6
+3.16
+9
+24.43
+1.12
+10
+0
+0.24
+10
+0.37
+2.89
+10
+0.77
+5.22
+10
+1.02
+6.41
+10
+2.05
+7.83
+10
+3.55
+10.21
+10
+5.05
+9.18
+10
+7.08
+8.02
+10
+9.38
+7.14
+10
+12.1
+5.68
+10
+23.7
+2.42
+11
+0
+0
+11
+0.25
+4.86
+11
+0.5
+7.24
+11
+0.98
+8
+11
+1.98
+6.81
+11
+3.6
+5.87
+11
+5.02
+5.22
+11
+7.03
+4.45
+11
+9.03
+3.62
+11
+12.12
+2.69
+11
+24.08
+0.86
+12
+0
+0
+12
+0.25
+1.25
+12
+0.5
+3.96
+12
+1
+7.82
+12
+2
+9.72
+12
+3.52
+9.75
+12
+5.07
+8.57
+12
+7.07
+6.59
+12
+9.03
+6.11
+12
+12.05
+4.57
+12
+24.15
+1.17</p>
+<p>위와 같은 경우에 아래의 문제를 풀어보자.</p>
+<ol style="list-style-type: decimal">
+<li><p>위 혈장약물농도를 가장 잘 설명하는 모형을 구성하고 개별 Fitted value를 산출하시오.</p></li>
+<li><p>위의 결과를 이용하여 아래와 같은 그래프를 작성하시오. (diagnostic plot)</p></li>
+</ol>
+<p>그림 . Diagnostic plot 예</p>
+<p>DV: dependent variable, observation value – 여기서는 혈청중 약물농도
+IPRE: individual prediction value, considering intersubject variability
+WRES: weighted residual
+IWRE: weighted residual of individual prediction value</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>앞쪽 (또는 무작위로 선택한) 6 명분의 자료를 이용하여 모델을 구성하고 파라미터를 예측한 후, 나머지 6명에 대한 Root Mean Squared Prediction Error(RMSE), Mean Prediction Error(MPE), Mean Absolute Prediction Error(MAPE)를 구하시오. (2 fold split validation method)</p>
+<p>(related to precision)</p>
+<pre><code>(related to bias)
+
+(related to bias)</code></pre></li>
+</ol>
+<p>또한 위의 결과(모델구축을 위한 6명분의 자료와 모형의 타당성 검토를 위한 6명분의 자료)를 이용하여 문제 2와 같은 그래프를 그리시오.</p>
+<p>[풀이]
+1. 최적의 약동학 모형 찾기</p>
+<p>모형번호
+$PK
+설 명
+C1-01
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) ; L
+TVKA = THETA(3) ; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+기본출발모형
+(Basic start model)
+C1-02
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT ** THETA(5) ; L
+TVKA = THETA(3) ; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+분포용적에 체중을 일반적인 형태로 붙임
+C1-03
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT; L
+TVKA = THETA(3) ; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+theta5가 불필요하여 단순형으로 변경
+C1-04
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT ; L
+TVKA = THETA(3) + THETA(5) * BWT ** THETA(6); /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+KA에 체중을 일반적인 형태로 붙임
+C1-05
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT ; L
+TVKA = THETA(3) + THETA(5) * BWT ; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+theta6이 불필요하여 단순화
+C1-06
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT; L
+TVKA = THETA(3) ; /hr
+ALAG1 = THETA(5);
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+theta5도 불필요하여 제거하고 ALAG1을 붙임
+C1-07
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) + THETA(4) * BWT; L
+TVKA = THETA(3) ; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+theta2를 고정하고 돌림
+표 11. 모형별 특성</p>
+<p>모형번호
+$PK
+설 명
+C1-08
+TVCL = THETA(1) ; L/hr
+TVV = THETA(2) * BWT; L
+TVKA = THETA(3) * BWT; /hr
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(ETA(2))
+KA = TVKA * EXP(ETA(3))
+위의 theta2는 제거하고 KA에 체중을 붙임, C1-05의 단순형
+C2-01
+TVCL = THETA(1)
+TVV2 = THETA(2)
+TVQ = THETA(3)
+TVV3 = THETA(4)
+TVKA = THETA(5)
+ALAG1 = THETA(6)
+CL = TVCL * EXP(ETA(1))
+V2 = TVV2 * EXP(ETA(2))
+Q = TVQ
+V3 = TVV3
+KA = TVKA * EXP(ETA(3))
+2 구획모형, 표준오차가 구해지지 않음</p>
+<p>모형번호
+Parent
+Minimize
+Obj Fx Value
+Std Error
+Parameters
+Thetas
+Fixed Thetas
+Etas
+Eps
+Off Diag Etas
+C1-01</p>
+<p>True
+57.321
+True
+11
+5
+0
+3
+1
+3/3
+C1-02
+C1-01
+True
+44.390
+True
+13
+7
+0
+3
+1
+3/3
+C1-03
+C1-02
+True
+44.403
+True
+12
+6
+0
+3
+1
+3/3
+C1-04
+C1-03
+True
+41.304
+True
+14
+8
+0
+3
+1
+3/3
+C1-05
+C1-04
+True
+41.448
+True
+13
+7
+0
+3
+1
+3/3
+C1-06
+C1-03
+True
+43.172
+True
+13
+7
+0
+3
+1
+3/3
+C1-07
+C1-03
+True
+45.418
+True
+11
+5
+1
+3
+1
+3/3
+C1-08
+C1-07
+True
+42.593
+True
+11
+5
+0
+3
+1
+3/3
+C2-01</p>
+<p>True
+56.010
+False
+14
+8
+0
+3
+1
+3/3
+표 12. 모형별 NONMEM 수행결과요약</p>
+<p>그림 5. 모형 개발 흐름도</p>
+<p>우도비 검정에서는 1개의 파라미터 증가에 목적함수값이 3.84이상 감소하면 유의하다고 본다. 모형이 포함관계가 아닐 때는 Akaike information criterion을 사용해서 2이상 감소하면 유의하다고 간주한다. 따라서, 따라서, C1-03 모형을 파라미터 수와 목적함수값을 기준으로 볼 때 최적 약동학 모형으로 선정한다. 기본출발모형인 C1-01과 최종선정모형인 C1-03의 diagnostic plot은 다음과 같다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>진단 그림 그리기</li>
+</ol>
+<p>실제 모델링 과정에서는 1번에서의 수치만 가지고 최종모형을 선택하는 것이 아니라, 모형을 변화시킬 때마다 진단 그림을 그려서 확인한다. 즉, 육안탐색(visual exploration)이 다른 formal test보다 우선적으로 시행되어야 한다.</p>
+<ol style="list-style-type: decimal">
+<li>C1-01 모형의 진단그림(diagnostic plot)</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li>개별 적합도</li>
+</ol>
+<p>주의: Realized eta를 사용하기 때문에 covariate를 구조모형에 제대로 반영하지 못하였더라도 잘 맞는 것으로 나온다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Eta들의 Normal Q-Q plot</li>
+</ol>
+<p>모두 정규분포에서 크게 벗어나지 않으므로 적절하다.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Dot plot</li>
+</ol>
+<p>PRED vs DV에 비해 IPRE vs DV는 잘 맞는다 이는 자료가 잘 적합되도록 realized eta를 구해서 적합되었기 때문이다. 따라서, covariate를 찾는 단계에서는 좌측 그림이 더 중요하다.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Spaghetti plot</li>
+</ol>
+<p>스파게티 플롯에서도 별다른 이상은 없다. 이것은 도트 플롯과 유사한데, 다만 한 사람의 것은 한 줄로 이어져서 나온다는 점이 특색이다.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Covariate screening</li>
+</ol>
+<p>자료수가 적어서 판단하기 어려우나, BWT는 ETA 1, 2, 3 모두와 어느정도 경향을 보이고 있으므로 유의한 관련이 있을 수 있다.
+2) C1-03 모형의 진단그림(diagnostic plot)
+(1) 개별 적합도(individual fit graph)</p>
+<p>C1-01과 유사하다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Eta들이 Normal Q-Q Plot</li>
+</ol>
+<p>정규분포를 크게 벗어나지 않는다.
+(3) Dot plot</p>
+<p>왼쪽 그림이 C1-01 모형에 비해 약간 개선되었다.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Spaghetti plot</p></li>
+<li><p>Covariate screening</p></li>
+</ol>
+<p>Eta2에서 BWT와 경향성이 약간 감소했다. 하지만 다른 eta들과는 경향성이 보이지만, 모형 개발 흐름도를 볼 때 통계적으로 유의하진 않았다.
+3. 모형의 타당도 검증(validation)</p>
+<ol style="list-style-type: decimal">
+<li>앞쪽 6명을 이용하여 구한 Model Diagnostic Plot</li>
+</ol>
+<p>좌측은 intersubject random variability를 고려하지 않은 것이고, 우측은 피험자의 자료를 이용하여 intersubject random variability를 고려하여 구한 것이다.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>모형 타당성 검토를 위한 모형 구축 및 파라미터 추정에 사용하지 않은 뒤쪽 6명에 대한 예측(Prediction) 결과 (RMSR = RMSE, MR = ME, MAR = MAE)</li>
+</ol>
+<p>좌측은 intersubject random variability를 고려하지 않은 것이고, 우측은 피험자의 자료를 이용하여 intersubject random variability를 고려하여 구한 것이다. 즉, 약동학 파라미터의 전체적인 분포에서 피험자의 자료를 이용하여 해당 피험자는 전체 분포중에서 어느 정도의 위치에 해당하는 지를 추정한 후 추정된 파라미터를 이용하여 혈장약물농도를 예측한 값이다.
+Ⅲ. Phenobarbital 예제</p>
+<p>신생아에서의 Phenobarbital 투약후 채혈하여 혈청중의 약물농도를 측정하였다. Table 1 에 인구학적 자료, Table 2에 환자별 투약시간 및 용량 등 투약 자료, Table3에 약물농도 자료를 표시하였다. 이를 이용하여 Example 1과 같이 약물농도를 가장 잘 설명할 수 있는 model을 구하고, 그 model에 대한 타당성(validity)을 검증하시오.</p>
+<p>그림 6. 개별 피험자 결과 그래프(Observation Plot for Each Subject)</p>
+<p>자료는 C:파일이다. 각 열 이름은 순서대로 다음과 같다.
+ID, TIME, AMT, WGT, APGR, DV, EVID, MDV</p>
+<p>[풀이]
+1. 모형 개발 흐름도</p>
+<p>$PROBLEM PHENOBARBITAL [PARENT NODE] C1-05
+$INPUT ID TIME AMT DV MDV BWT APGR
+$DATA PHENO.CSV IGNORE=#
+; TIME(hr), AMT(mg), DV(mg/L)
+$SUBROUTINES ADVAN1 TRANS2
+$PK
+TVCL = (THETA(1) * BWT ** THETA(2)) / 1000; (L to ml)
+TVV = THETA(3) + THETA(4) * BWT ** THETA(5)
+CL = TVCL * EXP(ETA(1))
+V = TVV * EXP(THETA(6) * ETA(1))
+S1 = V; SCALE FOR CENTRAL COMP</p>
+<p>K = CL / V
+HALF = LOG(2) / K</p>
+<p>$ERROR
+IPRE = F
+W = 1
+IRES = IPRE - DV
+IWRE = IRES / W
+Y = IPRE + W * EPS(1)</p>
+<p>$THETA
+(0, 1)
+(0, 1)
+(0, 1) ; TVV (L)
+(0, 1)
+(0, 1)
+(0, 1)</p>
+<p>$OMEGA
+0.2</p>
+<p>$SIGMA 1;
+$ESTIMATION MAXEVAL=9999 PRINT=5 METHOD=ZERO POSTHOC MSFO=C1-07.MSF
+$COVARIANCE
+$TABLE ID TIME MDV IPRE IWRE
+FILE=C1-07.FIT NOPRINT ONEHEADER
+$TABLE ID BWT APGR ETA(1)
+FILE=C1-07.PAR NOPRINT ONEHEADER FIRSTONLY NOAPPEND
+$TABLE ID BWT APGR CL V K HALF
+FILE=C1-07.IPK NOPRINT ONEHEADER FIRSTONLY NOAPPEND</p>
+<ol start="2" style="list-style-type: decimal">
+<li>최종모형의 진단 그림</li>
+</ol>
+<ol style="list-style-type: decimal">
+<li><p>개별 적합 그림</p></li>
+<li><p>Normal Q-Q plot for eta</p></li>
+<li><p>Dot plot</p></li>
+<li><p>Spaghetti plot</p></li>
+<li><p>Covariate screening</p></li>
+</ol>
+<p>초보자를 위한</p>
+<p>NONMEM 설치 및 운영 매뉴얼
+&lt;행정간행물등록번호 : 11-1470129-000147-01&gt;
+발행일/2005년 12월
+발행인/최수영
+김주일 김옥희 최선옥 정성희
+엄소영 정서정 배균섭
+발행처/식품의약품안전청 국립독성연구원
+주 소/122-704 서울특별시 은평구 진흥로 231
+전 화/(02)380-1774～5
+팩 스/(02)380-1776</p>
+<p>연락처：대사약리팀</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+---
+output:
+  github_document: 
+    df_print: kable
+---
+
+# PHENO
+
+```{r}
+library(tidyverse)
+df <- read_table('PHENO', col_names = FALSE) %>% 
+  set_names(c('ID','TIME','AMT','BWT','APGA','DV','MDV','EVID')) %>% 
+  filter(DV != '.') %>% 
+  mutate(DV = as.numeric(DV))
+head(df)
+ggplot(df, aes(x=TIME, y=DV, group=ID, color=ID)) +
+  geom_point()+
+  geom_line()
+```
+

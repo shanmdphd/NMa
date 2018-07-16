@@ -1,5 +1,5 @@
-2018-05-09 
-오전 10:35
+2018-07-16 
+오후 04:55
 $PROB PHENOBARBITAL IV P:ROOT F:BASE
 $INPUT ID TIME AMT BWT APGA DV MDV EVID
 $DATA ../PHENO
@@ -51,8 +51,8 @@ NM-TRAN MESSAGES
   
 License Registered to: Asan Medical Center
 Expiration Date:    14 DEC 2018
-Current Date:        9 MAY 2018
-Days until program expires : 215
+Current Date:       16 JUL 2018
+Days until program expires : 148
 1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.4.1
  ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
  CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
@@ -339,8 +339,8 @@ Days until program expires : 215
  TOTAL EFFECTIVE ETAS (NIND*NETA):                           118
   
  #TERE:
- Elapsed estimation  time in seconds:     3.16
- Elapsed covariance  time in seconds:     0.63
+ Elapsed estimation  time in seconds:     1.07
+ Elapsed covariance  time in seconds:     0.39
  Elapsed postprocess time in seconds:     0.02
 1
  
@@ -609,8 +609,8 @@ Days until program expires : 215
  SG11
 +       ......... ......... ......... ......... ......... ......... ......... .........
  
- Elapsed finaloutput time in seconds:     1.06
- #CPUT: Total CPU Time in Seconds,        2.387
+ Elapsed finaloutput time in seconds:     0.34
+ #CPUT: Total CPU Time in Seconds,        1.872
 Stop Time: 
-2018-05-09 
-오전 10:37
+2018-07-16 
+오후 04:55
