@@ -1,5 +1,5 @@
 
-R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
@@ -27,7 +27,15 @@ Type 'q()' to quit R.
 > #loadcmp("C:/NMa/PPb.Rc")
 > #loadcmp("C:/NMa/PPc.Rc")
 > 
-> #source("C:/NMa/TabRename.R")
+> source("C:/NMa/TabRename.R")
+
+C:\Users\mdlhs\asancpt\ms-vancomycin\1129.R74>IF EXIST sdtab RENAME sdtab sdtab1129 
+
+C:\Users\mdlhs\asancpt\ms-vancomycin\1129.R74>IF EXIST patab RENAME patab patab1129 
+
+C:\Users\mdlhs\asancpt\ms-vancomycin\1129.R74>IF EXIST cotab RENAME cotab cotab1129 
+
+C:\Users\mdlhs\asancpt\ms-vancomycin\1129.R74>IF EXIST catab RENAME catab catab1129 
 > source("C:/NMa/PP1.R")
 There were 12 warnings (use warnings() to see them)
 > source("C:/NMa/PP2.R")
@@ -41,19 +49,8 @@ Warning messages:
 4: In if (MatLines != 0) { :
   the condition has length > 1 and only the first element will be used
 > source("C:/NMa/PP3.R")
-There were 12 warnings (use warnings() to see them)
-> source("C:/NMa/PP4.R")
-The following object is masked _by_ .GlobalEnv:
-
-    ID
-
-There were 50 or more warnings (use warnings() to see the first 50)
-> source("C:/NMa/PP5.R")
-There were 30 warnings (use warnings() to see them)
-> source("C:/NMa/PPa.R")
-> source("C:/NMa/PPb.R")
-> source("C:/NMa/PPc.R")
-> 
-> proc.time()
-   user  system elapsed 
-   5.67    0.63    8.26 
+Error in file(file, "rt") : cannot open the connection
+Calls: source -> withVisible -> eval -> eval -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") : cannot open file 'sdtab': No such file or directory
+Execution halted

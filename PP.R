@@ -8,7 +8,7 @@
 #loadcmp("C:/NMa/PPb.Rc")
 #loadcmp("C:/NMa/PPc.Rc")
 
-#source("C:/NMa/TabRename.R")
+source("C:/NMa/TabRename.R")
 source("C:/NMa/PP1.R")
 source("C:/NMa/PP2.R")
 source("C:/NMa/PP3.R")
