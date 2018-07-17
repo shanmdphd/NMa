@@ -1185,7 +1185,7 @@ SumOut1 = function(ModelName)
   return(data.frame(OutName,Parent,EstMethod,Formula,Minimize,OFV,SE,Parameter,Theta,FixedTheta,Eta,Eps,OffDiagOmega,nDV,AICc,stringsAsFactors=FALSE))
 }
 
-SumOut = function(FileExt=".MDL", RunExt=".R73", OutExt=".OUT")
+SumOut = function(FileExt=".MDL", RunExt=".R74", OutExt=".OUT")
 {
   WorkDir = getwd()
   Folders = list.dirs(path=WorkDir, full.names=FALSE, recursive=FALSE)
@@ -1474,7 +1474,7 @@ SetRPT = function(ModelName, Var, nPerm=30, Seed, ModelExt=".CTL", NMFE="C:\\NMa
   }
   for (i in Loc4:nLine) CTL[i] = ""
 
-  FDATA = read.csv(paste0(ModelName,".R73/FDATA.CSV"))
+  FDATA = read.csv(paste0(ModelName,".R74/FDATA.CSV"))
   Res = Decomp(FDATA)
   Demog = Res$Demog
   Admin = Res$Admin
@@ -1502,7 +1502,7 @@ SetRPT = function(ModelName, Var, nPerm=30, Seed, ModelExt=".CTL", NMFE="C:\\NMa
     CTL[Loc2] = paste0("$DATA ..\\", CSVName, " IGNORE=@")
     writeLines(CTL, CTLName)
 
-    BAT[i] = paste0("CALL ", NMFE, " ", CTLName, " ", BaseName, ".OUT -rundir=", BaseName, ".R73")
+    BAT[i] = paste0("CALL ", NMFE, " ", CTLName, " ", BaseName, ".OUT -rundir=", BaseName, ".R74")
   }
 
   if (Divide > 1) {
