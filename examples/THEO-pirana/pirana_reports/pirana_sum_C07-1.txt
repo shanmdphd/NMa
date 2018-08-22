@@ -1,0 +1,67 @@
+================================================================================
+Drug:              [Not entered] 
+Protocol:          [Not entered] 
+Run:               C07-1         
+Description:       [Not entered] 
+Project notes:     [Not entered] 
+Run notes:         [None entered]
+Report created by: user          
+--------------------------------------------------------------------------------
+Description:        THEOPHYLLINE ORAL                                                                                                                                                                             
+NONMEM model file:  C07-1.ctl                                                                                                                                                                                     
+NONMEM output file: C07-1.lst                                                                                                                                                                                     
+Reference model:    -                                                                                                                                                                                             
+Model author:                                                                                                                                                                                                     
+NM version Pirana:  nm74g64                                                                                                                                                                                       
+NM info:            version 7.4.1                                                                                                                                                                                 
+Run on machine:     [unknown]                                                                                                                                                                                     
+Output file date:   2018-8-20, 10:46:57                                                                                                                                                                           
+Run started:        -                                                                                                                                                                                             
+Run finished:       -                                                                                                                                                                                             
+Table files:        sdtabC07-1, patabC07-1, cotabC07-1, catabC07-1                                                                                                                                                
+Attached folders:   nmfe_C07-1_001, nmfe_C07-1_002, nmfe_C07-1_003, nmfe_C07-1_004, nmfe_C07-1_001, nmfe_C07-1_002, nmfe_C07-1_003, nmfe_C07-1_004, nmfe_C07-1_001, nmfe_C07-1_002, nmfe_C07-1_003, nmfe_C07-1_004
+MSFO file:          THIS.MSF                                                                                                                                                                                      
+--------------------------------------------------------------------------------
+Subroutines:                                                            
+Methods:          #1 First Order Conditional Estimation with Interaction
+Dataset:          THEO                                                  
+  Dataset IGNORE: -                                                     
+  Dataset ACCEPT: -                                                     
+# individuals:     12                                                   
+# observations:   132                                                   
+
+
+Estimation results: #1 First Order Conditional Estimation with Interaction
+--------------------------------------------------------------------------
+Objective function value:    92.831                                 
+Termination message:      minimization successful                   
+                          no. of function evaluations used:      405
+                          no. of sig. digits in final est.:  3.2    
+Checks:                   No boundary problems reported by NONMEM   
+                          All gradients non-zero during estimation  
+Condition number:         11500                                     
+MSF file:                 THIS.MSF                                  
+
+
+Parameter estimates
+-------------------
+Theta | Description | Estimate | FIX | SE     | RSE   | 95%CI         | [lower,  | init,  | upper] | 
+1     |             | 32.4     | -   | 1.68   | 5.2%  | 29.107-35.693 | 0        | 50     | 500    | 
+2     |             | 0.0873   | -   | 0.0042 | 4.9%  | 0.079-0.096   | 0        | 1      | 10     | 
+3     |             | 1.49     | -   | 0.302  | 20.3% | 0.898-2.082   | 0        | 5      | 50     | 
+
+Omega | Description | Estimate | SE     | RSE    | Etabar         | p val  | Shrinkage | 
+1,1   | .           | 0.0194   | 0.0085 | 43.8%  | -0.002 (0.038) | 0.9531 | 1.6%      | 
+2,1   | .           | 0.0121   | 0.0075 | 61.8%  | .              | .      | .         | 
+2,2   | .           | 0.0202   | 0.0207 | 102.5% | 0.001 (0.037)  | 0.9695 | 5%        | 
+3,1   | .           | 0.0569   | 0.036  | 63.3%  | .              | .      | .         | 
+3,2   | .           | -0.0065  | 0.0221 | 341.6% | .              | .      | .         | 
+3,3   | .           | 0.435    | 0.223  | 51.3%  | -0.012 (0.18)  | 0.9463 | 1.3%      | 
+
+Sigma | Description | Estimate | SE     | RSE      | Shrinkage | 
+1,1   | .           | 0.017    | 0.0121 | (71.2%)  | 8%        | 
+2,2   | .           | 0.0829   | 0.118  | (142.3%) | 9%        | 
+
+--------------------------------------------------------------------------------
+Report generated 2018-8-20, 12:47:58 on CPT02
+================================================================================

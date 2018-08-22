@@ -1,0 +1,8 @@
+ 
+ AN ERROR WAS FOUND IN THE CONTROL STATEMENTS.
+ 
+AN ERROR WAS FOUND ON LINE 13 AT THE APPROXIMATE POSITION NOTED:
+ include nonmem_reserved_general
+         X                      
+ THE CHARACTERS IN ERROR ARE: nonmem_reserved_general
+  171  ERROR OPENING INCLUDE FILE.

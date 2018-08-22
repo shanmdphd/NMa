@@ -1,0 +1,68 @@
+================================================================================
+Drug:              [Not entered] 
+Protocol:          [Not entered] 
+Run:               C07-2         
+Description:       [Not entered] 
+Project notes:     [Not entered] 
+Run notes:         [None entered]
+Report created by: user          
+--------------------------------------------------------------------------------
+Description:        THEOPHYLLINE ORAL P:ROOT F:BASE               
+NONMEM model file:  C07-2.ctl                                     
+NONMEM output file: C07-2.lst                                     
+Reference model:    -                                             
+Model author:                                                     
+NM version Pirana:  nm74g64                                       
+NM info:            version 7.4.1                                 
+Run on machine:     [unknown]                                     
+Output file date:   2018-8-20, 10:57:4                            
+Run started:        -                                             
+Run finished:       -                                             
+Table files:        sdtabC07-2, patabC07-2, cotabC07-2, catabC07-2
+Attached folders:                                                 
+MSFO file:          THIS.MSF                                      
+--------------------------------------------------------------------------------
+Subroutines:      ADVAN2 TRANS2                                         
+Methods:          #1 First Order Conditional Estimation with Interaction
+Dataset:          THEOPP                                                
+  Dataset IGNORE: -                                                     
+  Dataset ACCEPT: -                                                     
+# individuals:     12                                                   
+# observations:   132                                                   
+
+
+Estimation results: #1 First Order Conditional Estimation with Interaction
+--------------------------------------------------------------------------
+Objective function value: 103.698                                   
+Termination message:      minimization successful                   
+                          no. of function evaluations used:      307
+                          no. of sig. digits in final est.:  3.5    
+Checks:                   No boundary problems reported by NONMEM   
+                          All gradients non-zero during estimation  
+Condition number:         5.5E+007                                  
+MSF file:                 THIS.MSF                                  
+
+
+Parameter estimates
+-------------------
+Theta | Description | Estimate | FIX | SE     | RSE   | 95%CI       | [lower,  | init,  | upper] | 
+1     |             | 0.0399   | -   | 0.0031 | 7.8%  | 0.034-0.046 | 0        | 0.1    | +Inf   | 
+2     |             | 0.462    | -   | 0.018  | 3.9%  | 0.427-0.497 | 0        | 1      | +Inf   | 
+3     |             | 1.6      | -   | 0.328  | 20.5% | 0.957-2.243 | 0        | 10     | +Inf   | 
+4     |             | 0.677    | -   | 0.0878 | 13%   | 0.505-0.849 | 0        | 1      | +Inf   | 
+5     |             | 0.01     | FIX | 0      | 0%    | 0.01-0.01   | 0.01     | 0.01   | 0.01   | 
+
+Omega | Description | Estimate | SE     | RSE    | Etabar         | p val  | Shrinkage | 
+1,1   | .           | 0.0634   | 0.0372 | 58.7%  | -0.004 (0.07)  | 0.957  | 0.1%      | 
+2,1   | .           | 0.0307   | 0.0129 | 42%    | .              | .      | .         | 
+2,2   | .           | 0.0151   | 0.0053 | 35.1%  | -0.002 (0.034) | 0.9606 | 0.1%      | 
+3,1   | .           | -0.0152  | 0.0448 | 294.7% | .              | .      | .         | 
+3,2   | .           | -0.016   | 0.0353 | 220.6% | .              | .      | .         | 
+3,3   | .           | 0.426    | 0.231  | 54.2%  | -0.007 (0.18)  | 0.971  | 0.3%      | 
+
+Sigma | Description | Estimate | SE | RSE | Shrinkage | 
+1,1   | .           | 1        | .  | .   | 8.7%      | 
+
+--------------------------------------------------------------------------------
+Report generated 2018-8-20, 11:11:2 on CPT02
+================================================================================

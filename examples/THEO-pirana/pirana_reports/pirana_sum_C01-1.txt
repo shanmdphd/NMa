@@ -1,0 +1,76 @@
+================================================================================
+Drug:              [Not entered] 
+Protocol:          [Not entered] 
+Run:               C01-1         
+Description:       [Not entered] 
+Project notes:     [Not entered] 
+Run notes:         [None entered]
+Report created by: user          
+--------------------------------------------------------------------------------
+Description:        THEOPHYLLINE ORAL  
+NONMEM model file:  C01-1.ctl          
+NONMEM output file: C01-1.lst          
+Reference model:    -                  
+Model author:                          
+NM version Pirana:  nm74g64            
+NM info:            version 7.4.1      
+Run on machine:     [unknown]          
+Output file date:   2018-8-20, 14:25:20
+Run started:        -                  
+Run finished:       -                  
+Table files:        sdtabC01-1         
+Attached folders:                      
+MSFO file:                             
+--------------------------------------------------------------------------------
+Subroutines:                    
+Methods:          #1 First Order
+Dataset:          THEO          
+  Dataset IGNORE: -             
+  Dataset ACCEPT: -             
+# individuals:     12           
+# observations:   132           
+
+
+Estimation results: #1 First Order
+----------------------------------
+Objective function value: 57.321                                                               
+Termination message:      minimization successful                                              
+                          no. of function evaluations used:      479                           
+                          no. of sig. digits in final est.:  3.2                               
+                          total data points normally distributed (n):          132             
+                          n*log(2pi) constant to objective function:    242.59977276603360     
+                          objective function value without constant:    57.321065205740112     
+                          objective function value with constant:       299.92083797177372     
+                          reported objective function does not contain constant                
+                          total effective etas (nind*neta):                            36      
+                          elapsed estimation  time in seconds:     0.06                        
+                          elapsed covariance  time in seconds:     0.02                        
+                          elapsed postprocess time in seconds:     0.01                        
+                           1                                                                   
+Checks:                   No boundary problems reported by NONMEM                              
+                          All gradients non-zero during estimation                             
+Condition number:         na                                                                   
+
+
+Parameter estimates
+-------------------
+Theta | Description | Estimate | FIX | SE     | RSE   | 95%CI         | [lower,  | init,  | upper] | 
+1     |             | 3.17     | -   | 0.641  | 20.2% | 1.914-4.426   | 0        | 5      | 50     | 
+2     |             | 0.105    | -   | 0.0231 | 22%   | 0.06-0.15     | 0        | 1      | 10     | 
+3     |             | 38.3     | -   | 1.68   | 4.4%  | 35.007-41.593 | 0        | 50     | 500    | 
+
+Omega | Description | Estimate | SE     | RSE    | 
+1,1   | .           | 1.2      | 0.42   | 35%    | 
+2,1   | .           | 0.37     | 0.34   | 91.9%  | 
+2,2   | .           | 0.251    | 0.289  | 115.1% | 
+3,1   | .           | 0.137    | 0.0821 | 59.9%  | 
+3,2   | .           | 0.0434   | 0.023  | 53%    | 
+3,3   | .           | 0.0313   | 0.0198 | 63.3%  | 
+
+Sigma | Description | Estimate | SE     | RSE     | 
+1,1   | .           | 0.0121   | 0.0036 | (29.6%) | 
+2,2   | .           | 0.0543   | 0.0321 | (59.1%) | 
+
+--------------------------------------------------------------------------------
+Report generated 2018-8-20, 14:25:42 on CPT02
+================================================================================
