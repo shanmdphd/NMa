@@ -1,0 +1,168 @@
+% Document setup
+\documentclass[a4paper,8pt]{article}
+\nonstopmode
+\usepackage[english]{babel}
+\usepackage{booktabs} % professional tables
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage[table]{xcolor} % for alternating table colors
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+
+% page layout
+\usepackage[portrait]{geometry}
+\newcommand{\alin}{\vspace{8pt} \noindent}
+\renewcommand{\familydefault}{\sfdefault}  % sans serif
+\usepackage {color}
+\frenchspacing
+\sloppy
+\setlength \textwidth{12cm}
+\setlength \textheight{30cm}
+\setlength \oddsidemargin{-1.5cm}
+\setlength \topmargin{-3cm}
+\definecolor{Grey1}{rgb}{0.9,0.9,0.9}
+\definecolor{Grey2}{rgb}{0.95,0.95,0.95}
+
+\begin{document}
+
+\section*{Results summary for: CONTROL5}
+\begin{tabular}{l l}
+Report generated: & 2018-8-22, 16:56:51\\
+Report created by: & Sungpil Han\\ 
+Contents: & \hyperlink{basic}{\textcolor{blue}{General run info}} \\ 
+ & \hyperlink{First Order}{\textcolor{blue}{First Order}} \\ 
+\end{tabular}
+\subsubsection*{\hypertarget{basic}{General} run info:}
+{\footnotesize
+\begin{verbatim}
+Description        THEOPHYLLINE   POPULATION DATA
+NONMEM model file  CONTROL5.ctl                  
+NONMEM output file CONTROL5.out                  
+Reference model    -                             
+NONMEM version     version 7.4.3                 
+Author             Sungpil Han                   
+Dataset            THEOPP                        
+  Dataset ignored  -                             
+  Dataset accepted -                             
+# individuals       12                           
+# observations     132                           
+Output file date   N/A                           
+Run started        -                             
+Run finished       -                             
+Table files                                      
+Attached folders                                 
+Drug                                             
+Protocol                                         
+Notes in Pirana    Project: Pirana exploration   
+\end{verbatim}
+}
+\pagebreak 
+
+
+\subsubsection*{\hypertarget{First Order}{Estimation} results: \#1 First Order}
+{\footnotesize
+\begin{verbatim}
+Objective function value: 104.561                                                              
+Termination message:      minimization successful                                              
+                          no. of function evaluations used:      149                           
+                          no. of sig. digits in final est.:  4.7                               
+                          total data points normally distributed (n):          132             
+                          n*log(2pi) constant to objective function:    242.59977276603360     
+                          objective function value without constant:    104.56106631146798     
+                          objective function value with constant:       347.16083907750158     
+                          reported objective function does not contain constant                
+                          total effective etas (nind*neta):                            36      
+                          elapsed estimation  time in seconds:     0.07                        
+                          elapsed covariance  time in seconds:     0.01                        
+                          elapsed postprocess time in seconds:     0.00                        
+                            1                                                                  
+Checks:                   No boundary problems reported by NONMEM                              
+                          All gradients non-zero during estimation                             
+Condition number:         na                                                                   
+\end{verbatim}
+}
+{\footnotesize
+\begin{table}[!h] \rowcolors{1}{Grey1}{Grey2}
+\caption{Run CONTROL5. \#1 First Order.}
+\begin{tabular}{l l c c c c c c c c}
+\textbf{$\Theta$} & \textbf{Parameter} & \textbf{Estimate} & & \textbf{SE} & \textbf{RSE} & \textbf{95\% CI} & \textbf{lower} & \textbf{init} & \textbf{upper} \tabularnewline 
+1 &  MEAN ABSORPTION RATE CONSTANT (1/HR) & 2.77 &  & 0.708 & 25.6 & 4.158 - 1.382 & 0.1 & 3 & 5 \tabularnewline 
+ 2 &  MEAN ELIMINATION RATE CONSTANT (1/HR) & 0.0781 &  & 0.007 & 9.3 & 0.092 - 0.064 & 0.008 & 0.08 & 0.5 \tabularnewline 
+ 3 &  SLOPE OF CLEARANCE VS WEIGHT RELATIONSHIP (LITERS/HR/KG) & 0.0363 &  & 0.005 & 12.5 & 0.045 - 0.027 & 0.004 & 0.04 & 0.9 \tabularnewline 
+ \end{tabular} 
+\end{table} 
+
+\begin{table}[!h] \rowcolors{1}{Grey1}{Grey2}
+{\footnotesize
+\begin{tabular}{l l  c c  c c  c c  c c c c }
+\textbf{$\Omega^2$} & \textbf{Description} & \textbf{1} & & \textbf{2} & & \textbf{3} & & & \tabularnewline 
+1 &  & 5.55 & (87\%) & \tabularnewline 
+2 &  & 0.0052 & (267.2\%) & 0.0002 & (50.8\%) & \tabularnewline 
+3 &  & -0.128 & (371.1\%) & 0.0091 & (40.9\%) & 0.515 & (41.2\%) & \tabularnewline 
+\end{tabular} 
+
+}
+\end{table} 
+
+\begin{table}[!h] \rowcolors{1}{Grey1}{Grey2}
+{\footnotesize 
+\begin{tabular}{l l  c c c  c c c  c c c  c c c }
+\textbf{$\Omega$} & \textbf{Description} & \textbf{1} & & \textbf{2} & & \textbf{3} & &  \tabularnewline 
+1 &  & 235.6\% &(43.5\%) & & &  & & \tabularnewline 
+2 &  & 14.4\% &  & 1.5\% &(25.4\%) & & & \tabularnewline 
+3 &  & -7.6\% &  & 81.9\% &  & 71.8\% &(20.6\%) &\tabularnewline 
+\end{tabular} 
+
+}
+\end{table} 
+
+\begin{table}[!h] \rowcolors{1}{Grey1}{Grey2}
+{\footnotesize
+\begin{tabular}{l l  c c  c c c c}
+\textbf{$\Sigma^2$} & \textbf{Description} & 
+\textbf{1}  & & \tabularnewline 
+1 &   &  0.388 & (27.062\%) & \tabularnewline 
+\end{tabular}
+}
+\end{table}
+}
+
+\subsubsection*{hypertarget{modelfile}{NONMEM} control stream}
+{\footnotesize
+\begin{verbatim}
+;; x1. Author: Sungpil Han
+$PROB  THEOPHYLLINE   POPULATION DATA
+$INPUT      ID DOSE=AMT TIME CP=DV WT
+$DATA       THEOPP
+
+$SUBROUTINES  ADVAN2
+
+$PK
+;SCALING PARAMETER=VOLUME/WT SINCE DOSE IS WEIGHT-ADJUSTED
+   CALLFL=1
+   KA=THETA(1)+ETA(1)
+   K=THETA(2)+ETA(2)
+   CL=THETA(3)*WT+ETA(3)
+   SC=CL/K/WT
+
+$THETA  
+(.1,3,5) ; MEAN ABSORPTION RATE CONSTANT (1/HR)
+(.008,.08,.5) ; MEAN ELIMINATION RATE CONSTANT (1/HR)
+(.004,.04,.9) ; SLOPE OF CLEARANCE VS WEIGHT RELATIONSHIP (LITERS/HR/KG)
+
+$OMEGA BLOCK(3)  6 .005 .0002 .3 .006 .4
+
+$ERROR
+   Y=F+EPS(1)
+
+$SIGMA  .4
+
+$EST     MAXEVAL=450  PRINT=5
+$COV
+$TABLE          ID DOSE WT TIME
+$SCAT           (RES WRES) VS TIME BY ID
+
+\end{verbatim}
+}\end{document}
