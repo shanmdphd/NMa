@@ -1,5 +1,5 @@
-2018-08-21 
-오후 02:13
+2018-08-31 
+오후 03:38
 $PROB THEOPHYLLINE ORAL
 $INPUT ID AMT=DROP TIME DV BWT
 $DATA THEO
@@ -40,9 +40,9 @@ NM-TRAN MESSAGES
   
 License Registered to: Asan Medical Center
 Expiration Date:    14 DEC 2018
-Current Date:       21 AUG 2018
-Days until program expires : 113
-1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.4.1
+Current Date:       31 AUG 2018
+Days until program expires : 103
+1NONLINEAR MIXED EFFECTS MODEL PROGRAM (NONMEM) VERSION 7.4.3
  ORIGINALLY DEVELOPED BY STUART BEAL, LEWIS SHEINER, AND ALISON BOECKMANN
  CURRENT DEVELOPERS ARE ROBERT BAUER, ICON DEVELOPMENT SOLUTIONS,
  AND ALISON BOECKMANN. IMPLEMENTATION, EFFICIENCY, AND STANDARDIZATION
@@ -213,7 +213,7 @@ Days until program expires : 113
  TOTAL EFFECTIVE ETAS (NIND*NETA):                            36
   
  #TERE:
- Elapsed estimation  time in seconds:     0.06
+ Elapsed estimation  time in seconds:     0.07
  Elapsed covariance  time in seconds:     0.02
  Elapsed postprocess time in seconds:     0.01
 1
@@ -547,7 +547,7 @@ Days until program expires : 113
 +       -1.04E+03 -4.73E+04  1.00E+03 -4.88E+03  1.43E+04  3.51E+04  9.36E+02 -1.52E+05  1.58E+04 -1.70E+05 .........  2.81E+04
  
  Elapsed finaloutput time in seconds:     0.05
- #CPUT: Total CPU Time in Seconds,        0.172
+ #CPUT: Total CPU Time in Seconds,        0.203
 Stop Time: 
-2018-08-21 
-오후 02:13
+2018-08-31 
+오후 03:38
