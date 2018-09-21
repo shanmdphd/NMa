@@ -28,3 +28,9 @@ sh make.sh
 make copy
 ```
 
+# Get Pirana
+
+```
+wget http://pirana-software.com/pub/docs/Manual.pdf
+wget https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3697037/pdf/psp201324a.pdf 
+```
