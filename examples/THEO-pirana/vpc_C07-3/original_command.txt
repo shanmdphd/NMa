@@ -1,0 +1,1 @@
+c:\Strawberry\perl\bin\vpc -samples=200 -no_of_bins=11 -bin_by_count=1 -dir=vpc_C07-3 C07-3.ctl

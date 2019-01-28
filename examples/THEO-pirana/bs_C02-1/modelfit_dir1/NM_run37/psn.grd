@@ -1,0 +1,4 @@
+TABLE NO.     1: First Order Conditional Estimation: Problem=1 Subproblem=0 Superproblem1=0 Iteration1=0 Superproblem2=0 Iteration2=0
+ ITERATION    GRD(1)       GRD(2)       GRD(3)       GRD(4)       GRD(5)       GRD(6)       GRD(7)       GRD(8)       GRD(9)       GRD(10)
+            0 -2.50826E+01 -2.11710E+01 -1.67592E+00 -2.98943E+00  2.76573E+01 -1.56508E+01  3.20040E+00  5.02400E+01 -2.34987E-04  1.12869E+01
+           21 -3.85103E-03 -1.26679E-02 -2.07850E-04 -1.21669E-03  1.50268E-02 -2.45846E-02  1.52579E-05 -2.11803E-02  1.19948E-05 -1.03073E-03

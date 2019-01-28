@@ -1,0 +1,116 @@
+---
+title: "VPC"
+output: pdf_document
+classoption: landscape
+geometry: margin=1.5cm
+---
+
+```{r input_from_PsN,include=FALSE}
+
+#START OF AUTO-GENERATED PREAMBLE, WILL BE OVERWRITTEN WHEN THIS FILE IS USED AS A TEMPLATE
+#Created 2018-10-19 at 17:57
+
+rplots.level <- 1
+xpose.runno <- 'C07-3'
+toolname <- 'vpc'
+pdf.filename <- paste0('PsN_',toolname,'_plots.pdf')
+pdf.title <- 'vpc diagnostic plots run C07-3'
+working.directory<-'C:\\nma\\examples\\THEO-pirana\\vpc_C07-3\\'
+model.directory<-'C:\\nma\\examples\\THEO-pirana\\'
+results.directory <- 'C:\\nma\\examples\\THEO-pirana\\'
+model.filename<-'C07-3.ctl'
+subset.variable<-NULL
+mod.suffix <- '.ctl'
+mod.prefix <- ''
+tab.suffix <- ''
+rscripts.directory <- 'C:/STRAWB~1/perl/site/lib/PsN_4_8_1/R-scripts'
+tool.results.file <- 'vpc_results.csv'
+theta.labels <- c('THETA1','THETA2','THETA3','THETA4','THETA5')
+theta.fixed <- c(FALSE,FALSE,FALSE,FALSE,FALSE)
+omega.labels <- c('OMEGA(1,1)','OMEGA(2,2)','OMEGA(3,3)')
+omega.fixed <- c(FALSE,FALSE,FALSE)
+sigma.labels <- c('SIGMA(1,1)')
+sigma.fixed <- c(TRUE)
+n.eta <- 3
+n.eps <- 1
+
+vpctab <- 'vpctab'
+have.loq.data <- FALSE
+have.censored <- FALSE
+is.categorical <- FALSE
+is.tte <- FALSE
+dv <- 'DV'
+idv <- 'TIME'
+samples <- 200
+
+setwd(working.directory)
+
+############################################################################
+#END OF AUTO-GENERATED PREAMBLE
+#WHEN THIS FILE IS USED AS A TEMPLATE THIS LINE MUST LOOK EXACTLY LIKE THIS
+
+
+```
+
+
+```{r loading_libraries, warning=FALSE, message=FALSE, include = FALSE}
+# get libPaths
+source(file.path(rscripts.directory,"common/R_info.R"))
+R_info(directory=working.directory,only_libPaths=T)
+library(xpose4)
+#add R_info to the meta file
+R_info(directory=working.directory)
+```
+
+```{r vpc_plots, warning=FALSE, message=FALSE, results='asis',echo=FALSE,fig.width=9,fig.height=6.5,fig.keep="high",fig.align="center"}
+
+if (is.tte) {
+    #data is in the model directory, go there to read input
+    setwd(model.directory)
+    xpdb <- xpose.data(xpose.runno)
+    plots <- kaplan.plot(object=xpdb, VPC=T)
+    #go back to vpc directory 
+    setwd(working.directory)
+} else if (is.categorical) { 
+    plots <- xpose.VPC.categorical(vpc.info=tool.results.file, vpctab=vpctab)
+} else if (have.loq.data | have.censored) {
+    plots <- xpose.VPC.both(vpc.info=tool.results.file, vpctab=vpctab)
+} else {
+    plots <- xpose.VPC(vpc.info=tool.results.file, vpctab=vpctab)
+}
+print(plots) 
+
+if (exists('mix')) {     # A mixture model is a special case
+    if (require("vpc")) {
+        source(paste0(rscripts.directory, "/vpc/vpc_mixtures.R"))
+        observations_tablefile <- paste0(working.directory, '/m1/vpc_original.npctab.dta')
+        simulations_tablefile <- paste0(working.directory, '/m1/vpc_simulation.1.npctab.dta')
+
+        obs <- read_nonmem_table(observations_tablefile)
+        sim <- read_nonmem_table(simulations_tablefile)
+        obs_phm <- read_nonmem_table(phm_obs_file)
+        sim_phm <- read_nonmem_table(phm_sim_file)
+        if (!exists('stratify_on')) {
+            stratify_on <- NULL
+        }
+        
+        vpc <- vpc::vpc(obs=obs, sim=sim, obs_cols=list(dv=dv), sim_cols=list(dv=dv), stratify=stratify_on, bins=bin_boundaries)
+        print(vpc)
+        plots_mixest <- mixture_vpc(obs, sim, obs_phm, sim_phm, dv=dv, bins=bin_boundaries, stratify_on=stratify_on)
+        plots_randomized <- mixture_vpc(obs, sim, obs_phm, sim_phm, dv=dv, bins=bin_boundaries, stratify_on=stratify_on, randomize=TRUE)
+
+        for (p in c(plots_mixest, plots_randomized)) {
+            if (is.character(p)) {      # An error message instead of a plot
+                cat("\\pagebreak\n\n")
+                cat(p)
+                cat("\\pagebreak")
+            } else {
+                print(p)
+            }
+        }
+    }
+}
+#add R_info to the meta file
+R_info(directory=working.directory)
+```
+

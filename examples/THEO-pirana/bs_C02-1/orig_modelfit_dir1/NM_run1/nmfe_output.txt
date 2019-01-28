@@ -1,0 +1,50 @@
+Starting NMTRAN
+  
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+             
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+             
+ (WARNING  13) WITH USER-WRITTEN PRED OR $PRED, NM-TRAN CANNOT APPEND THE
+ MDV DATA ITEM.
+        1개 파일이 복사되었습니다.
+Pathlist information for compiler and MPI systems are located in nmpathlist.txt
+
+Recompiling certain components.
+starting wait
+ending wait
+Exiting lpreddo
+Compiling FSUBS
+Building NONMEM Executable
+Starting nonmem execution ...
+License Registered to: Asan Medical Center
+Expiration Date:    14 DEC 2018
+Current Date:       19 OCT 2018
+Days until program expires :  55
+
+
+ First Order Conditional Estimation
+ MONITORING OF SEARCH:
+
+
+0ITERATION NO.:    0    OBJECTIVE VALUE:   754.160639238166        NO. OF FUNC. EVALS.:   6
+ CUMULATIVE NO. OF FUNC. EVALS.:        6
+ NPARAMETR:  5.0000E+01  1.0000E+00  5.0000E+00  2.0000E-01  1.0000E-01  1.0000E-01  2.0000E-01  1.0000E-01  2.0000E-01  1.0000E-01
+
+ PARAMETER:  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01  1.0000E-01
+
+ GRADIENT:  -1.1032E+02  2.8951E+02  4.2371E+01  8.4058E+01 -7.4772E+02 -1.5849E+02 -6.6062E+02 -2.9683E+02 -6.1768E+01 -7.7889E+02
+
+
+0ITERATION NO.:   49    OBJECTIVE VALUE:   103.494673948722        NO. OF FUNC. EVALS.: 469
+ CUMULATIVE NO. OF FUNC. EVALS.:      475
+ NPARAMETR:  3.2136E+01  8.7707E-02  1.5877E+00  1.8994E-02  1.3597E-02  5.6470E-02  1.8605E-02 -7.8013E-03  4.3007E-01  4.7717E-01
+
+ PARAMETER: -3.8097E-01 -2.4303E+00 -1.1202E+00 -1.0771E+00  4.4123E-02  1.8324E-01 -1.3139E+00 -3.9662E-01 -5.0119E+00  8.8135E-01
+
+ GRADIENT:  -7.9572E-03  1.0235E-02  2.6945E-03  2.4614E-03 -1.5010E-02 -5.7537E-03 -3.8698E-04  2.0263E-03  0.0000E+00 -4.5369E-05
+
+ Elapsed estimation  time in seconds:     0.44
+ Elapsed covariance  time in seconds:     0.13
+ Elapsed postprocess time in seconds:     0.01
+ Elapsed finaloutput time in seconds:     0.05
+Done with nonmem execution

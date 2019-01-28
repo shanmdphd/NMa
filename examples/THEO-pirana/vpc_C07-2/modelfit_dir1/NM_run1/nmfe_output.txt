@@ -1,0 +1,27 @@
+Starting NMTRAN
+  
+ WARNINGS AND ERRORS (IF ANY) FOR PROBLEM    1
+             
+ (WARNING  2) NM-TRAN INFERS THAT THE DATA ARE POPULATION.
+        1개 파일이 복사되었습니다.
+Pathlist information for compiler and MPI systems are located in nmpathlist.txt
+
+Recompiling certain components.
+starting wait
+ending wait
+Exiting lpreddo
+Compiling FSUBS
+Building NONMEM Executable
+Starting nonmem execution ...
+License Registered to: Asan Medical Center
+Expiration Date:    14 DEC 2018
+Current Date:       19 OCT 2018
+Days until program expires :  55
+
+
+ First Order Conditional Estimation with Interaction (Evaluation)
+ OBJECTIVE FUNCTION VALUE:    317.22354095137194     
+ Elapsed evaluation  time in seconds:     0.01
+ Elapsed postprocess time in seconds:     0.00
+ Elapsed finaloutput time in seconds:     0.01
+Done with nonmem execution

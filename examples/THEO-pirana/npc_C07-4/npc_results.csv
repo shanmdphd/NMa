@@ -1,0 +1,19 @@
+NPC run info
+"","          Date","  observations","   simulations","     Modelfile","Simulation model","Dependent variable","   PsN version","NONMEM version",
+"",    2018-10-19,           132,           200,     C07-4.ctl,auto-generated,            DV,         4.8.1,       default,
+
+NPC results  
+132 observations out of 132
+"","points below PI (count)","points below PI (%)","outside CI for below PI","95% CI below: from (%)","95% CI below: to (%)","points above PI (count)","points above PI (%)","outside CI for above PI","95% CI above: from (%)","95% CI above: to (%)",
+"         0% PI",            18,      13.63636,             *,      36.36364,      62.87879,           114,      86.36364,             *,      37.12121,      63.63636,
+"        20% PI",            10,      7.575758,             *,      28.78788,      50.75758,           107,      81.06061,             *,      27.27273,       53.0303,
+"        40% PI",             8,      6.060606,             *,      20.45455,      40.90909,           104,      78.78788,             *,      18.18182,      43.18182,
+"        50% PI",             8,      6.060606,             *,      15.90909,      34.84848,           102,      77.27273,             *,      13.63636,      36.36364,
+"        60% PI",             7,       5.30303,             *,      12.12121,       28.0303,           101,      76.51515,             *,      10.60606,      30.30303,
+"        80% PI",             2,      1.515152,             *,      4.545455,      15.90909,            78,      59.09091,             *,      3.787879,      18.93939,
+"        90% PI",             0,             0,             *,      1.515152,      8.333333,            49,      37.12121,             *,     0.7575758,      12.12121,
+"        95% PI",             0,             0,              ,             0,       5.30303,            24,      18.18182,             *,             0,      6.818182,
+
+NPC * (warning) statistics
+"","Real data * count","Sim. data * count mean","Theoretical mean","Sim. data * count median","Sim. data * count 95% CI from","            to",
+"",            15,          0.58,           0.8,             0,             0,             5,

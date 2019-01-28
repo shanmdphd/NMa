@@ -1,0 +1,1 @@
+c:\Strawberry\perl\bin\npc -samples=200 -dir=npc_C07-4 C07-4.ctl

@@ -1,0 +1,169 @@
+command_line: c:\Strawberry\perl\bin\vpc -samples=200 -no_of_bins=11 -bin_by_count=1
+  -dir=vpc_C01-1 C01-1.ctl
+common_options:
+  abort_on_fail: 0
+  accepted_ofv_difference: 0.5
+  add_retries: 0
+  always_datafile_in_nmrun: 0
+  check_nmtran: 0
+  clean: 1
+  compress: 0
+  condition_number_limit: 1000
+  correlation_limit: 0.85
+  crash_restarts: 4
+  degree: 0.1
+  directory: C:\nma\examples\THEO-pirana\vpc_C01-1\
+  display_iterations: 0
+  handle_crashes: 1
+  handle_msfo: 0
+  large_omega_cv_limit: 0.8
+  large_sigma_cv_limit: 0.8
+  large_theta_cv_limit: 0.5
+  last_est_complete: 0
+  lsf_sleep: 3
+  min_retries: 0
+  missing_data_token: '-99'
+  model_subdir: 0
+  near_bound_sign_digits: 2
+  near_zero_boundary_limit: 0.01
+  nice: 19
+  nm_output: ext,cov,cor,coi,phi
+  nm_version: default
+  nmfe: '1'
+  nmqual: 0
+  nodes: 0
+  picky: 0
+  prepend_model_file_name: 0
+  quick_summarize: 0
+  retries: 0
+  rmarkdown: 1
+  rplots: 0
+  run_on_lsf: 0
+  run_on_sge: 0
+  run_on_slurm: 0
+  run_on_torque: 0
+  run_on_ud: 0
+  run_on_zink: 0
+  seed: 808279
+  send_email: 0
+  shrinkage: 0
+  sign_digits_off_diagonals: 2
+  significant_digits_accept: 0
+  so: 0
+  template_directory_rplots: C:/STRAWB~1/perl/site/lib/PsN_4_8_1/R-scripts
+  template_file_rplots: vpc_default.Rmd
+  threads: '5'
+  tweak_inits: 1
+  verbose: 0
+  zip: 0
+finish_time: 2018-10-19 17:50:05
+model_files: C:\nma\examples\THEO-pirana\C01-1.ctl
+NONMEM_directory: C:/nm74g64
+NONMEM_version: '7.4'
+PsN_version: 4.8.1
+R_LIB_PATHS:
+  - C:/Users/mdlhs/Rlib
+  - C:/Program Files/R/R-3.5.1/library
+R_packages:
+  - assertthat-0.2.0 from CRAN (R 3.5.0)
+  - backports-1.1.2 from CRAN (R 3.5.0)
+  - base-3.5.1 from local
+  - bindr-0.1.1 from CRAN (R 3.5.0)
+  - bindrcpp-0.2.2 from CRAN (R 3.5.0)
+  - broom-0.5.0 from CRAN (R 3.5.1)
+  - cellranger-1.1.0 from CRAN (R 3.5.0)
+  - cli-1.0.1 from CRAN (R 3.5.1)
+  - codetools-0.2-15 from CRAN (R 3.5.1)
+  - colorspace-1.3-2 from CRAN (R 3.5.0)
+  - compiler-3.5.1 from local
+  - crayon-1.3.4 from Github (gaborcsardi/crayon@3e751fb)
+  - datasets-3.5.1 from local
+  - devtools-1.13.6 from CRAN (R 3.5.0)
+  - digest-0.6.18 from CRAN (R 3.5.1)
+  - dplyr-0.7.7 from CRAN (R 3.5.1)
+  - evaluate-0.12 from CRAN (R 3.5.1)
+  - fansi-0.4.0 from CRAN (R 3.5.1)
+  - forcats-0.3.0 from CRAN (R 3.5.0)
+  - foreach-1.4.4 from CRAN (R 3.5.0)
+  - gam-1.16 from CRAN (R 3.5.1)
+  - ggplot2-3.0.0 from CRAN (R 3.5.1)
+  - glue-1.3.0 from CRAN (R 3.5.1)
+  - graphics-3.5.1 from local
+  - grDevices-3.5.1 from local
+  - grid-3.5.1 from local
+  - gtable-0.2.0 from CRAN (R 3.5.0)
+  - haven-1.1.2 from CRAN (R 3.5.0)
+  - hms-0.4.2 from CRAN (R 3.5.0)
+  - htmltools-0.3.6 from CRAN (R 3.5.0)
+  - httr-1.3.1 from CRAN (R 3.5.0)
+  - iterators-1.0.10 from CRAN (R 3.5.1)
+  - jsonlite-1.5 from CRAN (R 3.5.0)
+  - knitr-1.20 from CRAN (R 3.5.0)
+  - labeling-0.3 from CRAN (R 3.5.0)
+  - lattice-0.20-35 from CRAN (R 3.5.0)
+  - lazyeval-0.2.1 from CRAN (R 3.5.0)
+  - lubridate-1.7.4 from CRAN (R 3.5.0)
+  - magrittr-1.5 from CRAN (R 3.5.0)
+  - memoise-1.1.0 from CRAN (R 3.5.0)
+  - methods-3.5.1 from local
+  - modelr-0.1.2 from CRAN (R 3.5.0)
+  - munsell-0.5.0 from CRAN (R 3.5.0)
+  - nlme-3.1-137 from CRAN (R 3.5.1)
+  - packrat-0.4.9-3 from CRAN (R 3.5.0)
+  - pillar-1.3.0 from CRAN (R 3.5.1)
+  - pkgconfig-2.0.2 from CRAN (R 3.5.1)
+  - plyr-1.8.4 from CRAN (R 3.5.0)
+  - purrr-0.2.5 from CRAN (R 3.5.0)
+  - R6-2.3.0 from CRAN (R 3.5.1)
+  - Rcpp-0.12.19 from CRAN (R 3.5.1)
+  - readr-1.1.1 from CRAN (R 3.5.0)
+  - readxl-1.1.0 from CRAN (R 3.5.0)
+  - reshape-0.8.7 from CRAN (R 3.5.0)
+  - rlang-0.2.2 from CRAN (R 3.5.1)
+  - rmarkdown-1.10 from CRAN (R 3.5.0)
+  - rprojroot-1.3-2 from CRAN (R 3.5.0)
+  - rstudioapi-0.8 from CRAN (R 3.5.1)
+  - rvest-0.3.2 from CRAN (R 3.5.0)
+  - scales-1.0.0 from CRAN (R 3.5.1)
+  - splines-3.5.1 from local
+  - stats-3.5.1 from local
+  - stringi-1.2.4 from CRAN (R 3.5.1)
+  - stringr-1.3.1 from CRAN (R 3.5.0)
+  - tibble-1.4.2 from CRAN (R 3.5.0)
+  - tidyr-0.8.1 from CRAN (R 3.5.0)
+  - tidyselect-0.2.5 from CRAN (R 3.5.1)
+  - tidyverse-1.2.1 from CRAN (R 3.5.0)
+  - tools-3.5.1 from local
+  - utf8-1.1.4 from CRAN (R 3.5.0)
+  - utils-3.5.1 from local
+  - withr-2.1.2 from CRAN (R 3.5.0)
+  - xml2-1.2.0 from CRAN (R 3.5.0)
+  - xpose4-4.6.1 from CRAN (R 3.5.0)
+  - yaml-2.2.0 from CRAN (R 3.5.1)
+R_system: x86_64, mingw32
+R_version: 3.5.1
+start_time: 2018-10-19 17:50:02
+tool_name: vpc
+tool_options:
+  bin_array: ''
+  bin_by_count: 1
+  boxcox_lambda: 0
+  confidence_interval: 95
+  copy_data: 1
+  dv: DV
+  fine_pi: 0
+  flip_comments: 0
+  idv: TIME
+  in_filter: ''
+  keep_estimation: 0
+  levels: ''
+  lnDV: 0
+  mix: 0
+  n_simulation_models: 1
+  no_of_bins: 11
+  noprediction: 0
+  offset_rawres: 1
+  predcorr: 0
+  sim_table: ''
+  so: 0
+  varcorr: 0

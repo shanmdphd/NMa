@@ -1,0 +1,66 @@
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: M M M M M M 
+ px2: M M M N N N 
+ px3: G G G G G G 
+ px3u: D D D D D D 
+ px4: N N N F F F 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           6           0           3           0           3
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: M M M M M M 
+ px2: M M M N N N 
+ px3: G G G G G G 
+ px3u: D D D D D D 
+ px4: N N N F F F 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           6          -1           2           0           3
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: M M M M M M 
+ px2: M M M N N N 
+ px3: G G G G G G 
+ px3u: D D D D D D 
+ px4: N N N F F F 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           6          -1           2           0           0
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: M M M M M M 
+ px2: M M M N N N 
+ px3: G G G G G G 
+ px3u: D D D D D D 
+ px4: N N N F F F 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           6          -1           2           0           3
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: M M M M M M 
+ px2: M M M N N N 
+ px3: G G G G G G 
+ px3u: D D D D D D 
+ px4: N N N F F F 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           6          -1           2           0           0
+ MCMC settings
+           1          -1           1  0.50000000000000000       1.00000000000000002E-002   1000.0000000000000     
+          -1          -1          -1  0.50000000000000000     
+           2           2           0           2           2  0.40000000000000002       9.99999999999999955E-007   1000000.0000000000     
+        3000        3000        1000           0
+ px1: T T T T T S 
+ px2u:             
+ px2a: M M M N N N 
+ px2b: N N N M M M 
+ px2: M M M N N N 
+ px3: N N N N N G 
+ px3u: D D D D D D 
+ px4: N N N N N N 
+ theta to mu map:            1           2           3           0           0           0
+ sum checks            3           2           0           5           2           0           0
+ sum checks            3           2           0           5           2           0           0

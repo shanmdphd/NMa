@@ -1,0 +1,1 @@
+c:\Strawberry\perl\bin\bootstrap -samples=50 -threads=4 -dir=bs_C02-1 C02-1.ctl
